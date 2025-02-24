@@ -1,33 +1,35 @@
 <x-layout>
-    <div class="container mt-5 ">
-        <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6 ">
-                <h1 class="display-1 text-center mb-3">registrati</h1>
+    <div class="container mt-5 pt-4 w-100">
+        <div class="row justify-content-center">
+            <h1 class="col-12 display-1 text-center mb-3">Registrati</h1>
+            <div class="col-6">
                 <x-error></x-error>
-                <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" name="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            name="email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">conferma la password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
-                            name="password_confirmation">
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 p-3 mt-4">registrati</button>
-                </form>
             </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <form method="POST" action="{{ route('register') }}" class="col-6 col-md-8 col-lg-6 rounded shadow p-5">
+                @csrf
+                <div class="mb-3">
+                    <label class="form-label" for="nameRegister">Username</label>
+                    <input type="text" class="form-control" id="nameRegister" name="name"
+                        value="{{ old('name') }}">
+                </div>
+                <div class="mb-3">
+                    <label for="emailRegister" class="form-label">Email </label>
+                    <input type="email" class="form-control" id="emailRegister"
+                        name="email" value="{{ old('email') }}">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordRegister" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordRegister" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordRegisterConfirmation" class="form-label">Conferma la password</label>
+                    <input type="password" class="form-control" id="passwordRegisterConfirmation" name="password_confirmation">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 p-3 mt-4">Registrati</button>
+            </form>
         </div>
     </div>
 </x-layout>

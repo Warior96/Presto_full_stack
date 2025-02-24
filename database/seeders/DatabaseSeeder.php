@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,12 +12,26 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public $categories = ['elettronica', 'abbigliamento','salute e bellezza','casa e giardinaggio','giocattoli','sport','animali domestici','libri e riviste','accessori','motori'];
+
+    //  seeder categorie
+    public $categories = [
+        'elettronica',
+        'abbigliamento',
+        'salute e bellezza',
+        'casa e giardinaggio',
+        'giocattoli',
+        'sport',
+        'animali domestici',
+        'libri e riviste',
+        'accessori',
+        'motori'
+    ];
 
     public function run(): void
-    {foreach ($this->categories as $category) {
+    {
+        foreach ($this->categories as $category) {
             Category::create([
-                'name'=>$category,
+                'name' => $category,
             ]);
         }
     }
