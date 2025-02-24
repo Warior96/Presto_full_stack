@@ -11,7 +11,7 @@
     <link rel="icon" href="xxx.ico" type="image/x-icon">
 
     <title>
-        @if (Route::currentRouteName() == 'index')
+        @if (Route::currentRouteName() == 'homepage')
              Homepage
         @endif
     </title>
