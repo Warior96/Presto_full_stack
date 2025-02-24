@@ -12,7 +12,7 @@
 
     <title>
         @if (Route::currentRouteName() == 'homepage')
-             Homepage
+            Presto.it
         @endif
     </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -43,7 +43,8 @@
 
 
 
-    <x-footer />
+    {{-- <x-footer /> --}}
+
     <!-- CDN JavaScript -->
     <!-- script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
