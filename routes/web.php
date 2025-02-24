@@ -14,4 +14,7 @@ Route::controller(PublicController::class)->group(function () {
 Route::prefix('articles/')->controller(ArticleController::class)->group(function () {
     //rotta che rimanda alla homepage del sito web
     Route::get('create', 'createArticle')->name('createarticle');
+    Route::get('indexAll', 'indexAll')->name('article.indexAll');
+    Route::get('show/article/{article}', 'show')->name('article.show');
+    Route::get('/category/{category}', 'byCategory')->name('byCategory');
 });

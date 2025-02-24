@@ -6,12 +6,24 @@
         </div>
         @auth
             <div class="row">
-                <div class="col-12 text-center mt-5">
+                <div class="col-12 text-center my-5">
                     <a href="{{ route('createarticle') }}" class="btn btn-success">Pubblica un articolo</a>
                 </div>
             </div>
         @endauth
         <x-success />
 
-    </div>
-</x-layout>
+        <div class="row justify-content-center">
+            @forelse ($articles as $article)
+                <div class="col-3 m-3">
+                    <x-card :article="$article" />
+                </div>
+            @empty <div class="col-12">
+                    <h3 class="text-center"> Non sono ancora stati creati articoli </h3>
+                </div>
+                @endforelse
+
+            </div>
+
+        </div>
+    </x-layout>
