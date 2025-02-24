@@ -15,18 +15,16 @@
 
         @guest
         <li class="nav-item">
-          <a href="{{route('login')}}" class="
-          @if (Route::currentRouteName()=='login') active text-danger @endif nav-link"
-                    >Login</a>
+          <a href="{{route('login')}}" class="@if (Route::currentRouteName()=='login') active text-danger @endif nav-link">Login</a>
         </li>
         @endguest
 
-        {{-- se l'utente è loggato vede il pulsante loggout --}}
+        {{-- se l'utente è logato vede il pulsante logout --}}
         @auth
         <form action="{{ route('logout') }}" method="post" class="ms-auto">
           @csrf
           <button class="btn btn-dark">logout</button>
-      </form>
+        </form>
         @endauth
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
