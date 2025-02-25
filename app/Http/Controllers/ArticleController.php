@@ -32,10 +32,12 @@ class ArticleController extends Controller implements HasMiddleware
         return view('storeArticle.show', compact('article'));
         dd($article);
     }
-    public function byCategory (Category $category)
-{
-    return view('storeArticle.byCategory', ['articles' => $category->articles, 'category' => $category]);
-}
+    public function byCategory(Category $category)
+    {
+        if ($category->articles->isEmpty()) {
+            return redirect()->route('homepage');
+        }
 
-    
+        return view('storeArticle.byCategory', ['articles' => $category->articles, 'category' => $category]);
+    }
 }

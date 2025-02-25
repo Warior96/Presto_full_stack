@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid shadow bg-secondary-subtle">
     <footer class="py-5">
-      <div class="row">
+      <div class="row mx-5">
         <div class="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul class="nav flex-column">

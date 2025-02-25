@@ -1,13 +1,13 @@
 <x-layout>
-    <div class="container mt-5 pt-4 w-100">
+    <header class="container mt-5 pt-4 vh-100">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-1 text-center mb-3">Registrati</h1>
+            <h1 class="col-12 display-2 text-center mb-3">Registrati</h1>
             <div class="col-6">
                 <x-error></x-error>
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
             <form method="POST" action="{{ route('register') }}" class="col-6 col-md-8 col-lg-6 rounded shadow p-5">
                 @csrf
                 <div class="mb-3">
@@ -17,8 +17,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="emailRegister" class="form-label">Email </label>
-                    <input type="email" class="form-control" id="emailRegister"
-                        name="email" value="{{ old('email') }}">
+                    <input type="email" class="form-control" id="emailRegister" name="email"
+                        value="{{ old('email') }}">
                 </div>
                 <div class="mb-3">
                     <label for="passwordRegister" class="form-label">Password</label>
@@ -26,10 +26,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="passwordRegisterConfirmation" class="form-label">Conferma la password</label>
-                    <input type="password" class="form-control" id="passwordRegisterConfirmation" name="password_confirmation">
+                    <input type="password" class="form-control" id="passwordRegisterConfirmation"
+                        name="password_confirmation">
                 </div>
-                <button type="submit" class="btn btn-primary w-100 p-3 mt-4">Registrati</button>
+                <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">Registrati</button>
             </form>
         </div>
-    </div>
+    </header>
+    <x-footer></x-footer>
 </x-layout>
