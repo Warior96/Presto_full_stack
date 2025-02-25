@@ -11,12 +11,12 @@
 <body>
 
     <div>
-        <h1>Un utente ha chiesto di lavorare con noi</h1>
+        <h1>L'utente {{ $user->name }} ha chiesto di lavorare con noi</h1>
         <h2>Ecco i suoi dati:</h2>
         <p>Nome: {{ $user->name }}</p>
         <p>Email: {{ $user->email }}</p>
-        <p>Se vuoi renderl* revisor, clicca qui:</p>
-        <a href="">Rendi revisor</a>
+        <p>Se vuoi renderlo/a revisor, clicca qui:</p>
+        <a href="{{route('make.revisor', compact('user'))}}">Rendi revisor</a>
     </div>
 </body>
 

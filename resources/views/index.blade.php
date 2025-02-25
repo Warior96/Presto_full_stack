@@ -2,12 +2,21 @@
     @if (session()->has('errorMessage'))
         <div class="alert alert-danger text-center shadow rounded w-50">
             {{ session('errorMessage') }}
-
         </div>
+    </div>
     @endif
     <header class="container mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center">
             <h1 class="col-12 display-1 text-center mb-3">Presto.it</h1>
+            {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
+
+            <div class="col-12 d-flex justify-content-center">
+                @if (session()->has('message'))
+                <div class="alert alert-success text-center shadow rounded w-50">
+                    {{ session('message') }}
+                @endif
+                
+            </div>
         </div>
         @auth
             <div class="row">

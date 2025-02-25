@@ -30,5 +30,9 @@ Route::prefix('revisor/')->controller(RevisorController::class)->group(function 
     Route::patch('accept/{article}', 'accept')->name('accept');
     // view rifiuto dell'articolo
     Route::patch('reject/{article}', 'reject')->name('reject');
- 
+    // rotta che fa scattare la richiesta di mail per la candidatura
+    Route::get('request/', 'becomeRevisor')->middleware('auth')->name('become.revisor');
+    // rotta per rendere effettivo un utente come revisore
+    Route::get('make/revisor/{user}', 'makeRevisor')->middleware('auth')->name('make.revisor');
+
 });
