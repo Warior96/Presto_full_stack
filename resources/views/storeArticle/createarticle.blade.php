@@ -1,8 +1,8 @@
 <x-layout>
 
-    <div class="container mt-5 pt-4">
+    <header class="container mt-5 pt-4 vh-100">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-1 text-center mb-3">Crea un articolo</h1>
+            <h1 class="col-12 display-2 text-center mb-3">Crea un articolo</h1>
             <x-success />
 
             {{-- @if (session()->has('success'))
@@ -16,5 +16,6 @@
         <div class="row justify-content-center">
             <livewire:add-article />
         </div>
-    </div>
+    </header>
+    <x-footer></x-footer>
 </x-layout>

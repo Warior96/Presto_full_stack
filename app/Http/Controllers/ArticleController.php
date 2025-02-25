@@ -37,8 +37,7 @@ class ArticleController extends Controller implements HasMiddleware
         if ($category->articles->isEmpty()) {
             return redirect()->route('homepage');
         }
-    
+
         return view('storeArticle.byCategory', ['articles' => $category->articles, 'category' => $category]);
     }
-    
 }

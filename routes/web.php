@@ -12,9 +12,12 @@ Route::controller(PublicController::class)->group(function () {
 
 // gruppo articoli articleController
 Route::prefix('articles/')->controller(ArticleController::class)->group(function () {
-    //rotta che rimanda alla homepage del sito web
+    // view creazione articolo
     Route::get('create', 'createArticle')->name('createarticle');
+    // view tutti gli articoli
     Route::get('indexAll', 'indexAll')->name('article.indexAll');
-    Route::get('show/article/{article}', 'show')->name('article.show');
+    // view dettaglio articolo
+    Route::get('show/{article}', 'show')->name('article.show');
+    // view articoli per categoria
     Route::get('/category/{category}', 'byCategory')->name('byCategory');
 });
