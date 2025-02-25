@@ -1,5 +1,5 @@
 <x-layout>
-    <header class="container mt-5 pt-4 vh-100">
+    <header class="container mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center">
             <h1 class="col-12 display-2 text-center mb-3">Registrati</h1>
             <div class="col-6">
@@ -33,5 +33,5 @@
             </form>
         </div>
     </header>
-    <x-footer></x-footer>
+    {{-- <x-footer></x-footer> --}}
 </x-layout>
