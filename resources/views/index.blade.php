@@ -1,5 +1,10 @@
 <x-layout>
+    @if (session()->has('errorMessage'))
+        <div class="alert alert-danger text-center shadow rounded w-50">
+            {{ session('errorMessage') }}
 
+        </div>
+    @endif
     <header class="container mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center">
             <h1 class="col-12 display-1 text-center mb-3">Presto.it</h1>

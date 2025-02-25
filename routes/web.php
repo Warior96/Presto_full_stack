@@ -25,9 +25,10 @@ Route::prefix('articles/')->controller(ArticleController::class)->group(function
 
 Route::prefix('revisor/')->controller(RevisorController::class)->group(function () {
     // view elenco articoli da revisionare
-    Route::get('index', 'index')->name('revisor.index');
+    Route::get('index', 'index')->middleware('isRevisor')->name('revisor.index');
     // view accettazione dell'articolo
     Route::patch('accept/{article}', 'accept')->name('accept');
     // view rifiuto dell'articolo
     Route::patch('reject/{article}', 'reject')->name('reject');
+ 
 });
