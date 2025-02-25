@@ -31,6 +31,11 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
+                            href="{{ route('revisor.index') }}">Revisiona</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'active' : '' }}"
                             href="{{ route('article.indexAll') }}">Mostra</a>
                     </li>
@@ -40,7 +45,7 @@
                             Categorie
                         </a>
 
-                       
+
 
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
