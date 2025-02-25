@@ -9,27 +9,65 @@
 
     <div class="container">
         @if ($article_to_check)
-            <div class="row">
-                <div class="col-8">
-                    @for ($i = 0; $i < 6; $i++)
-                        <img src="https://picsum.photos/100/200" alt="">
-                    @endfor
-                    <div class="col">
-                        <form action="" method='POST'>
-                            @csrf
-                            <button class="btn btn-danger">Rifiuta</button>
-                        </form>
-
-                        <form action="" method='POST'>
-                            @csrf
-                            <button class="btn btn-success">Accetta</button>
-                        </form>
+            <div class="row justify-content-center pt-5">
+                <div class="col-md-8">
+                    <div class="row justify-content-center">
+                        @for ($i = 0; $i < 6; $i++)
+                            <div class="col-6 col-md-4 mb-4 text-center">
+                                <img src="https://picsum.photos/100/200" class="img-fluid rounded shadow" alt="">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+                {{-- Dettagli dell'articolo da revisionare --}}
+                <div class="col-md-4">
+                    <div>
+                        <h1>
+                            {{ $article_to_check->title }}
+                        </h1>
+                        <h3>
+                            Autore: {{ $article_to_check->user->name }} 
+                        </h3>
+                        <h4>
+                            {{ $article_to_check->price }}€
+                        </h4>
+                        <h4 class="fst-italic text-muted">
+                            #{{ $article_to_check->category->name }}
+                        </h4>
+                        <p class="h6">
+                            {{ $article_to_check->description }}
+                        </p>
                     </div>
                 </div>
             </div>
+
+
+            <div class="d-flex pb-4 justify-content-around">
+                <form action="" method='POST'>
+                    @csrf
+                    <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                </form>
+
+                <form action="" method='POST'>
+                    @csrf
+                    <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                </form>
+            </div>
         @else
-            <h1>Nessun articolo da revisionare</h1>
-            <a href="{{ route('homepage') }}">Torna alla home</a>
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col-12">
+
+
+                    <h1 class="fst-italic display-4">
+                        Nessun articolo da revisionare
+                    </h1>
+
+                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-black">
+                        Torna alla home
+                    </a>
+                </div>
+            </div>
         @endif
+    </div>
     </div>
 </x-layout>
