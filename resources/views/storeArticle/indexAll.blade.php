@@ -1,5 +1,5 @@
 <x-layout>
-    <header class="container-fluid  mt-5 pt-3 min-vh-100">
+    <header class="container-fluid  mt-5 pt-3 vh-100">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="display-2">Tutti gli articoli</h1>
