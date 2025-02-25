@@ -12,25 +12,41 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $article_to_check = Article::where('is_accepted', null)->first();
         return view('revisor.index', compact('article_to_check'));
     }
 
-    public function accept(Article $article) {
+    public function accept(Article $article)
+    {
         $article->setAccepted(true);
-        return redirect()->back()->with('message', "Hai accettato l'articolo $article->title");
+        return redirect()->back()->with('success', "Hai accettato l'articolo $article->title");
     }
-    public function reject(Article $article) {
+    public function reject(Article $article)
+    {
         $article->setAccepted(false);
-        return redirect()->back()->with('message', "Hai rifiutato l'articolo $article->title");
+        return redirect()->back()->with('reject', "Hai rifiutato l'articolo $article->title");
     }
-    public function becomeRevisor(Article $article) {
-       Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-       return redirect()->route('homepage')->with('message', 'Complimenti, la tua richieta di diventare revisor è stata inviata correttamente');
+
+    // funzione back da sistemare - annulla tutte le revisioni
+    // public function back()
+    // {
+    //     $article_to_check = Article::whereNotNull('is_accepted')->latest();
+    //     dd($article_to_check);
+    //     $article_to_check->update([
+    //         'is_accepted' => null,
+    //     ]);
+    //     return redirect()->back();
+    // }
+    public function becomeRevisor(Article $article)
+    {
+        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+        return redirect()->route('homepage')->with('message', 'Complimenti, la tua richieta di diventare revisor è stata inviata correttamente');
     }
-    public function makeRevisor(User $user) {
-        Artisan::call('app:make-user-revisor', ['email'=>$user->email]);
+    public function makeRevisor(User $user)
+    {
+        Artisan::call('app:make-user-revisor', ['email' => $user->email]);
         return redirect()->back();
     }
 }

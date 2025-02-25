@@ -13,15 +13,15 @@
                 <div class="col-md-8">
                     <div class="row justify-content-center">
                         @for ($i = 0; $i < 6; $i++)
-                            <div class="col-6 col-md-4 mb-4 text-center">
-                                <img src="https://picsum.photos/100/200" class="img-fluid rounded shadow" alt="">
+                            <div class="col-4 mb-4 text-center">
+                                <img src="https://picsum.photos/200" class="img-fluid rounded shadow" alt="">
                             </div>
                         @endfor
                     </div>
                 </div>
                 {{-- Dettagli dell'articolo da revisionare --}}
-                <div class="col-md-4">
-                    <div>
+                <div class="col-md-4 d-flex justify-content-between flex-column">
+                    <div class="row">
                         <h1>
                             {{ $article_to_check->title }}
                         </h1>
@@ -38,30 +38,41 @@
                             {{ $article_to_check->description }}
                         </p>
                     </div>
-                </div>
-            </div>
-
-
-            <div class="d-flex pb-4 justify-content-around">
-                <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'>
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
-                </form>
-
-                @if (session()->has('message'))
-                    <div class="row justify-content-center">
-                        <div class="col-5 alert alert-success text-center shadow rounded">
-                            {{ session('message') }}
-                        </div>
+                    <div class="row">
+                        @if (session()->has('success'))
+                            <div class="mt-4 alert alert-success shadow rounded">
+                                {{ session('success') }}
+                            </div>
+                        @elseif (session()->has('reject'))
+                            <div class="mt-4 alert alert-danger shadow rounded">
+                                {{ session('reject') }}
+                            </div>
+                        @endif
                     </div>
-                @endif
-                <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'>
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
-                </form>
+                    <div class="row pb-4 justify-content-around flex-row">
+                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'
+                            class="col-5">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                        </form>
 
+                        <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
+                            class="col-5">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                        </form>
+
+                        {{-- <form action="{{ route('back', ['article' => $article_to_check]) }}" method='POST'
+                            class="col-10">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-warning py-2 px-5 fw-bold">Annulla l'ultima operazione</button>
+                        </form> --}}
+
+                    </div>
+                </div>
             </div>
         @else
             <div class="row justify-content-center align-items-center text-center">
@@ -72,7 +83,7 @@
                         Nessun articolo da revisionare
                     </h1>
 
-                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-black">
+                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
                         Torna alla home
                     </a>
                 </div>

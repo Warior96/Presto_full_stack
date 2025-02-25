@@ -17,7 +17,7 @@
                         Non sono ancora stati creati articoli per questa categoria!
                     </h3>
                     @auth
-                        <a class="btn btn-dark my-5" href="{{ route('createarticle') }}">Pubblica un articolo</a>
+                        <a class="my-5 btn btn-info px-3 py-2 fs-5 rounded shadow" href="{{ route('createarticle') }}">Pubblica un articolo</a>
                     @endauth
                 </div>
             @endforelse
