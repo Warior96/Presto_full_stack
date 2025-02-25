@@ -33,7 +33,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
           </ul>
         </div>
-
+        <!--
         <div class="col-md-5 offset-md-1 mb-3">
           <form>
             <h5>Richiedi di lavorare con noi</h5>
@@ -44,7 +44,7 @@
           </form>
         </div>
       </div>
-
+-->
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
         <p>&copy; 2024 Company, Inc. All rights reserved.</p>
         <ul class="list-unstyled d-flex">
