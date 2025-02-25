@@ -26,7 +26,7 @@
                             {{ $article_to_check->title }}
                         </h1>
                         <h3>
-                            Autore: {{ $article_to_check->user->name }} 
+                            Autore: {{ $article_to_check->user->name }}
                         </h3>
                         <h4>
                             {{ $article_to_check->price }}€
