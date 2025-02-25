@@ -35,6 +35,7 @@
                 <h2 class="display-5 text-center"><span class="fw-bold">Titolo: </span>{{ $article->title }}</h2>
                 <div class=" h-75 m-5">
                     <h4 class="fw-bold mb-3">Prezzo: {{ $article->price }} €</h4>
+                    <h4 class="fw-bold mb-3">Categoria: {{ $article->category->name }} </h4>
                     <h5>Descrizione: {{ $article->description }}</h5>
                 </div>
             </div>
