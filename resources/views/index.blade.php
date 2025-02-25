@@ -28,17 +28,17 @@
 
                     <div class="row justify-content-center">
                         <h3 class="col-12 text-center mt-3">Ultimi arrivi</h3>
-                        @if ($articles) 
+                        @if ($articles)
                         <swiper-container class="mySwiper" space-between="30" slides-per-view="3" pagination="false"
-                loop="true" autoplay-delay="5000" > 
+                loop="true" autoplay-delay="5000" >
                 @foreach ($articles as $article)
                     <swiper-slide class="my-3">
                                 <x-card :article="$article" />
                     </swiper-slide>
                     @endforeach
                 </swiper-container>
-            @else 
-                        <!-- @forelse ($articles as $article) 
+            @else
+                        <!-- @forelse ($articles as $article)
                             <div class="col-3 m-3">
                                 <x-card :article="$article" />
                             </div>
