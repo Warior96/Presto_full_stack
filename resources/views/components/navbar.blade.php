@@ -69,14 +69,14 @@
                     <div class="input-group">
                         <input type="search" name="query" class="form-control" placeholder="Search"
                             aria-label="search">
-                        <button class="input-group-text btn btn-outline-success" type="submit"
-                            id="basic-addon2">Search</button>
+                        <button class="input-group-text btn btn-outline-info" type="submit"
+                            id="basic-addon2">Cerca</button>
                     </div>
                 </form>
 
                 @auth
                     {{-- logout --}}
-                    <form action="{{ route('logout') }}" method="post" class="ms-auto">
+                    <form action="{{ route('logout') }}" method="post" class="ms-3">
                         @csrf
                         <button class="btn btn-dark">Logout</button>
                     </form>
