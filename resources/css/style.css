@@ -1,17 +1,38 @@
-/* :root {} */
-
-/* h1, h2, h3, h4, h5, h6,
-.font-title {
-    font-family: "", "Arial Black", "Impact", sans-serif;
+:root {
+  --color-1: #CF5C36;
+  --color-2: #F5DEBA;
+  --color-3: #FFB800;
+  --color-4: #7AA981;
+  --color-5: #333339;
 }
 
+h1, h2, h3, h4, h5, h6,
+.font-title {
+    font-family: "Merriweather", "Arial Black", "Impact", sans-serif;
+}
+
+*{
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+} 
+
 * {
-    font-family: "", Arial, Helvetica, sans-serif;
-} */
+  color: var(--color-5);
+}
 
 body {
   background-color: #e3f2f8;
 }
+
+/* Homepage */
+.bg-header{
+  background-image: url(https://picsum.photos/1080/720);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+/* Fine Homepage */
 
 swiper-container {
   width: 100%;

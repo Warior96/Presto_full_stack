@@ -5,24 +5,53 @@
         </div>
         </div>
     @endif
-    <header class="container mt-5 pt-5 min-vh-100">
-        <div class="row justify-content-center">
+    <header class="container-flow bg-header mt-5 pt-5 vh-100">
+        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5">
+
+            <div class="col-12">
+                <h1 class=" display-1 text-center mb-3 pb-4">Emporium Shop</h1>
+                <h4 class="text-center">
+                    Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Aliquam labore voluptatibus
+                    iusto eos ducimus tempora nisi! 
+                </h4>
+            </div>
+
+            {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
+            <div class="col-12 d-flex justify-content-center">
+                @if (session()->has('message'))
+                    <div class="alert alert-success text-center shadow rounded w-50">
+                        {{ session('message') }}
+                    </div>
+                @endif
+            </div>
+
+            {{-- MESSAGGIO DI SUCCESSO GENERICO --}}
+            <x-success />
+
             @auth
-                <div class="col-3 d-flex align-items-center justify-content-start">
-                    <a href="{{ route('createarticle') }}" class="btn btn-info text-dark px-3 py-2 fs-5 rounded shadow"
-                        id="addArticle">Pubblica
-                        un articolo</a>
+                <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
+                    <h3 class="mb-3">Crea subito il tuo articolo</h3>
+                    <a href="{{ route('createarticle') }}" class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25"
+                        id="addArticle">
+                        Crea
+                    </a>
                 </div>
             @endauth
-            <h1 class="col-6 display-1 text-center mb-3">Emporium Shop</h1>
+
+        </div>
+    </header>
+
+    <section class="container mt-5 pt-5 min-vh-100">
+        <div class="row justify-content-center">
+            {{-- Bottone + modale lavora con noi --}}
             @auth
                 @if (Auth::user()->is_revisor != true)
-                   
                     <div class="col-3 d-flex justify-content-end align-content-center ">
                         <button type="button" class="btn btn-primary  my-4 fs-5 rounded shadow" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
                             Lavora con noi
                         </button>
+
                         <!-- Modal -->
                         <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -52,24 +81,16 @@
                             </div>
                         </div>
                     </div>
-                    @else
+                @else
                     <div class="col-3 d-flex justify-content-end align-content-center">
-                        <h1>Sei</h1>
-                        </div>
-                @endif
-            @endauth
-            {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
-
-            <div class="col-12 d-flex justify-content-center">
-                @if (session()->has('message'))
-                    <div class="alert alert-success text-center shadow rounded w-50">
-                        {{ session('message') }}
+                        {{-- <h4>Ora sei un revisore</h4> --}}
                     </div>
                 @endif
-            </div>
+            @endauth
+
+
 
         </div>
-        <x-success />
 
         <div class="row justify-content-center">
             <h3 class="col-12 text-center my-3">Ultimi arrivi</h3>
@@ -91,7 +112,7 @@
 
             @endif
         </div>
-    </header>
+    </section>
 
     <x-footer></x-footer>
 
