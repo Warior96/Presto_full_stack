@@ -18,11 +18,11 @@ class CategorySeeder extends Seeder
         $categories = [
             'Elettronica',
             'Abbigliamento',
-            'Salute e bellezza',
-            'Casa e giardinaggio',
+            'Bellezza',
+            'Giardinaggio',
             'Giocattoli',
             'Sport',
-            'Animali domestici',
+            'Tecnologia',
             'Libri e riviste',
             'Accessori',
             'Motori'
