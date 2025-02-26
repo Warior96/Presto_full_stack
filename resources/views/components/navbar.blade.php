@@ -55,12 +55,12 @@
                         </ul>
 
                     </li>
-                    @if (Auth::user()->is_revisor)
+                    {{-- @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
                                     href="{{ route('revisor.index') }}">Revisiona {{ \App\Models\Article::toBeRevisedCount() }}  </a>
                         </li>
-                    @endif
+                    @endif --}}
                     {{-- logout --}}
                     <form action="{{ route('logout') }}" method="post" class="ms-auto">
                         @csrf

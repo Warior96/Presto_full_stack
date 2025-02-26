@@ -17,15 +17,13 @@ class BecomeRevisor extends Mailable
     /**
      * Create a new message instance.
      */
-    
-        
     public $user;
 
     public function __construct(User $user)
     {
         $this->user = $user;
     }
-    
+
 
     /**
      * Get the message envelope.

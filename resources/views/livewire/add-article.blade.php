@@ -39,6 +39,8 @@
         <div class="mb-3">
             <label class="form-label" for="category">Categoria</label>
             <select wire:model.blur="category" class="form-select" id="category">
+                <option value="">Seleziona categoria</option>
+
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
