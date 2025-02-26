@@ -10,8 +10,7 @@
             <h1 class="col-12 display-1 text-center mb-3 position-relative">Presto.it</h1>
             @auth
 
-                    <a href="{{ route('createarticle') }}" class="btn btn-outline-info position-absolute text-dark d-inline-flex  p-3 fs-5 rounded shadow"id="addArticle">Pubblica un
-                        articolo</a>
+                <a href="{{ route('createarticle') }}" class="btn btn-outline-info position-absolute text-dark p-3 fs-5 rounded shadow" id="addArticle">Pubblica un articolo</a>
 
             @endauth
             {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
@@ -34,7 +33,9 @@
                     loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
                     @foreach ($articles as $article)
                         <swiper-slide class="my-3">
+                            <div class="row justify-content-center">
                             <x-card :article="$article" />
+                            </div>
                         </swiper-slide>
                     @endforeach
                 </swiper-container>

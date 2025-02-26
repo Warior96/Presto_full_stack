@@ -1,4 +1,4 @@
-<div class="col-6 col-md-8 col-lg-6 rounded shadow p-5">
+<div class="col-10 col-md-8 col-lg-6 rounded shadow p-5">
     <form wire:submit="createArticles">
         @csrf
 
