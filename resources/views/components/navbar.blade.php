@@ -27,14 +27,14 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
-                            href="{{ route('createarticle') }}">Crea</a>
+                            href="{{ route('createarticle') }}">Crea un articolo</a>
                     </li>
 
 
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'active' : '' }}"
-                            href="{{ route('article.indexAll') }}">Mostra</a>
+                            href="{{ route('article.indexAll') }}">Mostra tutti gli articoli</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -55,18 +55,31 @@
                         </ul>
 
                     </li>
-                    {{-- @if (Auth::user()->is_revisor)
+                    @if (Auth::user()->is_revisor)
                         <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
-                                    href="{{ route('revisor.index') }}">Revisiona {{ \App\Models\Article::toBeRevisedCount() }}  </a>
+                            <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
+                                href="{{ route('revisor.index') }}">Revisiona
+                                {{ \App\Models\Article::toBeRevisedCount() }} </a>
                         </li>
-                    @endif --}}
+                    @endif
+                @endauth
+
+                {{-- search --}}
+                <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
+                    <div class="input-group">
+                        <input type="search" name="query" class="form-control" placeholder="Search"
+                            aria-label="search">
+                        <button class="input-group-text btn btn-outline-success" type="submit"
+                            id="basic-addon2">Search</button>
+                    </div>
+                </form>
+
+                @auth
                     {{-- logout --}}
                     <form action="{{ route('logout') }}" method="post" class="ms-auto">
                         @csrf
                         <button class="btn btn-dark">Logout</button>
                     </form>
-
                 @endauth
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

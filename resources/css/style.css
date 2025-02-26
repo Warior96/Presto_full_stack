@@ -1,6 +1,16 @@
+/* :root {} */
+
+/* h1, h2, h3, h4, h5, h6,
+.font-title {
+    font-family: "", "Arial Black", "Impact", sans-serif;
+}
+
+* {
+    font-family: "", Arial, Helvetica, sans-serif;
+} */
+
 body {
   background-color: #e3f2f8;
-  ;
 }
 
 swiper-container {
@@ -40,3 +50,22 @@ swiper-slide:nth-child(3n) {
   left: 80vw;
   width: 14vw;
 }
+
+
+
+
+
+/* media query solo per sm smartphone */
+@media (max-width: 767px) {}
+
+/* media query solo per md tablet */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* media query solo per lg desktop */
+@media (min-width: 992px) {}
+
+/* media query in: md tablet e sm smartphone*/
+@media (max-width: 991px) {}
+
+/* media query in: lg desktop e md tablet*/
+@media (min-width: 768px) {}
