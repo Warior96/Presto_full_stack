@@ -45,8 +45,8 @@
 
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item d-flex"
-                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="ps-4 ms-auto">({{$category->articles->count()}})</span> </a>
+                                <li><a class="dropdown-item d-flex align-items-center text-center"
+                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="badge  bg-danger ps-4 ms-auto text-center">{{$category->articles->count()}}</span> </a>
                                 </li>
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
@@ -55,11 +55,15 @@
                         </ul>
 
                     </li>
-                    @if (Auth::user()->is_revisor)
-                        <li class="nav-item">
+                    @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
+                        <li class="nav-item position-relative">
                             <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
                                 href="{{ route('revisor.index') }}">Revisiona
-                                {{ \App\Models\Article::toBeRevisedCount() }} </a>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{ \App\Models\Article::toBeRevisedCount() }}
+                                <span class="visually-hidden">unread messages</span>
+                                  </span>
+                                </a>
                         </li>
                     @endif
                 @endauth
