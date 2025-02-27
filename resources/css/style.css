@@ -1,7 +1,56 @@
+:root {
+  --color-1: #CF5C36;
+  --color-2: #F5DEBA;
+  --color-3: #FFB800;
+  --color-4: #7AA981;
+  --color-5: #333339;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-title {
+  font-family: "Merriweather", "Arial Black", "Impact", sans-serif;
+}
+
+* {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+* {
+  color: var(--color-5);
+}
+
 body {
   background-color: #e3f2f8;
-  ;
 }
+
+/* Homepage */
+.bg-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://picsum.photos/1080/720");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#caret {
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+}
+
+#caret-icon {
+  scale: 2;
+  animation: bounce 2s infinite;
+  animation-fill-mode: both;
+}
+
+/* Fine Homepage */
 
 swiper-container {
   width: 100%;
@@ -40,3 +89,35 @@ swiper-slide:nth-child(3n) {
   left: 80vw;
   width: 14vw;
 }
+
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(10px);
+  }
+
+}
+
+
+
+
+/* media query solo per sm smartphone */
+@media (max-width: 767px) {}
+
+/* media query solo per md tablet */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* media query solo per lg desktop */
+@media (min-width: 992px) {}
+
+/* media query in: md tablet e sm smartphone*/
+@media (max-width: 991px) {}
+
+/* media query in: lg desktop e md tablet*/
+@media (min-width: 768px) {}
