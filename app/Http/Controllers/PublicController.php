@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -19,7 +20,6 @@ class PublicController extends Controller
     {
         $query = $request->input('query');
         $articles = Article::search($query)->where('is_accepted', true)->paginate(3);
-        // dd($request->query);
         return view('article.searched', ['articles' => $articles, 'query' => $query]);
     }
 }
