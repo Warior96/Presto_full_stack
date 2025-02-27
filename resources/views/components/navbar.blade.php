@@ -46,14 +46,13 @@
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item d-flex"
-                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="ps-4 ms-auto">({{$category->articles->count()}})</span> </a>
+                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="ps-4 ms-auto">({{$category->articles->where('is_accepted', 1)->count()}})</span> </a>
                                 </li>
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
                                 @endif
                             @endforeach
                         </ul>
-
                     </li>
                     @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
                         <li class="nav-item position-relative">
