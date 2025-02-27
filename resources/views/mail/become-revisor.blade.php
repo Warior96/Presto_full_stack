@@ -28,7 +28,7 @@
                 <p class="col-12 col-md-6 mx-5">email: {{ $user->email }}</p>
                 <p class="col-12 col-md-6 mx-5 mb-0">Distinti saluti,</p>
                 <p class="col-12 col-md-6 mx-5 mb-1">{{ $user->name }}</p>
-                <p class="col-12 col-md-7 mx-5">data e ora della richiesta: {{ \Carbon\Carbon::now()->format('d/m/Y H:i')}}</p>
+                <p class="col-12 col-md-7 mx-5">data e ora della richiesta:{{ \Carbon\Carbon::now()->addHours(1)->format('d/m/Y H:i') }}</p>
                 <p class="col-12 col-md-4 ms-5 mb-0 mt-2 ">Se vuoi renderlo/a revisor, clicca qui:</p>
             <div class="col-12 col-md-6 me-5 ">
                 <a href="{{ route('make.revisor', compact('user')) }}" class="btn btn-primary rounded-2 fs-5 shadow w-50 py-2 ">Rendi revisor</a>
