@@ -31,5 +31,19 @@ class AppServiceProvider extends ServiceProvider
         }
         //rendiamo globale la request della navbar search
         View::share('query', request()->query('query', ''));
+
+        $categoryIcons = [
+            'Elettronica'        => 'fa-tv',
+            'Abbigliamento'      => 'fa-tshirt',
+            'Bellezza'           => 'fa-paint-brush',
+            'Giardinaggio'       => 'fa-leaf',
+            'Giocattoli'         => 'fa-puzzle-piece',
+            'Sport'              => 'fa-football-ball',
+            'Tecnologia'         => 'fa-cogs',
+            'Libri e riviste'    => 'fa-book',
+            'Accessori'          => 'fa-glasses',
+            'Motori'             => 'fa-car',
+        ];
+        View::share('categoryIcons', $categoryIcons);
     }
 }
