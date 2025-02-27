@@ -37,6 +37,7 @@ class ArticleController extends Controller implements HasMiddleware
     {
         // $articles = $category->articles;
         $articles = $category->articles->where('is_accepted', true);
-        return view('storeArticle.byCategory', compact('articles', 'category'));
+        $num_articles = $articles->count();
+        return view('storeArticle.byCategory', compact('articles', 'category', 'num_articles'));
     }
 }
