@@ -5,14 +5,14 @@
         </div>
         </div>
     @endif
-    <header class="container-flow bg-header mt-5 pt-5 vh-100">
-        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5">
+    <header class="container-fluid bg-header pt-5 vh-100">
+        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5 position-relative text-white">
 
             <div class="col-12">
                 <h1 class=" display-1 text-center mb-3 pb-4">Emporium Shop</h1>
                 <h4 class="text-center">
                     Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Aliquam labore voluptatibus
-                    iusto eos ducimus tempora nisi! 
+                    iusto eos ducimus tempora nisi!
                 </h4>
             </div>
 
@@ -31,12 +31,19 @@
             @auth
                 <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
                     <h3 class="mb-3">Crea subito il tuo articolo</h3>
-                    <a href="{{ route('createarticle') }}" class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25"
-                        id="addArticle">
+                    <a href="{{ route('createarticle') }}"
+                        class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25" id="addArticle">
                         Crea
                     </a>
                 </div>
             @endauth
+
+            <a href="#lastArticles"
+                class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center"
+                id="caret">
+                <i class="fa-solid fa-angle-down text-white cssanimation hu__hu__" id="caret-icon"></i>
+            </a>
+
 
         </div>
     </header>
@@ -92,8 +99,8 @@
 
         </div>
 
-        <div class="row justify-content-center">
-            <h3 class="col-12 text-center my-3">Ultimi arrivi</h3>
+        <div class="row justify-content-center" id="lastArticles">
+            <h3 class="col-12 text-center mt-5 mb-3">Ultimi arrivi</h3>
             @if ($articles)
                 <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
                     loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
