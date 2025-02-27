@@ -2,7 +2,7 @@
     <div class="container">
     <div class="row py-5 justify-content-center align-items-center text-center">
         <div class="col-12 pt-5">
-                <h1 class="display-4">Sono presenti {{$category->articles->count()}} articoli della categoria <span
+                <h1 class="display-4">Sono presenti {{$num_articles}} articoli della categoria <span
                         class="fst-italic fw-bold">{{ $category->name }}</span></h1>
         </div>
         <div class="row height-custom justify-content-center align-items-center py-5">

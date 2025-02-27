@@ -45,8 +45,8 @@
 
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item d-flex align-items-center text-center"
-                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="badge  bg-danger ps-4 ms-auto text-center">{{$category->articles->count()}}</span> </a>
+                                <li><a class="dropdown-item d-flex"
+                                        href="{{ route('byCategory', ['category' => $category]) }}"> {{ $category->name }} <span class="ps-4 ms-auto">({{$category->articles->count()}})</span> </a>
                                 </li>
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">

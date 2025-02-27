@@ -20,6 +20,8 @@ class PublicController extends Controller
     {
         $query = $request->input('query');
         $articles = Article::search($query)->where('is_accepted', true)->paginate(3);
-        return view('article.searched', ['articles' => $articles, 'query' => $query]);
+        // $num_articles = Article::search($query)->where('is_accepted', true)->count();
+        $num_articles = $articles->total();
+        return view('article.searched', ['articles' => $articles, 'query' => $query, 'num_articles' => $num_articles]);
     }
 }
