@@ -208,11 +208,11 @@ return [
 
     'tntsearch' => [
         'storage' => storage_path(), // place where the index fi tes be stor•ed
-        'fuzziness' => env('TNTSEARCH_FUZZINESS', false),  // per errori di battitura true
+        'fuzziness' => env('TNTSEARCH_FUZZINESS', true),  // per errori di battitura true
         'fuzzy' => [
             'prefix_length' => 2,
             'max_expansions' => 50,
-            'distance' => 2,
+            'distance' => 5, // aumentare il valore per rendere la ricerca meno precisa
             'no_limit' => true
         ],
         'asYouType' => false,
