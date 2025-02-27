@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <div class="container-fluid ">
+    <div class="container ">
         <div class="row p-5 vh-100 ">
             <h1 class="col-12 col-md-6 mx-5 mt-3 mb-1">Emporium Shop</h1>
-            <h2 class="col-12 col-md-6 mx-5">Richiesta di Lavoro da {{ $user->name }}</h2>
+            <h2 class="col-12 col-md-6 mx-5">Richiesta di Lavoro da {nome completo}</h2>
             <p class="col-12 col-md-6 mx-5 mt-3 mb-1">Gentile Emporium Shop,</p>
-            <p class="col-12 col-md-6 mx-5 mb-1">Mi chiamo{{ $user->name }} e sono molto interessato/a a lavorare con il
+            <p class="col-12 col-md-6 mx-5 mb-1">Mi chiamo {nome completo} e sono molto interessato/a a lavorare con il
                 vostro team come revisor.</p>
             <p class="col-12 col-md-6 mx-5 mb-1">
                 Sarei molto grato/a se poteste prendere in considerazione la mia candidatura e, se necessario, sono
@@ -24,18 +24,30 @@
             <p class="col-12 col-md-6 mx-5">
                 Vi ringrazio in anticipo per l'opportunità e resto a disposizione per qualsiasi chiarimento. Ecco i miei
                 dati personali</p>
-                <p class="col-12 col-md-6 mx-5">nome: {{ $user->name }}</p>
-                <p class="col-12 col-md-6 mx-5">email: {{ $user->email }}</p>
+                <p class="col-12 col-md-6 mx-5">{dati di contatto}</p>
                 <p class="col-12 col-md-6 mx-5 mb-0">Distinti saluti,</p>
-                <p class="col-12 col-md-6 mx-5 mb-1">{{ $user->name }}</p>
-                <p class="col-12 col-md-7 mx-5">data e ora della richiesta: {{ \Carbon\Carbon::now()->format('d/m/Y H:i')}}</p>
-                <p class="col-12 col-md-4 ms-5 mb-0 mt-2 ">Se vuoi renderlo/a revisor, clicca qui:</p>
-            <div class="col-12 col-md-6 me-5 ">
-                <a href="{{ route('make.revisor', compact('user')) }}" class="btn btn-primary rounded-2 fs-5 shadow w-50 py-2 ">Rendi revisor</a>
+                <p class="col-12 col-md-6 mx-5 mb-1">{nome completo}</p>
+                <p class="col-12 col-md-7 mx-5">{data della richiesta}</p>
+                <p class="col-12 col-md-4 ms-5 mb-0 mt-3 ">Se vuoi renderlo/a revisor, clicca qui:</p>
+            <div class="col-12 col-md-4 me-5 ">
+                <a href="" class="btn btn-primary rounded-2 fs-5 shadow w-50 py-2 ">Rendi revisor</a>
             </div>
 
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -28,13 +28,13 @@
             {{-- MESSAGGIO DI SUCCESSO GENERICO --}}
             <x-success />
 
-                <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
-                    <h3 class="mb-3">Crea subito il tuo articolo</h3>
-                    <a href="{{ route('createarticle') }}"
-                        class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25" id="addArticle">
-                        Crea
-                    </a>
-                </div>
+            <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
+                <h3 class="mb-3">Crea subito il tuo articolo</h3>
+                <a href="{{ route('createarticle') }}"
+                    class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25" id="addArticle">
+                    Crea
+                </a>
+            </div>
 
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center"
@@ -97,7 +97,7 @@
 
         </div>
 
-        <div class="row justify-content-center" id="lastArticles">
+        <div class="row justify-content-center " id="lastArticles">
             <h3 class="col-12 text-center mt-5 mb-3">Ultimi arrivi</h3>
             @if ($articles)
                 <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
