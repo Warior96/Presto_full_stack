@@ -29,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         if (Schema::hasTable('categories')) {
             View::share('categories', Category::orderBy('name')->get());
         }
+        //rendiamo globale la request della navbar search
+        View::share('query', request()->query('query', ''));
     }
 }

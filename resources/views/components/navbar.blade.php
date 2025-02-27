@@ -68,7 +68,7 @@
                 <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
                     <div class="input-group">
                         <input type="search" name="query" class="form-control" placeholder="Search"
-                            aria-label="search">
+                            aria-label="search" value="{{$query}}">
                         <button class="input-group-text btn btn-outline-info" type="submit"
                             id="basic-addon2">Cerca</button>
                     </div>
