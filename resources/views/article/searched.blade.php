@@ -4,7 +4,11 @@
         <div class="row py-5 justify-content-center align-items-center">
             <div class="col-12">
                 <h1 class="display-2 text-center mt-5 pt-3">
+                    @if ($articles->count()>1)
                     Ci sono {{$articles->count()}} risultati nella ricerca "<span class="fst-italic">{{ $query }}</span>"
+                    @elseif ($articles->count()==1)
+                    C'è {{$articles->count()}} risultato nella ricerca "<span class="fst-italic">{{ $query }}</span>"
+                    @endif
                 </h1>
             </div>
         </div>
@@ -16,18 +20,18 @@
             </div>
             @empty
             <div class="col-12">
-                <h3 class="text-center">
+                <h1 class="display-2 text-center mt-5 pt-3">
                     Nessun articolo corrisponde alla ricerca
-                </h3>
-                {{-- @auth
+                </h1>
+                <div class="col-12 text-center">
                 <a class="my-5 btn btn-info px-3 py-2 fs-5 rounded shadow" href="{{ route('createarticle') }}">Pubblica un articolo</a>
-                @endauth --}}
+                </div>
             </div>
             @endforelse
         </div>
     </div>
 
-    <div>
+    <div class="d-flex justify-content-center">
         {{ $articles->links() }}
     </div>
 

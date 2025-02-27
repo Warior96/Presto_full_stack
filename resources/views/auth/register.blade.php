@@ -30,6 +30,9 @@
                         name="password_confirmation">
                 </div>
                 <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">Registrati</button>
+                <div class="text-center mt-4">
+                    <a href="{{ route('login') }}" class="text-decoration-none fs-5">Sei gia registrato? Loggati</a>
+                </div>
             </form>
         </div>
     </header>
