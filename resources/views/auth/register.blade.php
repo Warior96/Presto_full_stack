@@ -1,7 +1,7 @@
 <x-layout>
     <header class="container mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-2 text-center mb-3">Registrati</h1>
+            <h1 class="col-12 display-2 text-center mb-3">{{ __('ui.registrati') }}</h1>
             <div class="col-6">
                 <x-error></x-error>
             </div>
@@ -29,7 +29,7 @@
                     <input type="password" class="form-control" id="passwordRegisterConfirmation"
                         name="password_confirmation">
                 </div>
-                <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">Registrati</button>
+                <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">{{ __('ui.registrati') }}</button>
                 <div class="text-center mt-4">
                     <a href="{{ route('login') }}" class="text-decoration-none fs-5">Sei gia registrato? Loggati</a>
                 </div>

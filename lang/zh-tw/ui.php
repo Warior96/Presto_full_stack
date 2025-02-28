@@ -25,8 +25,8 @@ return [
     'Accessori' => '饰品',
     'Motori' => '器械',
     // revisione
-    'accettati' => '通过',
-    'rifiutati' => '拒绝',
+    'accetta' => '通过',
+    'rifiuta' => '拒绝',
     // form
     'titolo' => '标题',
     'descrizione' => '标题',

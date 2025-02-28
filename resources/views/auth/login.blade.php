@@ -19,7 +19,7 @@
                     <label class="form-label" for="passwordLogin">Password</label>
                     <input type="password" class="form-control" name="password" id="passwordLogin">
                 </div>
-                <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">{{ __('ui.login') }}<</button>
+                <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">{{ __('ui.login') }}</button>
 
                 <div class="text-center mt-4">
                     <a href="{{ route('register') }}" class="text-decoration-none fs-5">Non sei registrato? Registrati</a>

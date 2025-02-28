@@ -9,7 +9,7 @@ return [
     'cerca' => 'Cerca',
     'login' => 'Login',
     'logout' => 'Logout',
-    'register' => 'Registrati',
+    'registrati' => 'Registrati',
     'candidati' => 'Candidati',
     'dettaglio' => 'Dettaglio',
     'ultimiArrivi' => 'Ultimi Arrivi',
@@ -25,8 +25,8 @@ return [
     'Accessori' => 'Accessori',
     'Motori' => 'Motori',
     // revisione
-    'accettati' => 'Accettati',
-    'rifiutati' => 'Rifiutati',
+    'accetta' => 'Accetta',
+    'rifiuta' => 'Rifiuta',
     // form
     'titolo' => 'Titolo',
     'descrizione' => 'Descrizione',

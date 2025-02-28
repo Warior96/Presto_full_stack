@@ -25,8 +25,8 @@ return [
     'Accessori' => 'Accessories',
     'Motori' => 'Motors',
     // revisione
-    'accettati' => 'Accepted',
-    'rifiutati' => 'Rejected',
+    'accetta' => 'Accept',
+    'rifiuta' => 'Reject',
     // form
     'titolo' => 'Title',
     'descrizione' => 'Description',
