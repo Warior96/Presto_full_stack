@@ -46,11 +46,11 @@
         </div>
     </header>
 
-    <section class="container mt-5 pt-5 min-vh-100">
+    <section class="container">
         <div class="row justify-content-center">
             {{-- Bottone + modale lavora con noi --}}
             @auth
-                @if (Auth::user()->is_revisor != true)
+                @if (Auth::user()->is_revisor != true || !Auth::check())
                     <div class="col-3 d-flex justify-content-end align-content-center ">
                         {{-- <button type="button" class="btn btn-primary  my-4 fs-5 rounded shadow" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
@@ -93,11 +93,10 @@
                 @endif
             @endauth
 
-
-
         </div>
 
-        <div class="row justify-content-center " id="lastArticles">
+        {{-- ultimi arrivi --}}
+        <div class="row justify-content-center vh-100" id="lastArticles">
             <h3 class="col-12 text-center mt-5 mb-3">{{ __('ui.ultimiArrivi') }}</h3>
             @if ($articles)
                 <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
