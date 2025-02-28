@@ -17,7 +17,7 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
-                            href="{{ route('login') }}">Login</a>
+                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
                     </li>
                 @endguest
 
@@ -27,19 +27,19 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
-                            href="{{ route('createarticle') }}">Aggiungi un prodotto</a>
+                            href="{{ route('createarticle') }}">{{ __('ui.aggiungiProdotto') }}</a>
                     </li>
 
 
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'active' : '' }}"
-                            href="{{ route('article.indexAll') }}">Mostra tutti i prodotti</a>
+                            href="{{ route('article.indexAll') }}">{{ __('ui.mostraProdotti') }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Categorie
+                            {{ __('ui.categorie') }}
                         </a>
 
                         {{-- categorie --}}
@@ -54,7 +54,7 @@
                                         {{ __("ui.$category->name") }}
                                         <!-- Numero di elementi presenti nelle varie categorie -->
                                         <span
-                                            class="ms-auto">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
+                                            class="ms-auto ps-2">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
                                     </a>
                                 </li>
 
@@ -70,7 +70,7 @@
                     @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
                         <li class="nav-item position-relative">
                             <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
-                                href="{{ route('revisor.index') }}">Revisiona
+                                href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
                                 <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
                                     {{ \App\Models\Article::toBeRevisedCount() }}
                                 </span>
@@ -82,15 +82,15 @@
                 {{-- search --}}
                 <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
                     <div class="input-group">
-                        <input type="search" name="query" class="form-control" placeholder="Search"
+                        <input type="search" name="query" class="form-control" placeholder="{{ __('ui.cerca') }}"
                             aria-label="search" value="{{ $query }}">
                         <button class="input-group-text btn btn-outline-info" type="submit"
-                            id="basic-addon2">Cerca</button>
+                            id="basic-addon2">{{ __('ui.cerca') }}</button>
                     </div>
                 </form>
 
                 {{--  language --}}
-                {{-- <li class="nav-item dropdown my-auto ps-2">
+                <li class="nav-item dropdown my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
@@ -101,13 +101,13 @@
                         <li><span class="dropdown-item"><x-_locale lang="en" />English</span></li>
                         <li><span class="dropdown-item"><x-_locale lang="zh-tw" />简体中文</span></li>
                     </ul>
-                </li> --}}
+                </li>
 
                 @auth
                     {{-- logout --}}
                     <form action="{{ route('logout') }}" method="post" class="ms-3">
                         @csrf
-                        <button class="btn btn-dark">Logout</button>
+                        <button class="btn btn-dark">{{ __('ui.logout') }}</button>
                     </form>
                 @endauth
             </ul>

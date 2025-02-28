@@ -29,10 +29,10 @@
             <x-success />
 
             <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
-                <h3 class="mb-3">Crea subito il tuo articolo</h3>
+                {{-- <h3 class="mb-3">Crea subito il tuo articolo</h3> --}}
                 <a href="{{ route('createarticle') }}"
                     class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25" id="addArticle">
-                    Crea
+                    {{ __('ui.aggiungiProdotto') }}
                 </a>
             </div>
 
