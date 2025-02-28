@@ -9,6 +9,10 @@ return [
     'cerca' => 'Search',
     'login' => 'Login',
     'logout' => 'Logout',
+    'registrati' => 'Register',
+    'candidati' => 'Apply',
+    'dettaglio' => 'Detail',
+    'ultimiArrivi' => 'Latest Arrivals',
     // categorie
     'Elettronica' => 'Electronics',
     'Abbigliamento' => 'Clothing',
@@ -19,5 +23,16 @@ return [
     'Tecnologia' => 'Technology',
     'Libri e riviste' => 'Books',
     'Accessori' => 'Accessories',
-    'Motori' => 'Motors'
+    'Motori' => 'Motors',
+    // revisione
+    'accettati' => 'Accepted',
+    'rifiutati' => 'Rejected',
+    // form
+    'titolo' => 'Title',
+    'descrizione' => 'Description',
+    'prezzo' => 'Price',
+    'categoria' => 'Category',
+    'modifica' => 'Edit',
+    'elimina' => 'Delete',
+    'selezionaCategoria' => 'Select category',
 ];

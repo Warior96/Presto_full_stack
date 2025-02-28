@@ -2,7 +2,7 @@
     <div class="container mt-5 pt-3">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-4">Dettaglio dell'articolo: {{ $article->title }}</h1>
+                <h1 class="display-4">{{__('ui.dettaglio')}} dell'articolo: {{ $article->title }}</h1>
             </div>
         </div>
         <div class="row height-custom justify-content-center py-5">
@@ -32,11 +32,11 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 mb-3 height-custom ">
-                <h2 class="display-5 text-center"><span class="fw-bold">Titolo: </span>{{ $article->title }}</h2>
+                <h2 class="display-5 text-center"><span class="fw-bold">{{ __("ui.titolo")}}: </span>{{ ($article->title) }}</h2>
                 <div class=" h-75 m-5">
-                    <h4 class="fw-bold mb-3">Prezzo: {{ $article->price }} €</h4>
-                    <h4 class="fw-bold mb-3">Categoria: {{ $article->category->name }} </h4>    
-                    <h5>Descrizione: {{ $article->description }}</h5>
+                    <h4 class="fw-bold mb-3">{{ __("ui.prezzo")}}: {{ $article->price }} €</h4>
+                    <h4 class="fw-bold mb-3">{{ __("ui.categoria")}}: {{ $article->category->name }} </h4>    
+                    <h5>{{ __("ui.descrizione")}}: {{ $article->description }}</h5>
                     <p>Data inserimento articolo: {{ $article->created_at->format('d/m/Y') }}</p>
                 </div>
             </div>

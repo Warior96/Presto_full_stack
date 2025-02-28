@@ -76,9 +76,9 @@
                                 <h5>Richiedi di lavorare con noi</h5>
                                 <p>Invia la tua candidatura come revisore</p>
                                 <div class="col-3  ">
-                                    <button type="button" class="btn btn-primary px-3 py-2 fs-5 rounded shadow"
+                                    <button type="button" class="btn btn-primary px-3 py-2 fs-5  rounded shadow"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Candidati
+                                        {{ __('ui.candidati') }}
                                     </button>
                                     {{-- es modale --}}
                                     <div class="it-example-modal">
@@ -96,7 +96,7 @@
                                                  <div class="modal-footer">
                                                     <button class="btn btn-outline-primary btn-sm" type="button" data-bs-dismiss="modal">No,
                                                         annulla</button>
-                                                    <button class="btn btn-primary btn-sm" type="button">Candidati</button>
+                                                    <button class="btn btn-primary btn-sm" type="button">  {{ __('ui.candidati') }}</button>
                                                  </div>
                                               </div>
                                            </div>
@@ -146,7 +146,7 @@
 
         
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 ps-5 mx-5  border-top border-secondary">
-        <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+        <p>&copy; 2025 Company, Inc. All rights reserved.</p>
         <ul class="list-unstyled d-flex">
             <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a></li>
           <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a></li>

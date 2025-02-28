@@ -9,6 +9,10 @@ return [
     'cerca' => '搜索',
     'login' => '登录',
     'logout' => '登出',
+    'registrati' => '注册',
+    'candidati' => '申请',
+    'dettaglio' => '详情',
+    'ultimiArrivi' => '最新',
     // categorie
     'Elettronica' => '电器',
     'Abbigliamento' => '服装',
@@ -19,5 +23,16 @@ return [
     'Tecnologia' => '技术',
     'Libri e riviste' => '书籍',
     'Accessori' => '饰品',
-    'Motori' => '器械'
+    'Motori' => '器械',
+    // revisione
+    'accettati' => '通过',
+    'rifiutati' => '拒绝',
+    // form
+    'titolo' => '标题',
+    'descrizione' => '标题',
+    'prezzo' => '价格',
+    'categoria' => '类别',
+    'modifica' => '编辑',
+    'elimina' => '删除',
+    'selezionaCategoria' => '选择类别',
 ];

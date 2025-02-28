@@ -4,7 +4,7 @@
 
         {{-- titolo --}}
         <div class="mb-3">
-            <label class="form-label" for="title">Titolo</label>
+            <label class="form-label" for="title">{{ __('ui.titolo') }}</label>
             <input type="text" class="form-control" wire:model.blur="title" id="title" value="{{ old('title') }}">
             @error('title')
                 <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
@@ -16,7 +16,7 @@
         {{-- descrizione --}}
         <div class="form-floating mb-3">
             <textarea class="form-control" placeholder="Scrivi una descrizione" id="description" wire:model.blur="description"></textarea>
-            <label for="description">Descrizione</label>
+            <label for="description">{{ __('ui.descrizione') }}</label>
             @error('description')
                 <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
                     {{ $message }}
@@ -26,7 +26,7 @@
 
         {{-- prezzo --}}
         <div class="mb-3">
-            <label class="form-label" for="price">Prezzo</label>
+            <label class="form-label" for="price">{{ __('ui.prezzo') }}</label>
             <input type="number" step="0.01" class="form-control" wire:model.blur="price" id="price">
             @error('price')
                 <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
@@ -37,12 +37,12 @@
 
         {{-- categorie --}}
         <div class="mb-3">
-            <label class="form-label" for="category">Categoria</label>
+            <label class="form-label" for="category">{{ __('ui.categoria') }}</label>
             <select wire:model.blur="category" class="form-select" id="category">
-                <option value="">Seleziona categoria</option>
+                <option value="">{{ __('ui.selezionaCategoria') }}</option>
 
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}">{{ (__("ui.$category->name")) }}</option>
                 @endforeach
             </select>
             @error('category')
@@ -52,7 +52,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">Crea</button>
+        <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">{{ __('ui.aggiungiProdotto') }}</button>
 
     </form>
 </div>
