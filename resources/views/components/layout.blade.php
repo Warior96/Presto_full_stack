@@ -11,9 +11,9 @@
     <link rel="icon" href="xxx.ico" type="image/x-icon">
 
     <title>
-        @if (Route::currentRouteName() == 'homepage')
-            Presto.it
-        @endif
+        {{-- @if (Route::currentRouteName() == 'homepage') --}}
+            Emporium Shop
+        {{-- @endif --}}
     </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
