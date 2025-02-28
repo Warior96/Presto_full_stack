@@ -87,8 +87,13 @@
                 <li class="nav-item dropdown my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
-                            alt="{{ session('locale') }} Flag" width="32" height="32" class="">
+                        @if (session('locale'))
+                            <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
+                                alt="{{ session('locale') }} Flag" width="32" height="32" class="">
+                        @else
+                            <img src="{{ asset('vendor/blade-flags/language-it.svg') }}" alt="it Flag" width="32"
+                                height="32" class="">
+                        @endif
                     </a>
                     <ul class="dropdown-menu">
                         <li><span class="dropdown-item"><x-_locale lang="it" /></span></li>
