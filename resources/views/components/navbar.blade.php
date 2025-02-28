@@ -10,7 +10,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'homepage' ? 'active' : '' }}"
-                        href="{{ route('homepage') }}">Home</a>
+                        href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
                 </li>
 
                 {{-- se l'utente è ospite vede il pulsante login --}}
@@ -27,14 +27,14 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
-                            href="{{ route('createarticle') }}">Crea un articolo</a>
+                            href="{{ route('createarticle') }}">Aggiungi un prodotto</a>
                     </li>
 
 
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'active' : '' }}"
-                            href="{{ route('article.indexAll') }}">Mostra tutti gli articoli</a>
+                            href="{{ route('article.indexAll') }}">Mostra tutti i prodotti</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -42,19 +42,21 @@
                             Categorie
                         </a>
 
-
+                        {{-- categorie --}}
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
-                            <li class="d-flex justify-content-center">
-                                <a class="dropdown-item d-flex align-items-center" href="{{ route('byCategory', ['category' => $category]) }}">
-                                    <!-- icona associata automaticamente alla categoria -->
-                                    <i class="fa-solid {{ $categoryIcons[$category->name] ?? 'fa-notdef' }} me-2"></i>
-                                    <!-- nome delle varie categorie -->
-                                    {{ $category->name }}
-                                    <!-- Numero di elementi presenti nelle varie categorie -->
-                                    <span class="ms-auto">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
-                                </a>
-                            </li>
+                                <li class="d-flex justify-content-center">
+                                    <a class="dropdown-item d-flex align-items-center"
+                                        href="{{ route('byCategory', ['category' => $category]) }}">
+                                        <!-- icona associata automaticamente alla categoria -->
+                                        <i class="fa-solid {{ $categoryIcons[$category->name] ?? 'fa-notdef' }} me-2"></i>
+                                        <!-- nome delle varie categorie -->
+                                        {{ __("ui.$category->name") }}
+                                        <!-- Numero di elementi presenti nelle varie categorie -->
+                                        <span
+                                            class="ms-auto">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
+                                    </a>
+                                </li>
 
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
@@ -63,15 +65,16 @@
                         </ul>
 
                     </li>
+
+                    {{-- revisore --}}
                     @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
                         <li class="nav-item position-relative">
                             <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
                                 href="{{ route('revisor.index') }}">Revisiona
                                 <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
                                     {{ \App\Models\Article::toBeRevisedCount() }}
-                                <span class="visually-hidden">unread messages</span>
-                                  </span>
-                                </a>
+                                </span>
+                            </a>
                         </li>
                     @endif
                 @endauth
@@ -80,11 +83,25 @@
                 <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
                     <div class="input-group">
                         <input type="search" name="query" class="form-control" placeholder="Search"
-                            aria-label="search" value="{{$query}}">
+                            aria-label="search" value="{{ $query }}">
                         <button class="input-group-text btn btn-outline-info" type="submit"
                             id="basic-addon2">Cerca</button>
                     </div>
                 </form>
+
+                {{--  language --}}
+                {{-- <li class="nav-item dropdown my-auto ps-2">
+                    <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
+                            alt="{{ session('locale') }} Flag" width="32" height="32" class="">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item"><x-_locale lang="it" />Italiano</span></li>
+                        <li><span class="dropdown-item"><x-_locale lang="en" />English</span></li>
+                        <li><span class="dropdown-item"><x-_locale lang="zh-tw" />简体中文</span></li>
+                    </ul>
+                </li> --}}
 
                 @auth
                     {{-- logout --}}
@@ -93,28 +110,7 @@
                         <button class="btn btn-dark">Logout</button>
                     </form>
                 @endauth
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li> --}}
             </ul>
-            {{-- <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> --}}
         </div>
     </div>
 </nav>

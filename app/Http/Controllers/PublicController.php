@@ -24,4 +24,11 @@ class PublicController extends Controller
         $num_articles = $articles->total();
         return view('article.searched', ['articles' => $articles, 'query' => $query, 'num_articles' => $num_articles]);
     }
+
+    // set lingua
+    public function setLanguage($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 }

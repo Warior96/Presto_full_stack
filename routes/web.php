@@ -11,6 +11,8 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/', 'index')->name('homepage');
     // search
     Route::get('/search/article', 'searchArticles')->name('article.search');
+    //  rotta componente lingua
+    Route::post('/language/{lang}', 'setLanguage')->name('setLocale');
 });
 
 // gruppo articoli articleController
