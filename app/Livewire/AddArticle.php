@@ -11,7 +11,7 @@ class AddArticle extends Component
 {
     #[Validate('required', message: 'Il nome è obbligatorio')]
     #[Validate('min:3', message: 'Il nome deve essere almeno di 3 caratteri')]
-    #[Validate('max:20', message: 'Il nome deve essere al massimo di 20 caratteri')]
+    #[Validate('max:15', message: 'Il nome deve essere al massimo di 15 caratteri')]
     public $title;
 
     #[Validate('required', message: 'Il prezzo è obbligatorio')]
