@@ -91,9 +91,9 @@
                             alt="{{ session('locale') }} Flag" width="32" height="32" class="">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><span class="dropdown-item"><x-_locale lang="it" />Italiano</span></li>
-                        <li><span class="dropdown-item"><x-_locale lang="en" />English</span></li>
-                        <li><span class="dropdown-item"><x-_locale lang="zh-tw" />简体中文</span></li>
+                        <li><span class="dropdown-item"><x-_locale lang="it" /></span></li>
+                        <li><span class="dropdown-item"><x-_locale lang="en" /></span></li>
+                        <li><span class="dropdown-item"><x-_locale lang="zh-tw" /></span></li>
                     </ul>
                 </li>
                 {{-- se l'utente è ospite vede il pulsante login --}}
