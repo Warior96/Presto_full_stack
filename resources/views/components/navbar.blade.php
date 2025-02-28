@@ -13,13 +13,7 @@
                         href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
                 </li>
 
-                {{-- se l'utente è ospite vede il pulsante login --}}
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
-                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
-                    </li>
-                @endguest
+
 
                 {{-- se l'utente è loggato vede questi pulsanti --}}
                 @auth
@@ -102,7 +96,13 @@
                         <li><span class="dropdown-item"><x-_locale lang="zh-tw" />简体中文</span></li>
                     </ul>
                 </li>
-
+                {{-- se l'utente è ospite vede il pulsante login --}}
+                @guest
+                    <li class="nav-item ">
+                        <a class="nav-link  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
+                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
+                    </li>
+                @endguest
                 @auth
                     {{-- logout --}}
                     <form action="{{ route('logout') }}" method="post" class="ms-3">

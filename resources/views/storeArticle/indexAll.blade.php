@@ -2,7 +2,7 @@
     <header class="container-fluid  mt-5 pt-5 min-vh-100">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-2 pt-4">Tutti gli articoli</h1>
+                <h1 class="display-2 pt-4">{{ __('ui.mostraProdotti') }}</h1>
             </div>
         </div>
         <div class="row wh-100 justify-content-center align-items-center py-5">
