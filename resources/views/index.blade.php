@@ -5,15 +5,29 @@
         </div>
         </div>
     @endif
-    <header class="container-fluid bg-header pt-5 vh-100">
-        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5 position-relative text-white">
+    <header class="container-fluid bg-header pt-5 vh-100"
+        style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.604)),
+            url({{ asset('storage/background/header1.jpeg') }})">
+        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5 position-relative">
 
-            <div class="col-12">
-                <h1 class=" display-1 text-center mb-3 pb-4">Emporium Shop</h1>
-                <h4 class="text-center">
-                    Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Aliquam labore voluptatibus
-                    iusto eos ducimus tempora nisi!
-                </h4>
+            <div class="col-12 c-2">
+                <h1 class=" display-1 text-center mb-4 pb-4" data-aos="fade-down" data-aos-delay="300"
+                    data-aos-duration="2000">Emporium Shop</h1>
+                @auth
+                    <h4 class="text-center typewriter1 invisible mb-2">
+                        Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche oggi?
+                    </h4>
+                    <h4 class="text-center typewriter2 invisible mb-2">
+                        Non perdere tempo e buttati nel mondo del mercato!
+                    </h4>
+                @else
+                    <h4 class="text-center typewriter1 invisible mb-2">
+                        Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
+                    </h4>
+                    <h4 class="text-center typewriter2 invisible mb-2">
+                        Unisciti a Emporium Shop e trova l'affare perfetto!
+                    </h4>
+                @endauth
             </div>
 
             {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
@@ -28,10 +42,10 @@
             {{-- MESSAGGIO DI SUCCESSO GENERICO --}}
             <x-success />
 
+            {{-- crea articolo --}}
             <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
-                {{-- <h3 class="mb-3">Crea subito il tuo articolo</h3> --}}
-                <a href="{{ route('createarticle') }}"
-                    class="btn btn-info text-dark px-3 py-3 fs-3 rounded-4 shadow w-25" id="addArticle">
+                <a href="{{ route('createarticle') }}" class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4  w-25"
+                    id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
                 </a>
             </div>
@@ -39,7 +53,7 @@
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center"
                 id="caret">
-                <i class="fa-solid fa-angle-down text-white cssanimation hu__hu__" id="caret-icon"></i>
+                <i class="fa-solid fa-angle-down text-white" id="caret-icon"></i>
             </a>
 
 
@@ -47,57 +61,10 @@
     </header>
 
     <section class="container">
-        <div class="row justify-content-center">
-            {{-- Bottone + modale lavora con noi --}}
-            {{-- @auth
-                @if (Auth::user()->is_revisor != true || !Auth::check())
-                    <div class="col-3 d-flex justify-content-end align-content-center "> --}}
-            {{-- <button type="button" class="btn btn-primary  my-4 fs-5 rounded shadow" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            Lavora con noi
-                        </button> --}}
-
-            <!-- Modal -->
-            {{-- <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered ">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5 w-100 pt-3" id="staticBackdropLabel">
-                                            {{ Auth::user()->name }}, vuoi lavorare con noi?
-                                        </h1>
-                                        <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body px-4">
-                                        <p>I tuoi dati:</p>
-                                        <ul>
-                                            <li>nome: {{ Auth::user()->name }}</li>
-                                            <li>email: {{ Auth::user()->email }}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,
-                                            annulla</button>
-                                        <a href="{{ route('become.revisor') }}"
-                                            class="btn btn-primary px-3 py-2  rounded shadow">Candidati</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @else
-                    <div class="col-3 d-flex justify-content-end align-content-center"> --}}
-            {{-- <h4>Ora sei un revisore</h4> --}}
-            {{-- </div>
-                @endif
-            @endauth --}}
-
-        </div>
 
         {{-- ultimi arrivi --}}
-        <div class="row justify-content-center vh-100" id="lastArticles">
-            <h3 class="col-12 text-center mt-5 mb-3">{{ __('ui.ultimiArrivi') }}</h3>
+        <div class="row justify-content-center vh-100 pt-5" id="lastArticles">
+            <h3 class="col-12 text-center mb-0 mt-5">{{ __('ui.ultimiArrivi') }}</h3>
             <div class="col-12">
 
                 @if ($articles)
@@ -113,9 +80,8 @@
                     </swiper-container>
                 @else
                     <div class="col-12">
-                        <p class="text-center my-3 fs-5"> Non sono ancora stati creati articoli </p>
+                        <p class="text-center my-3 fs-5">Non sono ancora stati creati articoli</p>
                     </div>
-
                 @endif
             </div>
         </div>
