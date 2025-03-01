@@ -49,16 +49,16 @@
     <section class="container">
         <div class="row justify-content-center">
             {{-- Bottone + modale lavora con noi --}}
-            @auth
+            {{-- @auth
                 @if (Auth::user()->is_revisor != true || !Auth::check())
-                    <div class="col-3 d-flex justify-content-end align-content-center ">
-                        {{-- <button type="button" class="btn btn-primary  my-4 fs-5 rounded shadow" data-bs-toggle="modal"
+                    <div class="col-3 d-flex justify-content-end align-content-center "> --}}
+            {{-- <button type="button" class="btn btn-primary  my-4 fs-5 rounded shadow" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
                             Lavora con noi
                         </button> --}}
 
-                        <!-- Modal -->
-                        <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+            <!-- Modal -->
+            {{-- <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered ">
                                 <div class="modal-content ">
@@ -87,34 +87,37 @@
                         </div>
                     </div>
                 @else
-                    <div class="col-3 d-flex justify-content-end align-content-center">
-                        {{-- <h4>Ora sei un revisore</h4> --}}
-                    </div>
+                    <div class="col-3 d-flex justify-content-end align-content-center"> --}}
+            {{-- <h4>Ora sei un revisore</h4> --}}
+            {{-- </div>
                 @endif
-            @endauth
+            @endauth --}}
 
         </div>
 
         {{-- ultimi arrivi --}}
         <div class="row justify-content-center vh-100" id="lastArticles">
             <h3 class="col-12 text-center mt-5 mb-3">{{ __('ui.ultimiArrivi') }}</h3>
-            @if ($articles)
-                <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
-                    loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
-                    @foreach ($articles as $article)
-                        <swiper-slide class="my-1">
-                            <div class="row justify-content-center p-0">
-                                <x-card :article="$article" />
-                            </div>
-                        </swiper-slide>
-                    @endforeach
-                </swiper-container>
-            @else
-                <div class="col-12">
-                    <p class="text-center my-3 fs-5"> Non sono ancora stati creati articoli </p>
-                </div>
+            <div class="col-12">
 
-            @endif
+                @if ($articles)
+                    <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
+                        loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
+                        @foreach ($articles as $article)
+                            <swiper-slide class="my-1">
+                                <div class="row justify-content-center p-0">
+                                    <x-card :article="$article" />
+                                </div>
+                            </swiper-slide>
+                        @endforeach
+                    </swiper-container>
+                @else
+                    <div class="col-12">
+                        <p class="text-center my-3 fs-5"> Non sono ancora stati creati articoli </p>
+                    </div>
+
+                @endif
+            </div>
         </div>
     </section>
 
