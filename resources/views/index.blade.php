@@ -6,8 +6,9 @@
         </div>
     @endif
     <header class="container-fluid bg-header pt-5 vh-100"
-        style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.604)),
-            url({{ asset('storage/background/header1.jpeg') }})">
+        style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
+            url({{ asset('storage/background/header1.jpeg') }}); background-repeat: no-repeat;
+            background-size: cover; background-position: center;">
         <div class="row justify-content-evenly align-items-center flex-column h-100 py-5 position-relative">
 
             <div class="col-12 c-2">

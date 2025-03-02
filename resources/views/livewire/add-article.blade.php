@@ -1,4 +1,4 @@
-<div class="col-10 col-md-8 col-lg-6 rounded shadow p-5">
+<div class="col-10 col-md-8 col-lg-6 rounded shadow px-5 py-4 bg-1">
     <form wire:submit="createArticles">
         @csrf
 
@@ -42,7 +42,7 @@
                 <option value="">{{ __('ui.selezionaCategoria') }}</option>
 
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ (__("ui.$category->name")) }}</option>
+                    <option value="{{ $category->id }}">{{ __("ui.$category->name") }}</option>
                 @endforeach
             </select>
             @error('category')
@@ -52,7 +52,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 p-3 mt-4 fs-5">{{ __('ui.aggiungiProdotto') }}</button>
+        <button type="submit" class="btn bg-4 btn-cus w-100 p-3 mt-4 mb-1 fs-5" id="addProduct">{{ __('ui.aggiungiProdotto') }}</button>
 
     </form>
 </div>

@@ -1,9 +1,9 @@
 :root {
   --color-1: #CF5C36;
   --color-2: #F5DEBA;
-  --color-3: #FFB800;
+  --color-3: #ffae18;
   --color-4: #5dc0b3;
-  --color-5: #333339;
+  --color-5: #2c2c31;
 }
 
 h1,
@@ -20,7 +20,8 @@ h6,
   font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
-* {
+*,
+nav a {
   color: var(--color-5);
 }
 
@@ -28,8 +29,28 @@ h6,
   color: var(--color-2);
 }
 
+.c-3 {
+  color: var(--color-3);
+}
+
+.c-4 {
+  color: var(--color-4);
+}
+
+.c-5 {
+  color: var(--color-5);
+}
+
+.bg-1 {
+  background-color: var(--color-1);
+}
+
 .bg-2 {
   background-color: var(--color-2);
+}
+
+.bg-3 {
+  background-color: var(--color-3);
 }
 
 .bg-4 {
@@ -114,6 +135,49 @@ swiper-slide:nth-child(3n) {
   width: 14vw;
 }
 
+
+
+/* paginazione */
+/* Stile dei link */
+.pagination .page-link {
+  color: var(--color-5);
+  background-color: var(--color-4);
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  margin: 0 1px;
+  transition: all 0.3s;
+}
+
+/* Hover */
+.pagination .page-link:hover {
+  background-color: var(--color-5);
+  color: white;
+  scale: 1.05;
+  transform: translateY(-1px);
+}
+
+/* Stile della pagina attiva */
+.pagination .active .page-link {
+  background-color: var(--color-1);
+  color: white;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: var(--color-3);
+  margin: 0 2px;
+  scale: 1.1;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Disabilitato */
+.pagination .disabled .page-link {
+  color: #8b8b8b;
+  background-color: #dadada;
+  border-color: #e9ecef;
+}
+
+
+/* footer */
 footer a {
   color: var(--color-2) !important;
 }
@@ -204,6 +268,31 @@ footer a {
     scale: 1.02;
     /* transform: translate(3px, 3px); */
     box-shadow: 3px 5px 3px var(--color-5);
+  }
+
+  #a-dettaglio:hover {
+    background-color: var(--color-4);
+  }
+
+  #a-categoria:hover {
+    background-color: var(--color-4);
+  }
+
+  #accept:hover {
+    background-color: rgba(0, 238, 127, 0.3);
+    border: 1px solid #147d4c;
+    color: #1a7e4f;
+  }
+
+  #reject:hover {
+    background-color: rgba(219, 54, 71, 0.3);
+    border: 1px solid #c61b2c;
+    color: #bc2e3c;
+  }
+
+  #addProduct:hover, #btn-login:hover, #btn-register:hover {
+    background-color: var(--color-2);
+    border-color: var(--color-3);
   }
 }
 

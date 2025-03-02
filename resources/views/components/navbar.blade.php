@@ -39,7 +39,7 @@
                         {{-- categorie --}}
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
-                                <li class="d-flex justify-content-center">
+                                <li class="d-flex justify-content-center z-3">
                                     <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('byCategory', ['category' => $category]) }}">
                                         <!-- icona associata automaticamente alla categoria -->

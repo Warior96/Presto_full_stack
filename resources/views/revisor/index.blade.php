@@ -1,7 +1,7 @@
 <x-layout>
     <header class="container mt-5 pt-4">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-2 text-center mb-3">
+            <h1 class="col-12 display-3 text-center mt-4 mb-1">
                 Articoli da revisionare
             </h1>
         </div>
@@ -22,19 +22,23 @@
                 {{-- Dettagli dell'articolo da revisionare --}}
                 <div class="col-md-4 d-flex justify-content-between flex-column">
                     <div class="row">
-                        <h1>
-                            {{ $article_to_check->title }}
-                        </h1>
-                        <h3>
-                            Autore: {{ $article_to_check->user->name }}
-                        </h3>
-                        <h4>
-                            {{ $article_to_check->price }}€
+                        <h2 class="mb-3">
+                            <span class="fs-6 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
+                        </h2>
+                        <h4 class="mb-3">
+                            <span class="fs-6 fw-normal">Autore:</span> {{ $article_to_check->user->name }}
                         </h4>
-                        <h4 class="fst-italic text-muted">
+                        <p class="fs-5">
+                            <span class="fs-6">{{ __('ui.prezzo') }}: </span>€{{ $article_to_check->price }}
+                        </p>
+                        <p class="fst-italic text-muted fs-5">
+                            <span class="fs-6 fst-normal">{{ __('ui.categoria') }}: </span>
                             #{{ $article_to_check->category->name }}
-                        </h4>
-                        <p class="h6">
+                        </p>
+                        <p class="mb-0 fs-6">
+                            {{ __('ui.descrizione') }}:
+                        </p>
+                        <p class="fs-5">
                             {{ $article_to_check->description }}
                         </p>
                     </div>
@@ -54,14 +58,16 @@
                             class="col-5">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-danger py-2 px-5 fw-bold">{{ __('ui.rifiuta') }}</button>
+                            <button class="btn btn-cus btn-danger py-2 px-5 fw-bold"
+                                id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
 
                         <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
                             class="col-5">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-success py-2 px-5 fw-bold">{{ __('ui.accetta') }}</button>
+                            <button class="btn btn-cus btn-success py-2 px-5 fw-bold"
+                                id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 
                         {{-- <form action="{{ route('back', ['article' => $article_to_check]) }}" method='POST'
