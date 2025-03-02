@@ -1,5 +1,5 @@
-<div class="col-12" id="card">
-    <div class="card mx-auto card-w shadow p-2 text-center mb-3 bg-1 c-5">
+<div class="col-12">
+    <div class="card mx-auto card-w p-2 text-center my-1 bg-1 c-5" id="card">
 
         <img src="https://picsum.photos/301/300" class="card-img-top img-fluid"
             alt="Immagine dell'articolo {{ $article->title }}">

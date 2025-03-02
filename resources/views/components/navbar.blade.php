@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary position-fixed top-0 left-0 w-100 z-3 shadow">
+<nav class="navbar navbar-expand-lg bg-6 position-fixed top-0 left-0 w-100 z-3 shadow">
     <div class="container-fluid mx-lg-3">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -37,7 +37,7 @@
                         </a>
 
                         {{-- categorie --}}
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu bg-2">
                             @foreach ($categories as $category)
                                 <li class="d-flex justify-content-center z-3">
                                     <a class="dropdown-item d-flex align-items-center"
@@ -78,13 +78,13 @@
                     <div class="input-group">
                         <input type="search" name="query" class="form-control" placeholder="{{ __('ui.cerca') }}"
                             aria-label="search" value="{{ $query }}">
-                        <button class="input-group-text btn btn-outline-info" type="submit"
+                        <button class="input-group-text btn " type="submit"
                             id="basic-addon2">{{ __('ui.cerca') }}</button>
                     </div>
                 </form>
 
                 {{--  language --}}
-                <li class="nav-item dropdown my-auto ps-2">
+                {{-- <li class="nav-item dropdown my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
@@ -95,12 +95,13 @@
                                 height="32" class="">
                         @endif
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu bg-2">
                         <li><span class="dropdown-item"><x-_locale lang="it" /></span></li>
                         <li><span class="dropdown-item"><x-_locale lang="en" /></span></li>
                         <li><span class="dropdown-item"><x-_locale lang="zh-tw" /></span></li>
                     </ul>
-                </li>
+                </li> --}}
+
                 {{-- se l'utente è ospite vede il pulsante login --}}
                 @guest
                     <li class="nav-item ">

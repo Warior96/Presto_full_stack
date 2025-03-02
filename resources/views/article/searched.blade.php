@@ -21,13 +21,19 @@
                     <x-card :article="$article" />
                 </div>
             @empty
-                <div class="col-12">
-                    <h1 class="display-2 text-center mt-5 pt-3">
+                <div class="col-12 py-5">
+                    <h1 class="display-5 text-center mt-5 pt-5">
                         Nessun articolo corrisponde alla ricerca
                     </h1>
-                    <div class="col-12 text-center">
+                    {{-- <div class="col-12 text-center">
                         <a class="my-5 btn btn-info px-3 py-2 fs-5 rounded shadow"
                             href="{{ route('createarticle') }}">Pubblica un articolo</a>
+                    </div> --}}
+                    <div class="col-12 d-flex flex-column align-items-center justify-content-start py-5 my-5">
+                        <a href="{{ route('createarticle') }}"
+                            class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4  w-25">
+                            {{ __('ui.aggiungiProdotto') }}
+                        </a>
                     </div>
                 </div>
             @endforelse

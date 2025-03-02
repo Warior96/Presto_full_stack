@@ -44,8 +44,8 @@
             <x-success />
 
             {{-- crea articolo --}}
-            <div class="col-12 d-flex flex-column align-items-center justify-content-start ">
-                <a href="{{ route('createarticle') }}" class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4  w-25"
+            <div class="col-12 d-flex flex-column align-items-center justify-content-start">
+                <a href="{{ route('createarticle') }}" class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-25 opacity-0"
                     id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
                 </a>
@@ -54,7 +54,7 @@
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center"
                 id="caret">
-                <i class="fa-solid fa-angle-down text-white" id="caret-icon"></i>
+                <i class="fa-solid fa-angle-down c-4" id="caret-icon"></i>
             </a>
 
 
@@ -64,7 +64,7 @@
     <section class="container">
 
         {{-- ultimi arrivi --}}
-        <div class="row justify-content-center vh-100 pt-5" id="lastArticles">
+        <div class="row justify-content-center vh-95 pt-5" id="lastArticles">
             <h3 class="col-12 text-center mb-0 mt-5">{{ __('ui.ultimiArrivi') }}</h3>
             <div class="col-12">
 
