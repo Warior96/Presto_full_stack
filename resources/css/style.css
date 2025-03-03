@@ -111,7 +111,32 @@ body {
   transition: all 0.5s ease;
 }
 
+/* Carosello categorie */
+.img-car{
+  background-color: rgba(0,0,0,0,0.3);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container-img-car {
+  width: 80vw;
+  height: 30vh;
+  position: relative;
+}
+
+.little-img-car {
+  width: 20vw;
+  height: 10vh;
+}
+
+/* Fine Carosello categorie */
+
 /* Fine Homepage */
+
+/* Swiper */
 
 swiper-container {
   width: 100%;
@@ -131,6 +156,31 @@ swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.mySwiper2-index {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper2-index swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper2-index .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 30px;
 }
 
 /* swiper-slide {
@@ -153,9 +203,10 @@ swiper-slide:nth-child(3n) {
 /* transition: scale; */
 /* } */
 
+/* Fine Swiper */
 
+/* Paginazione */
 
-/* paginazione */
 /* Stile dei link */
 .pagination .page-link {
   color: var(--color-5);
@@ -207,7 +258,7 @@ footer a {
 
 #basic-addon2:active {
   border: 2px solid var(--color-3);
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.8);
   scale: 1.01;
   background-color: var(--color-4);
 }
