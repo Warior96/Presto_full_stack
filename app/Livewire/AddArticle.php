@@ -6,9 +6,12 @@ use App\Models\Article;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
+use Livewire\WithFileUploads;
 
 class AddArticle extends Component
 {
+    use WithFileUploads;
+
     #[Validate('required', message: 'Il nome è obbligatorio')]
     #[Validate('min:3', message: 'Il nome deve essere almeno di 3 caratteri')]
     #[Validate('max:15', message: 'Il nome deve essere al massimo di 15 caratteri')]
@@ -27,6 +30,11 @@ class AddArticle extends Component
     #[Validate('required', message: 'La categoria è obbligatoria')]
     public $category;
 
+    public $article;
+
+    public $images = [];
+    public $temporary_images;
+
     // funzione di creazione articoli
     public function createArticles()
     {
@@ -34,13 +42,22 @@ class AddArticle extends Component
         $this->validate();
 
         // funzione di creazione
-        Article::create([
+        $this->article = Article::create([
             "title" => $this->title,
             "description" => $this->description,
             "price" => $this->price,
             "category_id" => $this->category,
             "user_id" => Auth::id(),
         ]);
+
+        // aggiunta immagini
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
+                $this->article->images()->create([
+                    "path" => $image->store('images', 'public'),
+                ]);
+            }
+        }
 
         // funzione di pulizia
         $this->puliziaCampi();
@@ -49,12 +66,38 @@ class AddArticle extends Component
         // return redirect()->route('createarticle');
     }
 
+    // funzione di aggiunta immagini
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate([
+            'temporary_images.*' => 'image|max:1024',
+            'temporary_images' => 'max:6',
+        ], [
+            'temporary_images.*.image' => 'Il file deve essere un\'immagine',
+            'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
+            'temporary_images.max' => 'Non puoi caricare più di 6 immagini',
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    // eliminare immagini
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+
     // pulizia campi
     protected function puliziaCampi()
     {
         $this->title = "";
-        $this->price = "";
         $this->description = "";
+        $this->price = "";
+        $this->images = [];
     }
 
     public function render()

@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Image;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
@@ -52,5 +53,10 @@ class Article extends Model
     {
 
         return Article::where('is_accepted', null)->count();
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(Image::class);
     }
 }

@@ -79,7 +79,7 @@
                         <input type="search" name="query" class="form-control" placeholder="{{ __('ui.cerca') }}"
                             aria-label="search" value="{{ $query }}">
                         <button class="input-group-text btn " type="submit"
-                            id="basic-addon2">{{ __('ui.cerca') }}</button>
+                            id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>
 

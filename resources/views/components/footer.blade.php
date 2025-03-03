@@ -190,16 +190,16 @@
             class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-5 mx-5 border-top border-secondary">
             <p class="c-2">&copy; 2025 The Final Commit. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/?locale=it_IT"><i
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.facebook.com/?locale=it_IT"><i
                             class="c-2 fa-brands fa-facebook"></i></a>
                 </li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com/"><i
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.instagram.com/"><i
                             class="c-2 fa-brands fa-instagram"></i></a>
                 </li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/?lang=it"><i
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://x.com/?lang=it"><i
                             class="c-2 fa-brands fa-x-twitter"></i></a>
                 </li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/feed/"><i
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.linkedin.com/feed/"><i
                             class="c-2 fa-brands fa-linkedin"></i></a>
                 </li>
             </ul>
