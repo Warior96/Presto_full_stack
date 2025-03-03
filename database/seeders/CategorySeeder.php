@@ -16,52 +16,57 @@ class CategorySeeder extends Seeder
     {
         //  seeder categorie
         $categories = [
-                [
-                    'name' => 'Elettronica',
-                    'img' => 'categories-img/elettronica.jpg',
-                ],
-                [
-                    'name' => 'Abbigliamento',
-                    'img' => 'categories-img/abbigliamento.jpg',
-                ],
-                [
-                    'name' => 'Bellezza',
-                    'img' => 'categories-img/bellezza.jpg',
-                ],
-                [
-                    'name' => 'Giardinaggio',
-                    'img' => 'categories-img/giardinaggio.jpg',
-                ],
-                [
-                    'name' => 'Giocattoli',
-                    'img' => 'categories-img/giocattoli.jpg',
-                ],
-                [
-                    'name' => 'Sport',
-                    'img' => 'categories-img/sport.jpg',
-                ],
-                [
-                    'name' => 'Tecnologia',
-                    'img' => 'categories-img/tecnologia.jpg',
-                ],
-                [
-                    'name' => 'Libri e riviste',
-                    'img' => 'categories-img/libri.jpg',
-                ],
-                [
-                    'name' => 'Accessori',
-                    'img' => 'categories-img/accessori.jpg',
-                ],
-                [
-                    'name' => 'Motori',
-                    'img' => 'categories-img/motori.jpg',
-                ],
+            [
+                'name' => 'Elettronica',
+                'img' => 'categories-img/elettronica.jpg',
+            ],
+            [
+                'name' => 'Abbigliamento',
+                'img' => 'categories-img/abbigliamento.jpg',
+            ],
+            [
+                'name' => 'Bellezza',
+                'img' => 'categories-img/bellezza.jpg',
+            ],
+            [
+                'name' => 'Giardinaggio',
+                'img' => 'categories-img/giardinaggio.jpg',
+            ],
+            [
+                'name' => 'Giocattoli',
+                'img' => 'categories-img/giocattoli.jpg',
+            ],
+            [
+                'name' => 'Sport',
+                'img' => 'categories-img/sport.jpg',
+            ],
+            [
+                'name' => 'Tecnologia',
+                'img' => 'categories-img/tecnologia.jpg',
+            ],
+            [
+                'name' => 'Libri e riviste',
+                'img' => 'categories-img/libri.jpg',
+            ],
+            [
+                'name' => 'Accessori',
+                'img' => 'categories-img/accessori.jpg',
+            ],
+            [
+                'name' => 'Motori',
+                'img' => 'categories-img/motori.jpg',
+            ],
         ];
 
         foreach ($categories as $category) {
-            if (!DB::table('categories')->where('name', $category)->exists()) {
-                DB::table('categories')->insert(['name' => $category['name'],'img' => $category['img']]);
-            } 
+            if (!DB::table('categories')->where('name', $category['name'])->exists()) {
+                DB::table('categories')->insert(['name' => $category['name'], 'img' => $category['img']]);
+            } else {
+                $existingCategory = DB::table('categories')->where('name', $category['name'])->first();
+                if (!$existingCategory->img) {
+                    DB::table('categories')->where('name', $category['name'])->update(['img' => $category['img']]);
+                }
+            }
         }
     }
 }
