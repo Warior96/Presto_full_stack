@@ -1,4 +1,4 @@
-<div class="col-10 col-md-8 col-lg-6 rounded shadow px-5 py-4 bg-1">
+<div class="col-10 col-md-8 col-lg-6 rounded shadow px-5 py-4 mb-5 bg-1">
     <form wire:submit="createArticles">
         @csrf
 
@@ -26,13 +26,19 @@
 
         {{-- immagini --}}
         <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <label class="form-label" for="temporary_images">Foto:</label>
+                <span class="mt-1 fs-7">*massimo 6 alla volta</span>
+            </div>
             <input type="file" wire:model.live="temporary_images" multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
             @error('temporary_images.*')
-                <p class="fst-italic text-danger">{{ $message }}</p>
+                <p class="fst-italic text-danger ps-3 my-1 border border-1 border-danger py-2 bg-2 rounded">
+                    {{ $message }}</p>
             @enderror
             @error('temporary_images')
-                <p class="fst-italic text-danger">{{ $message }}</p>
+                <p class="fst-italic text-danger ps-3 my-1 border border-1 border-danger py-2 bg-2 rounded">
+                    {{ $message }}</p>
             @enderror
         </div>
 
@@ -40,13 +46,17 @@
             <div class="row">
                 <div class="col-12">
                     <p>Preview delle foto:</p>
-                    <div class="row border border-4 border-success rounded shadow py-4">
+                    <div
+                        class="row border border-4 border-success rounded shadow py-4 justify-content-center align-items-center">
                         @foreach ($images as $key => $image)
-                            <div class="col d-flex flex-column align-items center my-3">
+                            <div
+                                class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items center my-3 position-relative">
                                 <div class="img-preview mx-auto shadow rounded"
                                     style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                <button type="button" class="btn btn-cus btn-danger rounded-1 position-absolute"
+                                    id="btn-preview" wire:click="removeImage({{ $key }})"><i
+                                        class="fa-solid fa-xmark" id="icon-preview"></i></button>
                             </div>
-                            <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">X</button>
                         @endforeach
                     </div>
                 </div>

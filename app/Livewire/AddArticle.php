@@ -42,7 +42,7 @@ class AddArticle extends Component
         $this->validate();
 
         // funzione di creazione
-        $this->article =Article::create([
+        $this->article = Article::create([
             "title" => $this->title,
             "description" => $this->description,
             "price" => $this->price,
@@ -72,6 +72,10 @@ class AddArticle extends Component
         if ($this->validate([
             'temporary_images.*' => 'image|max:1024',
             'temporary_images' => 'max:6',
+        ], [
+            'temporary_images.*.image' => 'Il file deve essere un\'immagine',
+            'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
+            'temporary_images.max' => 'Non puoi caricare più di 6 immagini',
         ])) {
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
