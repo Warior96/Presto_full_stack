@@ -212,6 +212,29 @@ footer a {
   background-color: var(--color-4);
 }
 
+.img-preview {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

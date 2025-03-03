@@ -24,6 +24,35 @@
             @enderror
         </div>
 
+        {{-- immagini --}}
+        <div class="mb-3">
+            <input type="file" wire:model.live="temporary_images" multiple
+                class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
+            @error('temporary_images.*')
+                <p class="fst-italic text-danger">{{ $message }}</p>
+            @enderror
+            @error('temporary_images')
+                <p class="fst-italic text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+
+        @if (!empty($images))
+            <div class="row">
+                <div class="col-12">
+                    <p>Preview delle foto:</p>
+                    <div class="row border border-4 border-success rounded shadow py-4">
+                        @foreach ($images as $key => $image)
+                            <div class="col d-flex flex-column align-items center my-3">
+                                <div class="img-preview mx-auto shadow rounded"
+                                    style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                            </div>
+                            <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">X</button>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
+
         {{-- prezzo --}}
         <div class="mb-3">
             <label class="form-label" for="price">{{ __('ui.prezzo') }}</label>
@@ -52,7 +81,8 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn bg-4 btn-cus w-100 p-3 mt-4 mb-1 fs-5" id="addProduct">{{ __('ui.aggiungiProdotto') }}</button>
+        <button type="submit" class="btn bg-4 btn-cus w-100 p-3 mt-4 mb-1 fs-5"
+            id="addProduct">{{ __('ui.aggiungiProdotto') }}</button>
 
     </form>
 </div>

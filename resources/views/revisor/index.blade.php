@@ -12,11 +12,21 @@
             <div class="row justify-content-center pt-5">
                 <div class="col-md-8">
                     <div class="row justify-content-center">
-                        @for ($i = 0; $i < 6; $i++)
-                            <div class="col-4 mb-4 text-center">
-                                <img src="https://picsum.photos/200" class="img-fluid rounded shadow" alt="">
-                            </div>
-                        @endfor
+                        @if ($article_to_check->images->count())
+                            @foreach ($article_to_check->images as $key => $image)
+                                <div class="col-4 mb-4 text-center">
+                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
+                                        alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}">
+                                </div>
+                            @endforeach
+                        @else
+                            @for ($i = 0; $i < 6; $i++)
+                                <div class="col-4 mb-4 text-center">
+                                    <img src="https://picsum.photos/200" class="img-fluid rounded shadow"
+                                        alt="immagine segnaposto">
+                                </div>
+                            @endfor
+                        @endif
                     </div>
                 </div>
                 {{-- Dettagli dell'articolo da revisionare --}}
