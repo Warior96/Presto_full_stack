@@ -9,7 +9,7 @@
         style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
             url({{ asset('storage/background/header1.jpeg') }}); background-repeat: no-repeat;
             background-size: cover; background-position: center;">
-        <div class="row justify-content-evenly align-items-center flex-column h-100 py-5 position-relative">
+        <div class="row justify-content-evenly align-items-center flex-column w-100 min-h-100 py-5 position-relative">
 
             <div class="col-12 c-2">
                 <h1 class=" display-1 text-center mb-4 pb-4" data-aos="fade-down" data-aos-delay="300"
@@ -43,16 +43,49 @@
             {{-- MESSAGGIO DI SUCCESSO GENERICO --}}
             <x-success />
 
+            {{-- carosello categorie --}}
+            <div class="col-12 mt-3">
+                <swiper-container class="mySwiper" thumbs-swiper=".mySwiper2-index" space-between="10" loop="true"
+                    autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
+                    @foreach ($categories as $categoria)
+                        <swiper-slide class="my-1">
+                            <div class="row justify-content-center p-0">
+                                <div class="col-12 container-img-car">
+                                    <img src="{{ Storage::url($categoria->img) }}" alt="" >
+                                    <div class="img-car">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </swiper-slide>
+                    @endforeach
+                </swiper-container>
+
+                <swiper-container class="mySwiper2-index" space-between="10" slides-per-view="4" free-mode="true"
+                    watch-slides-progress="true">
+                    @foreach ($categories as $categoria)
+                        <swiper-slide class="my-1">
+                            <div class="row justify-content-center p-0">
+                                <img src="{{ Storage::url($categoria->img) }}" alt="" class="little-img-car">
+                            </div>
+                        </swiper-slide>
+                    @endforeach
+                </swiper-container>
+            </div>
+
+
             {{-- crea articolo --}}
-            <div class="col-12 d-flex flex-column align-items-center justify-content-start">
-                <a href="{{ route('createarticle') }}" class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-25 opacity-0"
-                    id="addArticle">
+            <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
+                <a href="{{ route('createarticle') }}"
+                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-25 opacity-0" id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
                 </a>
             </div>
 
+            {{-- Frecciettina --}}
             <a href="#lastArticles"
-                class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center"
+                class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center mt-5"
                 id="caret">
                 <i class="fa-solid fa-angle-down c-4" id="caret-icon"></i>
             </a>
