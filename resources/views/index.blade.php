@@ -69,10 +69,10 @@
             <div class="col-12">
 
                 @if ($articles)
-                    <swiper-container class="mySwiper" space-between="15" slides-per-view="3" pagination="false"
+                    <swiper-container class="mySwiper swiper-container-home" space-between="15" slides-per-view="3" pagination="false"
                         loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
                         @foreach ($articles as $article)
-                            <swiper-slide class="my-1">
+                            <swiper-slide class="my-1 swiper-slide-home">
                                 <div class="row justify-content-center p-0">
                                     <x-card :article="$article" />
                                 </div>
