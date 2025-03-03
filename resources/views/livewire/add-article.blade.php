@@ -47,10 +47,10 @@
                 <div class="col-12">
                     <p>Preview delle foto:</p>
                     <div
-                        class="row border border-4 border-success rounded shadow py-4 justify-content-center align-items-center">
+                        class="row mx-1 bg-white rounded shadow py-2 justify-content-center align-items-center mb-3">
                         @foreach ($images as $key => $image)
                             <div
-                                class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items center my-3 position-relative">
+                                class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items center my-3 position-relative">
                                 <div class="img-preview mx-auto shadow rounded"
                                     style="background-image: url({{ $image->temporaryUrl() }});"></div>
                                 <button type="button" class="btn btn-cus btn-danger rounded-1 position-absolute"
