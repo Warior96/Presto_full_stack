@@ -84,7 +84,7 @@
                 </form>
 
                 {{--  language --}}
-                {{-- <li class="nav-item dropdown my-auto ps-2">
+                <li class="nav-item dropdown my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
@@ -100,11 +100,11 @@
                         <li><span class="dropdown-item"><x-_locale lang="en" /></span></li>
                         <li><span class="dropdown-item"><x-_locale lang="zh-tw" /></span></li>
                     </ul>
-                </li> --}}
+                </li>
 
                 {{-- se l'utente è ospite vede il pulsante login --}}
                 @guest
-                    <li class="nav-item ">
+                    <li class="ms-3 nav-item ">
                         <a class="nav-link  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
                             href="{{ route('login') }}">{{ __('ui.login') }}</a>
                     </li>
