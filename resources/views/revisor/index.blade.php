@@ -38,11 +38,25 @@
                             </swiper-container>
                         @else
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
-                                thumbs-swiper=".mySwiper2-revisor" space-between="10" navigation="true">
+                                thumbs-swiper=".mySwiper2-revisor" space-between="10" space-between="10" free-mode="true"
+                                slides-per-view="2.4">
                                 @for ($i = 0; $i < 6; $i++)
-                                    <swiper-slide class="swiper-slide-revisor">
+                                    <swiper-slide class="swiper-slide-revisor rounded">
                                         <img src="https://picsum.photos/50{{ $i }}"
                                             class="img-fluid rounded shadow" alt="immagine segnaposto">
+                                    </swiper-slide>
+                                @endfor
+                            </swiper-container>
+
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor"
+                                space-between="8" slides-per-view="10" free-mode="true" watch-slides-progress="true">
+                                @for ($i = 0; $i < 6; $i++)
+                                    <swiper-slide
+                                        class="swiper-slide-revisor rounded 
+                                        @if ($i == 0) ms-auto @endif
+                                        @if ($i == 5) me-auto @endif">
+                                        <img src="https://picsum.photos/50{{ $i }}" class=""
+                                            alt="Immagine {{ $i +1 }} dell'articolo causale">
                                     </swiper-slide>
                                 @endfor
                             </swiper-container>
