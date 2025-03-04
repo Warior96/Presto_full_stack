@@ -3,41 +3,27 @@
         <div class="row ">
             <div class="col-8">
                 <div class="ms-5 ps-5 row">
-                    <div class="col-6 col-md-3 mb-3 c-2">
+                    <img src="{{ asset('storage/logo/logo1.png') }}" alt="" class="img-logo">
+                    <div class="col-6 col-md-5 mb-3 c-2">
+                        
+                       
                         <h5>Chi siamo</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a>
-                            </li>
-                        </ul>
+                        <p class="c-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas alias fugiat rerum, nisi libero distinctio placeat perspiciatis aliquid enim fugit quisquam nulla ea id temporibus omnis delectus in porro eligendi.</p>
                     </div>
-                    <div class="col-6 col-md-3 mb-3 c-2">
-                        <h5>Shop</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a>
-                            </li>
-                        </ul>
-                    </div>
+                   
                     <div class="col-6 col-md-3 mb-3 c-2">
                         <h5>Contatti</h5>
                         <p class="c-2">
-                            <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-solid fa-envelope c-2"></i>
                             7oL0w@example.com
+                        </p>
+                        <p class="c-2">
+                            <i class="fa-solid fa-phone c-2"></i>
+                            +39 123456789
+                        </p>
+                        <p class="c-2">
+                            <i class="fa-solid fa-location-dot c-2"></i>
+                            Via Roma, 123
                         </p>
                        
                     </div>
