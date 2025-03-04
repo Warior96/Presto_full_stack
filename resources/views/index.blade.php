@@ -12,7 +12,7 @@
         <div class="row justify-content-evenly align-items-center flex-column w-100 min-h-100 py-4 position-relative">
 
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center  pb-3" data-aos="fade-down" data-aos-delay="300"
+                <h1 class=" display-1 text-center pb-3" data-aos="fade-down" data-aos-delay="300"
                     data-aos-duration="2000">Emporium Shop</h1>
                 {{-- @auth
                     <h4 class="text-center typewriter1 invisible mb-2">

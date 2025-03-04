@@ -360,7 +360,12 @@ footer a {
 .mySwiper2-revisor .swiper-slide-thumb-active {
   opacity: 1;
 }
-
+.img-logo{
+  /* width: 50px;
+  height: 40px; */
+  width: 10vw;
+  /* height: 30px; */
+}
 
 
 
