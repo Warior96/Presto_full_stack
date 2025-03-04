@@ -51,7 +51,7 @@
                         <swiper-slide class="my-1">
                             <div class="row justify-content-center p-0">
                                 <div class="col-12 container-img-car">
-                                    <img src="{{ Storage::url($categoria->img) }}" alt="" >
+                                    <img src="{{ Storage::url($categoria->img) }}" alt="" class="radius">
                                     <div class="img-car">
 
                                     </div>
@@ -67,7 +67,7 @@
                     @foreach ($categories as $categoria)
                         <swiper-slide class="my-1">
                             <div class="row justify-content-center p-0">
-                                <img src="{{ Storage::url($categoria->img) }}" alt="" class="little-img-car">
+                                <img src="{{ Storage::url($categoria->img) }}" alt="" class="little-img-car radius">
                             </div>
                         </swiper-slide>
                     @endforeach

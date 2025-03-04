@@ -7,6 +7,8 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
+use App\Jobs\ResizeImage;
 
 class AddArticle extends Component
 {
@@ -53,10 +55,15 @@ class AddArticle extends Component
         // aggiunta immagini
         if (count($this->images) > 0) {
             foreach ($this->images as $image) {
-                $this->article->images()->create([
-                    "path" => $image->store('images', 'public'),
-                ]);
+                $newFileName = "articles/{$this->article->id}";
+                $newImage = $this->article->images()->create(
+                    [
+                        "path" => $image->store($newFileName, 'public')
+                    ]
+                );
+                dispatch(new ResizeImage($newImage->path, 600, 600));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
         // funzione di pulizia

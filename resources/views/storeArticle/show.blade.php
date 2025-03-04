@@ -36,7 +36,7 @@
                         coverflow-effect-slide-shadows="true">
                         @foreach ($article->images as $key => $image)
                             <swiper-slide class="swiper-slide-show @if ($loop->first) active @endif">
-                                <img src="{{ Storage::url($image->path) }}" class="rounded-4 h-100"
+                                <img src="{{ $image->getUrl(600, 600) }}" class="rounded-4 h-100"
                                     alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
                             </swiper-slide>
                         @endforeach

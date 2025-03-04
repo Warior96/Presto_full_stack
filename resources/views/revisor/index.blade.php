@@ -18,8 +18,8 @@
                                 slides-per-view="2">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <swiper-slide class="swiper-slide-revisor">
-                                        <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
-                                            alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}">
+                                        <img src="{{ $image->getUrl(600, 600) }}" class="img-fluid rounded shadow"
+                                            alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
@@ -28,8 +28,8 @@
                                 slides-per-view="4" free-mode="true" watch-slides-progress="true">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <swiper-slide class="swiper-slide-revisor">
-                                        <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
-                                            alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}">
+                                        <img src="{{ $image->getUrl(600, 600) }}" class="img-fluid rounded shadow"
+                                            alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
