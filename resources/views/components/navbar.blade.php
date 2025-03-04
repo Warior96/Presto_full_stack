@@ -74,17 +74,20 @@
                 @endauth
 
                 {{-- search --}}
-                <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
-                    <div class="input-group">
-                        <input type="search" name="query" class="form-control" placeholder="{{ __('ui.cerca') }}"
-                            aria-label="search" value="{{ $query }}">
-                        <button class="input-group-text btn " type="submit"
-                            id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
+                @if (Route::currentRouteName() != 'homepage')
+                    <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
+                        <div class="input-group">
+                            <input type="search" name="query" class="form-control"
+                                placeholder="{{ __('ui.cerca') }}" aria-label="search" value="{{ $query }}">
+                            <button class="input-group-text btn " type="submit" id="basic-addon2"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                @endif
 
                 {{--  language --}}
-                <li class="nav-item dropdown my-auto ps-2">
+                <li
+                    class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : '' }} my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
