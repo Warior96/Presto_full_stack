@@ -11,9 +11,11 @@
         @if ($article_to_check)
             <div class="row justify-content-center pt-5 ">
                 <div class="col-md-8 ">
-                    <div class="row justify-content-center h-50 w-50 me-5">
+                    <div class="row justify-content-center me-5">
                         @if ($article_to_check->images->count())
-                            <swiper-container class="mySwiper-revisor swiper-container-revisor" thumbs-swiper=".mySwiper2-revisor" space-between="10">
+                            <swiper-container class="mySwiper-revisor swiper-container-revisor"
+                                thumbs-swiper=".mySwiper2-revisor" space-between="10" free-mode="true"
+                                slides-per-view="2">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <swiper-slide class="swiper-slide-revisor">
                                         <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
@@ -22,17 +24,18 @@
                                 @endforeach
                             </swiper-container>
 
-                            <swiper-container class="mySwiper2-revisor swiper-container-revisor " space-between="10" slides-per-view="4" free-mode="true"
-                                watch-slides-progress="true">
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor " space-between="10"
+                                slides-per-view="4" free-mode="true" watch-slides-progress="true">
                                 @foreach ($article_to_check->images as $key => $image)
-                                    <swiper-slide  class="swiper-slide-revisor">
+                                    <swiper-slide class="swiper-slide-revisor">
                                         <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}">
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
                         @else
-                            <swiper-container class="mySwiper-revisor swiper-container-revisor" thumbs-swiper=".mySwiper2-revisor" space-between="10" navigation="true">
+                            <swiper-container class="mySwiper-revisor swiper-container-revisor"
+                                thumbs-swiper=".mySwiper2-revisor" space-between="10" navigation="true">
                                 @for ($i = 0; $i < 6; $i++)
                                     <swiper-slide class="swiper-slide-revisor">
                                         <img src="https://picsum.photos/200" class="img-fluid rounded shadow"
