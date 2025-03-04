@@ -114,8 +114,8 @@ body {
 }
 
 /* Carosello categorie */
-.img-car{
-  background-color: rgba(0,0,0,0,0.3);
+.img-car {
+  background-color: rgba(0, 0, 0, 0, 0.3);
   top: 0px;
   left: 0px;
   width: 100%;
@@ -176,7 +176,7 @@ swiper-slide img {
   object-fit: cover;
 }
 
-swiper-slide .radius{
+swiper-slide .radius {
   border-radius: 30px
 }
 
@@ -306,11 +306,12 @@ footer a {
 .aspect-ratio-1 {
   aspect-ratio: 1/1;
 }
+
 /* swiper revisiona */
 .swiper-container-revisor {
   width: 100%;
   height: 100%;
-  /* height: 300px; */
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -324,7 +325,7 @@ footer a {
   align-items: center;
   background-size: cover;
   background-position: center;
-  
+  aspect-ratio: 1/1;
 }
 
 
@@ -337,18 +338,21 @@ footer a {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
-
 }
 
 .mySwiper2-revisor .swiper-slide-revisor {
   width: 25%;
   height: 100%;
   opacity: 0.4;
+
 }
 
 .mySwiper2-revisor .swiper-slide-thumb-active {
   opacity: 1;
 }
+
+
+
 
 
 
@@ -493,11 +497,11 @@ footer a {
     filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.6));
   }
 
-  #btn-preview:hover{
+  #btn-preview:hover {
     background-color: var(--color-2);
   }
 
-  #btn-preview:hover #icon-preview{
+  #btn-preview:hover #icon-preview {
     color: var(--color-6);
   }
 }
