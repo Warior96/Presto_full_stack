@@ -29,16 +29,31 @@ let typewriter1 = document.querySelectorAll('.typewriter1');
 let typewriter2 = document.querySelectorAll('.typewriter2');
 let addArticle = document.querySelector('#addArticle');
 
-typewriter1.forEach(el => {
-    setTimeout(() => {
-        el.classList.add('typewriter');
-        el.classList.remove('invisible');
-    }, 2000);
-    setTimeout(() => {
-        el.style.border = 'none';
-    }, 4850);
-});
+// typewriter1.forEach(el => {
+//     setTimeout(() => {
+//         el.classList.add('typewriter');
+//         el.classList.remove('invisible');
+//     }, 2000);
+//     setTimeout(() => {
+//         el.style.border = 'none';
+//     }, 4850);
+// });
 
+typewriter1.forEach((el, index) => {
+    if (index === 0) {
+        setTimeout(() => {
+            el.classList.add('typewriter');
+            el.classList.remove('invisible');
+        }, 2000);
+        setTimeout(() => {
+            el.style.border = 'none';
+        }, 4850);
+    } else {
+            // el.classList.add('typewriter');
+            el.classList.remove('invisible');
+            // el.style.border = 'none';
+    }
+});
 
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
