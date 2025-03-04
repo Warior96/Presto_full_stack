@@ -12,8 +12,9 @@
         <div class="row justify-content-evenly align-items-center flex-column w-100 min-h-100 py-4 position-relative">
 
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center pb-3" data-aos="fade-down" data-aos-delay="300"
-                    data-aos-duration="2000">Emporium Shop</h1>
+                <h1 class=" display-1 text-center  pb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                    Emporium Shop</h1>
+
                 {{-- @auth
                     <h4 class="text-center typewriter1 invisible mb-2">
                         Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche oggi?
@@ -46,73 +47,82 @@
             {{-- carosello categorie --}}
             <div class="col-12 ">
                 <swiper-container class="mySwiper" thumbs-swiper=".mySwiper2-index" space-between="10" loop="true"
-                    autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
+                    autoplay-delay="12000" autoplay-pause-on-mouse-enter="true">
                     @foreach ($categories as $categoria)
                         <swiper-slide class="my-1">
                             <div class="row justify-content-center p-0">
                                 <div class="col-12 container-img-card p-0">
                                     <img src="{{ Storage::url($categoria->img) }}" alt="" class="radius">
-                                    <div class="black-opacity radius d-flex flex-column justify-content-center align-items-center">
+                                    <div
+                                        class="black-opacity radius d-flex flex-column justify-content-center align-items-center">
                                         @auth
-                                            <h4 class="text-center typewriter1 invisible mb-2">
+                                            <h4 class="text-center typewriter1 invisible mb-3 c-2">
                                                 Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche
                                                 oggi?
-                                            </h4>  
+                                            </h4>
                                         @else
-                                            <h4 class="text-center typewriter1 invisible mb-2">
+                                            <h4 class="text-center typewriter1 invisible mb-3 c-2">
                                                 Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
                                             </h4>
                                         @endauth
                                         @switch($categoria->name)
                                             @case('Elettronica')
-                                            
-                                                <h4 class="mb-4 c-2">La tua lavatrice ha iniziato a fare i capricci?
-                                                    Sostituiscila con una della categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">La tua lavatrice fa i
+                                                    capricci?
+                                                    Sostituiscila con una della categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Abbigliamento')
-                                                <h4 class="mb-4 c-2">Hai l'armadio vuoto? Riempilo con gli articoli della
-                                                    categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Hai l'armadio vuoto?
+                                                    Riempilo con gli articoli della
+                                                    categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Bellezza')
-                                                <h4 class="mb-4 c-2">Cura la tua pelle con i prodotti della categoria
-                                                    "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Cura la tua pelle con i
+                                                    prodotti della categoria
+                                                    "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Giardinaggio')
-                                                <h4 class="mb-4 c-2">Hai il pollice verde? Dai sfogo alla tua fantasia con i
-                                                    prodotti della categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Hai il pollice verde? Dai
+                                                    sfogo alla tua fantasia con la categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Giocattoli')
-                                                <h4 class="mb-4 c-2">I giochi sparsi per casa non sono abbastanza? Aggiungine
-                                                    degli altri con gli articoli della categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Giochi sparsi per casa
+                                                    non sono abbastanza? Aggiungine
+                                                    altri dalla categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Sport')
-                                                <h4 class="mb-4 c-2">Sei un tipo atletico? Dai un'occhiata alla categoria
-                                                    "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Sei un tipo atletico? Dai
+                                                    un'occhiata alla categoria
+                                                    "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Tecnologia')
-                                                <h4 class="mb-4 c-2">Dispositivo vecchio? Guarda le nostre offerte nella
-                                                    categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Dispositivo vecchio?
+                                                    Guarda le nostre offerte nella
+                                                    categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Libri e riviste')
-                                                <h4 class="mb-4 c-2">Trova il libro dei tuoi sogni! Dai un occhiata alla
-                                                    categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Trova il libro dei tuoi
+                                                    sogni! Dai un occhiata alla
+                                                    categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Accessori')
-                                                <h4 class="mb-4 c-2">I piccoli dettagli a volte fanno la differenza, cerca il
-                                                    tuo stile all'interno della categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">
+                                                    I piccoli dettagli a volte fanno la differenza, cerca il
+                                                    tuo stile nella categoria "{{ $categoria->name }}"</h5>
                                             @break
 
                                             @case('Motori')
-                                                <h4 class="mb-4 c-2">Stai vendendo il tuo catorcio o ne stai cercando un altro?
-                                                    Scoprilo nella categoria "{{ $categoria->name }}"</h4>
+                                                <h5 class="text-center mb-4 c-2 typewriter2 invisible">Stai vendendo il tuo
+                                                    catorcio o ne stai cercando un altro?
+                                                    Scoprilo nella categoria "{{ $categoria->name }}"</h5>
                                             @break
                                         @endswitch
 
@@ -123,9 +133,8 @@
                                                 <input type="search" name="query" class="form-control"
                                                     placeholder="{{ __('ui.cerca') }}" aria-label="search"
                                                     value="{{ $query }}">
-                                                <button class="input-group-text btn " type="submit"
-                                                    id="basic-addon2"><i
-                                                        class="fa-solid fa-magnifying-glass"></i></button>
+                                                <button class="input-group-text btn " type="submit" id="basic-addon2">
+                                                    <i class="fa-solid fa-magnifying-glass"></i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -139,7 +148,7 @@
                 <swiper-container class="mySwiper2-index" space-between="10" slides-per-view="5" free-mode="true"
                     watch-slides-progress="true">
                     @foreach ($categories as $categoria)
-                        <swiper-slide class="my-1">
+                        <swiper-slide class="my-1" id="point">
                             <div class="row justify-content-center p-0 position-relative">
                                 <div class="col-12 container-little-img-card p-0">
                                     <img src="{{ Storage::url($categoria->img) }}" alt="" class="radius">

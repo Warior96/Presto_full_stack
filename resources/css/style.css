@@ -367,6 +367,13 @@ footer a {
   /* height: 30px; */
 }
 
+#basic-addon2 {
+  background-color: rgba(245, 222, 186, 0.516);
+}
+
+#point {
+  cursor: pointer;
+}
 
 
 
