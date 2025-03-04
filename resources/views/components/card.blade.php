@@ -2,7 +2,8 @@
     <div class="card mx-auto card-w p-2 text-center my-1 bg-1 c-5" id="card">
         {{-- <div class="h-50 w-100"> --}}
             <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
-                class="mx-auto card-img-top img-fluid {{ Route::currentRouteName() != 'article.indexAll' ? 'img-cus' : 'aspect-ratio-1' }} " alt="Immagine dell'articolo {{ $article->title }}">
+                class=" card-img-top  {{ Route::currentRouteName() == 'homepage' ? 'img-cus' : 'aspect-ratio-1' }}" alt="Immagine dell'articolo {{ $article->title }}">
+                
         {{-- </div> --}}
         <div class="card-body">
             <h4 class="card-title">{{ $article->title }}</h4>
