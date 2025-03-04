@@ -1,45 +1,62 @@
 <x-layout>
     <header class="container mt-5 pt-4">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-3 text-center mt-4 mb-1">
+            <h1 class="col-12 display-5 text-center mt-3 mb-1">
                 Articoli da revisionare
             </h1>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         @if ($article_to_check)
-            <div class="row justify-content-center pt-5 ">
-                <div class="col-md-8 ">
-                    <div class="row justify-content-center me-5">
+            <div class="row justify-content-center pt-4 mx-5">
+                <div class="col-md-9 ">
+                    <div class="row justify-content-center me-2">
                         @if ($article_to_check->images->count())
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
                                 thumbs-swiper=".mySwiper2-revisor" space-between="10" free-mode="true"
-                                slides-per-view="2">
+                                slides-per-view="2.4">
                                 @foreach ($article_to_check->images as $key => $image)
-                                    <swiper-slide class="swiper-slide-revisor">
-                                        <img src="{{ $image->getUrl(600, 600) }}" class="img-fluid rounded shadow"
+                                    <swiper-slide class="swiper-slide-revisor rounded">
+                                        <img src="{{ $image->getUrl(600, 600) }}" class=""
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
 
-                            <swiper-container class="mySwiper2-revisor swiper-container-revisor " space-between="10"
-                                slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor"
+                                space-between="8" slides-per-view="10" free-mode="true" watch-slides-progress="true">
                                 @foreach ($article_to_check->images as $key => $image)
-                                    <swiper-slide class="swiper-slide-revisor">
-                                        <img src="{{ $image->getUrl(600, 600) }}" class="img-fluid rounded shadow"
+                                    <swiper-slide
+                                        class="swiper-slide-revisor rounded 
+                                        @if ($loop->first) ms-auto @endif
+                                        @if ($loop->last) me-auto @endif">
+                                        <img src="{{ $image->getUrl(600, 600) }}" class=""
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
                         @else
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
-                                thumbs-swiper=".mySwiper2-revisor" space-between="10" navigation="true">
+                                thumbs-swiper=".mySwiper2-revisor" space-between="10" space-between="10" free-mode="true"
+                                slides-per-view="2.4">
                                 @for ($i = 0; $i < 6; $i++)
-                                    <swiper-slide class="swiper-slide-revisor">
-                                        <img src="https://picsum.photos/200" class="img-fluid rounded shadow"
-                                            alt="immagine segnaposto">
+                                    <swiper-slide class="swiper-slide-revisor rounded">
+                                        <img src="https://picsum.photos/50{{ $i }}"
+                                            class="img-fluid rounded shadow" alt="immagine segnaposto">
+                                    </swiper-slide>
+                                @endfor
+                            </swiper-container>
+
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor"
+                                space-between="8" slides-per-view="10" free-mode="true" watch-slides-progress="true">
+                                @for ($i = 0; $i < 6; $i++)
+                                    <swiper-slide
+                                        class="swiper-slide-revisor rounded 
+                                        @if ($i == 0) ms-auto @endif
+                                        @if ($i == 5) me-auto @endif">
+                                        <img src="https://picsum.photos/50{{ $i }}" class=""
+                                            alt="Immagine {{ $i +1 }} dell'articolo causale">
                                     </swiper-slide>
                                 @endfor
                             </swiper-container>
@@ -50,7 +67,7 @@
 
 
                 {{-- Dettagli dell'articolo da revisionare --}}
-                <div class="col-md-4 d-flex justify-content-between flex-column">
+                <div class="col-md-3 d-flex justify-content-between flex-column">
                     <div class="row">
                         <h2 class="mb-3">
                             <span class="fs-6 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
@@ -111,7 +128,7 @@
                 </div>
             </div>
         @else
-            <div class="row justify-content-center align-items-center text-center">
+            <div class="row justify-content-center align-items-center text-center mx-3">
                 <div class="col-12">
 
 
