@@ -117,7 +117,7 @@
                                     <p class="c-2">Al momento c'è 1 articolo da revisionare</p>
                                 @endif
                                 <div class="mt-2">
-                                    <a class="btn btn-primary px-4 py-2 fs-5 rounded-4 shadow position-relative"
+                                    <a class="btn btn-primary px-4 py-2 fs-5 text-white rounded-4 shadow position-relative"
                                         href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
                                         <span
                                             class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">

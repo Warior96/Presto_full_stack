@@ -1,23 +1,23 @@
 <x-layout>
     <div class="container">
         <div class="row py-5 justify-content-center align-items-center text-center">
-            <div class="col-12 pt-5">
+            <div class="col-12 pt-4">
                 @if ($articles->isEmpty())
-                    <h1 class="display-4">Non sono presenti articoli della categoria <br> <span
+                    <h1 class="display-5 pt-5">Non sono presenti articoli della categoria <br> <span
                             class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
                 @else
                     @if ($num_articles == 1)
-                        <h1 class="display-4">E' presente {{ $num_articles }} articolo della categoria <br> <span
+                        <h1 class="display-5">E' presente {{ $num_articles }} articolo della categoria <br> <span
                                 class="fst-italic fw-bold">{{ __("ui.$category->name") }}</span></h1>
                     @else
-                        <h1 class="display-4">Sono presenti {{ $num_articles }} articoli della categoria <br> <span
+                        <h1 class="display-5">Sono presenti {{ $num_articles }} articoli della categoria <br> <span
                                 class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
                     @endif
                 @endif
             </div>
-            <div class="row justify-content-evenly align-items-center py-5">
+            <div class="row justify-content-evenly align-items-center py-4">
                 @forelse ($articles as $article)
-                    <div class="col-12 col-md-3 ">
+                    <div class="col-12 col-md-3 mx-3 mb-2 ">
                         <x-card :article="$article" />
                     </div>
                 @empty
