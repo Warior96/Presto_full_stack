@@ -9,27 +9,11 @@
         style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
             url({{ asset('storage/background/header1.jpeg') }}); background-repeat: no-repeat;
             background-size: cover; background-position: center;">
-        <div class="row justify-content-evenly align-items-center flex-column w-100 min-h-100 py-4 position-relative">
+        <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
 
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center  pb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                <h1 class=" display-1 text-center pb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
                     Emporium Shop</h1>
-
-                {{-- @auth
-                    <h4 class="text-center typewriter1 invisible mb-2">
-                        Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche oggi?
-                    </h4>
-                    <h4 class="text-center typewriter2 invisible mb-2">
-                        Non perdere tempo e buttati nel mondo del mercato!
-                    </h4>
-                @else
-                    <h4 class="text-center typewriter1 invisible mb-2">
-                        Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
-                    </h4>
-                    <h4 class="text-center typewriter2 invisible mb-2">
-                        Unisciti a Emporium Shop e trova l'affare perfetto!
-                    </h4>
-                @endauth --}}
             </div>
 
             {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
@@ -48,11 +32,11 @@
             <div class="col-12 ">
                 <swiper-container class="mySwiper" thumbs-swiper=".mySwiper2-index" space-between="10" loop="true"
                     autoplay-delay="12000" autoplay-pause-on-mouse-enter="true">
-                    @foreach ($categories as $categoria)
+                    @foreach ($categories as $category)
                         <swiper-slide class="my-1">
                             <div class="row justify-content-center p-0">
                                 <div class="col-12 container-img-card p-0">
-                                    <img src="{{ Storage::url($categoria->img) }}" alt="" class="radius">
+                                    <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
                                     <div
                                         class="black-opacity radius d-flex flex-column justify-content-center align-items-center">
                                         @auth
@@ -65,64 +49,65 @@
                                                 Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
                                             </h4>
                                         @endauth
-                                        @switch($categoria->name)
+                                        @switch($category->name)
                                             @case('Elettronica')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">La tua lavatrice fa i
                                                     capricci?
-                                                    Sostituiscila con una della categoria "{{ $categoria->name }}"</h5>
+                                                    Sostituiscila con una della categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Abbigliamento')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Hai l'armadio vuoto?
                                                     Riempilo con gli articoli della
-                                                    categoria "{{ $categoria->name }}"</h5>
+                                                    categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Bellezza')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Cura la tua pelle con i
                                                     prodotti della categoria
-                                                    "{{ $categoria->name }}"</h5>
+                                                    "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Giardinaggio')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Hai il pollice verde? Dai
-                                                    sfogo alla tua fantasia con la categoria "{{ $categoria->name }}"</h5>
+                                                    sfogo alla tua fantasia con la categoria "{{ __("ui.$category->name") }}"
+                                                </h5>
                                             @break
 
                                             @case('Giocattoli')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Giochi sparsi per casa
                                                     non sono abbastanza? Aggiungine
-                                                    altri dalla categoria "{{ $categoria->name }}"</h5>
+                                                    altri dalla categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Sport')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Sei un tipo atletico? Dai
                                                     un'occhiata alla categoria
-                                                    "{{ $categoria->name }}"</h5>
+                                                    "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Tecnologia')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Dispositivo vecchio?
                                                     Guarda le nostre offerte nella
-                                                    categoria "{{ $categoria->name }}"</h5>
+                                                    categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Libri e riviste')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Trova il libro dei tuoi
                                                     sogni! Dai un occhiata alla
-                                                    categoria "{{ $categoria->name }}"</h5>
+                                                    categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Accessori')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">
                                                     I piccoli dettagli a volte fanno la differenza, cerca il
-                                                    tuo stile nella categoria "{{ $categoria->name }}"</h5>
+                                                    tuo stile nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Motori')
                                                 <h5 class="text-center mb-4 c-2 typewriter2 invisible">Stai vendendo il tuo
                                                     catorcio o ne stai cercando un altro?
-                                                    Scoprilo nella categoria "{{ $categoria->name }}"</h5>
+                                                    Scoprilo nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
                                         @endswitch
 
@@ -147,14 +132,14 @@
 
                 <swiper-container class="mySwiper2-index" space-between="10" slides-per-view="5" free-mode="true"
                     watch-slides-progress="true">
-                    @foreach ($categories as $categoria)
+                    @foreach ($categories as $category)
                         <swiper-slide class="my-1" id="point">
                             <div class="row justify-content-center p-0 position-relative">
                                 <div class="col-12 container-little-img-card p-0">
-                                    <img src="{{ Storage::url($categoria->img) }}" alt="" class="radius">
+                                    <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
                                     <div class="little-black-opacity p-0 radius">
-                                        <h5 class="c-2 position-absolute top-50 start-50 translate-middle text-center">
-                                            {{ $categoria->name }}</h5>
+                                        <h6 class="c-2 position-absolute top-50 start-50 translate-middle text-center">
+                                            {{ __("ui.$category->name") }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -167,12 +152,12 @@
             {{-- crea articolo --}}
             <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
                 <a href="{{ route('createarticle') }}"
-                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-25 opacity-0" id="addArticle">
+                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 opacity-0" id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
                 </a>
             </div>
 
-            {{-- Frecciettina --}}
+            {{-- caret --}}
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center mt-5"
                 id="caret">

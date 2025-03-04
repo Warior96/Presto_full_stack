@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-6 position-fixed top-0 left-0 w-100 z-3 shadow">
     <div class="container-fluid mx-lg-2">
         <a class="navbar-brand my-0 me-3 p-0" href="{{ route('homepage') }}">
-            <img src="{{ asset('storage/logo/logo1.png') }}" alt="" class="img-logo">
+            <img src="{{ Storage::url('logo/logo-rettangolare-corona-1.svg') }}" alt="" class="img-logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

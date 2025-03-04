@@ -3,36 +3,40 @@
         <div class="row ">
             <div class="col-8">
                 <div class="ms-5 ps-5 row">
-                    <img src="{{ asset('storage/logo/logo1.png') }}" alt="" class="img-logo">
+
+                    {{-- logo --}}
+                    <img src="{{ Storage::url('logo/logo-quadrato-corona-1.svg') }}" alt=""
+                        class="img-logo-footer">
+
+                    {{-- chi siamo --}}
                     <div class="col-6 col-md-5 mb-3 c-2">
-                        
-                       
-                        <h5>Chi siamo</h5>
-                        <p class="c-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas alias fugiat rerum, nisi libero distinctio placeat perspiciatis aliquid enim fugit quisquam nulla ea id temporibus omnis delectus in porro eligendi.</p>
+                        <p class="c-2 mb-2">Chi siamo</p>
+                        <p class="c-2">
+                            Emporium The Shop è un marketplace dove puoi vendere e acquistare prodotti di ogni
+                            categoria. Scopri offerte esclusive e un'esperienza sicura e intuitiva.
+                        </p>
                     </div>
-                   
-                    <div class="col-6 col-md-3 mb-3 c-2">
-                        <h5>Contatti</h5>
+
+                    {{-- contatti --}}
+                    <div class="col-6 col-md-3 mb-3 ms-4 c-2">
+                        <p class="c-2 mb-2">Contatti</p>
                         <p class="c-2">
-                            <i class="fa-solid fa-envelope c-2"></i>
-                            7oL0w@example.com
+                            <i class="fa-solid fa-envelope c-2 me-2"></i>
+                            <a href="mailto:amdin@example.com">amdin@example.com</a>
                         </p>
                         <p class="c-2">
-                            <i class="fa-solid fa-phone c-2"></i>
-                            +39 123456789
+                            <i class="fa-solid fa-phone c-2 me-1"></i>
+                            <a href="tel:+39123456789">+39 123456789</a>
                         </p>
                         <p class="c-2">
-                            <i class="fa-solid fa-location-dot c-2"></i>
-                            Via Roma, 123
+                            <i class="fa-solid fa-location-dot c-2 me-2"></i>
+                            <a href="https://www.google.com/maps/place/Via+Roma,+123,+Roma+RM" target="_blank">Via Roma,
+                                123</a>
                         </p>
-                       
                     </div>
                 </div>
-
-
-
-
             </div>
+
             <div class="col-4">
 
                 {{-- Bottone + modale lavora con noi --}}
@@ -88,9 +92,11 @@
                         {{-- log + revisore --}}
                         @if (\App\Models\Article::toBeRevisedCount() > 0)
                             <div class="col-12 d-flex flex-column justify-content-end align-content-center">
-                                <p class="c-2">Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,</p>
+                                <p class="c-2">Benvenuto revisore <strong
+                                        class="c-2">{{ Auth::user()->name }}</strong>,</p>
                                 @if (\App\Models\Article::toBeRevisedCount() > 1)
-                                    <p class="c-2">Al momento ci sono {{ \App\Models\Article::toBeRevisedCount() }} articoli da
+                                    <p class="c-2">Al momento ci sono {{ \App\Models\Article::toBeRevisedCount() }}
+                                        articoli da
                                         revisionare</p>
                                 @else
                                     <p class="c-2">Al momento c'è 1 articolo da revisionare</p>
@@ -108,7 +114,8 @@
                         @else
                             {{-- nessun articolo da revisionare --}}
                             <div class="col-12">
-                                <p class="c-2 mb-1">Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,</p>
+                                <p class="c-2 mb-1">Benvenuto revisore <strong
+                                        class="c-2">{{ Auth::user()->name }}</strong>,</p>
                                 <p class="c-2">Al momento non ci sono articoli da revisionare</p>
                             </div>
                         @endif
@@ -145,8 +152,7 @@
                                             </div>
                                             <div
                                                 class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">No,
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,
                                                     annulla</button>
                                                 <a href="{{ route('become.revisor') }}"
                                                     class="btn btn-primary px-3 py-2 rounded shadow">Candidati</a>
@@ -165,21 +171,20 @@
         </div>
 
 
-        <div
-            class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-5 mx-5 border-top border-secondary">
+        <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-5 mx-5 border-top border-secondary">
             <p class="c-2">&copy; 2025 The Final Commit. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.facebook.com/?locale=it_IT"><i
-                            class="c-2 fa-brands fa-facebook"></i></a>
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank"
+                        href="https://www.facebook.com/?locale=it_IT"><i class="c-2 fa-brands fa-facebook"></i></a>
                 </li>
-                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.instagram.com/"><i
-                            class="c-2 fa-brands fa-instagram"></i></a>
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank"
+                        href="https://www.instagram.com/"><i class="c-2 fa-brands fa-instagram"></i></a>
                 </li>
                 <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://x.com/?lang=it"><i
                             class="c-2 fa-brands fa-x-twitter"></i></a>
                 </li>
-                <li class="ms-3"><a class="link-body-emphasis" target="_blank" href="https://www.linkedin.com/feed/"><i
-                            class="c-2 fa-brands fa-linkedin"></i></a>
+                <li class="ms-3"><a class="link-body-emphasis" target="_blank"
+                        href="https://www.linkedin.com/feed/"><i class="c-2 fa-brands fa-linkedin"></i></a>
                 </li>
             </ul>
         </div>
