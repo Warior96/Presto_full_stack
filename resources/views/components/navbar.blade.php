@@ -99,9 +99,21 @@
                         @endif
                     </a>
                     <ul class="dropdown-menu bg-2">
-                        <li><span class="dropdown-item"><x-_locale lang="it" /></span></li>
-                        <li><span class="dropdown-item"><x-_locale lang="en" /></span></li>
-                        <li><span class="dropdown-item"><x-_locale lang="zh-tw" /></span></li>
+                        <li>
+                            <span class="dropdown-item @if (session('locale') == 'it') d-none @endif ">
+                                <x-_locale lang="it" />
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dropdown-item @if (session('locale') == 'en') d-none @endif ">
+                                <x-_locale lang="en" />
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dropdown-item @if (session('locale') == 'zh-tw') d-none @endif ">
+                                <x-_locale lang="zh-tw" />
+                            </span>
+                        </li>
                     </ul>
                 </li>
 
