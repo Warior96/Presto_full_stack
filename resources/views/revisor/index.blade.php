@@ -17,52 +17,86 @@
                                 thumbs-swiper=".mySwiper2-revisor" space-between="10" free-mode="true"
                                 slides-per-view="2.4">
                                 @foreach ($article_to_check->images as $key => $image)
-                                    <swiper-slide class="swiper-slide-revisor rounded">
+                                    <swiper-slide class="swiper-slide-revisor rounded position-relative">
+
                                         <img src="{{ $image->getUrl(600, 600) }}" class=""
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
-                                        <div class="card-body">
-                                            <h5>Labels</h5>
-                                            @if ($image->labels)
-                                                @foreach ($image->labels as $label)
-                                                    #{{ $label }},
-                                                @endforeach
-                                            @else
-                                                <p class="fst-italic">No labels</p>
-                                            @endif
+                                        <div class="dropdown dropend" id="labels">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Labels
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="px-2 py-1">
+                                                        @if ($image->labels)
+                                                            @foreach ($image->labels as $label)
+                                                                #{{ $label }},
+                                                            @endforeach
+                                                        @else
+                                                            <p class="fst-italic">No labels</p>
+                                                        @endif
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="card-body">
-                                            <h5>Ratings</h5>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->adult }}"></div>
-                                                </div>
-                                                <div class="col-10">adult</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->violence }}"></div>
-                                                </div>
-                                                <div class="col-10">violence</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->spoof }}"></div>
-                                                </div>
-                                                <div class="col-10">spoof</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->racy }}"></div>
-                                                </div>
-                                                <div class="col-10">racy</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->medical }}"></div>
-                                                </div>
-                                                <div class="col-10">medical</div>
-                                            </div>
+
+                                        <div class="dropdown dropstart" id="ratings">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Ratings
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+
+                                                    <div class="row px-2 py-1">
+                                                        <div class="col-2 text-center {{ $image->adult }}">
+                                                        </div>
+                                                        <div class="col-8 ps-2 pe-0">adult</div>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+
+                                                    <div class="row px-2 py-1">
+                                                        <div class="col-2 text-center {{ $image->violence }}">
+                                                        </div>
+                                                        <div class="col-8 ps-2 pe-0">violence</div>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+
+                                                    <div class="row px-2 py-1">
+                                                        <div class="col-2 text-center {{ $image->spoof }}">
+                                                        </div>
+                                                        <div class="col-8 ps-2 pe-0">spoof</div>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+
+                                                    <div class="row px-2 py-1">
+                                                        <div class="col-2 text-center {{ $image->racy }}">
+                                                        </div>
+                                                        <div class="col-8 ps-2 pe-0">racy</div>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+
+                                                    <div class="row px-2 py-1">
+                                                        <div class="col-2 text-center {{ $image->medical }}">
+                                                        </div>
+                                                        <div class="col-8 ps-2 pe-0">medical</div>
+                                                    </div>
+
+                                                </li>
+                                            </ul>
                                         </div>
+
+
+
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>

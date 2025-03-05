@@ -382,6 +382,18 @@ footer a {
   margin-bottom: 40px;
 }
 
+#labels {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+#ratings {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
 
 
 
