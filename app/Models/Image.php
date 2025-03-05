@@ -23,8 +23,7 @@ class Image extends Model
 
     public static function getUrlByFilePath($filePath, $w = null, $h = null)
     {
-        if (!$w && !$h)
-        {
+        if (!$w && !$h) {
             return Storage::url($filePath);
         }
 
@@ -37,5 +36,12 @@ class Image extends Model
     public function getUrl($w = null, $h = null)
     {
         return self::getUrlByFilePath($this->path, $w, $h);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'labels' => 'array',
+        ];
     }
 }

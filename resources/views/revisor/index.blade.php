@@ -20,12 +20,55 @@
                                     <swiper-slide class="swiper-slide-revisor rounded">
                                         <img src="{{ $image->getUrl(600, 600) }}" class=""
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
+                                        <div class="card-body">
+                                            <h5>Labels</h5>
+                                            @if ($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    #{{ $label }},
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic">No labels</p>
+                                            @endif
+                                        </div>
+                                        <div class="card-body">
+                                            <h5>Ratings</h5>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->adult }}"></div>
+                                                </div>
+                                                <div class="col-10">adult</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->violence }}"></div>
+                                                </div>
+                                                <div class="col-10">violence</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->spoof }}"></div>
+                                                </div>
+                                                <div class="col-10">spoof</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->racy }}"></div>
+                                                </div>
+                                                <div class="col-10">racy</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->medical }}"></div>
+                                                </div>
+                                                <div class="col-10">medical</div>
+                                            </div>
+                                        </div>
                                     </swiper-slide>
                                 @endforeach
                             </swiper-container>
 
-                            <swiper-container class="mySwiper2-revisor swiper-container-revisor"
-                                space-between="8" slides-per-view="10" free-mode="true" watch-slides-progress="true">
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor" space-between="8"
+                                slides-per-view="10" free-mode="true" watch-slides-progress="true">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <swiper-slide
                                         class="swiper-slide-revisor rounded 
@@ -38,8 +81,8 @@
                             </swiper-container>
                         @else
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
-                                thumbs-swiper=".mySwiper2-revisor" space-between="10" space-between="10" free-mode="true"
-                                slides-per-view="2.4">
+                                thumbs-swiper=".mySwiper2-revisor" space-between="10" space-between="10"
+                                free-mode="true" slides-per-view="2.4">
                                 @for ($i = 0; $i < 6; $i++)
                                     <swiper-slide class="swiper-slide-revisor rounded">
                                         <img src="https://picsum.photos/50{{ $i }}"
@@ -48,15 +91,15 @@
                                 @endfor
                             </swiper-container>
 
-                            <swiper-container class="mySwiper2-revisor swiper-container-revisor"
-                                space-between="8" slides-per-view="10" free-mode="true" watch-slides-progress="true">
+                            <swiper-container class="mySwiper2-revisor swiper-container-revisor" space-between="8"
+                                slides-per-view="10" free-mode="true" watch-slides-progress="true">
                                 @for ($i = 0; $i < 6; $i++)
                                     <swiper-slide
                                         class="swiper-slide-revisor rounded 
                                         @if ($i == 0) ms-auto @endif
                                         @if ($i == 5) me-auto @endif">
                                         <img src="https://picsum.photos/50{{ $i }}" class=""
-                                            alt="Immagine {{ $i +1 }} dell'articolo causale">
+                                            alt="Immagine {{ $i + 1 }} dell'articolo causale">
                                     </swiper-slide>
                                 @endfor
                             </swiper-container>
