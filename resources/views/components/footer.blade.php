@@ -171,6 +171,10 @@
         </div>
 
 
+        <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 ps-5 mx-5 border-top border-secondary">
+            <p class="c-2">Questo sito utilizza cookie per migliorare l'esperienza utente. Continuando la navigazione, accetti la nostra Privacy Policy e Cookie Policy.</p>
+        </div>
+
         <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-5 mx-5 border-top border-secondary">
             <p class="c-2">&copy; 2025 The Final Commit. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
