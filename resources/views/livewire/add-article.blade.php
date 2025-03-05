@@ -7,7 +7,7 @@
             <label class="form-label" for="title">{{ __('ui.titolo') }}</label>
             <input type="text" class="form-control" wire:model.blur="title" id="title" value="{{ old('title') }}">
             @error('title')
-                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
+                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}
                 </div>
             @enderror
@@ -18,7 +18,7 @@
             <textarea class="form-control" placeholder="Scrivi una descrizione" id="description" wire:model.blur="description"></textarea>
             <label for="description">{{ __('ui.descrizione') }}</label>
             @error('description')
-                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
+                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}
                 </div>
             @enderror
@@ -33,11 +33,11 @@
             <input type="file" wire:model.live="temporary_images" multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
             @error('temporary_images.*')
-                <p class="fst-italic text-danger ps-3 my-1 border border-1 border-danger py-2 bg-2 rounded">
+                <p class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}</p>
             @enderror
             @error('temporary_images')
-                <p class="fst-italic text-danger ps-3 my-1 border border-1 border-danger py-2 bg-2 rounded">
+                <p class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}</p>
             @enderror
         </div>
@@ -68,7 +68,7 @@
             <label class="form-label" for="price">{{ __('ui.prezzo') }}</label>
             <input type="number" step="0.01" class="form-control" wire:model.blur="price" id="price">
             @error('price')
-                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
+                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}
                 </div>
             @enderror
@@ -85,7 +85,7 @@
                 @endforeach
             </select>
             @error('category')
-                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded">
+                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}
                 </div>
             @enderror
