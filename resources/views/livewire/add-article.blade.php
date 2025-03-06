@@ -28,7 +28,7 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <label class="form-label" for="temporary_images">Foto:</label>
-                <span class="mt-1 fs-7">*massimo 6 alla volta</span>
+                <span class="mt-1 fs-7">*massimo 5 alla volta</span>
             </div>
             <input type="file" wire:model.live="temporary_images" multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">

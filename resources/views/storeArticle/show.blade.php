@@ -24,7 +24,7 @@
                         alt="Nessun foto inserita dall'utente">
                 @endif
             </div>
-            <div class="col-12 col-md-6 mb-3">
+            <div class="col-12 col-md-6 mb-3 ">
                 <h2 class="display-5 ms-4"><span class="fw-bold">{{ __('ui.titolo') }}:
                     </span>{{ $article->title }}</h2>
                 <div class=" h-75 m-4">

@@ -89,11 +89,11 @@ class AddArticle extends Component
     {
         if ($this->validate([
             'temporary_images.*' => 'image|max:1024',
-            'temporary_images' => 'max:6',
+            'temporary_images' => 'max:5',
         ], [
             'temporary_images.*.image' => 'Il file deve essere un\'immagine',
             'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
-            'temporary_images.max' => 'Non puoi caricare più di 6 immagini',
+            'temporary_images.max' => 'Non puoi caricare più di 5 immagini',
         ])) {
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
