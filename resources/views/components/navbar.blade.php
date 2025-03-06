@@ -100,7 +100,7 @@
                     </a>
                     <ul class="dropdown-menu bg-2">
                         <li>
-                            <span class="dropdown-item @if (session('locale') == 'it') d-none @endif ">
+                            <span class="dropdown-item @if (session('locale') == 'it' || session('locale') == null) d-none @endif ">
                                 <x-_locale lang="it" />
                             </span>
                         </li>
