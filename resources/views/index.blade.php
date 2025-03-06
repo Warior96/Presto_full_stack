@@ -51,61 +51,61 @@
                                         @endauth
                                         @switch($category->name)
                                             @case('Elettronica')
-                                            <h5  class="c-2 " id="typewriter-text2">La tua lavatrice fa i
+                                                <h5 class="c-2 " id="typewriter-text2">La tua lavatrice fa i
                                                     capricci?
                                                     Sostituiscila con una della categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Abbigliamento')
-                                            <h5  class="c-2 " id="typewriter-text2">Hai l'armadio vuoto?
+                                                <h5 class="c-2 " id="typewriter-text2">Hai l'armadio vuoto?
                                                     Riempilo con gli articoli della
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Bellezza')
-                                            <h5  class="c-2 " id="typewriter-text2">Cura la tua pelle con i
+                                                <h5 class="c-2 " id="typewriter-text2">Cura la tua pelle con i
                                                     prodotti della categoria
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Giardinaggio')
-                                            <h5  class="c-2 " id="typewriter-text2">Hai il pollice verde? Dai
+                                                <h5 class="c-2 " id="typewriter-text2">Hai il pollice verde? Dai
                                                     sfogo alla tua fantasia con la categoria "{{ __("ui.$category->name") }}"
                                                 </h5>
                                             @break
 
                                             @case('Giocattoli')
-                                            <h5  class="c-2 " id="typewriter-text2">Giochi sparsi per casa
+                                                <h5 class="c-2 " id="typewriter-text2">Giochi sparsi per casa
                                                     non sono abbastanza? Aggiungine
                                                     altri dalla categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Sport')
-                                            <h5  class="c-2 " id="typewriter-text2">Sei un tipo atletico? Dai
+                                                <h5 class="c-2 " id="typewriter-text2">Sei un tipo atletico? Dai
                                                     un'occhiata alla categoria
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Tecnologia')
-                                            <h5  class="c-2 " id="typewriter-text2">Dispositivo vecchio?
+                                                <h5 class="c-2 " id="typewriter-text2">Dispositivo vecchio?
                                                     Guarda le nostre offerte nella
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Libri e riviste')
-                                            <h5  class="c-2 " id="typewriter-text2">Trova il libro dei tuoi
+                                                <h5 class="c-2 " id="typewriter-text2">Trova il libro dei tuoi
                                                     sogni! Dai un occhiata alla
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Accessori')
-                                            <h5  class="c-2 " id="typewriter-text2">
+                                                <h5 class="c-2 " id="typewriter-text2">
                                                     I piccoli dettagli a volte fanno la differenza, cerca il
                                                     tuo stile nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Motori')
-                                            <h5  class="c-2 " id="typewriter-text2">Stai vendendo il tuo
+                                                <h5 class="c-2 " id="typewriter-text2">Stai vendendo il tuo
                                                     catorcio o ne stai cercando un altro?
                                                     Scoprilo nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
@@ -151,17 +151,20 @@
 
             {{-- crea articolo --}}
             <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
-                <a href="{{ route('createarticle') }}"
-                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 opacity-0" id="addArticle">
+                {{-- <a href="{{ route('createarticle') }}"
+                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
-                </a>
+                </a> --}}
+                <a href="{{ route('createarticle') }}" id="addArticle"
+                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0{{-- opacity-0 --}}"
+                    data-back="{{ __('ui.aggiungiProdotto2') }}" data-front="{{ __('ui.aggiungiUn')}} {{__('ui.prodotto') }}"></a>
             </div>
 
             {{-- caret --}}
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center mt-5"
                 id="caret">
-                <i class="fa-solid fa-angle-down c-4" id="caret-icon"></i>
+                <i class="fa-solid fa-angle-down" id="caret-icon"></i>
             </a>
 
 
