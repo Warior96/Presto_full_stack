@@ -49,7 +49,7 @@
                                 <p class="c-2">Invia la tua candidatura come revisore</p>
                                 <div class="col-3">
                                     {{-- bottone apertura modale --}}
-                                    <button type="button" class="btn btn-primary px-4 py-2 fs-5 rounded-4 shadow"
+                                    <button type="button" class="btn btn-primary px-4 py-2 fs-5  rounded-4 shadow"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         {{ __('ui.candidati') }}
                                     </button>
@@ -127,9 +127,9 @@
                         <div>
                             <h5 class="c-2">Richiedi di lavorare con noi</h5>
                             <p class="c-2">Invia la tua candidatura come revisore</p>
-                            <div class="col-3  ">
+                            <div class="col-4 ">
                                 {{-- bottone apertura modale --}}
-                                <button type="button" class="btn btn-primary px-3 py-2 fs-5 rounded shadow"
+                                <button type="button" class="btn btn-primary px-3 py-2 fs-5  rounded shadow"
                                     data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     {{ __('ui.candidati') }}
                                 </button>

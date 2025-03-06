@@ -153,7 +153,7 @@
                             <span class="fs-6 fw-normal">Autore:</span> {{ $article_to_check->user->name }}
                         </h4>
                         <p class="fs-5">
-                            <span class="fs-6">{{ __('ui.prezzo') }}: </span>€{{ $article_to_check->price }}
+                            <span class="fs-6">{{ __('ui.prezzo') }}: </span>{{ __('ui.€') }}{{ $article_to_check->price }}
                         </p>
                         <p class="fst-italic text-muted fs-5">
                             <span class="fs-6 fst-normal">{{ __('ui.categoria') }}: </span>
@@ -179,18 +179,18 @@
                     </div>
                     <div class="row pb-4 justify-content-around flex-row">
                         <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'
-                            class="col-5">
+                            class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-danger py-2 px-5 fw-bold"
+                            <button class="btn btn-cus btn-danger py-2 px-5 w-100 fw-bold"
                                 id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
 
                         <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
-                            class="col-5">
+                            class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-success py-2 px-5 fw-bold"
+                            <button class="btn btn-cus btn-success py-2 px-5 w-100 fw-bold"
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 

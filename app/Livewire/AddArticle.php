@@ -34,6 +34,9 @@ class AddArticle extends Component
 
     #[Validate('required', message: 'La categoria è obbligatoria')]
     public $category;
+    
+    #[Validate('required', message: 'La categoria è obbligatoria')]
+    public $condition;
 
     public $article;
 
