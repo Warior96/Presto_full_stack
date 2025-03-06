@@ -94,7 +94,6 @@ body {
 
 .btn-cus {
   transition: all 0.5s ease;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 #caret {
@@ -106,6 +105,7 @@ body {
 
 #caret-icon {
   scale: 2;
+  color: #adadaf;;
   animation: bounce 2s infinite;
   animation-delay: 8.5s;
   animation-fill-mode: both;
@@ -582,7 +582,7 @@ footer a {
 
 
 
-
+/* btn aggiungi un prodotto homepage */
 
 .btn-flip {
   opacity: 1;
@@ -613,6 +613,7 @@ footer a {
   padding: 1rem;
   width: 100%;
   color: #373232;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   border-radius: 1.2rem;
   display: block;
   transition: 0.5s;
@@ -627,6 +628,7 @@ footer a {
   left: 0;
   opacity: 1;
   color: #adadaf;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   border-radius: 1.2rem;
   display: block;
   padding: 1rem;
