@@ -1,6 +1,8 @@
 :root {
   --color-1: #e9693f;
+  --color-1-o: #e9693fc5;
   --color-2: #F5DEBA;
+  --color-2-o: #f5debaca;
   --color-3: #ffae18;
   --color-4: #5dc0b3;
   /* --color-4: #7AA981; */
@@ -52,8 +54,16 @@ nav a {
   background-color: var(--color-1);
 }
 
+.bg-1-o {
+  background-color: var(--color-1-o);
+}
+
 .bg-2 {
   background-color: var(--color-2);
+}
+
+.bg-2-o {
+  background-color: var(--color-2-o);
 }
 
 .bg-3 {
@@ -80,9 +90,19 @@ body {
 .vh-95 {
   height: 95vh;
 }
-.fs-6{
+
+.fs-6 {
   font-size: 1.50rem !important;
 }
+
+.fs-7 {
+  font-size: 1.15rem !important;
+}
+
+.fs-8 {
+  font-size: 0.75rem;
+}
+
 
 
 /* Homepage */
@@ -151,6 +171,16 @@ body {
 }
 
 /* Fine Carosello categorie */
+
+/* Ultimi Arrivi */
+
+.preview-onda {
+  width: 10vw;
+  height: 4vh;
+
+  padding-top: 0px;
+  margin-top: 0px;
+}
 
 /* Fine Homepage */
 
@@ -277,9 +307,7 @@ swiper-slide:nth-child(3n) {
   height: 300px;
 }
 
-.fs-7 {
-  font-size: 0.75rem;
-}
+
 
 
 /* footer */
@@ -400,6 +428,12 @@ footer a {
   right: 5px;
 }
 
+.btn-lr {
+  padding: 3px 10px 4px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
 
 
 
@@ -557,6 +591,15 @@ footer a {
   #btn-preview:hover #icon-preview {
     color: var(--color-6);
   }
+
+  .btn-lr:hover {
+    background-color: var(--color-1);
+  }
+
+  .btn-lr:active {
+    background-color: var(--color-1);
+  }
+
 }
 
 /* media query in: md tablet e sm smartphone*/
@@ -566,14 +609,14 @@ footer a {
 @media (min-width: 768px) {}
 
 /* Add Article- form */
-.price-container{
+.price-container {
   position: relative;
 
   display: flex;
   align-items: center;
 }
 
-.price-icon{
+.price-icon {
   position: absolute;
   display: block;
   text-align: center;
@@ -582,7 +625,7 @@ footer a {
   pointer-events: none;
 }
 
-.price-input{
+.price-input {
   padding-left: 25px;
 }
 

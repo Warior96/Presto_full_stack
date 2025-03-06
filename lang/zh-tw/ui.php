@@ -38,9 +38,9 @@ return [
     'elimina' => '删除',
     'selezionaCategoria' => '选择类别',
     'condizione' => '状态',
-    'nuovo' => '新品',
-    'usato' => '二手',
-    'ricondizionato' => '回收',
+    'new' => '新品',
+    'used' => '二手',
+    'reconditioned' => '回收',
     'immagine' => '图片',
     // login
     'login_email_required' => '必须填写邮箱。',

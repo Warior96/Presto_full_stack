@@ -173,14 +173,25 @@
 
     <section class="container">
 
-        {{-- ultimi arrivi --}}
-        <div class="row justify-content-center vh-95 pt-5" id="lastArticles">
-            <h3 class="col-12 text-center mb-0 mt-5">{{ __('ui.ultimiArrivi') }}</h3>
+        {{-- ULTIMI ARRIVI --}}
+
+        <div class="row justify-content-center min-vh-100 pt-5" id="lastArticles">
+
+            {{-- TITOLO E GRAZIA --}}
+            <div class="col-12 d-flex flex-column align-items-center">
+                <h3 class="d-inline display-4 text-center mb-0 mt-5 pb-3">{{ __('ui.ultimiArrivi') }}</h3>
+                <div class="d-flex justify-content-center">
+                    <img src="{{ asset('storage/background/onda1.png') }}" alt="" class="preview-onda">
+                    <img src="{{ asset('storage/background/onda2.png') }}" alt="" class="preview-onda">
+                </div>
+            </div>
             <div class="col-12">
 
+                {{-- CAROSELLO EFFETTIVO --}}
                 @if ($articles)
-                    <swiper-container class="mySwiper swiper-container-home" space-between="15" slides-per-view="3"
-                        pagination="false" loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true">
+                    <swiper-container class="mySwiper swiper-container-home preview-art-container" space-between="15"
+                        slides-per-view="3" pagination="false" loop="true" autoplay-delay="5000"
+                        autoplay-pause-on-mouse-enter="true">
                         @foreach ($articles as $article)
                             <swiper-slide class="my-1 swiper-slide-home">
                                 <div class="row justify-content-center p-0">
@@ -196,6 +207,7 @@
                 @endif
             </div>
         </div>
+
     </section>
 
     <x-footer></x-footer>
