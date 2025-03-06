@@ -28,6 +28,7 @@ class Article extends Model
         'price',
         'category_id',
         'user_id',
+        'condition'
     ];
 
     // relazione con users
