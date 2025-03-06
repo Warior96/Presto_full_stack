@@ -159,12 +159,22 @@
                             <span class="fs-6 fst-normal">{{ __('ui.categoria') }}: </span>
                             #{{ $article_to_check->category->name }}
                         </p>
+                        <div class="d-flex">
+                            <p class="mb-0 fs-6">
+                                {{ __('ui.condizione') }}:
+                            </p>
+                            <p class="fs-6  ms-2">
+                                {{ $article_to_check->condition }}
+                            </p>
+                        </div>
                         <p class="mb-0 fs-6">
                             {{ __('ui.descrizione') }}:
                         </p>
                         <p class="fs-5">
                             {{ $article_to_check->description }}
                         </p>
+                      
+
                     </div>
                     <div class="row">
                         @if (session()->has('success'))

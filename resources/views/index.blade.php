@@ -151,17 +151,20 @@
 
             {{-- crea articolo --}}
             <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
-                <a href="{{ route('createarticle') }}"
-                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 opacity-0" id="addArticle">
+                {{-- <a href="{{ route('createarticle') }}"
+                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
                     {{ __('ui.aggiungiProdotto') }}
-                </a>
+                </a> --}}
+                <a href="{{ route('createarticle') }}" id="addArticle"
+                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0{{-- opacity-0 --}}"
+                    data-back="{{ __('ui.aggiungiProdotto2') }}" data-front="{{ __('ui.aggiungiUn')}} {{__('ui.prodotto') }}"></a>
             </div>
 
             {{-- caret --}}
             <a href="#lastArticles"
                 class="d-inline-flex position-absolute text-center text-decoration-none d-flex justify-content-center align-items-center mt-5"
                 id="caret">
-                <i class="fa-solid fa-angle-down c-4" id="caret-icon"></i>
+                <i class="fa-solid fa-angle-down" id="caret-icon"></i>
             </a>
 
 

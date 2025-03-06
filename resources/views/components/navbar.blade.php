@@ -21,7 +21,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
-                            href="{{ route('createarticle') }}">{{ __('ui.aggiungiProdotto') }}</a>
+                            href="{{ route('createarticle') }}">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto')}}</a>
                     </li>
 
 
@@ -119,16 +119,16 @@
 
                 {{-- se l'utente è ospite vede il pulsante login --}}
                 @guest
-                    <li class="ms-3 nav-item ">
-                        <a class="nav-link  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
-                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
+                    <li class="me-2 nav-item ">
+                        <a class="nav-link mx-2  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
+                            href="{{ route('login') }}"><i class="fa-solid fa-arrow-right-to-bracket fs-6"></i></a>
                     </li>
                 @endguest
                 @auth
                     {{-- logout --}}
-                    <form action="{{ route('logout') }}" method="post" class="ms-3">
+                    <form action="{{ route('logout') }}" method="post" >
                         @csrf
-                        <button class="btn btn-dark">{{ __('ui.logout') }}</button>
+                        <button class="btn mx-2 "><i class="fa-solid fa-arrow-right-from-bracket fs-6"></i></button>
                     </form>
                 @endauth
             </ul>

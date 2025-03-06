@@ -27,7 +27,7 @@
         {{-- immagini --}}
         <div class="mb-3">
             <div class="d-flex justify-content-between">
-                <label class="form-label" for="temporary_images">Foto:</label>
+                <label class="form-label" for="temporary_images">{{ __('ui.immagine') }}:</label>
                 <span class="mt-1 fs-7">*massimo 5 alla volta</span>
             </div>
             <input type="file" wire:model.live="temporary_images" multiple
@@ -63,11 +63,11 @@
         @endif
           {{-- condizioni --}}
         <div class="mb-3">
-            <label class="form-label" for="condition">Condizioni</label>
+            <label class="form-label" for="condition">{{ __('ui.condizione') }}</label>
             <select wire:model.blur="condition"  class="form-select" id="condition">
-                <option value="new">Nuovo</option>
-                <option value="used">Usato</option>
-                <option value="reconditioned">Ricondizionato</option>
+                <option value="{{ __('ui.nuovo') }}"> {{ __('ui.nuovo') }}</option>
+                <option value="{{ __('ui.usato') }}">{{ __('ui.usato') }}</option>
+                <option value="{{ __('ui.ricondizionato') }}">{{ __('ui.ricondizionato') }}</option>
             </select>
             @error('condition')
                 <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
@@ -109,7 +109,7 @@
         </div>
 
         <button type="submit" class="btn bg-4 btn-cus w-100 p-3 mt-4 mb-1 fs-5"
-            id="addProduct">{{ __('ui.aggiungiProdotto') }}</button>
+            id="addProduct">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto')}}</button>
 
     </form>
 </div>

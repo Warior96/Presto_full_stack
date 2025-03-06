@@ -35,7 +35,7 @@ class AddArticle extends Component
     #[Validate('required', message: 'La categoria è obbligatoria')]
     public $category;
     
-    #[Validate('required', message: 'La categoria è obbligatoria')]
+    #[Validate('required', message: 'La condizione è obbligatoria')]
     public $condition;
 
     public $article;
@@ -55,6 +55,7 @@ class AddArticle extends Component
             "description" => $this->description,
             "price" => $this->price,
             "category_id" => $this->category,
+            "condition" => $this->condition,
             "user_id" => Auth::id(),
         ]);
 
