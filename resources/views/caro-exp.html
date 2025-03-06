@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <style>
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            /* background-color: aqua; */
+        }
+
+        swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            padding-bottom: 120px;
+
+        }
+
+        swiper-slide img {
+            display: block;
+            width: 80%;
+            background-color: blue;
+        }
+
+        .mySwiper swiper-slide {
+            position: relative;
+            /* background: white; */
+            border-radius: 10px;
+            /* overflow: hidden; */
+            /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); Ombra generica */
+        }
+
+        .mySwiper swiper-slide::after {
+            content: "";
+            position: absolute;
+            bottom: 100px;
+            /* Sposta l'ombra verso il basso */
+            left: 50%;
+            width: 80%;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.629);
+            filter: blur(10px);
+            transform: translateX(-50%);
+            z-index: -1;
+
+        }
+        .swiper-slide-shadow-left,
+        .swiper-slide-shadow-right {
+            width: 248px;
+            /* Modifica la larghezza dell'ombra */
+            height: 248px;
+            /* Modifica l'altezza dell'ombra */
+            opacity: 1;
+            /* Modifica l'opacità dell'ombra */
+        }
+    </style>
+</head>
+
+<body>
+
+    <swiper-container class="mySwiper " pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+        slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+        coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+        <swiper-slide>
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg " />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </swiper-slide>
+    </swiper-container>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
