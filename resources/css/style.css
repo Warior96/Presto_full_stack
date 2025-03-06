@@ -187,7 +187,7 @@ swiper-slide img {
 }
 
 swiper-slide .radius {
-  border-radius: 30px
+  border-radius: 15px
 }
 
 /* swiper-slide {
@@ -382,7 +382,17 @@ footer a {
   margin-bottom: 40px;
 }
 
+#labels {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
 
+#ratings {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 
 
 
@@ -433,23 +443,33 @@ footer a {
   width: 3px;
   height: 100%;
   background-color: var(--color-4);
-  animation: blink 0.5s infinite;
-  animation-timing-function: step-end;
+  animation: blink 0.5s steps(1) infinite, stopBlinking 0.1s forwards 5s;
+}
+
+@keyframes stopBlinking {
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes typing {
   0% {
     max-width: 0;
   }
+
   100% {
     max-width: calc(var(--characters) * 1ch);
   }
 }
 
 @keyframes blink {
-  0%, 75%, 100% {
+
+  0%,
+  75%,
+  100% {
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }

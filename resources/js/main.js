@@ -58,49 +58,50 @@ let typeWriters2 = document.querySelectorAll('#typewriter-text2');
 // });
 
 
-
 typeWriters.forEach((el, index) => {
-    let text = el.innerText;
-    el.style.visibility = "hidden";
-    if (index === 0) {
-        setTimeout(() => {
+  let text = el.innerText;
+  el.style.visibility = "hidden";
+  if (index === 0) {
+    setTimeout(() => {
+      el.style.visibility = "visible";
+      el.style.setProperty('--characters', text.length);
+    }, 2000);
+  } else {
+    el.classList.remove('typewriter')
+    el.style.visibility = "visible";
+    el.style.setProperty('--characters', text.length);
+  }
+
+});
+
+
+
+
+typeWriters2.forEach((el, index) => {
+  let text = el.innerText;
+  el.style.visibility = "hidden";
+  if (index === 0) {
+    setTimeout(() => {
+      el.classList.add('typewriter')
+      el.style.visibility = "visible";
+      el.style.setProperty('--characters', text.length);
+    }, 5000);
+  } else {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            el.classList.add('typewriter');
             el.style.visibility = "visible";
             el.style.setProperty('--characters', text.length);
-        }, 2000);
-    }else{
-            el.classList.remove('typewriter')
-            el.style.visibility = "visible";
-            el.style.setProperty('--characters', text.length);
-    }});
-
-
-
-
-    typeWriters2.forEach((el, index) => {
-        let text = el.innerText;
-        el.style.visibility = "hidden";
-        if (index === 0) {
-            setTimeout(() => {
-                el.classList.add('typewriter')
-                el.style.visibility = "visible";
-                el.style.setProperty('--characters', text.length);
-            }, 5000);
-        }else {
-            const observer = new IntersectionObserver((entries, observer) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                  el.classList.add('typewriter');
-                  el.style.visibility = "visible";
-                  el.style.setProperty('--characters', text.length);
-                  observer.disconnect();
-                }, 2000);
-                }
-              });
-            });
-            observer.observe(el);
-          }
-        });
+            observer.disconnect();
+          }, 2000);
+        }
+      });
+    });
+    observer.observe(el);
+  }
+});
 
 
 
@@ -172,6 +173,6 @@ typeWriters.forEach((el, index) => {
 // }, 7600);
 
 setTimeout(() => {
-    addArticle.classList.remove('opacity-0');
-    addArticle.classList.add('opacity-100');
+  addArticle.classList.remove('opacity-0');
+  addArticle.classList.add('opacity-100');
 }, 7700);
