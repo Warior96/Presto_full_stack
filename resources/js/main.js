@@ -176,3 +176,12 @@ setTimeout(() => {
   addArticle.classList.remove('opacity-0');
   addArticle.classList.add('opacity-100');
 }, 7700);
+
+
+let btnlight = document.querySelector('.btnlight')
+
+btnlight.addEventListener('click', ()=>{
+  btnlight.classList.toggle('button-clicked')
+  // document.body.classList.toggle('dark-mode');
+  btnlight.firstElementChild.classList.toggle('icon-clicked')
+})

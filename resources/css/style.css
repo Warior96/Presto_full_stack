@@ -74,13 +74,14 @@ nav a {
 
 body {
   background-color: var(--color-2);
+
 }
 
 .vh-95 {
   height: 95vh;
 }
 .fs-6{
-  font-size: 1.50rem !important; 
+  font-size: 1.50rem !important;
 }
 
 
@@ -645,4 +646,48 @@ footer a {
   background: #323237;
   content: attr(data-front);
   transform: translateY(0) rotateX(0);
+}
+
+
+
+
+
+
+.btnlight {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  outline: none;
+  border: 4px #323237 solid;
+  background: linear-gradient(145deg, #323237, #454242);
+  box-shadow: inset 2px 2px 0px #7d7c7e, inset -2px -2px 0px #1c1c1c;
+  color: var(--color-2);
+}
+
+.btnlight span {
+  color: inherit;
+  font-size: 17px;
+}
+
+.btnlight::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: inherit;
+  background: linear-gradient(145deg, #262626, #606060);
+  /* box-shadow: 11px 11px 22px #141414, -11px -11px 22px #525252; */
+  z-index: -1;
+}
+
+.button-clicked {
+  background: linear-gradient(-185deg, #131313, #444245);
+  box-shadow: inset -2px -2px 0px #5e5e5e, inset 2px 2px 0px #1c1c1c;
+}
+
+.icon-clicked{
+  color: #49fb35 !important;
+  text-shadow: 0px 0px 20px #49fb35;
 }

@@ -85,9 +85,15 @@
                     </form>
                 @endif
 
-                {{--  language --}}
-                <li
-                    class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : '' }} my-auto ps-2">
+                <li class="nav-item {{Route::currentRouteName() == 'homepage' ? 'ms-auto' : "ms-4" }}  my-auto">
+                    <button class="btnlight">
+                        <span class="fa-solid fa-lightbulb"></span>
+                    </button>
+                </li>
+
+                    {{--  language --}}
+                    <li
+                    class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
