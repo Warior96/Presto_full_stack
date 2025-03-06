@@ -28,6 +28,8 @@
 // let typewriter1 = document.querySelectorAll('.typewriter1');
 // let typewriter2 = document.querySelectorAll('.typewriter2');
 let addArticle = document.querySelector('#addArticle');
+let typeWriters = document.querySelectorAll('.typewriter');
+let typeWriters2 = document.querySelectorAll('#typewriter-text2');
 
 // typewriter1.forEach(el => {
 //     setTimeout(() => {
@@ -55,7 +57,7 @@ let addArticle = document.querySelector('#addArticle');
 //     }
 // });
 
-let typeWriters = document.querySelectorAll('.typewriter');
+
 
 typeWriters.forEach((el, index) => {
     let text = el.innerText;
@@ -72,7 +74,7 @@ typeWriters.forEach((el, index) => {
     }});
 
 
-    let typeWriters2 = document.querySelectorAll('#typewriter-text2');
+
 
     typeWriters2.forEach((el, index) => {
         let text = el.innerText;
