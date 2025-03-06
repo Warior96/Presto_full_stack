@@ -3,6 +3,7 @@ return [
     // homepage
     'home' => 'Homepage',
     'aggiungiProdotto' => 'Aggiungi un prodotto',
+    'aggiungiProdotto2' => 'E concludi la vendita',
     'mostraProdotti' => 'Mostra tutti i prodotti',
     'categorie' => 'Categorie',
     'revisiona' => 'Revisiona',

@@ -494,13 +494,13 @@ footer a {
 @media (min-width: 992px) {
 
   /* hover */
-  .btn-cus:hover {
+  /* .btn-cus:hover {
     background-color: var(--color-1);
     color: var(--color-5);
     border: 1px solid var(--color-2);
     scale: 1.02;
     box-shadow: 3px 5px 3px var(--color-5);
-  }
+  } */
 
   #a-dettaglio:hover {
     background-color: var(--color-4);
@@ -578,4 +578,62 @@ footer a {
 
 .price-input{
   padding-left: 25px;
+}
+
+
+
+
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-flip:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 1rem;
+  width: 100%;
+  color: #373232;
+  border-radius: 1.2rem;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  border-radius: 1.2rem;
+  display: block;
+  padding: 1rem;
+  line-height: 40px;
+  transition: 0.5s;
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
 }
