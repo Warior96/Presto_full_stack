@@ -2,7 +2,8 @@
 return [
     // homepage
     'home' => 'Homepage',
-    'aggiungiProdotto' => 'Aggiungi un prodotto',
+    'aggiungiUn' => 'Aggiungi un',
+    'prodotto' => 'Prodotto',
     'mostraProdotti' => 'Mostra tutti i prodotti',
     'categorie' => 'Categorie',
     'revisiona' => 'Revisiona',
@@ -36,5 +37,19 @@ return [
     'modifica' => 'Modifica',
     'elimina' => 'Elimina',
     'selezionaCategoria' => 'Seleziona categoria',
-
+    'condizione' => 'Condizione',
+    'nuovo' => 'Nuovo',
+    'usato' => 'Usato',
+    'ricondizionato' => 'Ricondizionato',
+    'immagine' => 'Immagine',
+    // login
+    'login_email_required' => 'L\'email è obbligatoria.',
+    'login_email_invalid' => 'Inserisci un indirizzo email valido.',
+    'login_password_required' => 'La password è obbligatoria.',
+    'login_password_min' => 'La password deve contenere almeno 8 caratteri.',
+    'login_credentials_invalid' => 'Credenziali non valide.',
+    // register
+    'register_name_required' => 'Il nome è obbligatorio.',
+    'register_email_unique' => 'Questa email è gia registrata.',
+    'register_password_confirmed' => 'Le password non corrispondono.',
 ];

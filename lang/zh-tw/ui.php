@@ -2,7 +2,8 @@
 return [
     // homepage
     'home' => '首页',
-    'aggiungiProdotto' => '发布新产品',
+    'aggiungiUn' => '发布新',
+    'prodotto' => '产品',
     'mostraProdotti' => '全部',
     'categorie' => '分类',
     'revisiona' => '审核',
@@ -36,4 +37,19 @@ return [
     'modifica' => '编辑',
     'elimina' => '删除',
     'selezionaCategoria' => '选择类别',
+    'condizione' => '状态',
+    'nuovo' => '新品',
+    'usato' => '二手',
+    'ricondizionato' => '回收',
+    'immagine' => '图片',
+    // login
+    'login_email_required' => '必须填写邮箱。',
+    'login_email_invalid' => '邮箱格式不正确。',
+    'login_password_required' => '必须填写密码。',
+    'login_password_min' => '密码必须至少包含8个字符。',
+    'login_credentials_invalid' => '邮箱或密码不正确。',
+    // register
+    'register_name_required' => '必须填写用户名。',
+    'register_email_unique' => '该邮箱已经注册。',
+    'register_password_confirmed' => '输入的密码不一致。',
 ];

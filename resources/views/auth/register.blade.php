@@ -31,7 +31,7 @@
                 </div>
                 <button type="submit" class="btn btn-cus bg-4 w-100 p-3 mt-4 fs-5" id="btn-register">{{ __('ui.registrati') }}</button>
                 <div class="text-center mt-4">
-                    <a href="{{ route('login') }}" class="text-decoration-none c-2 fs-5">Sei gia registrato? Loggati</a>
+                    <a href="{{ route('login') }}" class="text-decoration-none c-2 fs-5">Sei gia {{__('ui.registrati')}}? Loggati</a>
                 </div>
             </form>
         </div>
