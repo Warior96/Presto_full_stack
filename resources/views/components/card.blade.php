@@ -7,7 +7,7 @@
         {{-- </div> --}}
         <div class="card-body">
             <h4 class="card-title">{{ $article->title }}</h4>
-            <h6 class="card-subtitle text-body-secondary"> {{ $article->price }} €</h6>
+            <h6 class="card-subtitle text-body-secondary"> {{ $article->price }} {{ __('ui.€') }}</h6>
             <div class=" mt-5 px-3">
                 <a href="{{ route('article.show', compact('article')) }}" class="btn btn-cus bg-2 text-black w-100 mb-2"
                     id="a-dettaglio">{{ __('ui.dettaglio') }}</a>

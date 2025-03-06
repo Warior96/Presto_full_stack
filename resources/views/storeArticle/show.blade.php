@@ -28,7 +28,7 @@
                 <h2 class="display-5 ms-4"><span class="fw-bold">{{ __('ui.titolo') }}:
                     </span>{{ $article->title }}</h2>
                 <div class=" h-75 m-4">
-                    <h4 class="fw-bold mb-3">{{ __('ui.prezzo') }}: €{{ $article->price }}</h4>
+                    <h4 class="fw-bold mb-3">{{ __('ui.prezzo') }}: {{ __('ui.€') }}{{ $article->price }}</h4>
                     <h4 class="fw-bold mb-3">{{ __('ui.categoria') }}: <span
                             class="text-muted fst-italic">#{{ __("ui.{$article->category->name}") }} </span></h4>
                     <p class="fs-5 pt-3">{{ __('ui.descrizione') }}: {{ $article->description }}</p>

@@ -61,6 +61,20 @@
                 </div>
             </div>
         @endif
+          {{-- condizioni --}}
+        <div class="mb-3">
+            <label class="form-label" for="condition">Condizioni</label>
+            <select wire:model.blur="condition"  class="form-select" id="condition">
+                <option value="new">Nuovo</option>
+                <option value="used">Usato</option>
+                <option value="reconditioned">Ricondizionato</option>
+            </select>
+            @error('condition')
+                <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
 
         {{-- prezzo --}}
         <div class="mb-3">
