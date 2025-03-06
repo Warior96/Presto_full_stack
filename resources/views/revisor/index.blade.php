@@ -17,16 +17,16 @@
                                 thumbs-swiper=".mySwiper2-revisor" space-between="10" free-mode="true"
                                 slides-per-view="2.4">
                                 @foreach ($article_to_check->images as $key => $image)
-                                    <swiper-slide class="swiper-slide-revisor rounded position-relative">
+                                    <swiper-slide class="swiper-slide-revisor rounded position-relative mx-auto">
 
                                         <img src="{{ $image->getUrl(600, 600) }}" class=""
                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                         <div class="dropdown dropend" id="labels">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            <button class="btn-lr bg-1-o dropdown-toggle" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 Labels
                                             </button>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu bg-2-o">
                                                 <li>
                                                     <div class="px-2 py-1">
                                                         @if ($image->labels)
@@ -42,11 +42,11 @@
                                         </div>
 
                                         <div class="dropdown dropstart" id="ratings">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            <button class="btn-lr  bg-1-o dropdown-toggle" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 Ratings
                                             </button>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu bg-2-o">
                                                 <li>
 
                                                     <div class="row px-2 py-1">
@@ -147,33 +147,48 @@
                 <div class="col-md-3 d-flex justify-content-between flex-column">
                     <div class="row">
                         <h2 class="mb-3">
-                            <span class="fs-6 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
+                            <span class="fs-7 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
                         </h2>
                         <h4 class="mb-3">
-                            <span class="fs-6 fw-normal">Autore:</span> {{ $article_to_check->user->name }}
+                            <span class="fs-7 fw-normal">Autore:</span> {{ $article_to_check->user->name }}
                         </h4>
                         <p class="fs-5">
-                            <span class="fs-6">{{ __('ui.prezzo') }}: </span>{{ __('ui.€') }}{{ $article_to_check->price }}
+                            <span class="fs-7">{{ __('ui.prezzo') }}:
+                            </span>{{ __('ui.€') }}{{ $article_to_check->price }}
                         </p>
                         <p class="fst-italic text-muted fs-5">
-                            <span class="fs-6 fst-normal">{{ __('ui.categoria') }}: </span>
+                            <span class="fs-7 fst-normal">{{ __('ui.categoria') }}: </span>
                             #{{ $article_to_check->category->name }}
                         </p>
-                        <div class="d-flex">
-                            <p class="mb-0 fs-6">
+                        <p class="fs-5">
+                            <span class="mb-0 fs-7">
                                 {{ __('ui.condizione') }}:
-                            </p>
-                            <p class="fs-6  ms-2">
-                                {{ $article_to_check->condition }}
-                            </p>
-                        </div>
-                        <p class="mb-0 fs-6">
+                            </span>
+                            @switch($article_to_check->condition)
+                                @case('new')
+                                    {{ __('ui.new') }}
+                                @break
+
+                                @case('used')
+                                    {{ __('ui.used') }}
+                                @break
+
+                                @case('reconditioned')
+                                    {{ __('ui.reconditioned') }}
+                                @break
+
+                                @default
+                                    Nessuna {{ __('ui.condizione') }} indicata
+                            @endswitch
+                        </p>
+                        <p class="mb-0 fs-7">
                             {{ __('ui.descrizione') }}:
                         </p>
                         <p class="fs-5">
                             {{ $article_to_check->description }}
                         </p>
-                      
+
+
 
                     </div>
                     <div class="row">

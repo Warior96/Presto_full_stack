@@ -38,9 +38,9 @@ return [
     'elimina' => 'Delete',
     'selezionaCategoria' => 'Select category',
     'condizione' => 'Condition',
-    'nuovo' => 'New',
-    'usato' => 'Used',
-    'ricondizionato' => 'Reconditioned',
+    'new' => 'New',
+    'used' => 'Used',
+    'reconditioned' => 'Reconditioned',
     'immagine' => 'Image',
     // login
     'login_email_required' => 'The email is required.',
