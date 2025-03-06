@@ -1,7 +1,7 @@
 <x-layout>
     <header class="container mt-5 pt-5 vh-100">
         <div class="row justify-content-center pt-3">
-            <h1 class="col-12 display-4 text-center mb-3">Login</h1>
+            <h1 class="col-12 display-4 text-center mb-3">{{ __('ui.login') }}</h1>
             {{-- <div class="col-6">
                 <x-error></x-error>
             </div> --}}
@@ -58,8 +58,7 @@
                     id="btn-login">{{ __('ui.login') }}</button>
 
                 <div class="text-center mt-4">
-                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non sei registrato?
-                        Registrati</a>
+                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non sei {{__('ui.registrati')}}? {{__('ui.registrati')}}</a>
                 </div>
 
             </form>
