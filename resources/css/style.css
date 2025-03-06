@@ -382,18 +382,6 @@ footer a {
   margin-bottom: 40px;
 }
 
-#labels {
-  position: absolute;
-  top: 0;
-  left: 10px;
-}
-
-#ratings {
-  position: absolute;
-  top: 0;
-  right: 10px;
-}
-
 
 
 
@@ -425,47 +413,45 @@ footer a {
 
 }
 
-
 /* animazione macchina da scrivere */
 .typewriter {
-  overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange;
-  /* The typwriter cursor */
+  display: inline-block;
+  max-width: 0;
+  animation: typing 4s steps(var(--characters)) forwards;
   white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em;
-  /* Adjust as needed */
-  animation:
-    typing 4s steps(50, end),
-    blink-caret .75s step-end infinite;
+  overflow: hidden;
+  position: relative;
+  padding-right: 10px;
+
 }
 
-.delay {
-  animation-delay: 3s;
+.typewriter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-4);
+  animation: blink 0.5s infinite;
+  animation-timing-function: step-end;
 }
 
 @keyframes typing {
-  from {
-    width: 0
+  0% {
+    max-width: 0;
   }
-
-  to {
-    width: 100%
+  100% {
+    max-width: calc(var(--characters) * 1ch);
   }
 }
 
-@keyframes blink-caret {
-
-  from,
-  to {
-    border-color: transparent
+@keyframes blink {
+  0%, 75%, 100% {
+    opacity: 1;
   }
-
-  50% {
-    border-color: var(--color-5);
+  25% {
+    opacity: 0;
   }
 }
 

@@ -25,8 +25,8 @@
 
 
 
-let typewriter1 = document.querySelectorAll('.typewriter1');
-let typewriter2 = document.querySelectorAll('.typewriter2');
+// let typewriter1 = document.querySelectorAll('.typewriter1');
+// let typewriter2 = document.querySelectorAll('.typewriter2');
 let addArticle = document.querySelector('#addArticle');
 
 // typewriter1.forEach(el => {
@@ -39,21 +39,68 @@ let addArticle = document.querySelector('#addArticle');
 //     }, 4850);
 // });
 
-typewriter1.forEach((el, index) => {
+// typewriter1.forEach((el, index) => {
+//     if (index === 0) {
+//         setTimeout(() => {
+//             el.classList.add('typewriter');
+//             el.classList.remove('invisible');
+//         }, 2000);
+//         setTimeout(() => {
+//             el.style.border = 'none';
+//         }, 4850);
+//     } else {
+//             // el.classList.add('typewriter');
+//             el.classList.remove('invisible');
+//             // el.style.border = 'none';
+//     }
+// });
+
+let typeWriters = document.querySelectorAll('.typewriter');
+
+typeWriters.forEach((el, index) => {
+    let text = el.innerText;
+    el.style.visibility = "hidden";
     if (index === 0) {
         setTimeout(() => {
-            el.classList.add('typewriter');
-            el.classList.remove('invisible');
+            el.style.visibility = "visible";
+            el.style.setProperty('--characters', text.length);
         }, 2000);
-        setTimeout(() => {
-            el.style.border = 'none';
-        }, 4850);
-    } else {
-            // el.classList.add('typewriter');
-            el.classList.remove('invisible');
-            // el.style.border = 'none';
-    }
-});
+    }else{
+            el.classList.remove('typewriter')
+            el.style.visibility = "visible";
+            el.style.setProperty('--characters', text.length);
+    }});
+
+
+    let typeWriters2 = document.querySelectorAll('#typewriter-text2');
+
+    typeWriters2.forEach((el, index) => {
+        let text = el.innerText;
+        el.style.visibility = "hidden";
+        if (index === 0) {
+            setTimeout(() => {
+                el.classList.add('typewriter')
+                el.style.visibility = "visible";
+                el.style.setProperty('--characters', text.length);
+            }, 5000);
+        }else {
+            const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                  el.classList.add('typewriter');
+                  el.style.visibility = "visible";
+                  el.style.setProperty('--characters', text.length);
+                  observer.disconnect();
+                }, 2000);
+                }
+              });
+            });
+            observer.observe(el);
+          }
+        });
+
+
 
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
@@ -78,32 +125,32 @@ typewriter1.forEach((el, index) => {
 //     }
 // });
 
-let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            let el = entry.target;
-            setTimeout(() => {
-                el.classList.remove('invisible');
-                el.classList.add('typewriter');
-            }, time1);
-            setTimeout(() => {
-                el.style.border = 'none';
-            }, time2);
-        }
-    });
-});
+// let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             let el = entry.target;
+//             setTimeout(() => {
+//                 el.classList.remove('invisible');
+//                 el.classList.add('typewriter');
+//             }, time1);
+//             setTimeout(() => {
+//                 el.style.border = 'none';
+//             }, time2);
+//         }
+//     });
+// });
 
 // Creiamo un singolo osservatore per ciascuna configurazione di tempo
-let observer1 = intervallo2(5000, 20600);
-let observer2 = intervallo2(1000, 15600);
+// let observer1 = intervallo2(5000, 20600);
+// let observer2 = intervallo2(1000, 15600);
 
-typewriter2.forEach((el, index) => {
-    if (index === 0) {
-        observer1.observe(el);
-    } else {
-        observer2.observe(el);
-    }
-});
+// typewriter2.forEach((el, index) => {
+//     if (index === 0) {
+//         observer1.observe(el);
+//     } else {
+//         observer2.observe(el);
+//     }
+// });
 
 
 
