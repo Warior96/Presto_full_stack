@@ -46,8 +46,7 @@
             <div class="row">
                 <div class="col-12">
                     <p>Preview delle foto:</p>
-                    <div
-                        class="row mx-1 bg-white rounded shadow py-2 justify-content-center align-items-center mb-3">
+                    <div class="row mx-1 bg-white rounded shadow py-2 justify-content-center align-items-center mb-3">
                         @foreach ($images as $key => $image)
                             <div
                                 class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items center my-3 position-relative">
@@ -66,7 +65,11 @@
         {{-- prezzo --}}
         <div class="mb-3">
             <label class="form-label" for="price">{{ __('ui.prezzo') }}</label>
-            <input type="number" step="0.01" class="form-control" wire:model.blur="price" id="price">
+            <div class="price-container">
+                <i class="price-icon">{{ __('ui.€') }}</i>
+                <input type="number" step="0.01" class="form-control price-input" wire:model.blur="price" id="price">
+            </div>
+
             @error('price')
                 <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
                     {{ $message }}

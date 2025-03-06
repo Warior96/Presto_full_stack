@@ -558,3 +558,24 @@ footer a {
 
 /* media query in: lg desktop e md tablet*/
 @media (min-width: 768px) {}
+
+/* Add Article- form */
+.price-container{
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.price-icon{
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 25px;
+
+  pointer-events: none;
+}
+
+.price-input{
+  padding-left: 25px;
+}
