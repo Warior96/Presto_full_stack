@@ -31,9 +31,10 @@ return [
     'titolo' => 'Titolo',
     'descrizione' => 'Descrizione',
     'prezzo' => 'Prezzo',
+    '€' => '€',
     'categoria' => 'Categoria',
     'modifica' => 'Modifica',
     'elimina' => 'Elimina',
     'selezionaCategoria' => 'Seleziona categoria',
-   
+
 ];
