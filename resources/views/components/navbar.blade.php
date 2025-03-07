@@ -21,7 +21,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
-                            href="{{ route('createarticle') }}">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto')}}</a>
+                            href="{{ route('createarticle') }}">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}</a>
                     </li>
 
 
@@ -65,7 +65,8 @@
                         <li class="nav-item position-relative">
                             <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
                                 href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
-                                <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+                                    id="revisor-badge">
                                     {{ \App\Models\Article::toBeRevisedCount() }}
                                 </span>
                             </a>
@@ -73,27 +74,31 @@
                     @endif
                 @endauth
 
-                {{-- search --}}
-                @if (Route::currentRouteName() != 'homepage')
-                    <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex ms-auto">
-                        <div class="input-group">
-                            <input type="search" name="query" class="form-control"
-                                placeholder="{{ __('ui.cerca') }}" aria-label="search" value="{{ $query }}">
-                            <button class="input-group-text btn " type="submit" id="basic-addon2"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </form>
-                @endif
+                {{-- <li class="ms-lg-auto"> --}}
 
-                <li class="nav-item {{Route::currentRouteName() == 'homepage' ? 'ms-auto' : "ms-4" }}  my-auto">
+
+                    {{-- search --}}
+                    @if (Route::currentRouteName() != 'homepage')
+                        <form action="{{ route('article.search') }}" method="GET" role="search"
+                            class="d-flex ms-lg-auto ms-1 me-2 my-2 my-md-2 ms-md-1 me-md-3 my-lg-0 mx-lg-0">
+                            <div class="input-group">
+                                <input type="search" name="query" class="form-control"
+                                    placeholder="{{ __('ui.cerca') }}" aria-label="search"
+                                    value="{{ $query }}">
+                                <button class="input-group-text btn " type="submit" id="basic-addon2"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+                    @endif
+
+                <li class="nav-item {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
                     <button class="btnlight">
                         <span class="fa-solid fa-lightbulb"></span>
                     </button>
                 </li>
 
-                    {{--  language --}}
-                    <li
-                    class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
+                {{--  language --}}
+                <li class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
@@ -132,7 +137,7 @@
                 @endguest
                 @auth
                     {{-- logout --}}
-                    <form action="{{ route('logout') }}" method="post" >
+                    <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="btn mx-2 "><i class="fa-solid fa-arrow-right-from-bracket fs-6"></i></button>
                     </form>

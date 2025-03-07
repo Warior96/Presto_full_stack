@@ -12,8 +12,8 @@
         <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
 
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center pb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
-                    Emporium Shop</h1>
+                <h1 class=" display-1 text-center pb-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                    EMPORIUM SHOP</h1>
             </div>
 
             {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
@@ -29,83 +29,83 @@
             <x-success />
 
             {{-- carosello categorie --}}
-            <div class="col-12 ">
+            <div class="col-12 overflow-hidden">
                 <swiper-container class="mySwiper" thumbs-swiper=".mySwiper2-index" space-between="10" loop="true"
                     autoplay-delay="12000" autoplay-pause-on-mouse-enter="true">
                     @foreach ($categories as $category)
-                        <swiper-slide class="my-1">
+                        <swiper-slide class="my-1 overflow-hidden">
                             <div class="row justify-content-center p-0">
                                 <div class="col-12 container-img-card p-0">
                                     <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
                                     <div
                                         class="black-opacity radius d-flex flex-column justify-content-center align-items-center">
                                         @auth
-                                            <h4 class="typewriter c-2" id="typewriter-text">
+                                            <h4 class="typewriter c-2 mb-3" id="typewriter-text">
                                                 Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche
                                                 oggi?
                                             </h4>
                                         @else
-                                            <h4 class="typewriter c-2" id="typewriter-text">
+                                            <h4 class="typewriter c-2 mb-3" id="typewriter-text">
                                                 Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
                                             </h4>
                                         @endauth
                                         @switch($category->name)
                                             @case('Elettronica')
-                                                <h5 class="c-2 " id="typewriter-text2">La tua lavatrice fa i
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">La tua lavatrice fa i
                                                     capricci?
                                                     Sostituiscila con una della categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Abbigliamento')
-                                                <h5 class="c-2 " id="typewriter-text2">Hai l'armadio vuoto?
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Hai l'armadio vuoto?
                                                     Riempilo con gli articoli della
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Bellezza')
-                                                <h5 class="c-2 " id="typewriter-text2">Cura la tua pelle con i
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Cura la tua pelle con i
                                                     prodotti della categoria
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Giardinaggio')
-                                                <h5 class="c-2 " id="typewriter-text2">Hai il pollice verde? Dai
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Hai il pollice verde? Dai
                                                     sfogo alla tua fantasia con la categoria "{{ __("ui.$category->name") }}"
                                                 </h5>
                                             @break
 
                                             @case('Giocattoli')
-                                                <h5 class="c-2 " id="typewriter-text2">Giochi sparsi per casa
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Giochi sparsi per casa
                                                     non sono abbastanza? Aggiungine
                                                     altri dalla categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Sport')
-                                                <h5 class="c-2 " id="typewriter-text2">Sei un tipo atletico? Dai
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Sei un tipo atletico? Dai
                                                     un'occhiata alla categoria
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Tecnologia')
-                                                <h5 class="c-2 " id="typewriter-text2">Dispositivo vecchio?
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Dispositivo vecchio?
                                                     Guarda le nostre offerte nella
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Libri e riviste')
-                                                <h5 class="c-2 " id="typewriter-text2">Trova il libro dei tuoi
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Trova il libro dei tuoi
                                                     sogni! Dai un occhiata alla
                                                     categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Accessori')
-                                                <h5 class="c-2 " id="typewriter-text2">
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">
                                                     I piccoli dettagli a volte fanno la differenza, cerca il
                                                     tuo stile nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Motori')
-                                                <h5 class="c-2 " id="typewriter-text2">Stai vendendo il tuo
+                                                <h5 class="c-2 mb-3" id="typewriter-text2">Stai vendendo il tuo
                                                     catorcio o ne stai cercando un altro?
                                                     Scoprilo nella categoria "{{ __("ui.$category->name") }}"</h5>
                                             @break
@@ -130,10 +130,14 @@
                     @endforeach
                 </swiper-container>
 
-                <swiper-container class="mySwiper2-index" space-between="10" slides-per-view="5" free-mode="true"
-                    watch-slides-progress="true">
+                <swiper-container class="mySwiper2-index" free-mode="true" watch-slides-progress="true"
+                    breakpoints='{
+                        "0": { "slidesPerView": 2, "spaceBetween": 2 },
+                        "768": { "slidesPerView": 4, "spaceBetween": 5 },
+                        "1024": { "slidesPerView": 5, "spaceBetween": 10 }
+                    }'>
                     @foreach ($categories as $category)
-                        <swiper-slide class="my-1" id="point">
+                        <swiper-slide class="my-1 point">
                             <div class="row justify-content-center p-0 position-relative">
                                 <div class="col-12 container-little-img-card p-0">
                                     <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
@@ -157,7 +161,8 @@
                 </a> --}}
                 <a href="{{ route('createarticle') }}" id="addArticle"
                     class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0{{-- opacity-0 --}}"
-                    data-back="{{ __('ui.aggiungiProdotto2') }}" data-front="{{ __('ui.aggiungiUn')}} {{__('ui.prodotto') }}"></a>
+                    data-back="{{ __('ui.aggiungiProdotto2') }}"
+                    data-front="{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}"></a>
             </div>
 
             {{-- caret --}}
@@ -190,8 +195,12 @@
                 {{-- CAROSELLO EFFETTIVO --}}
                 @if ($articles)
                     <swiper-container class="mySwiper swiper-container-home preview-art-container" space-between="15"
-                        slides-per-view="3" pagination="false" loop="true" autoplay-delay="5000"
-                        autoplay-pause-on-mouse-enter="true">
+                        pagination="false" loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true"
+                        breakpoints='{
+                            "0": { "slidesPerView": 1 },
+                            "768": { "slidesPerView": 2 },
+                            "1024": { "slidesPerView": 3 }
+                        }'>
                         @foreach ($articles as $article)
                             <swiper-slide class="my-1 swiper-slide-home">
                                 <div class="row justify-content-center p-0">

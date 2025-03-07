@@ -141,7 +141,7 @@ body {
 
 /* Carosello categorie */
 .black-opacity {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.36);
   top: 0px;
   left: 0px;
   width: 100%;
@@ -165,7 +165,7 @@ body {
 }
 
 .container-little-img-card {
-  width: 14vw;
+  width: 35vw;
   height: 7vh;
   position: relative;
 }
@@ -440,7 +440,7 @@ footer a {
   background-color: rgba(245, 222, 186, 0.516);
 }
 
-#point {
+.point {
   cursor: pointer;
 }
 
@@ -466,6 +466,10 @@ footer a {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
+}
+
+#revisor-badge {
+  left: 21%;
 }
 
 
@@ -561,7 +565,20 @@ footer a {
 @media (max-width: 767px) {}
 
 /* media query solo per md tablet */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* primo swiper home */
+  .container-little-img-card {
+    width: 18vw;
+    height: 5vh;
+    position: relative;
+  }
+
+  #revisor-badge {
+    left: 10%;
+  }
+
+}
 
 /* media query solo per lg desktop */
 @media (min-width: 992px) {
@@ -631,6 +648,17 @@ footer a {
 
   .btn-lr:active {
     background-color: var(--color-1);
+  }
+
+  /* primo carosello home */
+  .container-little-img-card {
+    width: 14vw;
+    height: 7vh;
+    position: relative;
+  }
+
+  #revisor-badge {
+    left: 100%;
   }
 
 }
