@@ -304,7 +304,40 @@ swiper-slide:nth-child(3n) {
   background-position: center;
   background-size: cover;
   width: 300px;
+  height: 350px;
+}
+
+.swiper-container-show .swiper-slide-show {
+  position: relative;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.swiper-container-show .swiper-slide-show::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+
+  left: 50%;
+  width: 90%;
+  height: 30px;
+
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.684) 0%,
+      rgba(0, 0, 0, 0.578) 50%,
+      rgba(0, 0, 0, 0.225) 100%);
+  filter: blur(10px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  width: 300px;
   height: 300px;
+  opacity: 1;
+  border-radius: 10px;
 }
 
 
@@ -730,7 +763,7 @@ footer a {
   box-shadow: inset -2px -2px 0px #5e5e5e, inset 2px 2px 0px #1c1c1c;
 }
 
-.icon-clicked{
+.icon-clicked {
   color: #49fb35 !important;
   text-shadow: 0px 0px 20px #49fb35;
 }

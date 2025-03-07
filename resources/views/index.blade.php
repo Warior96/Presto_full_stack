@@ -175,18 +175,18 @@
 
         {{-- ULTIMI ARRIVI --}}
 
-        <div class="row justify-content-center min-vh-100 pt-5" id="lastArticles">
+        <div class="row justify-content-center vh-95 pt-4" id="lastArticles">
 
             {{-- TITOLO E GRAZIA --}}
-            <div class="col-12 d-flex flex-column align-items-center">
-                <h3 class="d-inline display-4 text-center mb-0 mt-5 pb-3">{{ __('ui.ultimiArrivi') }}</h3>
-                <div class="d-flex justify-content-center">
+            <div class="col-12 d-flex flex-column align-items-center ">
+                <h3 class="d-inline display-4 text-center mb-0 pt-5 pb-3">{{ __('ui.ultimiArrivi') }}</h3>
+                {{-- <div class="d-flex justify-content-center">
                     <img src="{{ asset('storage/background/onda1.png') }}" alt="" class="preview-onda">
                     <img src="{{ asset('storage/background/onda2.png') }}" alt="" class="preview-onda">
-                </div>
+                </div> --}}
             </div>
-            <div class="col-12">
 
+            <div class="col-12">
                 {{-- CAROSELLO EFFETTIVO --}}
                 @if ($articles)
                     <swiper-container class="mySwiper swiper-container-home preview-art-container" space-between="15"

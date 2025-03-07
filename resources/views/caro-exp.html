@@ -54,22 +54,24 @@
         .mySwiper swiper-slide::after {
             content: "";
             position: absolute;
-            bottom: 100px;
+            bottom: 140px;
             /* Sposta l'ombra verso il basso */
             left: 50%;
-            width: 80%;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.629);
+            width: 90%;
+            height: 30px;
+            /* background: rgba(0, 0, 0, 0.629); */
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.903) 0%, rgba(0, 0, 0, 0.053) 100%);
             filter: blur(10px);
-            transform: translateX(-50%);
+            transform: translate(-62%, -50%);
             z-index: -1;
 
         }
+
         .swiper-slide-shadow-left,
         .swiper-slide-shadow-right {
             width: 248px;
             /* Modifica la larghezza dell'ombra */
-            height: 248px;
+            height: 241px;
             /* Modifica l'altezza dell'ombra */
             opacity: 1;
             /* Modifica l'opacità dell'ombra */
