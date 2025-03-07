@@ -10,7 +10,9 @@
     <div class="container-fluid">
         @if ($article_to_check)
             <div class="row justify-content-center pt-4 mx-5">
-                <div class="col-md-9 ">
+                <div class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif 
+                    @if ($article_to_check->images->count() == 1) col-md-8 @endif
+                    ">
                     <div class="row justify-content-center me-2">
                         @if ($article_to_check->images->count())
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
@@ -31,7 +33,12 @@
                                                     <div class="px-2 py-1">
                                                         @if ($image->labels)
                                                             @foreach ($image->labels as $label)
-                                                                #{{ $label }},
+                                                                #{{ $label }}
+                                                                @if (!$loop->last)
+                                                                    ,
+                                                                @else
+                                                                    .
+                                                                @endif
                                                             @endforeach
                                                         @else
                                                             <p class="fst-italic">No labels</p>
@@ -144,7 +151,10 @@
 
 
                 {{-- Dettagli dell'articolo da revisionare --}}
-                <div class="col-md-3 d-flex justify-content-between flex-column">
+                <div class="
+                @if ($article_to_check->images->count() > 1) col-md-3 @endif 
+                    @if ($article_to_check->images->count() == 1) col-md-4 @endif
+                d-flex justify-content-between flex-column">
                     <div class="row">
                         <h2 class="mb-3">
                             <span class="fs-7 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}

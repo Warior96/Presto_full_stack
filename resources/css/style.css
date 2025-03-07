@@ -2,7 +2,9 @@
   --color-1: #e9693f;
   --color-1-o: #e9693fc5;
   --color-2: #F5DEBA;
-  --color-2-o: #f5debaca;
+  --color-2-s: rgb(248, 220, 175);
+  --color-2-st: #f4d4a2;
+  --color-2-o: #f5debad5;
   --color-3: #ffae18;
   --color-4: #5dc0b3;
   /* --color-4: #7AA981; */
@@ -64,6 +66,10 @@ nav a {
 
 .bg-2-o {
   background-color: var(--color-2-o);
+}
+
+.bg-2-s {
+  background-color: var(--color-2-s);
 }
 
 .bg-3 {
@@ -472,6 +478,16 @@ footer a {
   left: 21%;
 }
 
+.card-w {
+  border: 2px solid var(--color-1);
+  transition: all 0.3s ease;
+  border-radius: 26px;
+}
+
+.card-w img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
 
 
 
@@ -619,9 +635,10 @@ footer a {
     border-color: var(--color-3);
   }
 
-  #card:hover {
+  .card-w:hover {
     scale: 1.01;
-    box-shadow: 2px 2px 8px var(--color-4);
+    box-shadow: 2px 2px 15px var(--color-1);
+    background-color: var(--color-2-st);
   }
 
   #basic-addon2:hover {
@@ -661,6 +678,13 @@ footer a {
     left: 100%;
   }
 
+  .card-w img {
+    filter: grayscale(30%);
+  }
+
+  .card-w:hover img {
+    filter: grayscale(0%);
+  }
 }
 
 /* media query in: md tablet e sm smartphone*/

@@ -180,11 +180,11 @@
 
         {{-- ULTIMI ARRIVI --}}
 
-        <div class="row justify-content-center vh-95 pt-4" id="lastArticles">
+        <div class="row justify-content-center vh-95 pt-2" id="lastArticles">
 
             {{-- TITOLO E GRAZIA --}}
             <div class="col-12 d-flex flex-column align-items-center ">
-                <h3 class="d-inline display-4 text-center mb-0 pt-5 pb-3">{{ __('ui.ultimiArrivi') }}</h3>
+                <h3 class="d-inline display-4 text-center mb-0 pt-5 pb-1">{{ __('ui.ultimiArrivi') }}</h3>
                 {{-- <div class="d-flex justify-content-center">
                     <img src="{{ asset('storage/background/onda1.png') }}" alt="" class="preview-onda">
                     <img src="{{ asset('storage/background/onda2.png') }}" alt="" class="preview-onda">
@@ -194,18 +194,17 @@
             <div class="col-12">
                 {{-- CAROSELLO EFFETTIVO --}}
                 @if ($articles)
-                    <swiper-container class="mySwiper swiper-container-home preview-art-container" space-between="15"
-                        pagination="false" loop="true" autoplay-delay="5000" autoplay-pause-on-mouse-enter="true"
+                    <swiper-container class="mySwiper swiper-container-home preview-art-container row"
+                        space-between="15" pagination="false" loop="true" autoplay-delay="5000"
+                        autoplay-pause-on-mouse-enter="true"
                         breakpoints='{
                             "0": { "slidesPerView": 1 },
                             "768": { "slidesPerView": 2 },
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class="my-1 swiper-slide-home">
-                                <div class="row justify-content-center p-0">
-                                    <x-card :article="$article" />
-                                </div>
+                            <swiper-slide class="my-1 swiper-slide-home col-12 col-md-4 col-3">
+                                <x-card :article="$article" />
                             </swiper-slide>
                         @endforeach
                     </swiper-container>

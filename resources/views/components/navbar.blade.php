@@ -74,9 +74,6 @@
                     @endif
                 @endauth
 
-                {{-- <li class="ms-lg-auto"> --}}
-
-
                     {{-- search --}}
                     @if (Route::currentRouteName() != 'homepage')
                         <form action="{{ route('article.search') }}" method="GET" role="search"

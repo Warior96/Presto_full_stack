@@ -39,6 +39,22 @@
                     <p class="fs-5 pt-3">Data inserimento articolo: {{ $article->created_at->format('d/m/Y') }}</p>
                     <p class="fs-5 pt-3">Venditore: {{ $article->user->name }}</p>
                     <p class="fs-5 pt-3">{{ __('ui.condizione') }}: {{ $article->condition }}</p>
+
+
+                    @foreach ($article->images as $image)
+                        @if ($image->labels)
+                            <p class="fs-5 pt-3">Label:
+                                @foreach ($image->labels as $label)
+                                    # {{ $label }}
+                                    @if (!$loop->last)
+                                        ,
+                                    @else
+                                        .
+                                    @endif
+                                @endforeach
+                            </p>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

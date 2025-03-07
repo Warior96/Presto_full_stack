@@ -14,7 +14,7 @@
                 </h1>
             </div>
         </div>
-
+{{-- @dump($articles) --}}
         <div class="row justify-content-center  pb-3">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-3 mx-3">
