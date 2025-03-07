@@ -158,7 +158,12 @@
                         </p>
                         <p class="fst-italic text-muted fs-5">
                             <span class="fs-7 fst-normal">{{ __('ui.categoria') }}: </span>
-                            #{{ $article_to_check->category->name }}
+                            {{-- #{{ $article_to_check->category->name }} --}}
+                            @foreach ($categories as $category)
+                                @if ($article_to_check->category->name == $category->name)
+                                    #{{ __("ui.$category->name") }}
+                                @endif
+                            @endforeach
                         </p>
                         <p class="fs-5">
                             <span class="mb-0 fs-7">
@@ -207,7 +212,7 @@
                             class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-danger py-2 px-5 w-100 fw-bold"
+                            <button class="btn btn-cus btn-danger p-2 w-100 fw-bold"
                                 id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
 
@@ -215,7 +220,7 @@
                             class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-success py-2 px-5 w-100 fw-bold"
+                            <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 
