@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-6 position-fixed top-0 left-0 w-100 z-3 shadow">
+<nav class="navbar navbar-expand-lg bg-6 position-fixed top-0 left-0 w-100 z-3 shadow px-2">
     <div class="container-fluid mx-lg-2">
         <a class="navbar-brand my-0 me-3 p-0" href="{{ route('homepage') }}">
-            <img src="{{ Storage::url('logo/logo-rettangolare-corona-1.svg') }}" alt="" class="img-logo">
+            <img src="{{ Storage::url('logo/logo-rettangolare.png') }}" alt="" class="img-logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,15 +10,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'homepage' ? 'active' : '' }}"
                         href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
-                </li>
+                </li> --}}
 
                 {{-- se l'utente è loggato vede questi pulsanti --}}
                 @auth
                     {{-- crea articoli --}}
-
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
                             href="{{ route('createarticle') }}">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}</a>
@@ -74,19 +73,18 @@
                     @endif
                 @endauth
 
-                    {{-- search --}}
-                    @if (Route::currentRouteName() != 'homepage')
-                        <form action="{{ route('article.search') }}" method="GET" role="search"
-                            class="d-flex ms-lg-auto ms-1 me-2 my-2 my-md-2 ms-md-1 me-md-3 my-lg-0 mx-lg-0">
-                            <div class="input-group">
-                                <input type="search" name="query" class="form-control"
-                                    placeholder="{{ __('ui.cerca') }}" aria-label="search"
-                                    value="{{ $query }}">
-                                <button class="input-group-text btn " type="submit" id="basic-addon2"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                        </form>
-                    @endif
+                {{-- search --}}
+                @if (Route::currentRouteName() != 'homepage')
+                    <form action="{{ route('article.search') }}" method="GET" role="search"
+                        class="d-flex ms-lg-auto ms-1 me-2 my-2 my-md-2 ms-md-1 me-md-3 my-lg-0 mx-lg-0">
+                        <div class="input-group">
+                            <input type="search" name="query" class="form-control"
+                                placeholder="{{ __('ui.cerca') }}" aria-label="search" value="{{ $query }}">
+                            <button class="input-group-text btn " type="submit" id="basic-addon2"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                @endif
 
                 <li class="nav-item {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
                     <button class="btnlight">
@@ -106,7 +104,7 @@
                                 height="32" class="">
                         @endif
                     </a>
-                    <ul class="dropdown-menu bg-2">
+                    <ul class="dropdown-menu bg-2 mt-2">
                         <li>
                             <span class="dropdown-item @if (session('locale') == 'it' || session('locale') == null) d-none @endif ">
                                 <x-_locale lang="it" />

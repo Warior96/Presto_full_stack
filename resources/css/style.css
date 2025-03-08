@@ -123,6 +123,10 @@ body {
   color: var(--color-2);
 }
 
+.shop {
+  font-weight: 400;
+}
+
 .btn-cus {
   transition: all 0.5s ease;
 }

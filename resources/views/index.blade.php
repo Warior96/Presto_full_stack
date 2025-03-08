@@ -3,7 +3,6 @@
         <div class="alert alert-danger text-center shadow rounded w-50">
             {{ session('errorMessage') }}
         </div>
-        </div>
     @endif
     <header class="container-fluid bg-header pt-5 vh-100"
         style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
@@ -11,9 +10,11 @@
             background-size: cover; background-position: center;">
         <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
 
+            {{-- titolo --}}
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center pb-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
-                    EMPORIUM SHOP</h1>
+                <h1 class=" display-1 text-center pb-1" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                    EMPORIUM <span class="c-2 shop">SHOP</span>
+                </h1>
             </div>
 
             {{-- MESSAGGIO DI SUCCESSO PER LA CANDIDATURA COME REVISORE --}}
@@ -130,6 +131,7 @@
                     @endforeach
                 </swiper-container>
 
+                {{-- anteprima categorie --}}
                 <swiper-container class="mySwiper2-index" free-mode="true" watch-slides-progress="true"
                     breakpoints='{
                         "0": { "slidesPerView": 2, "spaceBetween": 2 },
@@ -176,6 +178,9 @@
         </div>
     </header>
 
+
+
+    
     <section class="container">
 
         {{-- ULTIMI ARRIVI --}}
