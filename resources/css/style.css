@@ -203,6 +203,15 @@ swiper-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 67vh;
+}
+
+.h {
+  height: 63vh;
+}
+
+.h2 {
+  height: 56vh;
 }
 
 .mySwiper2-index {
@@ -679,12 +688,38 @@ footer a {
   }
 
   .card-w img {
-    filter: grayscale(30%);
+    filter: grayscale(20%) brightness(99%) contrast(99%);
+    transition: all 0.5s ease-in-out;
   }
 
   .card-w:hover img {
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(101%) contrast(101%);
   }
+
+
+
+
+  .hover-expand {
+    overflow: hidden;
+    /* transition: height 1s ease-in-out; */
+  }
+
+  .card-buttons {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
+  }
+
+  /* .hover-expand:hover {
+    height: 94%;
+  } */
+
+  .hover-expand:hover .card-buttons {
+    max-height: 100%;
+    opacity: 1;
+  }
+
 }
 
 /* media query in: md tablet e sm smartphone*/

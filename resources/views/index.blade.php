@@ -46,7 +46,7 @@
                                             </h4>
                                         @else
                                             <h4 class="typewriter c-2 mb-3" id="typewriter-text">
-                                                Compra e vendi qualsiasi prodotto, nuovo o usato, in pochi click.
+                                                Compra e vendi prodotti, nuovi e usati, in pochi click.
                                             </h4>
                                         @endauth
                                         @switch($category->name)
@@ -180,7 +180,7 @@
 
         {{-- ULTIMI ARRIVI --}}
 
-        <div class="row justify-content-center vh-95 pt-2" id="lastArticles">
+        <div class="row justify-content-center align-items-center vh-95 pt-2" id="lastArticles">
 
             {{-- TITOLO E GRAZIA --}}
             <div class="col-12 d-flex flex-column align-items-center ">
