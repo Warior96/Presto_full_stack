@@ -19,12 +19,8 @@ class PublicController extends Controller
     public function searchArticles(Request $request)
     {
         $query = $request->input('query');
-        // $articlesnum = Article::search($query)->where('is_accepted', true)->get();
-        // $num_articles = $articlesnum->count();
-        // $articles = Article::search($query)->where('is_accepted', true)->paginate(3);
         $articles = Article::search($query)->where('is_accepted', true)->paginate(3);
-        $num_articles = $articles->total();
-        return view('article.searched', ['articles' => $articles, 'query' => $query, 'num_articles' => $num_articles]);
+        return view('article.searched', ['articles' => $articles, 'query' => $query]);
     }
 
     // set lingua
