@@ -11,7 +11,7 @@
         @if ($article_to_check)
             <div class="row justify-content-center pt-4 mx-5">
                 <div
-                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif 
+                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif
                     @if ($article_to_check->images->count() == 1) col-md-8 @endif
                     ">
                     <div class="row justify-content-center me-2">
@@ -113,7 +113,7 @@
                                 slides-per-view="10" free-mode="true" watch-slides-progress="true">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <swiper-slide
-                                        class="swiper-slide-revisor rounded 
+                                        class="swiper-slide-revisor rounded
                                         @if ($loop->first) ms-auto @endif
                                         @if ($loop->last) me-auto @endif">
                                         <img src="{{ $image->getUrl(600, 600) }}" class=""
@@ -137,7 +137,7 @@
                                 slides-per-view="10" free-mode="true" watch-slides-progress="true">
                                 @for ($i = 0; $i < 6; $i++)
                                     <swiper-slide
-                                        class="swiper-slide-revisor rounded 
+                                        class="swiper-slide-revisor rounded
                                         @if ($i == 0) ms-auto @endif
                                         @if ($i == 5) me-auto @endif">
                                         <img src="https://picsum.photos/50{{ $i }}" class=""
@@ -154,7 +154,7 @@
                 {{-- Dettagli dell'articolo da revisionare --}}
                 <div
                     class="
-                @if ($article_to_check->images->count() > 1) col-md-3 @endif 
+                @if ($article_to_check->images->count() > 1) col-md-3 @endif
                     @if ($article_to_check->images->count() == 1) col-md-4 @endif
                 d-flex justify-content-between flex-column">
                     <div class="row">
@@ -173,7 +173,7 @@
                             {{-- #{{ $article_to_check->category->name }} --}}
                             @foreach ($categories as $category)
                                 @if ($article_to_check->category->name == $category->name)
-                                    #{{ __("ui.$category->name") }}
+                                <span class="fs-7 fst-normal">#{{ __("ui.$category->name") }}: </span>
                                 @endif
                             @endforeach
                         </p>

@@ -61,12 +61,19 @@
 
                     {{-- revisore --}}
                     @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
-                        <li class="nav-item position-relative">
-                            <a class="nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
+                        <li class="nav-item">
+                            <a class="d-flex position-relative nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
                                 href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
-                                <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+                                {{-- <span class="position-absolute translate-middle badge rounded-pill bg-5"
                                     id="revisor-badge">
                                     {{ \App\Models\Article::toBeRevisedCount() }}
+                                </span> --}}
+
+                                <span class="bell-icon translate-middle">
+                                    <img class="bell" src="{{ Storage::url('logo/bell.gif')}}" alt="">
+                                    <div class="notification-amount">
+                                      <span class="c-2 dark">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                    </div>
                                 </span>
                             </a>
                         </li>

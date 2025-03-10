@@ -1,8 +1,7 @@
 :root {
   --color-1: #e9693f;
   --color-1-o: #e9693fc5;
-  /* --color-2: #F5DEBA; */
-  --color-2: #ffefd5;
+  --color-2: #FFEFD5;
   --color-2-s: rgb(248, 220, 175);
   --color-2-st: #f4d4a2;
   --color-2-o: #f5debad5;
@@ -90,14 +89,15 @@ nav a {
 }
 
 body {
+  /* visibility: hidden; */
   background-color: var(--color-2);
-
 }
 
-.dark-mode{
+.dark-mode {
   background-color: var(--color-5);
 }
-.dark-mode-footer{
+
+.dark-mode-footer {
   background-color: #4b4a4a;
 }
 
@@ -120,17 +120,6 @@ body {
 
 
 /* Homepage */
-.bg-header {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('/storage/background/header1.jpeg'); */
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://picsum.photos/1080/720"); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: var(--color-2);
-}
-
 .shop {
   font-weight: 400;
 }
@@ -158,49 +147,53 @@ body {
 }
 
 /* Carosello categorie */
-.black-opacity {
-  background-color: rgba(0, 0, 0, 0.36);
+/* .little-black-opacity {
+  background-color: rgba(0, 0, 0, 0.8);
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
   position: absolute;
-}
-
-.little-black-opacity {
-  background-color: rgba(0, 0, 0, 0.500);
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
+} */
 
 .container-img-card {
-  width: 80vw;
-  height: 38vh;
+  width: 100vw;
+  height: 64vh;
   position: relative;
 }
 
-.container-little-img-card {
+/* .container-little-img-card {
   width: 35vw;
   height: 7vh;
   position: relative;
+} */
+
+.text-slide-header {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fs-header {
+  font-size: 0.92rem !important;
 }
 
 /* Fine Carosello categorie */
 
 /* Ultimi Arrivi */
 
-.preview-onda {
+/* .preview-onda {
   width: 10vw;
   height: 4vh;
 
   padding-top: 0px;
   margin-top: 0px;
-}
+} */
 
-/* Fine Homepage */
+
 
 /* Swiper */
 
@@ -249,21 +242,6 @@ swiper-slide img {
   object-fit: cover;
 }
 
-swiper-slide .radius {
-  border-radius: 15px
-}
-
-/* swiper-slide {
-  width: 80%;
-}
-
-swiper-slide:nth-child(2n) {
-  width: 60%;
-}
-
-swiper-slide:nth-child(3n) {
-  width: 40%;
-} */
 
 /* Fine Homepage */
 
@@ -408,15 +386,16 @@ footer a {
 }
 
 #basic-addon2 {
-  border: 2px solid var(--color-4);
+  border: 2px solid var(--color-2);
   transition: all 0.3s ease;
+  background-color: rgba(255, 239, 213, 0.5);
 }
 
 #basic-addon2:active {
   border: 2px solid var(--color-3);
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.8);
   scale: 1.01;
-  background-color: var(--color-4);
+  background-color: var(--color-1);
 }
 
 .img-preview {
@@ -495,9 +474,7 @@ footer a {
   /* height: 30px; */
 }
 
-#basic-addon2 {
-  background-color: rgba(245, 222, 186, 0.516);
-}
+
 
 .point {
   cursor: pointer;
@@ -527,9 +504,9 @@ footer a {
   font-size: 1rem;
 }
 
-#revisor-badge {
+/* #revisor-badge {
   left: 21%;
-}
+} */
 
 .card-w {
   border: 2px solid var(--color-1);
@@ -548,11 +525,18 @@ footer a {
 
 
 
-
-
-
-
-
+/* animazione bounce della notifica del revisore */
+/* @keyframes bounce-revisor {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 
 
 /* animazione rimbalzo caret homepage */
@@ -570,7 +554,7 @@ footer a {
 }
 
 /* animazione macchina da scrivere */
-.typewriter {
+/* .typewriter {
   display: inline-block;
   max-width: 0;
   animation: typing 4s steps(var(--characters)) forwards;
@@ -619,7 +603,7 @@ footer a {
   25% {
     opacity: 0;
   }
-}
+} */
 
 
 
@@ -643,8 +627,21 @@ footer a {
     position: relative;
   }
 
-  #revisor-badge {
+  /* #revisor-badge {
     left: 10%;
+  } */
+
+  .text-slide-header {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .fs-header {
+    font-size: 1.22rem !important;
   }
 
 }
@@ -696,7 +693,7 @@ footer a {
 
   #basic-addon2:hover {
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
-    background-color: var(--color-4);
+    background-color: var(--color-1);
   }
 
   #caret-icon:hover {
@@ -728,9 +725,11 @@ footer a {
     position: relative;
   }
 
-  #revisor-badge {
+  /* #revisor-badge {
     left: 100%;
-  }
+    animation: bounce-revisor 2s linear infinite alternate;
+  } */
+
 
   .card-w img {
     filter: grayscale(20%) brightness(99%) contrast(99%);
@@ -741,8 +740,14 @@ footer a {
     filter: grayscale(0%) brightness(101%) contrast(101%);
   }
 
-
-
+  .text-slide-header {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 35%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
   .hover-expand {
     overflow: hidden;
@@ -763,6 +768,10 @@ footer a {
   .hover-expand:hover .card-buttons {
     max-height: 100%;
     opacity: 1;
+  }
+
+  .fs-header {
+    font-size: 1.40rem !important;
   }
 
 }
@@ -950,4 +959,86 @@ footer a {
 .icon-clicked {
   color: #49fb35 !important;
   text-shadow: 0px 0px 20px #49fb35;
+}
+
+
+
+
+
+/* icona di notifica della campanella */
+.bell{
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  width: 30%;
+  height: 30%;
+}
+.bell-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 60px;
+  top: 130%;
+}
+
+.bell-icon:focus .notification-amount, .bell-icon:hover .notification-amount {
+  opacity: 1;
+  visibility: visible;
+}
+.bell-icon:focus .notification-amount::before, .bell-icon:hover .notification-amount::before {
+  animation-name: bounce-notifica;
+  animation-delay: 250ms;
+}
+/* testo all'interno del badge di notifica */
+.notification-amount {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -6%;
+  right: -6%;
+  width: 25px;
+  height: 25px;
+  color: var(--color-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.notification-amount span {
+  position: relative;
+}
+.notification-amount::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-5);
+  border-radius: 50%;
+  z-index: 0;
+  transform: scale(0);
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+}
+
+
+@keyframes bounce-notifica {
+  0% {
+    transform: scale(0);
+ }
+  14% {
+    transform: scale(1.15);
+ }
+  28% {
+    transform: scale(1);
+ }
+  42% {
+    transform: scale(1.15);
+ }
+  70% {
+    transform: scale(1);
+ }
+  100% {
+    transform: scale(1);
+ }
 }

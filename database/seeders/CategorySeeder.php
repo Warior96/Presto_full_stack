@@ -18,43 +18,43 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'name' => 'Elettronica',
-                'img' => 'categories-img/elettronica.jpg',
+                'img' => 'categories-img/elettronica.png',
             ],
             [
                 'name' => 'Abbigliamento',
-                'img' => 'categories-img/abbigliamento.jpg',
+                'img' => 'categories-img/abbigliamento.png',
             ],
             [
                 'name' => 'Bellezza',
-                'img' => 'categories-img/bellezza.jpg',
+                'img' => 'categories-img/bellezza.png',
             ],
             [
                 'name' => 'Giardinaggio',
-                'img' => 'categories-img/giardinaggio.jpg',
+                'img' => 'categories-img/giardinaggio.png',
             ],
             [
                 'name' => 'Giocattoli',
-                'img' => 'categories-img/giocattoli.jpg',
+                'img' => 'categories-img/giocattoli.png',
             ],
             [
                 'name' => 'Sport',
-                'img' => 'categories-img/sport.jpg',
+                'img' => 'categories-img/sport.png',
             ],
             [
                 'name' => 'Tecnologia',
-                'img' => 'categories-img/tecnologia.jpg',
+                'img' => 'categories-img/tecnologia.png',
             ],
             [
                 'name' => 'Libri e riviste',
-                'img' => 'categories-img/libri.jpg',
+                'img' => 'categories-img/libri.png',
             ],
             [
                 'name' => 'Accessori',
-                'img' => 'categories-img/accessori.jpg',
+                'img' => 'categories-img/accessori.png',
             ],
             [
                 'name' => 'Motori',
-                'img' => 'categories-img/motori.jpg',
+                'img' => 'categories-img/motori.png',
             ],
         ];
 
