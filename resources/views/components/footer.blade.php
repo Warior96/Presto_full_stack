@@ -117,11 +117,11 @@
                                         </p>
                                     @endif
                                     <div class="mt-2 mt-md-0 mt-lg-2 mb-md-3 mb-lg-0 col-12 col-md-6">
-                                        <a class="btn btn-footer px-4 py-2 fs-5 text-white rounded-4 shadow position-relative"
+                                        <a class="btn btn-footer px-4 py-2 fs-5 rounded-4 shadow position-relative"
                                             href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
                                             <span
 
-                                                class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                                class="position-absolute start-100 translate-middle badge rounded-pill bg-danger dark">
                                                 {{ \App\Models\Article::toBeRevisedCount() }}
                                             </span>
                                         </a>
