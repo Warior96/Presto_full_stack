@@ -47,15 +47,15 @@
 
                 {{-- Bottone + modale lavora con noi --}}
                 @auth
+                    {{-- log + non revisore --}}
                     @if (!Auth::user()->is_revisor)
-                        {{-- <div class="col-3 d-flex justify-content-end align-content-center "> --}}
                         <div class="col-md-5 ms-3 ms-md-0 d-flex w-100 mb-3">
                             <div>
                                 <h5 class="c-2">Richiedi di lavorare con noi</h5>
                                 <p class="c-2">Invia la tua candidatura come revisore</p>
                                 <div class="col-3">
                                     {{-- bottone apertura modale --}}
-                                    <button type="button" class="btn btn-primary px-4 py-2 fs-5  rounded-4 shadow"
+                                    <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         {{ __('ui.candidati') }}
                                     </button>
@@ -65,7 +65,7 @@
                                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                         aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered ">
-                                            <div class="modal-content ">
+                                            <div class="modal-content bg-2">
                                                 <div class="modal-header">
                                                     <h1 class="modal-title fs-5 w-100 pt-3" id="staticBackdropLabel">
                                                         {{ Auth::user()->name }}, vuoi lavorare con noi?
@@ -82,11 +82,11 @@
                                                 </div>
                                                 <div
                                                     class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                    <button type="button" class="btn btn-secondary"
+                                                    <button type="button" class="btn modal-no"
                                                         data-bs-dismiss="modal">No,
                                                         annulla</button>
                                                     <a href="{{ route('become.revisor') }}"
-                                                        class="btn btn-primary px-3 py-2 rounded shadow">Candidati</a>
+                                                        class="btn modal-si px-3 py-2 shadow">Candidati</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,6 @@
                                         <a class="btn btn-footer px-4 py-2 fs-5 rounded-4 shadow position-relative"
                                             href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
                                             <span
-
                                                 class="position-absolute start-100 translate-middle badge rounded-pill bg-danger dark">
                                                 {{ \App\Models\Article::toBeRevisedCount() }}
                                             </span>
@@ -146,7 +145,7 @@
                             <p class="c-2 dark">Invia la tua candidatura come revisore</p>
                             <div class="col-4 ">
                                 {{-- bottone apertura modale --}}
-                                <button type="button" class="btn btn-primary px-3 py-2 fs-5  rounded shadow"
+                                <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
                                     data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     {{ __('ui.candidati') }}
                                 </button>
@@ -169,11 +168,10 @@
                                             </div>
                                             <div
                                                 class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">No,
+                                                <button type="button" class="btn modal-no" data-bs-dismiss="modal">No,
                                                     annulla</button>
                                                 <a href="{{ route('become.revisor') }}"
-                                                    class="btn btn-primary px-3 py-2 rounded shadow">Candidati</a>
+                                                    class="btn px-3 c-5 py-2 shadow modal-si">{{ __('ui.candidati') }}</a>
                                             </div>
                                         </div>
                                     </div>

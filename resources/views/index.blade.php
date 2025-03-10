@@ -226,21 +226,17 @@
 
         {{-- ULTIMI ARRIVI --}}
 
-        <div class="row justify-content-center align-items-center vh-95 pt-2" id="lastArticles">
+        <div class="row justify-content-center align-items-center vh-98 pt-2" id="lastArticles">
 
-            {{-- TITOLO E GRAZIA --}}
+            {{-- TITOLO --}}
             <div class="col-12 d-flex flex-column align-items-center ">
-                <h3 class="d-inline display-4 text-center mb-0 pt-5 pb-1">{{ __('ui.ultimiArrivi') }}</h3>
-                {{-- <div class="d-flex justify-content-center">
-                    <img src="{{ asset('storage/background/onda1.png') }}" alt="" class="preview-onda">
-                    <img src="{{ asset('storage/background/onda2.png') }}" alt="" class="preview-onda">
-                </div> --}}
+                <h4 class="d-inline display-4 text-center mb-0 pt-5 pb-1">{{ __('ui.ultimiArrivi') }}</h4>
             </div>
 
+            {{-- CAROSELLO EFFETTIVO --}}
             <div class="col-12 ">
-                {{-- CAROSELLO EFFETTIVO --}}
                 @if ($articles)
-                    <swiper-container class="mySwiper swiper-container-home preview-art-container row  mx-auto"
+                    <swiper-container class="mySwiper swiper-container-home preview-art-container row mx-auto"
                         space-between="0" pagination="false" loop="true" autoplay-delay="5000"
                         autoplay-pause-on-mouse-enter="true"
                         breakpoints='{
@@ -249,7 +245,7 @@
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class=" mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3">
+                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3">
                                 <x-card :article="$article" />
                             </swiper-slide>
                         @endforeach
@@ -260,17 +256,18 @@
                     </div>
                 @endif
             </div>
-        </div>
 
-        {{-- crea articolo --}}
-        <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
-            {{-- <a href="{{ route('createarticle') }}"
+            {{-- crea articolo --}}
+            <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
+                {{-- <a href="{{ route('createarticle') }}"
         class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
         {{ __('ui.aggiungiProdotto') }}
     </a> --}}
-            <a href="{{ route('createarticle') }}" id="addArticle"
-                class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0" data-back="{{ __('ui.aggiungiProdotto2') }}"
-                data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
+                <a href="{{ route('createarticle') }}" id="addArticle"
+                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
+                    data-back="{{ __('ui.aggiungiProdotto2') }}"
+                    data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
+            </div>
         </div>
 
     </section>

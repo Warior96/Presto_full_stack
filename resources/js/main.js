@@ -57,8 +57,8 @@ let typeWriters2 = document.querySelectorAll('.typewriter-text2');
 //     }
 // });
 
-
-typeWriters.forEach((el, index) => {
+// FUNZIONANTE PRIMA DEL CAMBIO HOME
+/* typeWriters.forEach((el, index) => {
   let text = el.innerText;
   el.style.visibility = "hidden";
   if (index === 0) {
@@ -72,12 +72,12 @@ typeWriters.forEach((el, index) => {
     el.style.setProperty('--characters', text.length);
   }
 
-});
+}); */
 
 
 
-
-typeWriters2.forEach((el, index) => {
+// FUNZIONANTE PRIMA DEL CAMBIO HOME
+/* typeWriters2.forEach((el, index) => {
   let text = el.innerText;
   el.style.visibility = "hidden";
   if (index === 0) {
@@ -101,7 +101,7 @@ typeWriters2.forEach((el, index) => {
     });
     observer.observe(el);
   }
-});
+}); */
 
 
 
@@ -187,6 +187,7 @@ let observerArticle = new IntersectionObserver((entries) => {
     }
   });
 });
+// INSERITO NELLA DARK MODE
 // observerArticle.observe(addArticle);
 
 
@@ -212,7 +213,7 @@ function checkDarkMode() {
   if (darkMode === 'true') {
     document.body.classList.add('dark-mode');
     document.body.style.visibility = 'visible';
-    if(footer){
+    if (footer) {
       footer.classList.toggle('dark-mode-footer');
     }
     btnlight.classList.toggle('button-clicked');
@@ -224,7 +225,7 @@ function checkDarkMode() {
 }
 
 // Esegui la funzione di check al caricamanto degli asset html
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
   document.body.style.visibility = 'visible';
   checkDarkMode();
 
@@ -235,7 +236,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 btnlight.addEventListener('click', () => {
   // Toggle della classe per il corpo e il bottone
   document.body.classList.toggle('dark-mode');
-  if(footer){
+  if (footer) {
     footer.classList.toggle('dark-mode-footer');
   }
   btnlight.classList.toggle('button-clicked');

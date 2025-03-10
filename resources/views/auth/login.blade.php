@@ -17,15 +17,17 @@
                         value="{{ old('email') }}">
                     @error('email')
                         <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
-                            @if ($message == 'The email field is required.' && session('locale') == 'it')
+                            @if (($message == 'The email field is required.' && session('locale') == 'it') || session('locale') == null)
                                 Il campo email è obbligatorio.
                             @elseif ($message == 'The email field is required.' && session('locale') == 'zh-tw')
                                 必须填写邮箱
-                            @elseif ($message == 'These credentials do not match our records.' && session('locale') == 'it')
+                            @elseif (
+                                ($message == 'These credentials do not match our records.' && session('locale') == 'it') ||
+                                    session('locale') == null)
                                 Email e password non corrispondono a nessun utente registrato.
                             @elseif ($message == 'These credentials do not match our records.' && session('locale') == 'zh-tw')
                                 邮箱密码与我们的数据不匹配
-                            @elseif ($message == 'The email must be a valid email address.' && session('locale') == 'it')
+                            @elseif (($message == 'The email must be a valid email address.' && session('locale') == 'it') || session('locale') == null)
                                 L'email deve essere un indirizzo email valido.
                             @elseif ($message == 'The email must be a valid email address.' && session('locale') == 'zh-tw')
                                 邮箱不存在
@@ -40,11 +42,11 @@
                     <input type="password" class="form-control" name="password" id="passwordLogin">
                     @error('password')
                         <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
-                            @if ($message == 'The password field is required.' && session('locale') == 'it')
+                            @if (($message == 'The password field is required.' && session('locale') == 'it') || session('locale') == null)
                                 Il campo password è obbligatorio.
                             @elseif ($message == 'The password field is required.' && session('locale') == 'zh-tw')
                                 必须填写密码
-                            @elseif ($message == 'The password is incorrect.' && session('locale') == 'it')
+                            @elseif (($message == 'The password is incorrect.' && session('locale') == 'it') || session('locale') == null)
                                 La password è errata.
                             @elseif ($message == 'The password is incorrect.' && session('locale') == 'zh-tw')
                                 密码错误
@@ -58,7 +60,8 @@
                     id="btn-login">{{ __('ui.login') }}</button>
 
                 <div class="text-center mt-4">
-                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non hai un account? {{__('ui.registrati')}}</a>
+                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non hai un account?
+                        {{ __('ui.registrati') }}</a>
                 </div>
 
             </form>

@@ -134,7 +134,7 @@
                 @guest
                     <li class="me-2 nav-item ">
                         <a class="nav-link mx-2  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
-                            href="{{ route('login') }}"><i class="fa-solid fa-arrow-right-to-bracket fs-6"></i></a>
+                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
                     </li>
                 @endguest
                 @auth

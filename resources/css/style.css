@@ -1,6 +1,7 @@
 :root {
   --color-1: #e9693f;
   --color-1-o: #e9693fc5;
+  --color-1-s: #b34520;
   --color-2: #FFEFD5;
   --color-2-s: rgb(248, 220, 175);
   --color-2-st: #f4d4a2;
@@ -37,7 +38,7 @@ nav a {
 }
 
 .c-2 {
-  color: var(--color-2);
+  color: var(--color-2) !important;
 }
 
 .c-3 {
@@ -49,7 +50,7 @@ nav a {
 }
 
 .c-5 {
-  color: var(--color-5);
+  color: var(--color-5) !important;
 }
 
 .bg-1 {
@@ -101,8 +102,8 @@ body {
   background-color: #4b4a4a;
 }
 
-.vh-95 {
-  height: 95vh;
+.vh-98 {
+  height: 98vh;
 }
 
 .fs-6 {
@@ -128,14 +129,26 @@ body {
   transition: all 0.5s ease;
 }
 
-.btn-footer{
-/* background-color: var(--color-1); */
-border: 2px solid var(--color-1);
+.btn-footer {
+  /* background-color: var(--color-1); */
+  border: 2px solid var(--color-1);
+  border-radius: 1.2rem;
 }
 
 .btn-footer:hover {
   background-color: var(--color-1);
-  color: var(--color-5)!important;
+  color: var(--color-5) !important;
+}
+
+.modal-no {
+  background-color: transparent;
+  border-radius: 1.2rem;
+  border: 2px solid var(--color-1);
+}
+
+.modal-si {
+  background-color: var(--color-1);
+  border-radius: 1.2rem;
 }
 
 #caret {
@@ -218,7 +231,7 @@ swiper-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 67vh;
+  height: 55vh;
 }
 
 .h {
@@ -355,16 +368,16 @@ swiper-slide img {
   border-radius: 10px;
 }
 
-.img-container-detail{
+.img-container-detail {
   width: 50%;
   overflow: hidden;
 }
 
-.price-detail{
+.price-detail {
   font-size: 4vw;
 }
 
-.btn-category-detail{
+.btn-category-detail {
   border: solid 2px var(--color-6);
   border-radius: 10px;
 
@@ -374,16 +387,16 @@ swiper-slide img {
 }
 
 
-#tag-categoria:hover{
+#tag-categoria:hover {
   background-color: var(--color-6);
   color: var(--color-2);
 }
 
-.data-detail{
+.data-detail {
   font-size: 0.8vw;
 }
 
-.data-container-detail{
+.data-container-detail {
   padding-top: 10px;
   margin-top: 50px;
   border-top: solid 1px var(--color-5);
@@ -522,6 +535,7 @@ footer a {
   border: 2px solid var(--color-1);
   transition: all 0.3s ease;
   border-radius: 26px;
+  padding: 14px;
 }
 
 .card-w img {
@@ -529,8 +543,14 @@ footer a {
   border-top-right-radius: 16px;
 }
 
+#a-categoria {
+  background-color: transparent;
+  border: 2px solid var(--color-1);
+}
 
-
+.w-45 {
+  width: 45%;
+}
 
 
 
@@ -669,11 +689,12 @@ footer a {
   } */
 
   #a-dettaglio:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-1-s);
+    color: var(--color-2) !important;
   }
 
   #a-categoria:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-1);
   }
 
   #accept:hover {
@@ -697,7 +718,7 @@ footer a {
 
   .card-w:hover {
     scale: 1.01;
-    box-shadow: 2px 2px 15px var(--color-1);
+    box-shadow: 2px 1px 5px var(--color-1-s);
     background-color: var(--color-2-st);
   }
 
@@ -782,6 +803,16 @@ footer a {
 
   .fs-header {
     font-size: 1.40rem !important;
+  }
+
+  .modal-no:hover {
+    background-color: var(--color-1);
+    border: 2px solid var(--color-1);
+  }
+
+  .modal-si:hover {
+    background-color: var(--color-1-s);
+    color: var(--color-2) !important;
   }
 
 }
@@ -977,13 +1008,14 @@ footer a {
 
 
 /* icona di notifica della campanella */
-.bell{
+.bell {
   position: absolute;
   right: 2%;
   top: 5%;
   width: 30%;
   height: 30%;
 }
+
 .bell-icon {
   position: absolute;
   width: 100px;
@@ -992,14 +1024,18 @@ footer a {
   top: 130%;
 }
 
-.bell-icon:focus .notification-amount, .bell-icon:hover .notification-amount {
+.bell-icon:focus .notification-amount,
+.bell-icon:hover .notification-amount {
   opacity: 1;
   visibility: visible;
 }
-.bell-icon:focus .notification-amount::before, .bell-icon:hover .notification-amount::before {
+
+.bell-icon:focus .notification-amount::before,
+.bell-icon:hover .notification-amount::before {
   animation-name: bounce-notifica;
   animation-delay: 250ms;
 }
+
 /* testo all'interno del badge di notifica */
 .notification-amount {
   opacity: 0;
@@ -1016,9 +1052,11 @@ footer a {
   justify-content: center;
   font-size: 14px;
 }
+
 .notification-amount span {
   position: relative;
 }
+
 .notification-amount::before {
   content: "";
   position: absolute;
@@ -1036,20 +1074,25 @@ footer a {
 @keyframes bounce-notifica {
   0% {
     transform: scale(0);
- }
+  }
+
   14% {
     transform: scale(1.15);
- }
+  }
+
   28% {
     transform: scale(1);
- }
+  }
+
   42% {
     transform: scale(1.15);
- }
+  }
+
   70% {
     transform: scale(1);
- }
+  }
+
   100% {
     transform: scale(1);
- }
+  }
 }
