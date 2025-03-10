@@ -58,7 +58,7 @@
                     id="btn-login">{{ __('ui.login') }}</button>
 
                 <div class="text-center mt-4">
-                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non sei {{__('ui.registrati')}}? {{__('ui.registrati')}}</a>
+                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non hai un account? {{__('ui.registrati')}}</a>
                 </div>
 
             </form>

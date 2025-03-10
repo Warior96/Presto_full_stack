@@ -14,10 +14,10 @@
                 </h1>
             </div>
         </div>
-
-        <div class="row justify-content-center  pb-3">
+        {{-- @dump($articles) --}}
+        <div class="row justify-content-center pb-3">
             @forelse ($articles as $article)
-                <div class="col-12 col-md-3 mx-3">
+                <div class="col-12 col-md-3 mx-4 h">
                     <x-card :article="$article" />
                 </div>
             @empty
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center pt-4">
         {{ $articles->links() }}
     </div>
 

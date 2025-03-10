@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row py-5 justify-content-center align-items-center text-center">
             <div class="col-12 pt-4">
                 @if ($articles->isEmpty())
@@ -15,9 +15,9 @@
                     @endif
                 @endif
             </div>
-            <div class="row justify-content-evenly align-items-center py-4">
+            <div class="row justify-content-center align-items-center pt-2 pb-4">
                 @forelse ($articles as $article)
-                    <div class="col-12 col-md-3 mx-3 mb-2 ">
+                    <div class="col-12 col-md-3 mx-3 mb-5 h2">
                         <x-card :article="$article" />
                     </div>
                 @empty
@@ -28,7 +28,7 @@
                 @endforelse
             </div>
 
-
         </div>
     </div>
+    <x-footer />
 </x-layout>

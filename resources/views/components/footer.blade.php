@@ -1,15 +1,21 @@
-<div class="container-fluid shadow bg-5">
+<div class="container-fluid shadow bg-5 overflow-hidden">
     <footer class="py-5">
-        <div class="row ">
-            <div class="col-8">
-                <div class="ms-5 ps-5 row">
+        <div class="row mx-md-2">
+            <div class="col-12 col-lg-8">
+                <div class="ps-lg-5 row">
 
                     {{-- logo --}}
-                    <img src="{{ Storage::url('logo/logo-quadrato-corona-1.svg') }}" alt=""
-                        class="img-logo-footer">
+                    <div class="col-12 d-flex d-md-none justify-content-center">
+                        <img src="{{ Storage::url('logo/logo-rettangolare.png') }}" alt=""
+                            class="img-logo-footer">
+                    </div>
+                    <div class="col-md-2 d-none d-md-flex justify-content-center">
+                        <img src="{{ Storage::url('logo/logo-quadrato.png') }}" alt=""
+                            class="img-logo-footer">
+                    </div>
 
                     {{-- chi siamo --}}
-                    <div class="col-6 col-md-5 mb-3 c-2">
+                    <div class="col-lg-5 col-md-5 ms-3 ms-md-0 mb-3 c-2 me-2 me-md-0 ps-lg-5">
                         <p class="c-2 mb-2">Chi siamo</p>
                         <p class="c-2">
                             Emporium The Shop è un marketplace dove puoi vendere e acquistare prodotti di ogni
@@ -18,7 +24,7 @@
                     </div>
 
                     {{-- contatti --}}
-                    <div class="col-6 col-md-3 mb-3 ms-4 c-2">
+                    <div class="col-lg-4 col-md-5 mb-3 ms-3 ms-md-0 ms-lg-4 c-2">
                         <p class="c-2 mb-2">Contatti</p>
                         <p class="c-2">
                             <i class="fa-solid fa-envelope c-2 me-2"></i>
@@ -37,13 +43,13 @@
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-lg-4 py-3 py-md-3 py-lg-0 mb-3 mb-md-0 mx-md-4 ps-md-3 px-lg-0 mx-lg-0">
 
                 {{-- Bottone + modale lavora con noi --}}
                 @auth
                     @if (!Auth::user()->is_revisor)
                         {{-- <div class="col-3 d-flex justify-content-end align-content-center "> --}}
-                        <div class="col-md-5 d-flex w-100 mb-3">
+                        <div class="col-md-5 ms-3 ms-md-0 d-flex w-100 mb-3">
                             <div>
                                 <h5 class="c-2">Richiedi di lavorare con noi</h5>
                                 <p class="c-2">Invia la tua candidatura come revisore</p>
@@ -91,24 +97,34 @@
                     @else
                         {{-- log + revisore --}}
                         @if (\App\Models\Article::toBeRevisedCount() > 0)
-                            <div class="col-12 d-flex flex-column justify-content-end align-content-center">
-                                <p class="c-2">Benvenuto revisore <strong
-                                        class="c-2">{{ Auth::user()->name }}</strong>,</p>
-                                @if (\App\Models\Article::toBeRevisedCount() > 1)
-                                    <p class="c-2">Al momento ci sono {{ \App\Models\Article::toBeRevisedCount() }}
-                                        articoli da
-                                        revisionare</p>
-                                @else
-                                    <p class="c-2">Al momento c'è 1 articolo da revisionare</p>
-                                @endif
-                                <div class="mt-2">
-                                    <a class="btn btn-primary px-4 py-2 fs-5 text-white rounded-4 shadow position-relative"
-                                        href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
-                                        <span
-                                            class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                            <div class="col-12 ms-3 ms-md-0 d-flex flex-column justify-content-end align-content-center">
+                                <div class="row">
+
+                                    @if (\App\Models\Article::toBeRevisedCount() > 1)
+                                        <p class="c-2 col-12 col-md-6 col-lg-12">
+                                            Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            <br>
+                                            Al momento ci sono
                                             {{ \App\Models\Article::toBeRevisedCount() }}
-                                        </span>
-                                    </a>
+                                            articoli da
+                                            revisionare
+                                        </p>
+                                    @else
+                                        <p class="c-2 col-12 col-md-6 col-lg-12">
+                                            Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            <br>
+                                            Al momento c'è 1 articolo da revisionare
+                                        </p>
+                                    @endif
+                                    <div class="mt-2 mt-md-0 mt-lg-2 mb-md-3 mb-lg-0 col-12 col-md-6">
+                                        <a class="btn btn-primary px-4 py-2 fs-5 text-white rounded-4 shadow position-relative"
+                                            href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
+                                            <span
+                                                class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                                {{ \App\Models\Article::toBeRevisedCount() }}
+                                            </span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         @else
@@ -152,7 +168,8 @@
                                             </div>
                                             <div
                                                 class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">No,
                                                     annulla</button>
                                                 <a href="{{ route('become.revisor') }}"
                                                     class="btn btn-primary px-3 py-2 rounded shadow">Candidati</a>
@@ -166,16 +183,18 @@
                 @endguest
 
             </div>
+        </div>
 
-
+        {{-- privacy --}}
+        <div
+            class="d-flex flex-column flex-sm-row justify-content-between pt-3 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
+            <p class="c-2">Questo sito utilizza cookie per migliorare l'esperienza utente. Continuando la
+                navigazione, accetti la nostra Privacy Policy e Cookie Policy.</p>
         </div>
 
 
-        <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 ps-5 mx-5 border-top border-secondary">
-            <p class="c-2">Questo sito utilizza cookie per migliorare l'esperienza utente. Continuando la navigazione, accetti la nostra Privacy Policy e Cookie Policy.</p>
-        </div>
-
-        <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-5 mx-5 border-top border-secondary">
+        <div
+            class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
             <p class="c-2">&copy; 2025 The Final Commit. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" target="_blank"

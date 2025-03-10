@@ -2,7 +2,8 @@
     <div class="container mt-5 pt-4 vh-100">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-3 mt-4 mb-1">{{ __('ui.dettaglio') }} {{ __('ui.prodotto') }}: {{ $article->title }}</h1>
+                <h1 class="display-3 mt-4 mb-1">{{ __('ui.dettaglio') }} {{ __('ui.prodotto') }}: {{ $article->title }}
+                </h1>
             </div>
         </div>
         <div class="row justify-content-center py-5">
@@ -13,9 +14,12 @@
                         coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
                         coverflow-effect-slide-shadows="true">
                         @foreach ($article->images as $key => $image)
-                            <swiper-slide class="swiper-slide-show rounded-4 overflow-hidden @if ($loop->first) active @endif">
-                                <img src="{{ $image->getUrl(600, 600) }}" class="rounded-4 h-100"
-                                    alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
+                            <swiper-slide
+                                class="swiper-slide-show rounded-4 overflow-hidden @if ($loop->first) active @endif">
+                                <div>
+                                    <img src="{{ $image->getUrl(600, 600) }}" class="rounded-4 h-100"
+                                        alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
+                                </div>
                             </swiper-slide>
                         @endforeach
                     </swiper-container>
@@ -35,6 +39,22 @@
                     <p class="fs-5 pt-3">Data inserimento articolo: {{ $article->created_at->format('d/m/Y') }}</p>
                     <p class="fs-5 pt-3">Venditore: {{ $article->user->name }}</p>
                     <p class="fs-5 pt-3">{{ __('ui.condizione') }}: {{ $article->condition }}</p>
+
+
+                    @foreach ($article->images as $image)
+                        @if ($image->labels)
+                            <p class="fs-5 pt-3">Label:
+                                @foreach ($image->labels as $label)
+                                    # {{ $label }}
+                                    @if (!$loop->last)
+                                        ,
+                                    @else
+                                        .
+                                    @endif
+                                @endforeach
+                            </p>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

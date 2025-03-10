@@ -10,7 +10,10 @@
     <div class="container-fluid">
         @if ($article_to_check)
             <div class="row justify-content-center pt-4 mx-5">
-                <div class="col-md-9 ">
+                <div
+                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif 
+                    @if ($article_to_check->images->count() == 1) col-md-8 @endif
+                    ">
                     <div class="row justify-content-center me-2">
                         @if ($article_to_check->images->count())
                             <swiper-container class="mySwiper-revisor swiper-container-revisor"
@@ -31,7 +34,12 @@
                                                     <div class="px-2 py-1">
                                                         @if ($image->labels)
                                                             @foreach ($image->labels as $label)
-                                                                #{{ $label }},
+                                                                #{{ $label }}
+                                                                @if (!$loop->last)
+                                                                    ,
+                                                                @else
+                                                                    .
+                                                                @endif
                                                             @endforeach
                                                         @else
                                                             <p class="fst-italic">No labels</p>
@@ -144,7 +152,11 @@
 
 
                 {{-- Dettagli dell'articolo da revisionare --}}
-                <div class="col-md-3 d-flex justify-content-between flex-column">
+                <div
+                    class="
+                @if ($article_to_check->images->count() > 1) col-md-3 @endif 
+                    @if ($article_to_check->images->count() == 1) col-md-4 @endif
+                d-flex justify-content-between flex-column">
                     <div class="row">
                         <h2 class="mb-3">
                             <span class="fs-7 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
@@ -158,7 +170,12 @@
                         </p>
                         <p class="fst-italic text-muted fs-5">
                             <span class="fs-7 fst-normal">{{ __('ui.categoria') }}: </span>
-                            #{{ $article_to_check->category->name }}
+                            {{-- #{{ $article_to_check->category->name }} --}}
+                            @foreach ($categories as $category)
+                                @if ($article_to_check->category->name == $category->name)
+                                    #{{ __("ui.$category->name") }}
+                                @endif
+                            @endforeach
                         </p>
                         <p class="fs-5">
                             <span class="mb-0 fs-7">
@@ -207,7 +224,7 @@
                             class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-danger py-2 px-5 w-100 fw-bold"
+                            <button class="btn btn-cus btn-danger p-2 w-100 fw-bold"
                                 id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
 
@@ -215,7 +232,7 @@
                             class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-success py-2 px-5 w-100 fw-bold"
+                            <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 
@@ -230,17 +247,26 @@
                 </div>
             </div>
         @else
-            <div class="row justify-content-center align-items-center text-center mx-3">
+            <div class="row justify-content-center align-items-center text-center my-5">
                 <div class="col-12">
 
 
                     <h1 class="fst-italic display-4">
                         Nessun articolo da revisionare
                     </h1>
-
-                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
+                </div>
+                {{-- <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
                         Torna alla home
-                    </a>
+                    </a> --}}
+                {{-- <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3"> --}}
+                {{-- <a href="{{ route('createarticle') }}"
+                            class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
+                            {{ __('ui.aggiungiProdotto') }}
+                        </a> --}}
+                <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 pt-5">
+                    <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-25"
+                        data-back="{{ __('ui.aggiungiUn') }} prodotto"
+                        data-front="Torna alla home"></a>
                 </div>
             </div>
         @endif

@@ -34,7 +34,7 @@ class AddArticle extends Component
 
     #[Validate('required', message: 'La categoria è obbligatoria')]
     public $category;
-    
+
     #[Validate('required', message: 'La condizione è obbligatoria')]
     public $condition;
 
@@ -83,7 +83,7 @@ class AddArticle extends Component
 
         // funzione di pulizia
         $this->puliziaCampi();
-        return redirect()->route('createarticle')->with('success', 'Articolo aggiunto con successo');
+        return redirect()->route('createarticle')->with('success', 'Il tuo articolo è stato caricato ed è in attesa di approvazione');
         // session()->flash('success', 'Articolo aggiunto con successo');
         // return redirect()->route('createarticle');
     }
