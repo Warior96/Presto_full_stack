@@ -4,21 +4,21 @@
 // let addArticle = document.querySelector('#addArticle');
 
 // setTimeout(() => {
-//     typewriter1.classList.add('typewriter');
+  //     typewriter1.classList.add('typewriter');
 //     typewriter1.classList.remove('invisible');
 // }, 2000);
 // setTimeout(() => {
-//     typewriter1.style.border = 'none';
+  //     typewriter1.style.border = 'none';
 // }, 4850);
 // setTimeout(() => {
-//     typewriter2.classList.add('typewriter');
+  //     typewriter2.classList.add('typewriter');
 //     typewriter2.classList.remove('invisible');
 // }, 5000);
 // setTimeout(() => {
-//     typewriter2.style.border = 'none';
+  //     typewriter2.style.border = 'none';
 // }, 7600);
 // setTimeout(() => {
-//     addArticle.classList.remove('opacity-0');
+  //     addArticle.classList.remove('opacity-0');
 //     addArticle.classList.add('opacity-100');
 // }, 7700);
 
@@ -32,23 +32,23 @@ let typeWriters = document.querySelectorAll('.typewriter');
 let typeWriters2 = document.querySelectorAll('#typewriter-text2');
 
 // typewriter1.forEach(el => {
-//     setTimeout(() => {
-//         el.classList.add('typewriter');
+  //     setTimeout(() => {
+    //         el.classList.add('typewriter');
 //         el.classList.remove('invisible');
 //     }, 2000);
 //     setTimeout(() => {
-//         el.style.border = 'none';
+  //         el.style.border = 'none';
 //     }, 4850);
 // });
 
 // typewriter1.forEach((el, index) => {
-//     if (index === 0) {
+  //     if (index === 0) {
 //         setTimeout(() => {
-//             el.classList.add('typewriter');
+  //             el.classList.add('typewriter');
 //             el.classList.remove('invisible');
 //         }, 2000);
 //         setTimeout(() => {
-//             el.style.border = 'none';
+  //             el.style.border = 'none';
 //         }, 4850);
 //     } else {
 //             // el.classList.add('typewriter');
@@ -87,7 +87,7 @@ typeWriters2.forEach((el, index) => {
       el.style.setProperty('--characters', text.length);
     }, 5000);
   } else {
-    const observer = new IntersectionObserver((entries, observer) => {
+    let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setTimeout(() => {
@@ -107,21 +107,21 @@ typeWriters2.forEach((el, index) => {
 
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
+  //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
 //             let el = entry.target;
 //             setTimeout(() => {
-//                 el.classList.remove('invisible');
+  //                 el.classList.remove('invisible');
 //                 el.classList.add('typewriter');
 //             }, time1);
 //             setTimeout(() => {
-//                 el.style.border = 'none';
+  //                 el.style.border = 'none';
 //             }, time2);
 //         }
 //     })
 // })
 // typewriter2.forEach(el, index => {
-//     if (index === 0) {
+  //     if (index === 0) {
 //         intervallo2(5000, 20600).observe(el);
 //     } else {
 //         intervallo2(1000, 15600).observe(el);
@@ -129,15 +129,15 @@ typeWriters2.forEach((el, index) => {
 // });
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
+  //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
 //             let el = entry.target;
 //             setTimeout(() => {
-//                 el.classList.remove('invisible');
+  //                 el.classList.remove('invisible');
 //                 el.classList.add('typewriter');
 //             }, time1);
 //             setTimeout(() => {
-//                 el.style.border = 'none';
+  //                 el.style.border = 'none';
 //             }, time2);
 //         }
 //     });
@@ -148,7 +148,7 @@ typeWriters2.forEach((el, index) => {
 // let observer2 = intervallo2(1000, 15600);
 
 // typewriter2.forEach((el, index) => {
-//     if (index === 0) {
+  //     if (index === 0) {
 //         observer1.observe(el);
 //     } else {
 //         observer2.observe(el);
@@ -158,18 +158,18 @@ typeWriters2.forEach((el, index) => {
 
 
 // setTimeout(() => {
-//     typewriter1.classList.add('typewriter');
+  //     typewriter1.classList.add('typewriter');
 //     typewriter1.classList.remove('invisible');
 // }, 2000);
 // setTimeout(() => {
-//     typewriter1.style.border = 'none';
+  //     typewriter1.style.border = 'none';
 // }, 4850);
 // setTimeout(() => {
-//     typewriter2.classList.add('typewriter');
+  //     typewriter2.classList.add('typewriter');
 //     typewriter2.classList.remove('invisible');
 // }, 5000);
 // setTimeout(() => {
-//     typewriter2.style.border = 'none';
+  //     typewriter2.style.border = 'none';
 // }, 7600);
 
 setTimeout(() => {
@@ -178,10 +178,47 @@ setTimeout(() => {
 }, 7700);
 
 
-let btnlight = document.querySelector('.btnlight')
 
-btnlight.addEventListener('click', ()=>{
-  btnlight.classList.toggle('button-clicked')
-  // document.body.classList.toggle('dark-mode');
-  btnlight.firstElementChild.classList.toggle('icon-clicked')
-})
+
+
+// Funzione per applicare la modalità scura al caricamento della pagina
+function checkDarkMode() {
+  const darkMode = localStorage.getItem('darkMode'); // Usa localStorage
+
+  if (darkMode === 'true') {
+    document.body.classList.add('dark-mode');
+    btnlight.classList.add('button-clicked');
+    btnlight.firstElementChild.classList.add('icon-clicked');
+  }
+}
+
+// Esegui la funzione di check quando la pagina viene caricata
+window.onload = checkDarkMode;
+
+// Night mode - Toggle Dark Mode
+let btnlight = document.querySelector('.btnlight');
+
+btnlight.addEventListener('click', () => {
+  // Toggle la classe per il corpo e il bottone
+  document.body.classList.toggle('dark-mode');
+  btnlight.classList.toggle('button-clicked');
+  btnlight.firstElementChild.classList.toggle('icon-clicked');
+
+  // Memorizza lo stato della modalità scura nel localStorage
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'true');
+  } else {
+    localStorage.setItem('darkMode', 'false');
+  }
+
+  // Cambia il colore del testo in base alla modalità
+  let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+
+  textElements.forEach(el => {
+    if (document.body.classList.contains('dark-mode')) {
+      el.style.color = '#F5DEBA';  // Colore chiaro in modalità scura
+    } else {
+      el.style.color = '#2c2c31';  // Colore scuro in modalità chiara
+    }
+  });
+});

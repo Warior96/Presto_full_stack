@@ -48,7 +48,7 @@
                                         {{ __("ui.$category->name") }}
                                         <!-- Numero di elementi presenti nelle varie categorie -->
                                         <span
-                                            class="ms-auto ps-2">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
+                                            class="ms-auto ps-2 dark">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
                                     </a>
                                 </li>
 

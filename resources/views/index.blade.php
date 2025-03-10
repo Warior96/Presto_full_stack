@@ -12,7 +12,7 @@
         <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
 
             <div class="col-12 c-2">
-                <h1 class=" display-1 text-center pb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                <h1 class=" display-1 text-center pb-3 dark" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
                     Emporium Shop</h1>
             </div>
 
@@ -138,7 +138,7 @@
                                 <div class="col-12 container-little-img-card p-0">
                                     <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
                                     <div class="little-black-opacity p-0 radius">
-                                        <h6 class="c-2 position-absolute top-50 start-50 translate-middle text-center">
+                                        <h6 class="dark c-2 position-absolute top-50 start-50 translate-middle text-center">
                                             {{ __("ui.$category->name") }}</h5>
                                     </div>
                                 </div>

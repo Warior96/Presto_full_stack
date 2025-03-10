@@ -114,9 +114,9 @@
                         @else
                             {{-- nessun articolo da revisionare --}}
                             <div class="col-12">
-                                <p class="c-2 mb-1">Benvenuto revisore <strong
+                                <p class="c-2 mb-1 dark">Benvenuto revisore <strong
                                         class="c-2">{{ Auth::user()->name }}</strong>,</p>
-                                <p class="c-2">Al momento non ci sono articoli da revisionare</p>
+                                <p class="c-2 dark">Al momento non ci sono articoli da revisionare</p>
                             </div>
                         @endif
                     @endif
@@ -125,8 +125,8 @@
                 @guest
                     <div class="col-md-5 d-flex w-100 mb-3">
                         <div>
-                            <h5 class="c-2">Richiedi di lavorare con noi</h5>
-                            <p class="c-2">Invia la tua candidatura come revisore</p>
+                            <h5 class="c-2 dark">Richiedi di lavorare con noi</h5>
+                            <p class="c-2 dark">Invia la tua candidatura come revisore</p>
                             <div class="col-4 ">
                                 {{-- bottone apertura modale --}}
                                 <button type="button" class="btn btn-primary px-3 py-2 fs-5  rounded shadow"
