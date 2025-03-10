@@ -184,7 +184,7 @@ let btnlight = document.querySelector('.btnlight');
 let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 
-//funzione che controlla se la dark è impostata oppure no
+//funzione che setta nel localStorage la dark se la trova impostata oppure non la mette se non la trova
 function setDark() {
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('darkMode', 'true');
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 btnlight.addEventListener('click', () => {
-  // Toggle la classe per il corpo e il bottone
+  // Toggle della classe per il corpo e il bottone
   document.body.classList.toggle('dark-mode');
   if(footer){
     footer.classList.toggle('dark-mode-footer');
@@ -228,9 +228,9 @@ btnlight.addEventListener('click', () => {
 
   textElements.forEach(el => {
     if (document.body.classList.contains('dark-mode')) {
-      el.style.color = '#F5DEBA';  // Colore chiaro in modalità scura
+      el.style.color = '#F5DEBA';  // Colore chiaro
     } else {
-      el.style.color = '#2c2c31';  // Colore scuro in modalità chiara
+      el.style.color = '#2c2c31';  // Colore scuro
     }
   });
 });
