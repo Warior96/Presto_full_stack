@@ -209,7 +209,7 @@
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class="my-1 swiper-slide-home col-12 col-md-4 col-3">
+                            <swiper-slide class="mb-5 swiper-slide-home col-lg-12 col-md-4 col-3">
                                 <x-card :article="$article" />
                             </swiper-slide>
                         @endforeach

@@ -22,10 +22,8 @@
         </div>
     </header>
 
-    <div class="d-flex justify-content-center">
-        <div>
-            {{ $articles->links() }}
-        </div>
+    <div class="d-flex justify-content-center pt-4 my-2">
+        {{ $articles->links() }}
     </div>
 
     <x-footer></x-footer>

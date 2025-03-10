@@ -17,7 +17,7 @@
                             <swiper-slide
                                 class="swiper-slide-show rounded-4 overflow-hidden @if ($loop->first) active @endif">
                                 <div>
-                                    <img src="{{ $image->getUrl(600, 600) }}" class="rounded-4 h-100"
+                                    <img src="{{ $image->getUrl(600, 600) }}" class="rounded-4 h-100 aspect-ratio-1"
                                         alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
                                 </div>
                             </swiper-slide>
