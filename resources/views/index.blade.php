@@ -4,8 +4,7 @@
             {{ session('errorMessage') }}
         </div>
     @endif
-    <header class="container-fluid bg-header pt-5 vh-100 bg-5"
-        {{-- style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
+    <header class="container-fluid bg-header pt-5 vh-100 bg-5" {{-- style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
             url({{ asset('storage/background/header1.jpeg') }}); background-repeat: no-repeat;
             background-size: cover; background-position: center;" --}}>
         <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
@@ -13,7 +12,8 @@
             {{-- titolo --}}
             <div class="col-12 c-2">
 
-                <h1 class=" display-1 text-center pb-1 dark" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+                <h1 class=" display-1 text-center pb-1 dark" data-aos="fade-down" data-aos-delay="300"
+                    data-aos-duration="2000">
                     EMPORIUM <span class="c-2 shop dark">SHOP</span>
                 </h1>
             </div>
@@ -145,7 +145,8 @@
                                 <div class="col-12 container-little-img-card p-0">
                                     <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
                                     <div class="little-black-opacity p-0 radius">
-                                        <h6 class="dark c-2 position-absolute top-50 start-50 translate-middle text-center">
+                                        <h6
+                                            class="dark c-2 position-absolute top-50 start-50 translate-middle text-center">
                                             {{ __("ui.$category->name") }}</h5>
                                     </div>
                                 </div>
@@ -156,17 +157,7 @@
             </div>
 
 
-            {{-- crea articolo --}}
-            <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
-                {{-- <a href="{{ route('createarticle') }}"
-                    class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
-                    {{ __('ui.aggiungiProdotto') }}
-                </a> --}}
-                <a href="{{ route('createarticle') }}" id="addArticle"
-                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
-                    data-back="{{ __('ui.aggiungiProdotto2') }}"
-                    data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
-            </div>
+
 
             {{-- caret --}}
             <a href="#lastArticles"
@@ -220,6 +211,17 @@
                     </div>
                 @endif
             </div>
+        </div>
+
+        {{-- crea articolo --}}
+        <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
+            {{-- <a href="{{ route('createarticle') }}"
+        class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
+        {{ __('ui.aggiungiProdotto') }}
+    </a> --}}
+            <a href="{{ route('createarticle') }}" id="addArticle"
+                class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0" data-back="{{ __('ui.aggiungiProdotto2') }}"
+                data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
         </div>
 
     </section>
