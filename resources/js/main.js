@@ -180,10 +180,11 @@ setTimeout(() => {
 
 
 //INIZIO DEL CODICE PER LA DARK-MODE
-
+let btnlight = document.querySelector('.btnlight');
 let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 
+//funzione che controlla se la dark è impostata oppure no
 function setDark() {
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('darkMode', 'true');
@@ -197,8 +198,9 @@ function checkDarkMode() {
   let darkMode = localStorage.getItem('darkMode');
   if (darkMode === 'true') {
     document.body.classList.add('dark-mode');
-    footer.classList.add('dark-mode-footer')
-    btnlight.classList.add('button-clicked');
+    if(footer){
+      footer.classList.toggle('dark-mode-footer');
+    }
     btnlight.firstElementChild.classList.add('icon-clicked');
     textElements.forEach(el=>{
       el.style.color = '#F5DEBA';  // Colore chiaro
@@ -206,15 +208,18 @@ function checkDarkMode() {
   }
 }
 
-// Esegui la funzione di check al caricamanto della pagina
-window.onload = checkDarkMode;
-
-let btnlight = document.querySelector('.btnlight');
+// Esegui la funzione di check al caricamanto degli asset html
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.style.visibility = 'visible';
+  checkDarkMode();
+});
 
 btnlight.addEventListener('click', () => {
   // Toggle la classe per il corpo e il bottone
   document.body.classList.toggle('dark-mode');
-  footer.classList.toggle('dark-mode-footer');
+  if(footer){
+    footer.classList.toggle('dark-mode-footer');
+  }
   btnlight.classList.toggle('button-clicked');
   btnlight.firstElementChild.classList.toggle('icon-clicked');
 

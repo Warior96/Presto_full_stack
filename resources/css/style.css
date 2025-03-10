@@ -89,8 +89,8 @@ nav a {
 }
 
 body {
+  visibility: hidden;
   background-color: var(--color-2);
-
 }
 
 .dark-mode{
