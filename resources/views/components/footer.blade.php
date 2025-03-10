@@ -6,11 +6,11 @@
 
                     {{-- logo --}}
                     <div class="col-12 d-flex d-md-none justify-content-center">
-                        <img src="{{ Storage::url('logo/logo-rettangolare.png') }}" alt=""
+                        <img src="{{ Storage::url('logo/logo-rettangolare-w.png') }}" alt=""
                             class="img-logo-footer">
                     </div>
                     <div class="col-md-2 d-none d-md-flex justify-content-center">
-                        <img src="{{ Storage::url('logo/logo-quadrato.png') }}" alt=""
+                        <img src="{{ Storage::url('logo/logo-quadrato-w.png') }}" alt=""
                             class="img-logo-footer">
                     </div>
 

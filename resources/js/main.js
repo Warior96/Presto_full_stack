@@ -181,9 +181,10 @@ setTimeout(() => {
 
 
 
-// Funzione per applicare la modalità scura al caricamento della pagina
+// Funzione della dark-mode
 function checkDarkMode() {
-  const darkMode = localStorage.getItem('darkMode'); // Usa localStorage
+  let darkMode = localStorage.getItem('darkMode');
+  let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 
   if (darkMode === 'true') {
     document.body.classList.add('dark-mode');
@@ -212,7 +213,7 @@ btnlight.addEventListener('click', () => {
   }
 
   // Cambia il colore del testo in base alla modalità
-  let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+
 
   textElements.forEach(el => {
     if (document.body.classList.contains('dark-mode')) {
