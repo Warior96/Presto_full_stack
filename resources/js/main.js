@@ -179,41 +179,47 @@ setTimeout(() => {
 
 
 
+//INIZIO DEL CODICE PER LA DARK-MODE
 
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+let footer = document.querySelector('footer')
 
-// Funzione della dark-mode
-function checkDarkMode() {
-  let darkMode = localStorage.getItem('darkMode');
-  let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
-
-  if (darkMode === 'true') {
-    document.body.classList.add('dark-mode');
-    btnlight.classList.add('button-clicked');
-    btnlight.firstElementChild.classList.add('icon-clicked');
-  }
-}
-
-// Esegui la funzione di check quando la pagina viene caricata
-window.onload = checkDarkMode;
-
-// Night mode - Toggle Dark Mode
-let btnlight = document.querySelector('.btnlight');
-
-btnlight.addEventListener('click', () => {
-  // Toggle la classe per il corpo e il bottone
-  document.body.classList.toggle('dark-mode');
-  btnlight.classList.toggle('button-clicked');
-  btnlight.firstElementChild.classList.toggle('icon-clicked');
-
-  // Memorizza lo stato della modalità scura nel localStorage
+function setDark() {
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('darkMode', 'true');
   } else {
     localStorage.setItem('darkMode', 'false');
   }
+}
 
-  // Cambia il colore del testo in base alla modalità
+// Funzione per controllare se la dark-mode è attiva o no al caricamento della pagina
+function checkDarkMode() {
+  let darkMode = localStorage.getItem('darkMode');
+  if (darkMode === 'true') {
+    document.body.classList.add('dark-mode');
+    footer.classList.add('dark-mode-footer')
+    btnlight.classList.add('button-clicked');
+    btnlight.firstElementChild.classList.add('icon-clicked');
+    textElements.forEach(el=>{
+      el.style.color = '#F5DEBA';  // Colore chiaro
+    })
+  }
+}
 
+// Esegui la funzione di check al caricamanto della pagina
+window.onload = checkDarkMode;
+
+let btnlight = document.querySelector('.btnlight');
+
+btnlight.addEventListener('click', () => {
+  // Toggle la classe per il corpo e il bottone
+  document.body.classList.toggle('dark-mode');
+  footer.classList.toggle('dark-mode-footer');
+  btnlight.classList.toggle('button-clicked');
+  btnlight.firstElementChild.classList.toggle('icon-clicked');
+
+  // Memorizza lo stato della modalità scura nel localStorage
+  setDark()
 
   textElements.forEach(el => {
     if (document.body.classList.contains('dark-mode')) {

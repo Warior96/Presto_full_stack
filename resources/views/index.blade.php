@@ -14,7 +14,7 @@
             <div class="col-12 c-2">
 
                 <h1 class=" display-1 text-center pb-1 dark" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
-                    EMPORIUM <span class="c-2 shop">SHOP</span>
+                    EMPORIUM <span class="c-2 shop dark">SHOP</span>
                 </h1>
             </div>
 

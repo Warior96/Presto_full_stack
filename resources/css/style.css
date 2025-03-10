@@ -94,6 +94,9 @@ body {
 }
 
 .dark-mode{
+  background-color: var(--color-5);
+}
+.dark-mode-footer{
   background-color: #4b4a4a;
 }
 
