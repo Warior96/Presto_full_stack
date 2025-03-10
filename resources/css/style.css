@@ -1,7 +1,8 @@
 :root {
   --color-1: #e9693f;
   --color-1-o: #e9693fc5;
-  --color-2: #F5DEBA;
+  /* --color-2: #F5DEBA; */
+  --color-2: #ffefd5;
   --color-2-s: rgb(248, 220, 175);
   --color-2-st: #f4d4a2;
   --color-2-o: #f5debad5;
