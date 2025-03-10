@@ -89,7 +89,7 @@ nav a {
 }
 
 body {
-  /* visibility: hidden; */
+  visibility: hidden;
   background-color: var(--color-2);
 }
 

@@ -187,7 +187,7 @@ let observerArticle = new IntersectionObserver((entries) => {
     }
   });
 });
-observerArticle.observe(addArticle);
+// observerArticle.observe(addArticle);
 
 
 
@@ -211,9 +211,11 @@ function checkDarkMode() {
   let darkMode = localStorage.getItem('darkMode');
   if (darkMode === 'true') {
     document.body.classList.add('dark-mode');
+    document.body.style.visibility = 'visible';
     if(footer){
       footer.classList.toggle('dark-mode-footer');
     }
+    btnlight.classList.toggle('button-clicked');
     btnlight.firstElementChild.classList.add('icon-clicked');
     textElements.forEach(el => {
       el.style.color = '#F5DEBA';  // Colore chiaro
@@ -223,8 +225,11 @@ function checkDarkMode() {
 
 // Esegui la funzione di check al caricamanto degli asset html
 document.addEventListener('DOMContentLoaded', ()=>{
-  checkDarkMode();
   document.body.style.visibility = 'visible';
+  checkDarkMode();
+  
+  //observer che fa apparire il btn aggiungi articolo, deve stare qui altrimenti il codice non lo legge e va in bug
+  observerArticle.observe(addArticle);
 });
 
 btnlight.addEventListener('click', () => {
