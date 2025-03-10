@@ -194,7 +194,7 @@ let observerArticle = new IntersectionObserver((entries) => {
 //INIZIO DEL CODICE PER LA DARK-MODE
 
 let btnlight = document.querySelector('.btnlight')
-let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 
 //funzione che setta nel localStorage la dark se la trova impostata oppure non la mette se non la trova
@@ -227,7 +227,7 @@ function checkDarkMode() {
 document.addEventListener('DOMContentLoaded', ()=>{
   document.body.style.visibility = 'visible';
   checkDarkMode();
-  
+
   //observer che fa apparire il btn aggiungi articolo, deve stare qui altrimenti il codice non lo legge e va in bug
   observerArticle.observe(addArticle);
 });
