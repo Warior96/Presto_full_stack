@@ -4,11 +4,12 @@
         <div class="row pt-5 justify-content-center align-items-center">
             <div class="col-12">
                 <h1 class="display-5 text-center mt-5 pb-3">
-                    @if ($articles->count() > 1)
-                        Ci sono {{ $articles->count() }} risultati nella ricerca "<span
+                    @if ($articles->total() > 1)
+                    {{-- @dd($articles->total()) --}}
+                        Ci sono {{ $articles->total() }} risultati nella ricerca "<span
                             class="fst-italic">{{ $query }}</span>"
-                    @elseif ($articles->count() == 1)
-                        C'è {{ $articles->count() }} risultato nella ricerca "<span
+                    @elseif ($articles->total() == 1)
+                        C'è {{ $articles->total() }} risultato nella ricerca "<span
                             class="fst-italic">{{ $query }}</span>"
                     @endif
                 </h1>
