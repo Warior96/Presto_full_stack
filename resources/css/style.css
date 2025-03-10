@@ -853,6 +853,7 @@ footer a {
   position: absolute;
   /* background: #adadaf; */
   background: var(--color-2);
+  border: 2px solid var(--color-1);
   content: attr(data-back);
   transform: translateY(-50%) rotateX(90deg);
 }
