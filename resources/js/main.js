@@ -4,21 +4,21 @@
 // let addArticle = document.querySelector('#addArticle');
 
 // setTimeout(() => {
-  //     typewriter1.classList.add('typewriter');
+//     typewriter1.classList.add('typewriter');
 //     typewriter1.classList.remove('invisible');
 // }, 2000);
 // setTimeout(() => {
-  //     typewriter1.style.border = 'none';
+//     typewriter1.style.border = 'none';
 // }, 4850);
 // setTimeout(() => {
-  //     typewriter2.classList.add('typewriter');
+//     typewriter2.classList.add('typewriter');
 //     typewriter2.classList.remove('invisible');
 // }, 5000);
 // setTimeout(() => {
-  //     typewriter2.style.border = 'none';
+//     typewriter2.style.border = 'none';
 // }, 7600);
 // setTimeout(() => {
-  //     addArticle.classList.remove('opacity-0');
+//     addArticle.classList.remove('opacity-0');
 //     addArticle.classList.add('opacity-100');
 // }, 7700);
 
@@ -29,26 +29,26 @@
 // let typewriter2 = document.querySelectorAll('.typewriter2');
 let addArticle = document.querySelector('#addArticle');
 let typeWriters = document.querySelectorAll('.typewriter');
-let typeWriters2 = document.querySelectorAll('#typewriter-text2');
+let typeWriters2 = document.querySelectorAll('.typewriter-text2');
 
 // typewriter1.forEach(el => {
-  //     setTimeout(() => {
-    //         el.classList.add('typewriter');
+//     setTimeout(() => {
+//         el.classList.add('typewriter');
 //         el.classList.remove('invisible');
 //     }, 2000);
 //     setTimeout(() => {
-  //         el.style.border = 'none';
+//         el.style.border = 'none';
 //     }, 4850);
 // });
 
 // typewriter1.forEach((el, index) => {
-  //     if (index === 0) {
+//     if (index === 0) {
 //         setTimeout(() => {
-  //             el.classList.add('typewriter');
+//             el.classList.add('typewriter');
 //             el.classList.remove('invisible');
 //         }, 2000);
 //         setTimeout(() => {
-  //             el.style.border = 'none';
+//             el.style.border = 'none';
 //         }, 4850);
 //     } else {
 //             // el.classList.add('typewriter');
@@ -107,21 +107,21 @@ typeWriters2.forEach((el, index) => {
 
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
-  //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
 //             let el = entry.target;
 //             setTimeout(() => {
-  //                 el.classList.remove('invisible');
+//                 el.classList.remove('invisible');
 //                 el.classList.add('typewriter');
 //             }, time1);
 //             setTimeout(() => {
-  //                 el.style.border = 'none';
+//                 el.style.border = 'none';
 //             }, time2);
 //         }
 //     })
 // })
 // typewriter2.forEach(el, index => {
-  //     if (index === 0) {
+//     if (index === 0) {
 //         intervallo2(5000, 20600).observe(el);
 //     } else {
 //         intervallo2(1000, 15600).observe(el);
@@ -129,15 +129,15 @@ typeWriters2.forEach((el, index) => {
 // });
 
 // let intervallo2 = (time1, time2) => new IntersectionObserver(entries => {
-  //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
 //             let el = entry.target;
 //             setTimeout(() => {
-  //                 el.classList.remove('invisible');
+//                 el.classList.remove('invisible');
 //                 el.classList.add('typewriter');
 //             }, time1);
 //             setTimeout(() => {
-  //                 el.style.border = 'none';
+//                 el.style.border = 'none';
 //             }, time2);
 //         }
 //     });
@@ -148,7 +148,7 @@ typeWriters2.forEach((el, index) => {
 // let observer2 = intervallo2(1000, 15600);
 
 // typewriter2.forEach((el, index) => {
-  //     if (index === 0) {
+//     if (index === 0) {
 //         observer1.observe(el);
 //     } else {
 //         observer2.observe(el);
@@ -158,30 +158,42 @@ typeWriters2.forEach((el, index) => {
 
 
 // setTimeout(() => {
-  //     typewriter1.classList.add('typewriter');
+//     typewriter1.classList.add('typewriter');
 //     typewriter1.classList.remove('invisible');
 // }, 2000);
 // setTimeout(() => {
-  //     typewriter1.style.border = 'none';
+//     typewriter1.style.border = 'none';
 // }, 4850);
 // setTimeout(() => {
-  //     typewriter2.classList.add('typewriter');
+//     typewriter2.classList.add('typewriter');
 //     typewriter2.classList.remove('invisible');
 // }, 5000);
 // setTimeout(() => {
-  //     typewriter2.style.border = 'none';
+//     typewriter2.style.border = 'none';
 // }, 7600);
 
-setTimeout(() => {
-  addArticle.classList.remove('opacity-0');
-  addArticle.classList.add('opacity-100');
-}, 7700);
+// setTimeout(() => {
+//   addArticle.classList.remove('opacity-0');
+//   addArticle.classList.add('opacity-100');
+// }, 7700);
+
+let observerArticle = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        addArticle.classList.remove('opacity-0');
+        addArticle.classList.add('opacity-100');
+      }, 1000);
+    }
+  });
+});
+observerArticle.observe(addArticle);
 
 
 
 //INIZIO DEL CODICE PER LA DARK-MODE
-let btnlight = document.querySelector('.btnlight');
-let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 
 //funzione che setta nel localStorage la dark se la trova impostata oppure non la mette se non la trova
@@ -202,7 +214,7 @@ function checkDarkMode() {
       footer.classList.toggle('dark-mode-footer');
     }
     btnlight.firstElementChild.classList.add('icon-clicked');
-    textElements.forEach(el=>{
+    textElements.forEach(el => {
       el.style.color = '#F5DEBA';  // Colore chiaro
     })
   }
