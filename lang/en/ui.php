@@ -4,6 +4,7 @@ return [
     'home' => 'Homepage',
     'aggiungiUn' => 'Add a',
     'prodotto' => 'Product',
+    'aggiungiProdotto2' => 'Complete the sale',
     'mostraProdotti' => 'Show all products',
     'categorie' => 'Categories',
     'revisiona' => 'Revise',

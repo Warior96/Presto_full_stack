@@ -4,10 +4,10 @@
             {{ session('errorMessage') }}
         </div>
     @endif
-    <header class="container-fluid bg-header pt-5 vh-100"
-        style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
+    <header class="container-fluid bg-header pt-5 vh-100 bg-5"
+        {{-- style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.451)),
             url({{ asset('storage/background/header1.jpeg') }}); background-repeat: no-repeat;
-            background-size: cover; background-position: center;">
+            background-size: cover; background-position: center;" --}}>
         <div class="row justify-content-evenly align-items-center flex-column w-100 h-100 py-4 position-relative">
 
             {{-- titolo --}}
@@ -42,7 +42,7 @@
                                         class="black-opacity radius d-flex flex-column justify-content-center align-items-center">
                                         @auth
                                             <h4 class="typewriter c-2 mb-3" id="typewriter-text">
-                                                Ciao {{ Auth::user()->name }}, sei pronto a fare l'offerta giusta anche
+                                                Ciao {{ Auth::user()->name }}, sei pronto a fare ottimi affari anche
                                                 oggi?
                                             </h4>
                                         @else
@@ -162,9 +162,9 @@
                     {{ __('ui.aggiungiProdotto') }}
                 </a> --}}
                 <a href="{{ route('createarticle') }}" id="addArticle"
-                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0{{-- opacity-0 --}}"
+                    class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
                     data-back="{{ __('ui.aggiungiProdotto2') }}"
-                    data-front="{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}"></a>
+                    data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
             </div>
 
             {{-- caret --}}

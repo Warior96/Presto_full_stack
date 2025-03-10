@@ -4,6 +4,7 @@ return [
     'home' => '首页',
     'aggiungiUn' => '发布新',
     'prodotto' => '产品',
+    'aggiungiProdotto2' => '完成售卖',
     'mostraProdotti' => '全部',
     'categorie' => '分类',
     'revisiona' => '审核',

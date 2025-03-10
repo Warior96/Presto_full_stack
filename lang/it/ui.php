@@ -4,7 +4,7 @@ return [
     'home' => 'Homepage',
     'aggiungiUn' => 'Aggiungi un',
     'prodotto' => 'Prodotto',
-    'aggiungiProdotto2' => 'E concludi la vendita',
+    'aggiungiProdotto2' => 'Completa la vendita',
     'mostraProdotti' => 'Mostra tutti i prodotti',
     'categorie' => 'Categorie',
     'revisiona' => 'Revisiona',

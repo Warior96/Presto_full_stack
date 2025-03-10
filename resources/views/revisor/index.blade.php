@@ -10,7 +10,8 @@
     <div class="container-fluid">
         @if ($article_to_check)
             <div class="row justify-content-center pt-4 mx-5">
-                <div class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif 
+                <div
+                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif 
                     @if ($article_to_check->images->count() == 1) col-md-8 @endif
                     ">
                     <div class="row justify-content-center me-2">
@@ -151,7 +152,8 @@
 
 
                 {{-- Dettagli dell'articolo da revisionare --}}
-                <div class="
+                <div
+                    class="
                 @if ($article_to_check->images->count() > 1) col-md-3 @endif 
                     @if ($article_to_check->images->count() == 1) col-md-4 @endif
                 d-flex justify-content-between flex-column">
@@ -245,17 +247,26 @@
                 </div>
             </div>
         @else
-            <div class="row justify-content-center align-items-center text-center mx-3">
+            <div class="row justify-content-center align-items-center text-center my-5">
                 <div class="col-12">
 
 
                     <h1 class="fst-italic display-4">
                         Nessun articolo da revisionare
                     </h1>
-
-                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
+                </div>
+                {{-- <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
                         Torna alla home
-                    </a>
+                    </a> --}}
+                {{-- <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3"> --}}
+                {{-- <a href="{{ route('createarticle') }}"
+                            class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
+                            {{ __('ui.aggiungiProdotto') }}
+                        </a> --}}
+                <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 pt-5">
+                    <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-25"
+                        data-back="{{ __('ui.aggiungiUn') }} prodotto"
+                        data-front="Torna alla home"></a>
                 </div>
             </div>
         @endif
