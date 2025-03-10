@@ -33,7 +33,7 @@ return [
     'titolo' => '标题',
     'descrizione' => '标题',
     'prezzo' => '价格',
-    '€' => '¥',
+    '€' => '¥ ',
     'categoria' => '类别',
     'modifica' => '编辑',
     'elimina' => '删除',

@@ -33,7 +33,7 @@ return [
     'titolo' => 'Title',
     'descrizione' => 'Description',
     'prezzo' => 'Price',
-    '€' => '£',
+    '€' => '£ ',
     'categoria' => 'Category',
     'modifica' => 'Edit',
     'elimina' => 'Delete',

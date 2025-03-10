@@ -1,13 +1,24 @@
 <x-layout>
     <div class="container mt-5 pt-4 vh-100">
+
+        {{-- title --}}
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-3 mt-4 mb-1">{{ __('ui.dettaglio') }} {{ __('ui.prodotto') }}: {{ $article->title }}
+                <h1 class="display-1 fw-bold mt-4 mb-1">
+                    {{ $article->title }}
                 </h1>
+
+                <p class="fs-4">
+                    Articolo pubblicato da {{ $article->user->name }}
+                </p>
             </div>
         </div>
-        <div class="row justify-content-center py-5">
-            <div class="col-12 col-md-6 mb-2">
+
+        {{-- card --}}
+        <div class="row justify-content-center align-item-center py-5">
+
+            {{-- fotografia --}}
+            <div class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail">
                 @if ($article->images->count() > 0)
                     <swiper-container class="mySwiper swiper-container-show" pagination="true" effect="coverflow"
                         grab-cursor="true" centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50"
@@ -24,39 +35,95 @@
                         @endforeach
                     </swiper-container>
                 @else
-                    <img src="https://picsum.photos/300" class="d-block w-100 rounded shadow"
-                        alt="Nessun foto inserita dall'utente">
+                    <swiper-container class="mySwiper swiper-container-show" pagination="true" effect="coverflow"
+                        grab-cursor="true" centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50"
+                        coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
+                        coverflow-effect-slide-shadows="true">
+                        <swiper-slide class="swiper-slide-show rounded-4 overflow-hidden">
+                            <div>
+                                <img src="https://picsum.photos/300" class="rounded-4 h-100 aspect-ratio-1"
+                                    alt="Nessun foto inserita dall'utente">
+                            </div>
+                        </swiper-slide>
+                    </swiper-container>
                 @endif
             </div>
-            <div class="col-12 col-md-6 mb-3 ">
-                <h2 class="display-5 ms-4"><span class="fw-bold">{{ __('ui.titolo') }}:
-                    </span>{{ $article->title }}</h2>
+
+            {{-- dettagli articolo --}}
+            <div class="col-12 col-md-6 mb-3">
                 <div class=" h-75 m-4">
-                    <h4 class="fw-bold mb-3">{{ __('ui.prezzo') }}: {{ __('ui.€') }}{{ $article->price }}</h4>
-                    <h4 class="fw-bold mb-3">{{ __('ui.categoria') }}: <span
-                            class="text-muted fst-italic">#{{ __("ui.{$article->category->name}") }} </span></h4>
-                    <p class="fs-5 pt-3">{{ __('ui.descrizione') }}: {{ $article->description }}</p>
-                    <p class="fs-5 pt-3">Data inserimento articolo: {{ $article->created_at->format('d/m/Y') }}</p>
-                    <p class="fs-5 pt-3">Venditore: {{ $article->user->name }}</p>
-                    <p class="fs-5 pt-3">{{ __('ui.condizione') }}: {{ $article->condition }}</p>
+                    {{-- Prezzo e condizione --}}
+                    <h3 class="fw-bold mb-3 price-detail">
+                        {{ __('ui.€') }}{{ $article->price }}
+                        <span class="fs-1 text-muted fst-italic text-uppercase hover">
+                            @if ($article->condition == 'new')
+                                {{ __('ui.new') }}
+                            @elseif ($article->condition == 'used')
+                                {{ __('ui.used') }}
+                            @elseif ($article->condition == 'reconditioned')
+                                {{ __('ui.reconditioned') }}
+                            @endif
+                        </span>
+                    </h3>
 
+                    {{-- Descrizione --}}
+                    <p class="fs-7">
+                        <span class="fw-bold">
+                            Informazioni su questo articolo:
+                        </span>
+                        <br>
+                        {{ $article->description }}
+                    </p>
 
+                    {{-- Categoria --}}
+                    <p class="fs-7 mt-5">
+                        <span class="fw-bold">
+                            {{ __('ui.categoria') }}:
+                        </span>
+                        <a href="{{ route('byCategory', ['category' => $article->category])}}" class="text-decoration-none p-2 ms-3 text-center btn-cus btn-category-detail" target="_blank"
+                            id="tag-categoria">
+                            {{ __("ui.{$article->category->name}") }}
+                        </a>
+
+                    </p>
+
+                    {{-- Altri tag --}}
                     @foreach ($article->images as $image)
                         @if ($image->labels)
-                            <p class="fs-5 pt-3">Label:
+                            <p class="fs-7 fw-bold mt-5 pt-3mb-0">
+                                Hashtag che descrivono l'articolo:
+                            </p>
+                            <p class="fs-7 mt-0">
                                 @foreach ($image->labels as $label)
-                                    # {{ $label }}
+                                    <span class="text-muted">
+                                        #{{ $label }}
+                                    </span>
+
                                     @if (!$loop->last)
-                                        ,
+                                        <span class="text-muted">
+                                            ,
+                                        </span>
                                     @else
-                                        .
+                                        <span class="text-muted">
+                                            .
+                                        </span>
                                     @endif
                                 @endforeach
                             </p>
                         @endif
                     @endforeach
+
+                    {{-- Informazioni secondarie --}}
+                    <div class="data-container-detail d-flex justify-content-between">
+                        <p class="data-detail">Approvato dai nostri revisori</p>
+                        <p class="data-detail">{{ $article->created_at->format('d/m/Y') }}</p>
+                    </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+
+    <x-footer />
 </x-layout>
