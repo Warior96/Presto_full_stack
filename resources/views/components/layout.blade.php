@@ -8,12 +8,9 @@
     <meta name="keywords" content="xxx, yyy, zzz">
     <meta name="author" content="The Final Commit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="xxx.ico" type="image/x-icon">
 
     <title>
-        {{-- @if (Route::currentRouteName() == 'homepage') --}}
-            Emporium Shop
-        {{-- @endif --}}
+        Emporium Shop
     </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
