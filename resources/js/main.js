@@ -29,7 +29,7 @@
 // let typewriter2 = document.querySelectorAll('.typewriter2');
 let addArticle = document.querySelector('#addArticle');
 let typeWriters = document.querySelectorAll('.typewriter');
-let typeWriters2 = document.querySelectorAll('#typewriter-text2');
+let typeWriters2 = document.querySelectorAll('.typewriter-text2');
 
 // typewriter1.forEach(el => {
 //     setTimeout(() => {
@@ -193,7 +193,7 @@ observerArticle.observe(addArticle);
 
 //INIZIO DEL CODICE PER LA DARK-MODE
 
-let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(#typewriter-text):not(footer *):not(.card-title), h5:not(#typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 
 function setDark() {
