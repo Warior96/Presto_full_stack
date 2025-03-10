@@ -39,8 +39,8 @@ class ResizeImage implements ShouldQueue
         ->crop($w, $h, CropPosition::Center)
         ->watermark(
             base_path('resources/img/watermark.png'),
-            width:10,
-            height:10,
+            width:100,
+            height:100,
             paddingX:5,
             paddingY:5,
             paddingUnit: Unit::Percent

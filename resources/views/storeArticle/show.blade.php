@@ -18,7 +18,8 @@
         <div class="row justify-content-center align-item-center py-5">
 
             {{-- fotografia --}}
-            <div class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail">
+            <div
+                class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail">
                 @if ($article->images->count() > 0)
                     <swiper-container class="mySwiper swiper-container-show" pagination="true" effect="coverflow"
                         grab-cursor="true" centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50"
@@ -80,18 +81,23 @@
                         <span class="fw-bold">
                             {{ __('ui.categoria') }}:
                         </span>
-                        <a href="{{ route('byCategory', ['category' => $article->category])}}" class="text-decoration-none p-2 ms-3 text-center btn-cus btn-category-detail" target="_blank"
-                            id="tag-categoria">
+                        <a href="{{ route('byCategory', ['category' => $article->category]) }}"
+                            class="text-decoration-none p-2 ms-3 text-center btn-cus btn-category-detail"
+                            target="_blank" id="tag-categoria">
                             {{ __("ui.{$article->category->name}") }}
                         </a>
 
                     </p>
 
                     {{-- Altri tag --}}
-                    @foreach ($article->images as $image)
+                    @foreach ($article->images as $key => $image)
                         @if ($image->labels)
                             <p class="fs-7 fw-bold mt-5 pt-3mb-0">
-                                Hashtag che descrivono l'articolo:
+                                @if ($article->images->count() > 1)
+                                    Hashtag che descrivono l'immagine {{ $key + 1 }}:
+                                @else
+                                    Hashtag che descrivono l'immagine:
+                                @endif
                             </p>
                             <p class="fs-7 mt-0">
                                 @foreach ($image->labels as $label)
