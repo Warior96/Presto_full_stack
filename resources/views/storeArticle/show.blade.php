@@ -56,7 +56,7 @@
                     {{-- Prezzo e condizione --}}
                     <h3 class="fw-bold mb-3 price-detail">
                         {{ __('ui.€') }}{{ $article->price }}
-                        <span class="fs-1 bg-2 text-muted fst-italic text-uppercase hover">
+                        <span class="fs-1 text-muted fst-italic text-uppercase hover">
                             @if ($article->condition == 'new')
                                 {{ __('ui.new') }}
                             @elseif ($article->condition == 'used')
@@ -100,7 +100,7 @@
                             </p>
                             <p class="fs-7 mt-0">
                                 @foreach ($image->labels as $label)
-                                    <span class="text-muted bg-2">
+                                    <span class="text-muted">
                                         #{{ $label }}
                                     </span>
 
