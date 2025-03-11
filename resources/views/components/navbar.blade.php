@@ -143,7 +143,7 @@
                 <li
                     class="nav-item d-none d-lg-block {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
                     <button class="btnlight">
-                        <span class="fa-solid fa-lightbulb"></span>
+                        <span id="nightmodeIcon" class="fa-solid fa-moon"></span>
                     </button>
                 </li>
 
