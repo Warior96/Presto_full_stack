@@ -15,7 +15,8 @@ class RevisorController extends Controller
     public function index()
     {
         $article_to_check = Article::where('is_accepted', null)->first();
-        return view('revisor.index', compact('article_to_check'));
+        $articles = Article::all();
+        return view('revisor.index', compact('article_to_check', 'articles'));
     }
 
     public function accept(Article $article)
@@ -30,10 +31,10 @@ class RevisorController extends Controller
     }
 
     // funzione back da sistemare - annulla tutte le revisioni
-    public function back()
+    public function back($article)
     {
-        $article_to_check = Article::whereNotNull('is_accepted')->orderBy('updated_at', 'desc')->first();
-        $article_to_check->setAccepted(null);
+        $article_back = Article::find($article);
+        $article_back->setAccepted(null);
         return redirect()->back();
     }
     public function becomeRevisor(Article $article)
