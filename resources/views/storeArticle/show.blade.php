@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container mt-5 pt-4 vh-100">
+    <div class="container mt-5 pt-4 min-vh-100">
 
         {{-- title --}}
         <div class="row justify-content-center align-items-center text-center">
@@ -15,7 +15,7 @@
         </div>
 
         {{-- card --}}
-        <div class="row justify-content-center align-item-center py-5">
+        <div class="row justify-content-center align-item-center pt-3 pb-5">
 
             {{-- fotografia --}}
             <div
@@ -52,11 +52,11 @@
 
             {{-- dettagli articolo --}}
             <div class="col-12 col-md-6 mb-3">
-                <div class=" h-75 m-4">
+                <div class=" min-h-75 m-4">
                     {{-- Prezzo e condizione --}}
                     <h3 class="fw-bold mb-3 price-detail">
                         {{ __('ui.€') }}{{ $article->price }}
-                        <span class="fs-1 text-muted fst-italic text-uppercase hover">
+                        <span class="fs-1 bg-2 text-muted fst-italic text-uppercase hover">
                             @if ($article->condition == 'new')
                                 {{ __('ui.new') }}
                             @elseif ($article->condition == 'used')
@@ -77,22 +77,21 @@
                     </p>
 
                     {{-- Categoria --}}
-                    <p class="fs-7 mt-5">
-                        <span class="fw-bold">
+                    <div class="fs-7 mt-3 pt-2">
+                        <p class="fw-bold pb-0 mb-0">
                             {{ __('ui.categoria') }}:
-                        </span>
+                        </p>
                         <a href="{{ route('byCategory', ['category' => $article->category]) }}"
-                            class="text-decoration-none p-2 ms-3 text-center btn-cus btn-category-detail"
-                            target="_blank" id="tag-categoria">
+                            class="c-1 fst-italic fs-5" target="_blank">
                             {{ __("ui.{$article->category->name}") }}
                         </a>
 
-                    </p>
+                    </div>
 
                     {{-- Altri tag --}}
                     @foreach ($article->images as $key => $image)
                         @if ($image->labels)
-                            <p class="fs-7 fw-bold mt-5 pt-3mb-0">
+                            <p class="fs-7 fw-bold mt-3 pt-2 mb-0">
                                 @if ($article->images->count() > 1)
                                     Hashtag che descrivono l'immagine {{ $key + 1 }}:
                                 @else
@@ -101,7 +100,7 @@
                             </p>
                             <p class="fs-7 mt-0">
                                 @foreach ($image->labels as $label)
-                                    <span class="text-muted">
+                                    <span class="text-muted bg-2">
                                         #{{ $label }}
                                     </span>
 
@@ -122,7 +121,7 @@
                     {{-- Informazioni secondarie --}}
                     <div class="data-container-detail d-flex justify-content-between">
                         <p class="data-detail">Approvato dai nostri revisori</p>
-                        <p class="data-detail">{{ $article->created_at->format('d/m/Y') }}</p>
+                        <p class="data-detail">{{ $article->updated_at->format('d/m/Y') }}</p>
                     </div>
 
 

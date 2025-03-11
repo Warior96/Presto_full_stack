@@ -369,7 +369,7 @@ swiper-slide img {
 }
 
 .img-container-detail {
-  width: 50%;
+  /* height: 100%; */
   overflow: hidden;
 }
 
@@ -400,6 +400,8 @@ swiper-slide img {
   padding-top: 10px;
   margin-top: 50px;
   border-top: solid 1px var(--color-5);
+
+  width: 115%;
 }
 
 
