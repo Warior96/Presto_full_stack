@@ -135,11 +135,6 @@ body {
   border-radius: 1.2rem;
 }
 
-.btn-footer:hover {
-  background-color: var(--color-1);
-  color: var(--color-5) !important;
-}
-
 .modal-no {
   background-color: transparent;
   border-radius: 1.2rem;
@@ -554,277 +549,6 @@ footer a {
   width: 45%;
 }
 
-
-
-
-/* animazione bounce della notifica del revisore */
-/* @keyframes bounce-revisor {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-} */
-
-
-/* animazione rimbalzo caret homepage */
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(6px);
-  }
-
-}
-
-/* animazione macchina da scrivere */
-/* .typewriter {
-  display: inline-block;
-  max-width: 0;
-  animation: typing 4s steps(var(--characters)) forwards;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  padding-right: 10px;
-
-}
-
-.typewriter::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 3px;
-  height: 100%;
-  background-color: var(--color-4);
-  animation: blink 0.5s steps(1) infinite, stopBlinking 0.1s forwards 5s;
-}
-
-@keyframes stopBlinking {
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes typing {
-  0% {
-    max-width: 0;
-  }
-
-  100% {
-    max-width: calc(var(--characters) * 1ch);
-  }
-}
-
-@keyframes blink {
-
-  0%,
-  75%,
-  100% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 0;
-  }
-} */
-
-
-
-
-
-
-
-
-
-
-/* media query solo per sm smartphone */
-@media (max-width: 767px) {}
-
-/* media query solo per md tablet */
-@media (min-width: 768px) and (max-width: 991px) {
-
-  /* primo swiper home */
-  .container-little-img-card {
-    width: 18vw;
-    height: 5vh;
-    position: relative;
-  }
-
-  /* #revisor-badge {
-    left: 10%;
-  } */
-
-  .text-slide-header {
-    position: absolute;
-    top: 60%;
-    left: 0%;
-    width: 100%;
-    height: 40%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  .fs-header {
-    font-size: 1.22rem !important;
-  }
-
-}
-
-/* media query solo per lg desktop */
-@media (min-width: 992px) {
-
-  /* hover */
-  /* .btn-cus:hover {
-    background-color: var(--color-1);
-    color: var(--color-5);
-    border: 1px solid var(--color-2);
-    scale: 1.02;
-    box-shadow: 3px 5px 3px var(--color-5);
-  } */
-
-  #a-dettaglio:hover {
-    background-color: var(--color-1-s);
-    color: var(--color-2) !important;
-  }
-
-  #a-categoria:hover {
-    background-color: var(--color-1);
-  }
-
-  #accept:hover {
-    background-color: rgba(0, 238, 127, 0.3);
-    border: 1px solid #147d4c;
-    color: #1a7e4f;
-  }
-
-  #reject:hover {
-    background-color: rgba(219, 54, 71, 0.3);
-    border: 1px solid #c61b2c;
-    color: #bc2e3c;
-  }
-
-  #addProduct:hover,
-  #btn-login:hover,
-  #btn-register:hover {
-    background-color: var(--color-2);
-    border-color: var(--color-3);
-  }
-
-  .card-w:hover {
-    scale: 1.01;
-    box-shadow: 2px 1px 5px var(--color-1-s);
-    background-color: var(--color-2-st);
-  }
-
-  #basic-addon2:hover {
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
-    background-color: var(--color-1);
-  }
-
-  #caret-icon:hover {
-    color: var(--color-1);
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.6));
-    scale: 2.17 2.07;
-  }
-
-  #btn-preview:hover {
-    background-color: var(--color-2);
-  }
-
-  #btn-preview:hover #icon-preview {
-    color: var(--color-6);
-  }
-
-  .btn-lr:hover {
-    background-color: var(--color-1);
-  }
-
-  .btn-lr:active {
-    background-color: var(--color-1);
-  }
-
-  /* primo carosello home */
-  .container-little-img-card {
-    width: 14vw;
-    height: 7vh;
-    position: relative;
-  }
-
-  /* #revisor-badge {
-    left: 100%;
-    animation: bounce-revisor 2s linear infinite alternate;
-  } */
-
-
-  .card-w img {
-    filter: grayscale(20%) brightness(99%) contrast(99%);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .card-w:hover img {
-    filter: grayscale(0%) brightness(101%) contrast(101%);
-  }
-
-  .text-slide-header {
-    position: absolute;
-    top: 0;
-    left: 65%;
-    width: 35%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  .hover-expand {
-    overflow: hidden;
-    /* transition: height 1s ease-in-out; */
-  }
-
-  .card-buttons {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
-  }
-
-  /* .hover-expand:hover {
-    height: 94%;
-  } */
-
-  .hover-expand:hover .card-buttons {
-    max-height: 100%;
-    opacity: 1;
-  }
-
-  .fs-header {
-    font-size: 1.40rem !important;
-  }
-
-  .modal-no:hover {
-    background-color: var(--color-1);
-    border: 2px solid var(--color-1);
-  }
-
-  .modal-si:hover {
-    background-color: var(--color-1-s);
-    color: var(--color-2) !important;
-  }
-
-}
-
-/* media query in: md tablet e sm smartphone*/
-@media (max-width: 991px) {}
-
-/* media query in: lg desktop e md tablet*/
-@media (min-width: 768px) {}
-
 /* Add Article- form */
 .price-container {
   position: relative;
@@ -1073,6 +797,35 @@ footer a {
 }
 
 
+/* animazione bounce della notifica del revisore */
+/* @keyframes bounce-revisor {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+
+/* animazione rimbalzo caret homepage */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(6px);
+  }
+
+}
+
+
 @keyframes bounce-notifica {
   0% {
     transform: scale(0);
@@ -1098,3 +851,248 @@ footer a {
     transform: scale(1);
   }
 }
+
+/* animazione macchina da scrivere */
+/* .typewriter {
+  display: inline-block;
+  max-width: 0;
+  animation: typing 4s steps(var(--characters)) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  padding-right: 10px;
+
+}
+
+.typewriter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-4);
+  animation: blink 0.5s steps(1) infinite, stopBlinking 0.1s forwards 5s;
+}
+
+@keyframes stopBlinking {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    max-width: 0;
+  }
+
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+/* media query solo per sm smartphone */
+@media (max-width: 767px) {}
+
+/* media query solo per md tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* primo swiper home */
+  .container-little-img-card {
+    width: 18vw;
+    height: 5vh;
+    position: relative;
+  }
+
+  /* #revisor-badge {
+    left: 10%;
+  } */
+
+  .text-slide-header {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .fs-header {
+    font-size: 1.22rem !important;
+  }
+
+}
+
+/* media query solo per lg desktop */
+@media (min-width: 992px) {
+
+  /* hover */
+  /* .btn-cus:hover {
+    background-color: var(--color-1);
+    color: var(--color-5);
+    border: 1px solid var(--color-2);
+    scale: 1.02;
+    box-shadow: 3px 5px 3px var(--color-5);
+  } */
+
+  #a-dettaglio:hover {
+    background-color: var(--color-1-s);
+    color: var(--color-2) !important;
+  }
+
+  #a-categoria:hover {
+    background-color: var(--color-1);
+  }
+
+  #accept:hover {
+    background-color: rgba(0, 238, 127, 0.3);
+    border: 1px solid #147d4c;
+    color: #1a7e4f;
+  }
+
+  #reject:hover {
+    background-color: rgba(219, 54, 71, 0.3);
+    border: 1px solid #c61b2c;
+    color: #bc2e3c;
+  }
+
+  #addProduct:hover,
+  #btn-login:hover,
+  #btn-register:hover {
+    background-color: var(--color-2);
+    border-color: var(--color-3);
+  }
+
+  .card-w:hover {
+    scale: 1.01;
+    box-shadow: 2px 1px 5px var(--color-1-s);
+    background-color: var(--color-2-st);
+  }
+
+  #basic-addon2:hover {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-1);
+  }
+
+  #caret-icon:hover {
+    color: var(--color-1);
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.6));
+    scale: 2.17 2.07;
+  }
+
+  #btn-preview:hover {
+    background-color: var(--color-2);
+  }
+
+  #btn-preview:hover #icon-preview {
+    color: var(--color-6);
+  }
+
+  .btn-lr:hover {
+    background-color: var(--color-1);
+  }
+
+  .btn-lr:active {
+    background-color: var(--color-1);
+  }
+
+  /* primo carosello home */
+  .container-little-img-card {
+    width: 14vw;
+    height: 7vh;
+    position: relative;
+  }
+
+  /* #revisor-badge {
+    left: 100%;
+    animation: bounce-revisor 2s linear infinite alternate;
+  } */
+
+
+  .card-w img {
+    filter: grayscale(20%) brightness(99%) contrast(99%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .card-w:hover img {
+    filter: grayscale(0%) brightness(101%) contrast(101%);
+  }
+
+  .text-slide-header {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 35%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .hover-expand {
+    overflow: hidden;
+    /* transition: height 1s ease-in-out; */
+  }
+
+  .card-buttons {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
+  }
+
+  /* .hover-expand:hover {
+    height: 94%;
+  } */
+
+  .hover-expand:hover .card-buttons {
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .fs-header {
+    font-size: 1.40rem !important;
+  }
+
+  .modal-no:hover {
+    background-color: var(--color-1);
+    border: 2px solid var(--color-1);
+  }
+
+  .modal-si:hover {
+    background-color: var(--color-1-s);
+    color: var(--color-2) !important;
+  }
+
+  .btn-footer:hover {
+    background-color: var(--color-1);
+    color: var(--color-5) !important;
+  }
+
+}
+
+/* media query in: md tablet e sm smartphone*/
+@media (max-width: 991px) {}
+
+/* media query in: lg desktop e md tablet*/
+@media (min-width: 768px) {}
