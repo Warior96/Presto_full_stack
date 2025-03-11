@@ -91,17 +91,22 @@ class AddArticle extends Component
     // funzione di aggiunta immagini
     public function updatedTemporaryImages()
     {
+        // validazione
         if ($this->validate([
-            'temporary_images.*' => 'image|max:1024',
+            'temporary_images.*' => 'mimes:jpg,jpeg,png',
             'temporary_images' => 'max:5',
         ], [
-            'temporary_images.*.image' => 'Il file deve essere un\'immagine',
-            'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
+            'temporary_images.*.mimes' => 'Il file deve essere un\'immagine in formato jpg, jpeg o png',
             'temporary_images.max' => 'Non puoi caricare più di 5 immagini',
         ])) {
-            foreach ($this->temporary_images as $image) {
-                $this->images[] = $image;
-            }
+            if ($this->validate([
+                'temporary_images.*' => 'max:1024',
+            ], [
+                'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
+            ]))
+                foreach ($this->temporary_images as $image) {
+                    $this->images[] = $image;
+                }
         }
     }
 
