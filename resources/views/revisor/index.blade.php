@@ -2,7 +2,8 @@
     <header class="container mt-5 pt-4">
         <div class="row justify-content-center">
             <h1 class="col-12 display-5 text-center mt-3 mb-1">
-                Articoli da revisionare
+                {{-- @dd($article_to_check) --}}
+               Ti mancano ancora {{ \App\Models\Article::toBeRevisedCount() }} articoli da revisionare
             </h1>
         </div>
     </header>
@@ -153,7 +154,7 @@
 
                 {{-- Dettagli dell'articolo da revisionare --}}
                 <div
-                    class=" 
+                    class="
                 @if ($article_to_check->images->count() > 1) col-md-3 @elseif ($article_to_check->images->count() == 1) col-md-4 @elseif ($article_to_check->images->count() == 0) col-md-4 @endif
                 d-flex justify-content-between flex-column">
                     <div class="row">
@@ -235,12 +236,11 @@
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 
-                        {{-- <form action="{{ route('back', ['article' => $article_to_check]) }}" method='POST'
-                            class="col-10">
+                        <form action="{{ route('back', ['article' => $article_to_check]) }}" method='POST' class="col-10">
                             @csrf
                             @method('PATCH')
                             <button class="btn btn-warning py-2 px-5 fw-bold">Annulla l'ultima operazione</button>
-                        </form> --}}
+                        </form>
 
                     </div>
                 </div>

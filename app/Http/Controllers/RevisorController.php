@@ -30,15 +30,12 @@ class RevisorController extends Controller
     }
 
     // funzione back da sistemare - annulla tutte le revisioni
-    // public function back()
-    // {
-    //     $article_to_check = Article::whereNotNull('is_accepted')->latest();
-    //     dd($article_to_check);
-    //     $article_to_check->update([
-    //         'is_accepted' => null,
-    //     ]);
-    //     return redirect()->back();
-    // }
+    public function back()
+    {
+        $article_to_check = Article::whereNotNull('is_accepted')->orderBy('updated_at', 'desc')->first();
+        $article_to_check->setAccepted(null);
+        return redirect()->back();
+    }
     public function becomeRevisor(Article $article)
     {
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
