@@ -198,6 +198,7 @@ let btnlight = document.querySelector('.btnlight')
 let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 let containerDetail = document.querySelector('#data-container-detail')
+let nightmodeIcon = document.querySelector('#nightmodeIcon')
 
 //funzione che setta nel localStorage la dark se la trova impostata oppure non la mette se non la trova
 function setDark() {
@@ -223,6 +224,8 @@ function checkDarkMode() {
     }
     btnlight.classList.toggle('button-clicked');
     btnlight.firstElementChild.classList.add('icon-clicked');
+    nightmodeIcon.classList.toggle('fa-moon')
+    nightmodeIcon.classList.toggle('fa-sun')
     textElements.forEach(el => {
       el.style.color = '#F5DEBA';  // Colore chiaro
     })
@@ -249,6 +252,8 @@ btnlight.addEventListener('click', () => {
     containerDetail.classList.toggle('data-container-detail-c2');
   }
   btnlight.classList.toggle('button-clicked');
+  nightmodeIcon.classList.toggle('fa-moon')
+  nightmodeIcon.classList.toggle('fa-sun')
   btnlight.firstElementChild.classList.toggle('icon-clicked');
 
   // Memorizza lo stato della modalità scura nel localStorage
