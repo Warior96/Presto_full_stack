@@ -5,7 +5,7 @@
             <div class="col-12">
                 <h1 class="display-5 text-center mt-5 pb-3">
                     @if ($articles->total() > 1)
-                    {{-- @dd($articles->total()) --}}
+                        {{-- @dd($articles->total()) --}}
                         Ci sono {{ $articles->total() }} risultati nella ricerca "<span
                             class="fst-italic">{{ $query }}</span>"
                     @elseif ($articles->total() == 1)
@@ -31,10 +31,10 @@
                             href="{{ route('createarticle') }}">Pubblica un articolo</a>
                     </div> --}}
                     <div class="col-12 d-flex flex-column align-items-center justify-content-start py-5 my-5">
-                        <a href="{{ route('createarticle') }}"
-                            class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4  w-25">
-                            {{ __('ui.aggiungiProdotto') }}
-                        </a>
+                        <a href="{{ route('createarticle') }}" id="addArticle"
+                            class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
+                            data-back="{{ __('ui.aggiungiProdotto2') }}"
+                            data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
                     </div>
                 </div>
             @endforelse

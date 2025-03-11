@@ -8,15 +8,15 @@
         {{-- switch dark light mode --}}
         <ul class="navbar-nav list-unstyled d-flex d-lg-none flex-row justify-content-center align-items-center ms-auto me-4">
 
-            <li class="nav-item me-3 {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
+            {{-- <li class="nav-item me-3 my-auto">
                 <button class="btnlight">
                     <span class="fa-solid fa-lightbulb"></span>
                 </button>
-            </li>
+            </li> --}}
 
             {{--  language --}}
             <li
-                class="nav-item dropdown  {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
+                class="nav-item dropdown my-auto ps-2 position-relative">
                 <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     @if (session('locale'))
@@ -27,7 +27,7 @@
                             height="32" class="">
                     @endif
                 </a>
-                <ul class="dropdown-menu bg-2 mt-2">
+                <ul class="dropdown-menu bg-2 mt-2 position-absolute top-0 left-0">
                     <li>
                         <span class="dropdown-item @if (session('locale') == 'it' || session('locale') == null) d-none @endif ">
                             <x-_locale lang="it" />

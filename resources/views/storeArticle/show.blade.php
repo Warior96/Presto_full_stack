@@ -122,7 +122,7 @@
                     {{-- Informazioni secondarie --}}
                     <div class="data-container-detail d-flex justify-content-between">
                         <p class="data-detail">Approvato dai nostri revisori</p>
-                        <p class="data-detail">{{ $article->created_at->format('d/m/Y') }}</p>
+                        <p class="data-detail">{{ $article->updated_at->format('d/m/Y') }}</p>
                     </div>
 
 

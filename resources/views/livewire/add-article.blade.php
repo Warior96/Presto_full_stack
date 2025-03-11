@@ -1,4 +1,4 @@
-<div class="col-10 col-md-8 col-lg-6 rounded shadow px-5 py-4 mb-5 bg-1">
+<div class="col-10 col-md-8 col-lg-6 rounded shadow px-4 px-md-5 py-4 mb-5 bg-1">
     <form wire:submit="createArticles">
         @csrf
 
@@ -79,7 +79,7 @@
 
         {{-- prezzo --}}
         <div class="mb-3">
-            <label class="form-label" for="price">{{ __('ui.prezzo') }}</label>
+            <label class="form-label" for="price">{{ __('ui.prezzo') }}:</label>
             <div class="price-container">
                 <i class="price-icon">{{ __('ui.€') }}</i>
                 <input type="number" step="0.01" class="form-control price-input" wire:model.blur="price"
@@ -95,7 +95,7 @@
 
         {{-- categorie --}}
         <div class="mb-3">
-            <label class="form-label" for="category">{{ __('ui.categoria') }}</label>
+            <label class="form-label" for="category">{{ __('ui.categoria') }}:</label>
             <select wire:model.blur="category" class="form-select" id="category">
                 <option value="">{{ __('ui.selezionaCategoria') }}</option>
 
