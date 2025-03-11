@@ -1,5 +1,5 @@
-<div class="container-fluid shadow bg-5 overflow-hidden mt-5 pt-5">
-    <footer class="py-5">
+<footer class="container-fluid shadow bg-5 overflow-hidden mt-5 pt-5">
+    <div class="py-5">
         <div class="row mx-md-2">
             <div class="col-12 col-lg-8">
                 <div class="ps-lg-5 row">
@@ -82,8 +82,7 @@
                                                 </div>
                                                 <div
                                                     class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                    <button type="button" class="btn modal-no"
-                                                        data-bs-dismiss="modal">No,
+                                                    <button type="button" class="btn modal-no" data-bs-dismiss="modal">No,
                                                         annulla</button>
                                                     <a href="{{ route('become.revisor') }}"
                                                         class="btn modal-si px-3 py-2 shadow">Candidati</a>
@@ -210,4 +209,4 @@
                 </li>
             </ul>
         </div>
-    </footer>
+</footer>
