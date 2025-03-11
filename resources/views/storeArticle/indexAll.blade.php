@@ -2,7 +2,7 @@
     <header class="container-fluid mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-3 pt-4 pb-2">Tutti i {{ __('ui.prodotto')}} in vendita</h1>
+                <h1 class="display-5 pt-4 pb-2">Tutti i prodotti in vendita</h1>
             </div>
         </div>
         <div class="row wh-100 justify-content-center align-items-center pb-4">

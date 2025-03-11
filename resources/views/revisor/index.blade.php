@@ -11,8 +11,7 @@
         @if ($article_to_check)
             <div class="row justify-content-center pt-4 mx-5">
                 <div
-                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @endif
-                    @if ($article_to_check->images->count() == 1) col-md-8 @endif
+                    class=" @if ($article_to_check->images->count() > 1) col-md-9 @elseif ($article_to_check->images->count() == 1) col-md-8 @elseif ($article_to_check->images->count() == 0) col-md-8 @endif
                     ">
                     <div class="row justify-content-center me-2">
                         @if ($article_to_check->images->count())
@@ -145,6 +144,7 @@
                                     </swiper-slide>
                                 @endfor
                             </swiper-container>
+
                         @endif
                     </div>
                 </div>
@@ -153,9 +153,8 @@
 
                 {{-- Dettagli dell'articolo da revisionare --}}
                 <div
-                    class="
-                @if ($article_to_check->images->count() > 1) col-md-3 @endif
-                    @if ($article_to_check->images->count() == 1) col-md-4 @endif
+                    class=" 
+                @if ($article_to_check->images->count() > 1) col-md-3 @elseif ($article_to_check->images->count() == 1) col-md-4 @elseif ($article_to_check->images->count() == 0) col-md-4 @endif
                 d-flex justify-content-between flex-column">
                     <div class="row">
                         <h2 class="mb-3">
@@ -173,7 +172,7 @@
                             {{-- #{{ $article_to_check->category->name }} --}}
                             @foreach ($categories as $category)
                                 @if ($article_to_check->category->name == $category->name)
-                                <span class="fs-7 fst-normal">#{{ __("ui.$category->name") }}: </span>
+                                    <span class="fs-7 fst-normal">#{{ __("ui.$category->name") }}: </span>
                                 @endif
                             @endforeach
                         </p>
@@ -224,7 +223,7 @@
                             class="col-6 px-3">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-cus btn-danger p-2 w-100 fw-bold"
+                            <button class="btn btn-cus p-2 w-100 fw-bold"
                                 id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
 
@@ -264,9 +263,8 @@
                             {{ __('ui.aggiungiProdotto') }}
                         </a> --}}
                 <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 pt-5">
-                    <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-25"
-                        data-back="{{ __('ui.aggiungiUn') }} prodotto"
-                        data-front="Torna alla home"></a>
+                    <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-20"
+                        data-back="{{ __('ui.aggiungiUn') }} prodotto" data-front="Torna alla home"></a>
                 </div>
             </div>
         @endif

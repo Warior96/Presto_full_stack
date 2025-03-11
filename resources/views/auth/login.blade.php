@@ -56,9 +56,10 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-cus bg-4 w-100 p-3 mt-4 fs-5"
+                <div class="w-100 d-flex justify-content-center">
+                <button type="submit" class="btn btn-cus bg-5 c-2 w-100 w-md-75 rounded-pill p-3 mt-4 fs-5"
                     id="btn-login">{{ __('ui.login') }}</button>
-
+                </div>
                 <div class="text-center mt-4">
                     <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non hai un account?
                         {{ __('ui.registrati') }}</a>

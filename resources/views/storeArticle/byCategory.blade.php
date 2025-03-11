@@ -3,15 +3,15 @@
         <div class="row py-5 justify-content-center align-items-center text-center">
             <div class="col-12 pt-4">
                 @if ($articles->isEmpty())
-                    <h1 class="display-5 pt-5">Non sono presenti articoli della categoria <br> <span
-                            class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
+                    <h1 class="fst-italic display-3 fw-bold pt-5"> {{ __("ui.$category->name") }}</h1>
+                    <h4 class="c-5 py-3">Non sono presenti articoli di questa categoria</h4>
                 @else
                     @if ($num_articles == 1)
-                        <h1 class="display-5">E' presente {{ $num_articles }} articolo della categoria <br> <span
-                                class="fst-italic fw-bold">{{ __("ui.$category->name") }}</span></h1>
+                        <h1 class="fst-italic display-4 fw-bold pt-3"> {{ __("ui.$category->name") }}</h1>
+                        <h4 class="c-5">È presente {{ $num_articles }} articolo della categoria</h4>
                     @else
-                        <h1 class="display-5">Sono presenti {{ $num_articles }} articoli della categoria <br> <span
-                                class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
+                        <h1 class="fst-italic display-4 fw-bold pt-3"> {{ __("ui.$category->name") }}</h1>
+                        <h4 class="c-5">Sono presenti {{ $num_articles }} articoli della categoria</h4>
                     @endif
                 @endif
             </div>
@@ -21,9 +21,12 @@
                         <x-card :article="$article" />
                     </div>
                 @empty
-                    <div class="col-12 text-center">
-                        <a class="my-5 btn btn-info px-3 py-2 fs-5 rounded shadow"
-                            href="{{ route('createarticle') }}">Pubblica un articolo</a>
+                    {{-- crea articolo --}}
+                    <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
+                        <a href="{{ route('createarticle') }}" id="addArticle"
+                            class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
+                            data-back="{{ __('ui.aggiungiProdotto2') }}"
+                            data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
                     </div>
                 @endforelse
             </div>

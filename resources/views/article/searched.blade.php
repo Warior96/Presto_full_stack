@@ -6,10 +6,10 @@
                 <h1 class="display-5 text-center mt-5 pb-3">
                     @if ($articles->total() > 1)
                         {{-- @dd($articles->total()) --}}
-                        Ci sono {{ $articles->total() }} risultati nella ricerca "<span
+                        Ci sono {{ $articles->total() }} risultati per la ricerca "<span
                             class="fst-italic">{{ $query }}</span>"
                     @elseif ($articles->total() == 1)
-                        C'è {{ $articles->total() }} risultato nella ricerca "<span
+                        C'è {{ $articles->total() }} risultato per la ricerca "<span
                             class="fst-italic">{{ $query }}</span>"
                     @endif
                 </h1>

@@ -8,11 +8,11 @@
         {{-- switch dark light mode --}}
         <ul class="navbar-nav list-unstyled d-flex d-lg-none flex-row justify-content-center align-items-center ms-auto me-4">
 
-            {{-- <li class="nav-item me-3 my-auto">
+            <li class="nav-item me-3 my-auto">
                 <button class="btnlight">
                     <span class="fa-solid fa-lightbulb"></span>
                 </button>
-            </li> --}}
+            </li>
 
             {{--  language --}}
             <li

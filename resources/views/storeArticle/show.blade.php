@@ -19,7 +19,7 @@
 
             {{-- fotografia --}}
             <div
-                class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail">
+                class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail show-border">
                 @if ($article->images->count() > 0)
                     <swiper-container class="mySwiper swiper-container-show" pagination="true" effect="coverflow"
                         grab-cursor="true" centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50"
@@ -51,7 +51,7 @@
             </div>
 
             {{-- dettagli articolo --}}
-            <div class="col-12 col-md-6 mb-3 min-vh-50 ps-lg-4 d-flex justify-content-between flex-column ">
+            <div class="col-12 col-md-6 mb-3 min-vh-50 ps-lg-5 d-flex justify-content-between flex-column ">
                 <div>
                     {{-- Prezzo e condizione --}}
                     <h3 class="fw-bold mb-3 price-detail">

@@ -109,9 +109,10 @@
                 </div>
             @enderror
         </div>
-
-        <button type="submit" class="btn bg-4 btn-cus w-100 p-3 mt-4 mb-1 fs-5"
-            id="addProduct">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}</button>
+        <div class="w-100 d-flex justify-content-center">
+            <button type="submit" class="btn bg-5 c-2 btn-cus w-100 p-3 mt-4 mb-1 fs-5 w-100 w-md-75 rounded-pill"
+                id="addProduct">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}</button>
+        </div>
 
     </form>
 </div>

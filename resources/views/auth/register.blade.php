@@ -1,7 +1,7 @@
 <x-layout>
-    <header class="container mt-5 pt-5 min-vh-100">
+    <header class="container mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center">
-            <h1 class="col-12 display-4 text-center mb-3">{{ __('ui.registrati') }}</h1>
+            <h1 class="col-12 display-4 pt-1 text-center mb-2">{{ __('ui.registrati') }}</h1>
         </div>
 
         <div class="row justify-content-center mt-3">
@@ -42,8 +42,10 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-cus bg-4 w-100 p-3 mt-4 fs-5"
+                <div class="w-100 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-cus bg-5 c-2 w-100 w-md-75 p-3 mt-4 fs-5 rounded-pill"
                     id="btn-register">{{ __('ui.registrati') }}</button>
+                </div>
                 <div class="text-center mt-4">
                     <a href="{{ route('login') }}" class="text-decoration-none c-2 fs-5">Sei già registrato? Accedi</a>
                 </div>
