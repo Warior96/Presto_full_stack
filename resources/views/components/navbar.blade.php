@@ -3,6 +3,51 @@
         <a class="navbar-brand my-0 me-3 p-0" href="{{ route('homepage') }}">
             <img src="{{ Storage::url('logo/logo-rettangolare.png') }}" alt="" class="img-logo">
         </a>
+
+        {{-- visbili da sm e md fuori da hamburger menu --}}
+        {{-- switch dark light mode --}}
+        <ul class="navbar-nav list-unstyled d-flex d-lg-none flex-row justify-content-center align-items-center ms-auto me-4">
+
+            <li class="nav-item me-3 {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
+                <button class="btnlight">
+                    <span class="fa-solid fa-lightbulb"></span>
+                </button>
+            </li>
+
+            {{--  language --}}
+            <li
+                class="nav-item dropdown  {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
+                <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    @if (session('locale'))
+                        <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
+                            alt="{{ session('locale') }} Flag" width="32" height="32" class="">
+                    @else
+                        <img src="{{ asset('vendor/blade-flags/language-it.svg') }}" alt="it Flag" width="32"
+                            height="32" class="">
+                    @endif
+                </a>
+                <ul class="dropdown-menu bg-2 mt-2">
+                    <li>
+                        <span class="dropdown-item @if (session('locale') == 'it' || session('locale') == null) d-none @endif ">
+                            <x-_locale lang="it" />
+                        </span>
+                    </li>
+                    <li>
+                        <span class="dropdown-item @if (session('locale') == 'en') d-none @endif ">
+                            <x-_locale lang="en" />
+                        </span>
+                    </li>
+                    <li>
+                        <span class="dropdown-item @if (session('locale') == 'zh-tw') d-none @endif ">
+                            <x-_locale lang="zh-tw" />
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        {{-- hamburger menu --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -70,9 +115,9 @@
                                 </span> --}}
 
                                 <span class="bell-icon translate-middle">
-                                    <img class="bell" src="{{ Storage::url('logo/bell.gif')}}" alt="">
+                                    <img class="bell" src="{{ Storage::url('logo/bell.gif') }}" alt="">
                                     <div class="notification-amount">
-                                      <span class="c-2 dark">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                        <span class="c-2 dark">{{ \App\Models\Article::toBeRevisedCount() }}</span>
                                     </div>
                                 </span>
                             </a>
@@ -93,22 +138,26 @@
                     </form>
                 @endif
 
-                <li class="nav-item {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
+                {{-- lingua e switch visibili solo da lg --}}
+                {{-- switch dark light mode --}}
+                <li
+                    class="nav-item d-none d-lg-block {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
                     <button class="btnlight">
                         <span class="fa-solid fa-lightbulb"></span>
                     </button>
                 </li>
 
                 {{--  language --}}
-                <li class="nav-item dropdown {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
+                <li
+                    class="nav-item dropdown d-none d-lg-block  {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
                     <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @if (session('locale'))
                             <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
                                 alt="{{ session('locale') }} Flag" width="32" height="32" class="">
                         @else
-                            <img src="{{ asset('vendor/blade-flags/language-it.svg') }}" alt="it Flag" width="32"
-                                height="32" class="">
+                            <img src="{{ asset('vendor/blade-flags/language-it.svg') }}" alt="it Flag"
+                                width="32" height="32" class="">
                         @endif
                     </a>
                     <ul class="dropdown-menu bg-2 mt-2">
