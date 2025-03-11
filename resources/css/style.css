@@ -2,7 +2,7 @@
   --color-1: #e9693f;
   --color-1-o: #e9693fc5;
   --color-1-s: #b34520;
-  --color-2: #FFEFD5;
+  --color-2: #fff0da;
   --color-2-s: rgb(248, 220, 175);
   --color-2-st: #f4d4a2;
   --color-2-o: #f5debad5;
@@ -226,7 +226,7 @@ swiper-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 55vh;
+  height: 58vh;
 }
 
 .h {
@@ -395,8 +395,7 @@ swiper-slide img {
   padding-top: 10px;
   margin-top: 50px;
   border-top: solid 1px var(--color-5);
-
-  width: 115%;
+  width: 100%;
 }
 
 
