@@ -4,11 +4,11 @@
         {{-- title --}}
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-1 fw-bold mt-4 mb-1">
+                <h1 class="display-1 fw-bold mb-1">
                     {{ $article->title }}
                 </h1>
 
-                <p class="fs-4">
+                <p class="fs-4 mb-2">
                     Articolo pubblicato da {{ $article->user->name }}
                 </p>
             </div>
@@ -51,8 +51,8 @@
             </div>
 
             {{-- dettagli articolo --}}
-            <div class="col-12 col-md-6 mb-3">
-                <div class=" min-h-75 m-4">
+            <div class="col-12 col-md-6 mb-3 min-vh-50 ps-lg-4 d-flex justify-content-between flex-column ">
+                <div>
                     {{-- Prezzo e condizione --}}
                     <h3 class="fw-bold mb-3 price-detail">
                         {{ __('ui.€') }}{{ $article->price }}
@@ -118,14 +118,14 @@
                         @endif
                     @endforeach
 
-                    {{-- Informazioni secondarie --}}
-                    <div class="data-container-detail d-flex justify-content-between">
-                        <p class="data-detail">Approvato dai nostri revisori</p>
-                        <p class="data-detail">{{ $article->updated_at->format('d/m/Y') }}</p>
-                    </div>
-
-
                 </div>
+                {{-- Informazioni secondarie --}}
+                <div class="data-container-detail w-100 d-flex justify-content-between">
+                    <p class="data-detail">Approvato dai nostri revisori</p>
+                    <p class="data-detail">{{ $article->updated_at->format('d/m/Y') }}</p>
+                </div>
+
+
             </div>
         </div>
     </div>
