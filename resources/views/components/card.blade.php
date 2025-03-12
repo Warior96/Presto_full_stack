@@ -3,6 +3,10 @@
         class="card-img-top {{ Route::currentRouteName() == 'homepage' ? 'img-cus' : 'aspect-ratio-1' }}"
         alt="Immagine dell'articolo {{ $article->title }}">
 
+        {{-- <button class="wishlist">
+            <i class="fa-regular fa-heart fs-4 c-5"></i>
+        </button> --}}
+        <livewire:wishlist />
     <div class="card-body px-0 pt-2 pb-0">
         <h4 class="card-title">{{ $article->title }}</h4>
         <h5 class="card-subtitle text-body-secondary">{{ __('ui.€') }} {{ $article->price }}</h5>

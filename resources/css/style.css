@@ -617,7 +617,18 @@ table *:not(img):not(button):not(a) {
   padding-left: 25px;
 }
 
-
+.wishlist{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 85%;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border: 2px solid var(--color-1);
+  border-radius: 100%;
+}
 
 /* btn aggiungi un prodotto homepage */
 
