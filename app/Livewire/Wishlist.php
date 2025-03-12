@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Livewire;
-
+// namespace App\Http\Livewire;
 use App\Models\Article;
 use Illuminate\Database\Schema\Blueprint;
 use Livewire\Component;
@@ -26,6 +26,10 @@ class Wishlist extends Component
         $article = Article::find($this->article->id);
         // dd($article);
         $user->wishlist()->syncWithoutDetaching([$article->id]);
+
+
+        // $this->emit('wishlistUpdated');
+        // $this->dispatch('wishlistUpdated', ['articleId' => $this->article->id, 'action' => 'add']);
     }
 
     public function render()

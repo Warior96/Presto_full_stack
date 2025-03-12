@@ -293,3 +293,37 @@ btnlight.forEach(el => {
     });
   })
 });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   Livewire.on('wishlistUpdated', (data) => {
+//       let articleId = data.articleId;
+//       let action = data.action;
+//       let wishlistDiv = document.getElementById(`wishlist-${articleId}`);
+
+//       if (wishlistDiv) {
+//           // Usa Livewire per aggiornare il componente
+//           if (action === 'add') {
+//               Livewire.emit('wishlistUpdated', articleId, 'add');
+//           } else {
+//               Livewire.emit('wishlistUpdated', articleId, 'remove');
+//           }
+//       }
+//   });
+// });
+
+let wishlistadd = document.querySelectorAll('.wishlistadd');
+let wishlistremove = document.querySelectorAll('.wishlistremove');
+
+// el.addEventListener('click', () => {
+
+wishlistadd.forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.add('d-none');
+  })
+})
+wishlistremove.forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.add('d-none');
+  })
+})
