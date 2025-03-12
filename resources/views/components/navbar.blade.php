@@ -205,7 +205,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-5 mx-2 icon"></i>Ciao {{ Auth::user()->name }}</span>
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu bg-2">
                             <li>
                             <a class="dropdown-item" data-bs-toggle="modal" href="#" data-bs-target="#no-revisor-nav">
                                 <i class="fa-solid fa-clipboard-list px-2 fs-6"></i>Storico operazioni
@@ -217,10 +217,13 @@
                                 </a>
                             </li>
                             <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
                                 {{-- logout --}}
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
-                                    <button class="btn mx-2 "><i class="fa-solid fa-arrow-right-from-bracket px-2 fs-6"></i>
+                                    <button class="dropdown-item text-danger"><i class="text-danger fa-solid fa-arrow-right-from-bracket px-2 fs-6"></i>
                                         Logout</button>
                                 </form>
                             </li>
@@ -306,7 +309,7 @@
 {{-- comparsa del pannello wish list --}}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">La mia wishlist</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
