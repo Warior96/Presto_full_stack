@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Wishlist;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
@@ -28,7 +29,7 @@ Route::prefix('articles/')->controller(ArticleController::class)->group(function
 });
 
 // gruppo revisori revisorController
-Route::prefix('revisor/')->controller(RevisorController::class)->group(function () {
+    Route::prefix('revisor/')->controller(RevisorController::class)->group(function () {
     // view elenco articoli da revisionare
     Route::get('index', 'index')->middleware('isRevisor')->name('revisor.index');
     // view accettazione dell'articolo

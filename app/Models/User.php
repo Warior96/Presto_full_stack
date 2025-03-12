@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -51,5 +52,10 @@ class User extends Authenticatable
     public function articles(): HasMany
     {
         return $this->hasMany(Article::class);
+    }
+
+    public function wishlist(): BelongsToMany
+    {
+        return $this->belongsToMany(Article::class, 'wishlist');
     }
 }

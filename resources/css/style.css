@@ -633,8 +633,12 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 
 .wishlist{
   display: flex;
-  margin-top: 5px;
-  margin-left: 85%;
+  top: 30px;
+  left: 7%;
+}
+
+.wishlistbtn{
+  display: flex;
   background-color: transparent;
   align-items: center;
   justify-content: center;
@@ -642,6 +646,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   width: 40px;
   border: 2px solid var(--color-1);
   border-radius: 100%;
+  background: var(--color-2-o);
 }
 
 /* btn aggiungi un prodotto homepage */
@@ -661,6 +666,9 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 .btn-flip:hover:after {
   opacity: 1;
   transform: translateY(0) rotateX(0);
+}
+.wishlist:hover {
+  transform: scale(1.1);
 }
 
 .btn-flip:hover:before {

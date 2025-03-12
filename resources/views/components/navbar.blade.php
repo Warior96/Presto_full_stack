@@ -314,26 +314,30 @@
 </div>
 
 {{-- comparsa del pannello wish list --}}
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-end bg-2" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">La mia wishlist</h5>
+        <h5 class="offcanvas-title text-center w-100 fs-3" id="offcanvasExampleLabel">La mia wishlist</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
-            lists,
-            etc.
-        </div>
-        <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+        <div class="container">
+            <div class="row">
+                @foreach (Auth::user()->wishlist as $wish)
+                    <div class="col-6 mb-4">
+                        <div class="card rounded-4 px-2 bg-2-s">
+                            {{-- @dump($wish->title) --}}
+                            <h5 class="text-center mt-2">{{ $wish->title }}</h5>
+                            <hr class="divider mt-0 mb-2">
+                            <img src="{{ $wish->images->isNotEmpty() ? $wish->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
+                                class="card-img-top rounded-4" alt="...">
+                            <a href="{{ route('article.show', compact('article')) }}"
+                                class="btn btn-cus rounded-pill bg-1 text-black w-100 my-2"
+                                id="a-dettaglio">{{ __('ui.dettaglio') }}</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
