@@ -3,7 +3,11 @@
         <div class="row justify-content-center">
             <h1 class="col-12 display-5 text-center mt-3 mb-1">
                 {{-- @dd($article_to_check) --}}
-               Ti mancano ancora {{ \App\Models\Article::toBeRevisedCount() }} articoli da revisionare
+                @if (\App\Models\Article::toBeRevisedCount() == 1)
+                    Ti manca ancora 1 articolo da revisionare
+                @elseif (\App\Models\Article::toBeRevisedCount() > 1)
+                    Ti mancano ancora {{ \App\Models\Article::toBeRevisedCount() }} articoli da revisionare
+                @endif
             </h1>
         </div>
     </header>
@@ -236,11 +240,16 @@
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
 
-                        <form action="{{ route('back', ['article' => $article_to_check]) }}" method='POST' class="col-10">
-                            @csrf
-                            @method('PATCH')
-                            <button class="btn btn-warning py-2 px-5 fw-bold">Annulla l'ultima operazione</button>
-                        </form>
+
+                        {{-- modale back --}}
+
+                        <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
+                            <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico"
+                                data-bs-toggle="modal" data-bs-target="#modal_revisor">
+                                Storico operazioni
+                            </button>
+
+                        </div>
 
                     </div>
                 </div>
@@ -250,18 +259,21 @@
                 <div class="col-12">
 
 
-                    <h1 class="fst-italic display-4">
+                    <h1 class="fst-italic display-4 pb-4">
                         Nessun articolo da revisionare
                     </h1>
                 </div>
-                {{-- <a href="{{ route('homepage') }}" class="mt-5 btn btn-info">
-                        Torna alla home
-                    </a> --}}
-                {{-- <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3"> --}}
-                {{-- <a href="{{ route('createarticle') }}"
-                            class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
-                            {{ __('ui.aggiungiProdotto') }}
-                        </a> --}}
+
+                {{-- modale back --}}
+                <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
+                    <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico" data-bs-toggle="modal"
+                        data-bs-target="#modal_revisor">
+                        Storico operazioni
+                    </button>
+
+                </div>
+
+
                 <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 pt-5">
                     <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-20"
                         data-back="{{ __('ui.aggiungiUn') }} prodotto" data-front="Torna alla home"></a>
@@ -269,4 +281,75 @@
             </div>
         @endif
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal_revisor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-5 text">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 c-2 w-100 pt-3" id="staticBackdropLabel">
+                        Storico dei prodotti accettati o rifiutati
+                    </h1>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body overflow-auto modal-storico">
+                    <table class="table bg-2 w-100">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Titolo</th>
+                                <th scope="col">Prezzo</th>
+                                <th scope="col" class="td-img">Anteprima</th>
+                                <th scope="col">Stato</th>
+                                <th scope="col">Dettaglio</th>
+                                <th scope="col">Annulla</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach ($articles as $article)
+                                @if ($article->is_accepted === 0 || $article->is_accepted === 1)
+                                    <tr>
+                                        <th scope="row">{{ $article->id + 1 }}</th>
+                                        <td>{{ $article->title }}</td>
+                                        <td>{{ __('ui.€') }} {{ $article->price }}</td>
+                                        <td class="d-flex justify-content-center align-items-center td-img">
+                                            <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
+                                                class="card-img-top aspect-ratio-1 img-table"
+                                                alt="Immagine dell'articolo {{ $article->title }}">
+                                        </td>
+                                        <td>
+                                            @if ($article->is_accepted == 0)
+                                                <span class="text-danger rounded-pill mx-2">Rifiutato</span>
+                                            @elseif ($article->is_accepted == 1)
+                                                <span class="text-success rounded-pill mx-2">Accettato</span>
+                                            @endif
+                                        </td>
+                                        <td><a target="_blank" href="{{ route('article.show', compact('article')) }}"
+                                                class="btn btn-cus rounded-pill bg-1 text-black mx-2"
+                                                id="a-dettaglio">{{ __('ui.dettaglio') }} </a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('back', ['article' => $article]) }}"
+                                                method='POST' class="">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button class="btn btn-warning rounded-pill fw-bold">Manda
+                                                    in revisione</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </x-layout>

@@ -54,6 +54,7 @@ nav a {
 .c-5 {
   color: var(--color-5) !important;
 }
+
 .c-7 {
   color: var(--color-7);
 }
@@ -407,6 +408,7 @@ swiper-slide img {
   border-top: solid 1px var(--color-5);
   width: 100%;
 }
+
 .data-container-detail-c2 {
   padding-top: 10px;
   margin-top: 50px;
@@ -513,7 +515,33 @@ footer a {
   /* height: 30px; */
 }
 
+.img-table {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
 
+td,
+th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.td-img {
+  width: 100px;
+}
+
+table *:not(img):not(button):not(a) {
+  background-color: var(--color-2) !important;
+}
+
+.btn-storico {
+  background-color: #ffc1073b;
+  border: 1px solid #ffc107;
+}
+
+.modal-storico {
+  max-height: 60vh;
+}
 
 .point {
   cursor: pointer;
@@ -754,8 +782,8 @@ footer a {
 }
 
 .icon-clicked {
-  color: #49fb35 !important;
-  text-shadow: 0px 0px 20px #49fb35;
+  color: rgb(255, 230, 0) !important;
+  text-shadow: 0px 0px 20px rgb(255, 230, 0);
 }
 
 
@@ -1015,7 +1043,7 @@ footer a {
   #btn-register:hover {
     background-color: var(--color-2);
     border-color: var(--color-5);
-    color: var(--color-5)!important;
+    color: var(--color-5) !important;
   }
 
   .card-w:hover {
@@ -1070,6 +1098,10 @@ footer a {
     animation: bounce-revisor 2s linear infinite alternate;
   } */
 
+  .btn-storico:hover {
+    background-color: #ffc107;
+    border: 1px solid #ffc107;
+  }
 
   .card-w img {
     filter: grayscale(20%) brightness(99%) contrast(99%);
@@ -1147,6 +1179,6 @@ footer a {
 /* media query in: lg desktop e md tablet*/
 @media (min-width: 768px) {
   .w-md-75 {
-    width: 75%!important;
+    width: 75% !important;
   }
 }

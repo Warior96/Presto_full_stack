@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
+use App\Models\Article;
 
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
         // categorie disponibili ovunque
         if (Schema::hasTable('categories')) {
             View::share('categories', Category::orderBy('name')->get());
+        }
+        // Condividi gli articoli globalmente se la tabella esiste
+        if (Schema::hasTable('articles')) {
+            View::share('articles', Article::all());
         }
         //rendiamo globale la request della navbar search
         View::share('query', request()->query('query', ''));
