@@ -139,6 +139,11 @@ body {
   border: 2px solid var(--color-1);
   border-radius: 1.2rem;
 }
+.btn-user {
+  /* background-color: var(--color-1); */
+  border: 2px solid var(--color-5);
+  border-radius: 1.2rem;
+}
 
 .modal-no {
   background-color: transparent;
@@ -1124,7 +1129,17 @@ footer a {
     color: var(--color-5) !important;
   }
 
+.btn-user:hover {
+  background-color: var(--color-5);
+  color: var(--color-2) !important;
 }
+
+.btn-user:hover .icon {
+  color: var(--color-2) !important;
+}
+
+}
+
 
 /* media query in: md tablet e sm smartphone*/
 @media (max-width: 991px) {}
