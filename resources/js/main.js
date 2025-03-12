@@ -196,7 +196,7 @@ let observerArticle = new IntersectionObserver((entries) => {
 
 let btnlight = document.querySelectorAll('.btnlight')
 let dashboard_btn = document.querySelector('.dashboard_btn')
-let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), button.dashboard_btn, a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn):not(.dashboard_btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark):not(.page-link');
 let footer = document.querySelector('footer')
 let containerDetail = document.querySelector('#data-container-detail')
 let nightmodeIcon = document.querySelector('#nightmodeIcon')
