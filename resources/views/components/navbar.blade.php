@@ -126,10 +126,10 @@
                         {{-- modale back --}}
 
 
-                        <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico" data-bs-toggle="modal"
+                        {{-- <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico" data-bs-toggle="modal"
                             data-bs-target="#no-revisor-nav">
                             Storico operazioni
-                        </button>
+                        </button> --}}
                     @endif
                 @endauth
 
@@ -206,14 +206,21 @@
                             <i class="fa-solid fa-user fs-5 mx-2 icon"></i>Ciao {{ Auth::user()->name }}</span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample"
-                                    role="button" aria-controls="offcanvasExample">Wishlist</a></li>
+                            <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" href="#" data-bs-target="#no-revisor-nav">
+                                <i class="fa-solid fa-clipboard-list px-2 fs-6"></i>Storico operazioni
+                            </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                    <i class="fa-solid fa-hand-holding-heart px-2 fs-6"></i> Wishlist
+                                </a>
+                            </li>
                             <li>
                                 {{-- logout --}}
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
-                                    <button class="btn mx-2 "><i class="fa-solid fa-arrow-right-from-bracket fs-6"></i>
+                                    <button class="btn mx-2 "><i class="fa-solid fa-arrow-right-from-bracket px-2 fs-6"></i>
                                         Logout</button>
                                 </form>
                             </li>
