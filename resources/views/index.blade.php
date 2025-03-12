@@ -265,8 +265,8 @@
     </a> --}}
                 <a href="{{ route('createarticle') }}" id="addArticle"
                     class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
-                    data-back="{{ __('ui.aggiungiProdotto2') }}"
-                    data-front="{{ __('ui.aggiungiUn') }} prodotto"></a>
+                    data-back="{{ __('ui.completaLaVendita') }}"
+                    data-front="{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}"></a>
             </div>
         </div>
 

@@ -205,7 +205,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-5 ms-1 me-2" id="icon_user"></i>
                             <span class="me-2 dark" id="span_user">
-                                Ciao {{ Auth::user()->name }}</span>
+                                {{__('ui.ciao')}} {{ Auth::user()->name }}</span>
                         </button>
                         <ul class="dropdown-menu bg-2 position-absolute w-100" id="user">
                             @if (Auth::user()->is_revisor)

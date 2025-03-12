@@ -28,7 +28,7 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <label class="form-label" for="temporary_images">{{ __('ui.immagine') }}:</label>
-                <span class="mt-1 fs-8 dark">*massimo 5 alla volta</span>
+                <span class="mt-1 fs-8 dark">*{{__('ui.massimo5Allavolta')}}</span>
             </div>
             <input type="file" wire:model.live="temporary_images" multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
@@ -65,7 +65,7 @@
         <div class="mb-3">
             <label class="form-label" for="condition">{{ __('ui.condizione') }}:</label>
             <select wire:model.blur="condition" class="form-select" id="condition">
-                <option value="">Seleziona {{ __('ui.condizione') }}</option>
+                <option value=""> {{ __('ui.seleziona') }}{{ __('ui.condizione') }}</option>
                 <option value="new"> {{ __('ui.new') }}</option>
                 <option value="used">{{ __('ui.used') }}</option>
                 <option value="reconditioned">{{ __('ui.reconditioned') }}</option>

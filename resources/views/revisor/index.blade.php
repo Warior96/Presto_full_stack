@@ -276,7 +276,7 @@
 
                 <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 pt-5">
                     <a href="{{ route('homepage') }}" class="btn-cus btn-revisor btn-text fs-4 w-20"
-                        data-back="{{ __('ui.aggiungiUn') }} prodotto" data-front="Torna alla home"></a>
+                        data-back="Visita il nostro catalogo" data-front="Torna alla home"></a>
                 </div>
             </div>
         @endif
