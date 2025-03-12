@@ -38,8 +38,8 @@
                             <div class="col-12 container-img-card p-0 position-relative">
                                 <img src="{{ Storage::url('categories-img/all.png') }}" alt="home" class="">
 
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center text-slide-header fs-header p-5">
+                                <div class="d-flex flex-column justify-content-center align-items-center text-slide-header fs-header p-5"
+                                    data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1000">
                                     {{-- @auth
                                         <h4 class="typewriter c-2 mb-3">
                                             Ciao {{ Auth::user()->name }}, sei pronto a fare ottimi affari anche
@@ -245,7 +245,7 @@
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3">
+                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="500">
                                 <x-card :article="$article" />
                             </swiper-slide>
                         @endforeach

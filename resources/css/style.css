@@ -521,9 +521,21 @@ th {
   text-align: center;
 }
 
-
 .td-img {
   width: 100px;
+}
+
+table *:not(img):not(button):not(a) {
+  background-color: var(--color-2) !important;
+}
+
+.btn-storico {
+  background-color: #ffc1073b;
+  border: 1px solid #ffc107;
+}
+
+.modal-storico {
+  max-height: 60vh;
 }
 
 .point {
@@ -765,8 +777,8 @@ th {
 }
 
 .icon-clicked {
-  color: #49fb35 !important;
-  text-shadow: 0px 0px 20px #49fb35;
+  color: rgb(255, 230, 0) !important;
+  text-shadow: 0px 0px 20px rgb(255, 230, 0);
 }
 
 
@@ -1081,6 +1093,10 @@ th {
     animation: bounce-revisor 2s linear infinite alternate;
   } */
 
+  .btn-storico:hover {
+    background-color: #ffc107;
+    border: 1px solid #ffc107;
+  }
 
   .card-w img {
     filter: grayscale(20%) brightness(99%) contrast(99%);
