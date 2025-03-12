@@ -2,7 +2,7 @@
     <header class="container-fluid mt-5 pt-4 min-vh-100">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-5 pt-4 pb-2">Tutti i prodotti in vendita</h1>
+                <h1 class="display-5 pt-4 pb-2">{{__('ui.tuttiIProdottiInVendita')}}</h1>
             </div>
         </div>
         <div class="row wh-100 justify-content-center align-items-center pb-4">
@@ -15,7 +15,7 @@
             @empty
 
                 <div class="col-12">
-                    <p class="text-center my-3 fs-5"> Non sono ancora stati creati {{ __('ui.prodotto')}} </p>
+                    <p class="text-center my-3 fs-5"> {{__('ui.nonSonoAncoraStatiCreatiProdotti')}} </p>
                 </div>
             @endforelse
 

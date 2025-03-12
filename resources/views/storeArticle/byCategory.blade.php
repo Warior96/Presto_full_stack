@@ -4,14 +4,14 @@
             <div class="col-12 pt-4">
                 @if ($articles->isEmpty())
                     <h1 class="fst-italic display-3 fw-bold pt-5"> {{ __("ui.$category->name") }}</h1>
-                    <h4 class="c-5 py-3">Non sono presenti articoli di questa categoria</h4>
+                    <h4 class="c-5 py-3"> {{ __("ui.NonSonoPresentiArticoliDiQuestaCategoria") }}</h4>
                 @else
                     @if ($num_articles == 1)
                         <h1 class="fst-italic display-4 fw-bold pt-3"> {{ __("ui.$category->name") }}</h1>
-                        <h4 class="c-5">È presente {{ $num_articles }} articolo della categoria</h4>
+                        <h4 class="c-5">{{__('ui.èPresente')}} {{ $num_articles }} {{__('ui.articoloDellaCategoria')}}</h4>
                     @else
                         <h1 class="fst-italic display-4 fw-bold pt-3"> {{ __("ui.$category->name") }}</h1>
-                        <h4 class="c-5">Sono presenti {{ $num_articles }} articoli della categoria</h4>
+                        <h4 class="c-5">{{__('ui.sonoPresenti')}} {{ $num_articles }} {{__('ui.articoliDellaCategoria')}}</h4>
                     @endif
                 @endif
             </div>

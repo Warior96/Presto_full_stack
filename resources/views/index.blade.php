@@ -51,11 +51,7 @@
                                         </h4>
                                     @endauth --}}
                                     <div class="c-2">
-                                        Emporium Shop è un marketplace innovativo dove puoi vendere e acquistare
-                                        prodotti di ogni categoria, dai dispositivi tecnologici all'abbigliamento, dagli
-                                        articoli per la casa ai prodotti artigianali. Unisciti alla nostra community di
-                                        venditori e acquirenti per vivere il meglio
-                                        del commercio online!
+                                        Emporium Shop {{ __('ui.èUnMarketplaceInnovativo') }}!
                                     </div>
                                     {{-- search --}}
                                     <form action="{{ route('article.search') }}" method="GET" role="search"
@@ -82,82 +78,83 @@
                                         class="d-flex flex-column justify-content-center align-items-center text-slide-header p-5">
                                         @auth
                                             <h4 class="typewriter c-2 mb-3 fs-header">
-                                                Ciao {{ Auth::user()->name }}, sei pronto a fare ottimi
-                                                affari anche
-                                                oggi?
+                                                {{ __('ui.ciao') }} {{ Auth::user()->name }},
+                                                {{ __('ui.seiProntoAFareOttimiAffariAncheOggi') }}?
                                             </h4>
                                         @else
                                             <h4 class="typewriter c-2 mb-3 fs-header">
-                                                Compra e vendi prodotti, nuovi e usati, in pochi click.
+                                                {{ __('ui.compraEVendiProdottiNuoviEUsatiInPochiClick') }}
                                             </h4>
                                         @endauth
                                         @switch($category->name)
                                             @case('Elettronica')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">La tua lavatrice fa i
-                                                    capricci?
-                                                    Sostituiscila con una della categoria
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.laTuaLavatriceFaICapricci') }}?
+                                                    {{ __('ui.sostituiscilaConUnaDellaCategoria') }}
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Abbigliamento')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Hai l'armadio vuoto?
-                                                    Riempilo con gli articoli della
-                                                    categoria "{{ __("ui.$category->name") }}"</h5>
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.haiLarmadioVuoto') }}?
+                                                    {{ __('ui.riempiloConIProdottiDellaCategoria') }}
+                                                    "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Bellezza')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Cura la tua pelle con
-                                                    i
-                                                    prodotti della categoria
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.curaLaTuaPelleConIProdottiDellaCategoria') }}
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Giardinaggio')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Hai il pollice verde?
-                                                    Dai
-                                                    sfogo alla tua fantasia con la categoria
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.haiIlPolliceVerde') }}?
+                                                    {{ __('ui.scopriLaCategoria') }}
                                                     "{{ __("ui.$category->name") }}"
                                                 </h5>
                                             @break
 
                                             @case('Giocattoli')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Giochi sparsi per
-                                                    casa
-                                                    non sono abbastanza? Aggiungine
-                                                    altri dalla categoria "{{ __("ui.$category->name") }}"</h5>
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.giochiSparsiPerCasaNonSonoAbbastanza') }}?
+                                                    {{ __('ui.aggiungineAltriDallaCategoria') }}
+                                                    "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Sport')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Sei un tipo atletico?
-                                                    Dai
-                                                    un'occhiata alla categoria
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.seiUnaPersonaAtletica') }}? {{ __('ui.vuoiTenertiInForma') }}?
+                                                    {{ __('ui.daiUnOcchiataAllaCategoria') }}
                                                     "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Tecnologia')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Dispositivo vecchio?
-                                                    Guarda le nostre offerte nella
-                                                    categoria "{{ __("ui.$category->name") }}"</h5>
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.iTuoiDispositiviSonoVecchi') }}?
+                                                    {{ __('ui.guardaLeNostreOfferteNellaCategoriaTecnologia') }}
+                                                    "{{ __("ui.$category->name") }}"</h5>
                                             @break
 
                                             @case('Libri e riviste')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Trova il libro dei
-                                                    tuoi
-                                                    sogni! Dai un occhiata alla
-                                                    categoria "{{ __("ui.$category->name") }}"</h5>
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.trovaIlLibroDeiTuoiSogni') }}!
+                                                    {{ __('ui.daiUnOcchiataAllaCategoria') }} "{{ __("ui.$category->name") }}"
+                                                </h5>
                                             @break
 
                                             @case('Accessori')
                                                 <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    I piccoli dettagli a volte fanno la differenza, cerca il
-                                                    tuo stile nella categoria "{{ __("ui.$category->name") }}"
+                                                    {{ __('ui.iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria') }}
+                                                    "{{ __("ui.$category->name") }}"
                                                 </h5>
                                             @break
 
                                             @case('Motori')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">Stai vendendo il tuo
-                                                    catorcio o ne stai cercando un altro?
-                                                    Scoprilo nella categoria "{{ __("ui.$category->name") }}"
+                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
+                                                    {{ __('ui.staiVendendoIlTuoMezzoONeStaiCercandoUnAltro') }}?
+                                                    {{ __('ui.scopriloNellaCategoriaMotori') }}
+                                                    "{{ __("ui.$category->name") }}"
                                                 </h5>
                                             @break
                                         @endswitch
@@ -245,7 +242,8 @@
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="500">
+                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3"
+                                data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="500">
                                 <x-card :article="$article" />
                             </swiper-slide>
                         @endforeach

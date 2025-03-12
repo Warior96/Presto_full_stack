@@ -4,9 +4,9 @@
             <h1 class="col-12 display-5 text-center mt-3 mb-1">
                 {{-- @dd($article_to_check) --}}
                 @if (\App\Models\Article::toBeRevisedCount() == 1)
-                    Ti manca ancora 1 articolo da revisionare
+                {{__('ui.tiMancaAncora1ArticoloDaRevisionare')}}
                 @elseif (\App\Models\Article::toBeRevisedCount() > 1)
-                    Ti mancano ancora {{ \App\Models\Article::toBeRevisedCount() }} articoli da revisionare
+                {{__('ui.tiMancanoAncora')}} {{ \App\Models\Article::toBeRevisedCount() }} {{__('ui.articoliDaRevisionare')}}
                 @endif
             </h1>
         </div>
@@ -166,7 +166,7 @@
                             <span class="fs-7 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
                         </h2>
                         <h4 class="mb-3">
-                            <span class="fs-7 fw-normal">Autore:</span> {{ $article_to_check->user->name }}
+                            <span class="fs-7 fw-normal">{{__('ui.autore')}}:</span> {{ $article_to_check->user->name }}
                         </h4>
                         <p class="fs-5">
                             <span class="fs-7">{{ __('ui.prezzo') }}:

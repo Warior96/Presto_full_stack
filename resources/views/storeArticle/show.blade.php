@@ -9,7 +9,7 @@
                 </h1>
 
                 <p class="fs-4 mb-2">
-                    Articolo pubblicato da {{ $article->user->name }}
+                    {{__('ui.articoloPubblicatoDi')}} {{ $article->user->name }}
                 </p>
             </div>
         </div>
@@ -70,7 +70,7 @@
                     {{-- Descrizione --}}
                     <p class="fs-7">
                         <span class="fw-bold">
-                            Informazioni su questo articolo:
+                            {{__('ui.informazioniSuQuestoArticolo')}}:
                         </span>
                         <br>
                         {{ $article->description }}
@@ -121,7 +121,7 @@
                 </div>
                 {{-- Informazioni secondarie --}}
                 <div class="data-container-detail w-100 d-flex justify-content-between" id="data-container-detail">
-                    <p class="data-detail">Approvato dai nostri revisori</p>
+                    <p class="data-detail">{{__('ui.approvatoDaiNostriRevisori')}}</p>
                     <p class="data-detail">{{ $article->updated_at->format('d/m/Y') }}</p>
                 </div>
 
