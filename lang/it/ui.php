@@ -9,12 +9,13 @@ return [
     'categorie' => 'Categorie',
     'revisiona' => 'Revisiona',
     'cerca' => 'Cerca',
-    'login' => 'Login',
+    'login' => 'Accedi',
     'logout' => 'Logout',
     'registrati' => 'Registrati',
     'candidati' => 'Candidati',
     'dettaglio' => 'Dettaglio',
     'ultimiArrivi' => 'Ultimi Arrivi',
+    'ciao' => 'Ciao',
     // categorie
     'Elettronica' => 'Elettronica',
     'Abbigliamento' => 'Abbigliamento',
@@ -30,6 +31,8 @@ return [
     'accetta' => 'Accetta',
     'rifiuta' => 'Rifiuta',
     // form
+    'seleziona' => 'Seleziona',
+    'massimo5Allavolta'=>'Massimo 5 alla volta',
     'titolo' => 'Titolo',
     'descrizione' => 'Descrizione',
     'prezzo' => 'Prezzo',
@@ -44,19 +47,24 @@ return [
     'reconditioned' => 'Ricondizionato',
     'immagine' => 'Immagine',
     // login
+    'password' => 'Password',
+    'nonHaiUnAccount' => 'Non hai un account',
     'login_email_required' => 'L\'email è obbligatoria.',
     'login_email_invalid' => 'Inserisci un indirizzo email valido.',
     'login_password_required' => 'La password è obbligatoria.',
     'login_password_min' => 'La password deve contenere almeno 8 caratteri.',
     'login_credentials_invalid' => 'Credenziali non valide.',
     // register
+    'nomeUtente' => 'Nome utente',
+    'confermaPassword' => 'Conferma password',
+    'seiGiàRegistrato' => 'Sei già registrato',
     'register_name_required' => 'Il nome è obbligatorio.',
     'register_email_unique' => 'Questa email è gia registrata.',
     'register_password_confirmed' => 'Le password non corrispondono.',
-
     //footer
     'contatti' => 'Contatti' ,
     'chi_siamo' => 'Chi siamo' ,
+    'tuttiIDirittiRiservati' => 'Tutti i diritti riservati',
     'privacy' => 'Questo sito utilizza cookie per migliorare l\'esperienza utente. Continuando la navigazione, accetti la nostra Privacy Policy e Cookie Policy.' ,
     //footer-revisore
     'richiediDiLavorare' => 'Richiedi di lavorare con noi' ,
@@ -70,4 +78,9 @@ return [
     'alMomentoSono' => 'Al momento ci sono',
     'articoliRev' => 'articoli da revisionare.',
     'alMomentoÈ' => 'Al momento c\'è 1 articolo da revisionare.',
+    'UnMarketplaceDove'=>'è un marketplace dove vendere e acquistare prodotti di abbigliamento, giardinaggio, tempo libero,
+    tecnologia nuovi, usati e ricondizionati . Scopri offerte esclusive in un\'esperienza sicura e intuitiva.',
+    'IscrivitiAlNostro'=>'Iscriviti al nostro sito e candidati',
+    'InviaLaTua'=>'Invia la tua candidatura come revisore',
+    'AlMomentoNon'=>'Al momento non ci sono articoli da revisionare.',
 ];

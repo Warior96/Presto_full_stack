@@ -12,7 +12,7 @@
                 class="col-10 col-md-8 col-lg-6 rounded shadow bg-1 px-4 px-md-5 py-4">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label" for="emailLogin">Email</label>
+                    <label class="form-label" for="emailLogin">{{__('ui.email')}}</label>
                     <input type="email" class="form-control" name="email" id="emailLogin"
                         value="{{ old('email') }}">
                     @error('email')
@@ -38,7 +38,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="passwordLogin">Password</label>
+                    <label class="form-label" for="passwordLogin">{{__('ui.password')}}</label>
                     <input type="password" class="form-control" name="password" id="passwordLogin">
                     @error('password')
                         <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
@@ -61,7 +61,7 @@
                     id="btn-login">{{ __('ui.login') }}</button>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">Non hai un account?
+                    <a href="{{ route('register') }}" class="text-decoration-none c-2 fs-5">{{__('ui.nonHaiUnAccount')}}?
                         {{ __('ui.registrati') }}</a>
                 </div>
 

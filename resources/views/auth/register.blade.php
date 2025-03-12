@@ -9,12 +9,12 @@
                 class="col-10 col-md-8 col-lg-6 rounded shadow bg-1 px-4 px-md-5 py-4">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label" for="nameRegister">Username</label>
+                    <label class="form-label" for="nameRegister">{{__('ui.nomeUtente')}}</label>
                     <input type="text" class="form-control" id="nameRegister" name="name"
                         value="{{ old('name') }}">
                 </div>
                 <div class="mb-3">
-                    <label for="emailRegister" class="form-label">Email </label>
+                    <label for="emailRegister" class="form-label">{{__('ui.email')}}</label>
                     <input type="email" class="form-control" id="emailRegister" name="email"
                         value="{{ old('email') }}">
                     @error('email')
@@ -24,7 +24,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="passwordRegister" class="form-label">Password</label>
+                    <label for="passwordRegister" class="form-label">{{__('ui.password')}}</label>
                     <input type="password" class="form-control" id="passwordRegister" name="password">
                     @error('password')
                         <div class="px-2 py-1 fst-italic bg-danger-subtle rounded mt-1">
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="passwordRegisterConfirmation" class="form-label">Conferma la password</label>
+                    <label for="passwordRegisterConfirmation" class="form-label">{{__('ui.confermaPassword')}}</label>
                     <input type="password" class="form-control" id="passwordRegisterConfirmation"
                         name="password_confirmation">
                     @error('password_confirmation')
@@ -47,7 +47,7 @@
                     id="btn-register">{{ __('ui.registrati') }}</button>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="{{ route('login') }}" class="text-decoration-none c-2 fs-5">Sei già registrato? Accedi</a>
+                    <a href="{{ route('login') }}" class="text-decoration-none c-2 fs-5">{{__('ui.seiGiàRegistrato')}}? {{__('ui.login')}}</a>
                 </div>
             </form>
         </div>

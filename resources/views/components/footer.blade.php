@@ -16,16 +16,15 @@
 
                     {{-- chi siamo --}}
                     <div class="col-lg-5 col-md-5 ms-3 ms-md-0 mb-3 c-2 me-2 me-md-0 ps-lg-5">
-                        <p class="c-2 mb-2">{{__('ui.chi_siamo')}}</p>
+                        <p class="c-2 mb-2">{{ __('ui.chi_siamo') }}</p>
                         <p class="c-2">
-                            Emporium The Shop è un marketplace dove puoi vendere e acquistare prodotti di ogni
-                            categoria. Scopri offerte esclusive e un'esperienza sicura e intuitiva.
+                            Emporium Shop {{ __('ui.UnMarketplaceDove') }}
                         </p>
                     </div>
 
                     {{-- contatti --}}
                     <div class="col-lg-4 col-md-5 mb-3 ms-3 ms-md-0 ms-lg-4 c-2">
-                        <p class="c-2 mb-2">{{__('ui.contatti')}}</p>
+                        <p class="c-2 mb-2">{{ __('ui.contatti') }}</p>
                         <p class="c-2">
                             <i class="fa-solid fa-envelope c-2 me-2"></i>
                             <a href="mailto:amdin@example.com">amdin@example.com</a>
@@ -51,8 +50,8 @@
                     @if (!Auth::user()->is_revisor)
                         <div class="col-md-5 ms-3 ms-md-0 d-flex w-100 mb-3">
                             <div>
-                                <h5 class="c-2">{{__('ui.richiediDiLavorare')}}</h5>
-                                <p class="c-2">{{__('ui.inviaCandidatura')}}</p>
+                                <h5 class="c-2">{{ __('ui.richiediDiLavorare') }}</h5>
+                                <p class="c-2">{{ __('ui.inviaCandidatura') }}</p>
                                 <div class="col-3">
                                     {{-- bottone apertura modale --}}
                                     <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
@@ -68,23 +67,24 @@
                                             <div class="modal-content bg-2">
                                                 <div class="modal-header">
                                                     <h1 class="modal-title fs-5 w-100 pt-3" id="staticBackdropLabel">
-                                                        {{ Auth::user()->name }}, {{__('ui.vuoiLavorare')}}
+                                                        {{ Auth::user()->name }}, {{ __('ui.vuoiLavorare') }}
                                                     </h1>
                                                     <button type="button" class="btn-close bg-white"
                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body px-4">
-                                                    <p>{{__('ui.tuoiDati')}}:</p>
+                                                    <p>{{ __('ui.tuoiDati') }}:</p>
                                                     <ul>
-                                                        <li>{{__('ui.nome')}}: {{ Auth::user()->name }}</li>
-                                                        <li>{{__('ui.email')}}: {{ Auth::user()->email }}</li>
+                                                        <li>{{ __('ui.nome') }}: {{ Auth::user()->name }}</li>
+                                                        <li>{{ __('ui.email') }}: {{ Auth::user()->email }}</li>
                                                     </ul>
                                                 </div>
                                                 <div
                                                     class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                    <button type="button" class="btn modal-no" data-bs-dismiss="modal">{{__('ui.annulla')}}</button>
+                                                    <button type="button" class="btn modal-no"
+                                                        data-bs-dismiss="modal">{{ __('ui.annulla') }}</button>
                                                     <a href="{{ route('become.revisor') }}"
-                                                        class="btn modal-si px-3 py-2 shadow">{{__('ui.candidati')}}</a>
+                                                        class="btn modal-si px-3 py-2 shadow">{{ __('ui.candidati') }}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -100,17 +100,19 @@
 
                                     @if (\App\Models\Article::toBeRevisedCount() > 1)
                                         <p class="c-2 col-12 col-md-6 col-lg-12">
-                                            {{__('ui.benvenutoRevisore')}} <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            {{ __('ui.benvenutoRevisore') }} <strong
+                                                class="c-2">{{ Auth::user()->name }}</strong>,
                                             <br>
-                                            {{__('ui.alMomentoSono')}}
+                                            {{ __('ui.alMomentoSono') }}
                                             {{ \App\Models\Article::toBeRevisedCount() }}
-                                            {{__('ui.articoliRev')}}
+                                            {{ __('ui.articoliRev') }}
                                         </p>
                                     @else
                                         <p class="c-2 col-12 col-md-6 col-lg-12">
-                                            {{__('ui.benvenutoRevisore')}} <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            {{ __('ui.benvenutoRevisore') }} <strong
+                                                class="c-2">{{ Auth::user()->name }}</strong>,
                                             <br>
-                                            {{__('ui.alMomentoÈ')}}
+                                            {{ __('ui.alMomentoÈ') }}
                                         </p>
                                     @endif
                                     <div class="mt-2 mt-md-0 mt-lg-2 mb-md-3 mb-lg-0 col-12 col-md-6">
@@ -127,9 +129,9 @@
                         @else
                             {{-- nessun articolo da revisionare --}}
                             <div class="col-12">
-                                <p class="c-2 mb-1 dark">Benvenuto revisore <strong
+                                <p class="c-2 mb-1 dark">{{ __('ui.benvenutoRevisore') }} <strong
                                         class="c-2">{{ Auth::user()->name }}</strong>,</p>
-                                <p class="c-2 dark">Al momento non ci sono articoli da revisionare</p>
+                                <p class="c-2 dark">{{ __('ui.AlMomentoNon') }}</p>
                             </div>
                         @endif
                     @endif
@@ -138,8 +140,8 @@
                 @guest
                     <div class="col-md-5 d-flex w-100 mb-3">
                         <div>
-                            <h5 class="c-2 dark">Richiedi di lavorare con noi</h5>
-                            <p class="c-2 dark">Invia la tua candidatura come revisore</p>
+                            <h5 class="c-2 dark">{{ __('ui.richiediDiLavorare') }}</h5>
+                            <p class="c-2 dark"> {{__('ui.InviaLaTua')}}</p>
                             <div class="col-4 ">
                                 {{-- bottone apertura modale --}}
                                 <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
@@ -155,18 +157,18 @@
                                         <div class="modal-content bg-2 ">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5 w-100 pt-3" id="staticBackdropLabel">
-                                                    Vuoi lavorare con noi?
+                                                    {{ __('ui.vuoiLavorare') }}
                                                 </h1>
                                                 <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body px-4">
-                                                <p>Iscriviti al nostro sito e candidati</p>
+                                                <p>{{__('ui.IscrivitiAlNostro')}}</p>
                                             </div>
                                             <div
-                                                class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                <button type="button" class="btn modal-no" data-bs-dismiss="modal">No,
-                                                    annulla</button>
+                                                class="modal-footer d-flex justify-content-between align-items-center pb-2 ">
+                                                <button type="button" class="btn modal-no "
+                                                    data-bs-dismiss="modal">{{ __('ui.annulla') }}</button>
                                                 <a href="{{ route('become.revisor') }}"
                                                     class="btn px-3 c-5 py-2 shadow modal-si">{{ __('ui.candidati') }}</a>
                                             </div>
@@ -184,13 +186,13 @@
         {{-- privacy --}}
         <div
             class="d-flex flex-column flex-sm-row justify-content-between pt-3 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
-            <p class="c-2">{{__('ui.privacy')}}</p>
+            <p class="c-2">{{ __('ui.privacy') }}</p>
         </div>
 
 
         <div
             class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
-            <p class="c-2">&copy; 2025 The Final Commit. All rights reserved.</p>
+            <p class="c-2">&copy; 2025 The Final Commit.{{__('ui.tuttiIDirittiRiservati')}}.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" target="_blank"
                         href="https://www.facebook.com/?locale=it_IT"><i class="c-2 fa-brands fa-facebook"></i></a>

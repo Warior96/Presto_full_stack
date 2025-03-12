@@ -15,6 +15,7 @@ return [
     'candidati' => 'Apply',
     'dettaglio' => 'Detail',
     'ultimiArrivi' => 'Latest Arrivals',
+    'ciao' => 'Hello',
     // categorie
     'Elettronica' => 'Electronics',
     'Abbigliamento' => 'Clothing',
@@ -30,6 +31,8 @@ return [
     'accetta' => 'Accept',
     'rifiuta' => 'Reject',
     // form
+    'massimo5Allavolta'=>'Maximum 5 at a time',
+    'seleziona' => 'Select',
     'titolo' => 'Title',
     'descrizione' => 'Description',
     'prezzo' => 'Price',
@@ -44,12 +47,17 @@ return [
     'reconditioned' => 'Reconditioned',
     'immagine' => 'Image',
     // login
+    'password' => 'Password',
+    'nonHaiUnAccount' => 'Don\'t have an account',
     'login_email_required' => 'The email is required.',
     'login_email_invalid' => 'The email is invalid.',
     'login_password_required' => 'The password is required.',
     'login_password_min' => 'The password must contain at least 8 characters.',
     'login_credentials_invalid' => 'The credentials are invalid.',
     // register
+    'nomeUtente' => 'Username',
+    'confermaPassword' => 'Confirm password',
+    'seiGiàRegistrato' => 'Already registered',
     'register_name_required' => 'The name is required.',
     'register_email_unique' => 'The email is already registered.',
     'register_password_confirmed' => 'The password does not match.',
@@ -57,6 +65,7 @@ return [
     'contatti' => 'Contacts' ,
     'chi_siamo' => 'About us' ,
     'privacy' => 'This site uses cookies to improve user experience. By continuing to browse, you accept our Privacy Policy and Cookie Policy.' ,
+    'tuttiIDirittiRiservati' => 'All rights reserved',
     //footer-revisore
     'richiediDiLavorare' => 'Ask to work with us' ,
     'inviaCandidatura' => 'Send your application to work as a revisor' ,
@@ -69,4 +78,9 @@ return [
     'alMomentoSono' => 'Currently there are',
     'articoliRev' => 'articols to review.',
     'alMomentoÈ' => 'Currently there is 1 article to review.',
+    'UnMarketplaceDove'=>'is a marketplace where you can buy and sell new, used and refurbished clothing, gardening, 
+    leisure and technology products. Discover exclusive offers in a safe and intuitive experience.',
+    'IscrivitiAlNostro'=>'Sign up to our site and apply',
+    'InviaLaTua'=>'Submit your application as a reviewer',
+    'AlMomentoNon'=>'At the moment there are no articles to review.',
 ];
