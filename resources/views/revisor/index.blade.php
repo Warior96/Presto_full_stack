@@ -244,9 +244,9 @@
                         {{-- modale back --}}
 
                         <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
-                            <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico"
+                            <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico dashboard_btn"
                                 data-bs-toggle="modal" data-bs-target="#modal_revisor">
-                                Storico operazioni
+                                Dashboard
                             </button>
 
                         </div>
@@ -266,9 +266,9 @@
 
                 {{-- modale back --}}
                 <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
-                    <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico" data-bs-toggle="modal"
-                        data-bs-target="#modal_revisor">
-                        Storico operazioni
+                    <button type="button" class="btn py-2 px-4 c-5 btn-storico fs-6 dashboard_btn" data-bs-toggle="modal"
+                        data-bs-target="#modal_revisor" id="revisor_dash">
+                        Dashboard
                     </button>
 
                 </div>
@@ -297,7 +297,7 @@
 
 
                 <div class="modal-body overflow-auto modal-storico">
-                    <table class="table bg-2 w-100">
+                    <table class="table bg-2 w-100 table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -338,7 +338,7 @@
                                                 method='POST' class="">
                                                 @csrf
                                                 @method('PATCH')
-                                                <button class="btn btn-warning rounded-pill fw-bold">Manda
+                                                <button class="btn btn-warning rounded-pill fw-bold">Invia
                                                     in revisione</button>
                                             </form>
                                         </td>
