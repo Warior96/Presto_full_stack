@@ -205,7 +205,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-5 ms-1 me-2" id="icon_user"></i>
                             <span class="me-2 dark" id="span_user">
-                                {{__('ui.ciao')}} {{ Auth::user()->name }}</span>
+                                {{ __('ui.ciao') }} {{ Auth::user()->name }}</span>
                         </button>
                         <ul class="dropdown-menu bg-2 position-absolute w-100" id="user">
                             @if (Auth::user()->is_revisor)
@@ -216,12 +216,12 @@
                                     </a>
                                 </li>
                             @endif
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample"
                                     role="button" aria-controls="offcanvasExample">
                                     <i class="fa-solid fa-hand-holding-heart px-2 fs-6"></i> Wishlist
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -314,7 +314,7 @@
 </div>
 
 {{-- comparsa del pannello wish list --}}
-<div class="offcanvas offcanvas-end bg-2" tabindex="-1" id="offcanvasExample"
+{{-- <div class="offcanvas offcanvas-end bg-2" tabindex="-1" id="offcanvasExample"
     aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-center w-100 fs-3" id="offcanvasExampleLabel">La mia wishlist</h5>
@@ -326,7 +326,7 @@
                 @foreach (Auth::user()->wishlist as $wish)
                     <div class="col-6 mb-4">
                         <div class="card rounded-4 px-2 bg-2-s">
-                            {{-- @dump($wish->title) --}}
+                 
                             <h5 class="text-center mt-2">{{ $wish->title }}</h5>
                             <hr class="divider mt-0 mb-2">
                             <img src="{{ $wish->images->isNotEmpty() ? $wish->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
@@ -340,4 +340,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

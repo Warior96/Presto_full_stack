@@ -65,7 +65,7 @@
         <div class="mb-3">
             <label class="form-label" for="condition">{{ __('ui.condizione') }}:</label>
             <select wire:model.blur="condition" class="form-select" id="condition">
-                <option value=""> {{ __('ui.seleziona') }}{{ __('ui.condizione') }}</option>
+                <option value=""> {{ __('ui.seleziona') }} {{ __('ui.Condizione') }}</option>
                 <option value="new"> {{ __('ui.new') }}</option>
                 <option value="used">{{ __('ui.used') }}</option>
                 <option value="reconditioned">{{ __('ui.reconditioned') }}</option>

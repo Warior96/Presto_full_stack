@@ -244,7 +244,7 @@
                         {{-- modale back --}}
 
                         <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
-                            <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico dashboard_btn"
+                            <button type="button" class="btn py-2 px-5 fw-bold c-5 btn-storico dashboard_btn"
                                 data-bs-toggle="modal" data-bs-target="#modal_revisor">
                                 Dashboard
                             </button>
@@ -266,7 +266,7 @@
 
                 {{-- modale back --}}
                 <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
-                    <button type="button" class="btn py-2 px-4 c-5 btn-storico fs-6 dashboard_btn" data-bs-toggle="modal"
+                    <button type="button" class="btn py-3 px-5 c-5 btn-storico fs-6 dashboard_btn" data-bs-toggle="modal"
                         data-bs-target="#modal_revisor" id="revisor_dash">
                         Dashboard
                     </button>

@@ -630,7 +630,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 .price-input {
   padding-left: 25px;
 }
-
+/* 
 .wishlist{
   display: flex;
   top: 30px;
@@ -655,7 +655,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 
 .wishlistadd {
   background: var(--color-2-o);
-}
+} */
 
 
 /* btn aggiungi un prodotto homepage */

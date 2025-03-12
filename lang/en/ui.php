@@ -84,6 +84,7 @@ return [
     'elimina' => 'Delete',
     'selezionaCategoria' => 'Select category',
     'condizione' => 'Condition',
+    'Condizione' => 'condition',
     'new' => 'New',
     'used' => 'Used',
     'reconditioned' => 'Reconditioned',

@@ -85,6 +85,7 @@ return [
     'elimina' => '删除',
     'selezionaCategoria' => '选择类别',
     'condizione' => '状态',
+    'Condizione' => '状态',
     'new' => '新品',
     'used' => '二手',
     'reconditioned' => '回收',

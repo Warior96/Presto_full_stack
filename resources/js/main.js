@@ -312,18 +312,18 @@ btnlight.forEach(el => {
 //   });
 // });
 
-let wishlistadd = document.querySelectorAll('.wishlistadd');
-let wishlistremove = document.querySelectorAll('.wishlistremove');
+// let wishlistadd = document.querySelectorAll('.wishlistadd');
+// let wishlistremove = document.querySelectorAll('.wishlistremove');
 
-// el.addEventListener('click', () => {
+// // el.addEventListener('click', () => {
 
-wishlistadd.forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.add('d-none');
-  })
-})
-wishlistremove.forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.add('d-none');
-  })
-})
+// wishlistadd.forEach(el => {
+//   el.addEventListener('click', () => {
+//     el.classList.add('d-none');
+//   })
+// })
+// wishlistremove.forEach(el => {
+//   el.addEventListener('click', () => {
+//     el.classList.add('d-none');
+//   })
+// })

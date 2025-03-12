@@ -11,7 +11,7 @@
         <p class="bg-white">Aggiungi</p>
     @endif --}}
     {{-- <livewire:wishlist-button :article="$article" /> --}}
-    <div id="wishlist-{{ $article->id }}" wire:key="wishlist-{{ $article->id }}">
+    {{-- <div id="wishlist-{{ $article->id }}" wire:key="wishlist-{{ $article->id }}">
         @if (Auth::user()->wishlist->contains($article->id))
             <livewire:wishlist-remover :article="$article" wire:key="remover-{{ $article->id }}" />
             <p class="bg-2">Rimuovi</p>
@@ -19,7 +19,7 @@
             <livewire:wishlist :article="$article" wire:key="add-{{ $article->id }}" />
             <p class="bg-white">Aggiungi</p>
         @endif
-    </div>
+    </div> --}}
 
     
 
