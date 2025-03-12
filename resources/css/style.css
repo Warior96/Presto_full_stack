@@ -649,6 +649,15 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   background: var(--color-2-o);
 }
 
+.wishlistremove {
+  background: var(--color-5);
+}
+
+.wishlistadd {
+  background: var(--color-2-o);
+}
+
+
 /* btn aggiungi un prodotto homepage */
 
 .btn-flip {
