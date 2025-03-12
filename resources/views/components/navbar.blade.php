@@ -158,8 +158,8 @@
                 {{--  language --}}
                 <li
                     class="nav-item dropdown d-none d-lg-block  {{ Route::currentRouteName() == 'homepage' ? 'ms-1' : '' }} my-auto ps-2">
-                    <a class="nav-link dropdown-toggle  py-0" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle  py-0" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         @if (session('locale'))
                             <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
                                 alt="{{ session('locale') }} Flag" width="32" height="32" class="">
@@ -200,19 +200,25 @@
 
 
                     {{-- dropdown pannello utente --}}
-                    <div class="dropdown">
-                        <button class="btn btn-user px-2 py-2 fs-7 rounded-4 shadow" type="button"
+                    <div class="dropdown position-relative">
+                        <button class="btn btn-user px-2 py-2 fs_nav rounded-4 shadow" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user fs-5 mx-2 icon"></i>Ciao {{ Auth::user()->name }}</span>
+                            <i class="fa-solid fa-user fs-5 ms-1 me-2" id="icon_user"></i>
+                            <span class="me-2" id="span_user">
+                                Ciao {{ Auth::user()->name }}</span>
                         </button>
-                        <ul class="dropdown-menu bg-2">
+                        <ul class="dropdown-menu bg-2 position-absolute w-100" id="user">
+                            @if (Auth::user()->is_revisor)
+                                <li>
+                                    <a class="dropdown-item w-100" data-bs-toggle="modal" href="#"
+                                        data-bs-target="#no-revisor-nav">
+                                        <i class="fa-solid fa-clipboard-list px-2 fs-6"></i>Dashboard
+                                    </a>
+                                </li>
+                            @endif
                             <li>
-                            <a class="dropdown-item" data-bs-toggle="modal" href="#" data-bs-target="#no-revisor-nav">
-                                <i class="fa-solid fa-clipboard-list px-2 fs-6"></i>Storico operazioni
-                            </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                                    role="button" aria-controls="offcanvasExample">
                                     <i class="fa-solid fa-hand-holding-heart px-2 fs-6"></i> Wishlist
                                 </a>
                             </li>
@@ -223,7 +229,8 @@
                                 {{-- logout --}}
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
-                                    <button class="dropdown-item text-danger"><i class="text-danger fa-solid fa-arrow-right-from-bracket px-2 fs-6"></i>
+                                    <button class="dropdown-item text-danger"><i
+                                            class="text-danger fa-solid fa-arrow-right-from-bracket px-2 fs-6"></i>
                                         Logout</button>
                                 </form>
                             </li>
@@ -251,7 +258,7 @@
 
 
             <div class="modal-body overflow-auto modal-storico">
-                <table class="table bg-2 w-100">
+                <table class="table bg-2 w-100 table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -292,7 +299,7 @@
                                             class="">
                                             @csrf
                                             @method('PATCH')
-                                            <button class="btn btn-warning rounded-pill fw-bold">Manda
+                                            <button class="btn btn-warning rounded-pill fw-bold">Invia
                                                 in revisione</button>
                                         </form>
                                     </td>

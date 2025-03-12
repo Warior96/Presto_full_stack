@@ -195,7 +195,8 @@ let observerArticle = new IntersectionObserver((entries) => {
 //INIZIO DEL CODICE PER LA DARK-MODE
 
 let btnlight = document.querySelectorAll('.btnlight')
-let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
+let dashboard_btn = document.querySelector('.dashboard_btn')
+let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn), button.dashboard_btn, a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark)');
 let footer = document.querySelector('footer')
 let containerDetail = document.querySelector('#data-container-detail')
 let nightmodeIcon = document.querySelector('#nightmodeIcon')
@@ -231,6 +232,10 @@ function checkDarkMode() {
     textElements.forEach(el => {
       el.style.color = '#F5DEBA';  // Colore chiaro
     })
+    if (dashboard_btn.classList.contains('dashboard_btn')) {
+      dashboard_btn.classList.toggle('c-5');
+      dashboard_btn.style.color = '#F5DEBA';  // Colore chiaro
+    }
   }
 }
 
@@ -251,6 +256,13 @@ btnlight.forEach(el => {
       footer.classList.toggle('dark-mode-footer');
       // containerDetail.style.borderColor="#F5DEBA";
     }
+    // bottne dashboard dashboard_btn
+    if (dashboard_btn) {
+      dashboard_btn.classList.toggle('c-5');
+      dashboard_btn.classList.toggle('c-2');
+      // el.style.color = '#F5DEBA';  // Colore chiaro
+      console.log('entraaaa2');
+    }
     if (containerDetail) {
       containerDetail.classList.toggle('data-container-detail-c2');
     }
@@ -266,12 +278,17 @@ btnlight.forEach(el => {
       if (document.body.classList.contains('dark-mode')) {
         el.style.color = '#F5DEBA';  // Colore chiaro
       } else {
-
         if (!el.classList.contains('c-7')) {
           el.style.color = '#2c2c31';  // Colore scuro
         } else {
           el.style.color = '#595856';  // Colore grigio chiaro
         }
+        // if (el.classList.contains('dashboard_btn')) {
+        //   el.classList.toggle('c-5');
+        //   el.classList.toggle('c-2');
+        //   // el.style.color = '#F5DEBA';  // Colore chiaro
+        //   console.log('entraaaa2');
+        // }
       }
     });
   })

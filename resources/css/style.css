@@ -120,11 +120,24 @@ body {
   font-size: 1.15rem !important;
 }
 
+.fs_nav {
+  font-size: 1rem;
+
+}
+
 .fs-8 {
   font-size: 0.75rem;
 }
 
+#user {
+  top: 105%;
+  right: 100%;
+  /* transform: translateX(0%); */
+}
 
+#revisor_dash{
+  border-radius: 1.2rem;
+}
 
 /* Homepage */
 .shop {
@@ -140,6 +153,7 @@ body {
   border: 2px solid var(--color-1);
   border-radius: 1.2rem;
 }
+
 .btn-user {
   /* background-color: var(--color-1); */
   border: 2px solid var(--color-5);
@@ -530,7 +544,7 @@ th {
   width: 100px;
 }
 
-table *:not(img):not(button):not(a) {
+table *:not(img):not(button):not(a):not(span):not(form) {
   background-color: var(--color-2) !important;
 }
 
@@ -1161,14 +1175,15 @@ table *:not(img):not(button):not(a) {
     color: var(--color-5) !important;
   }
 
-.btn-user:hover {
-  background-color: var(--color-5);
-  color: var(--color-2) !important;
-}
+  .btn-user:hover {
+    background-color: var(--color-5);
+    color: var(--color-2) !important;
+  }
 
-.btn-user:hover .icon {
-  color: var(--color-2) !important;
-}
+  .btn-user:hover #icon_user,
+  .btn-user:hover #span_user {
+      color: var(--color-2) !important;
+  }
 
 }
 
