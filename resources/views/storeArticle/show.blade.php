@@ -19,9 +19,9 @@
 
             {{-- fotografia --}}
             <div
-                class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail show-border">
+                class="col-12 d-flex justify-content-center align-items-center col-md-6 mb-2 bg-2-s rounded-pill img-container-detail show-border my-5">
                 @if ($article->images->count() > 0)
-                    <swiper-container class="mySwiper swiper-container-show" pagination="true" effect="coverflow"
+                    <swiper-container class="mySwiper swiper-container-show" pagination="false" effect="coverflow"
                         grab-cursor="true" centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50"
                         coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
                         coverflow-effect-slide-shadows="true">
