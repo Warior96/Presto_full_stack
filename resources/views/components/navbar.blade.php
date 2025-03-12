@@ -149,8 +149,8 @@
                 {{-- lingua e switch visibili solo da lg --}}
                 {{-- switch dark light mode --}}
                 <li
-                    class="nav-item d-none d-lg-block {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
-                    <button class="btnlight">
+                    class="nav-item me-2 d-none d-lg-block {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
+                    <button class="btnlight ">
                         <span id="nightmodeIcon" class="fa-solid fa-moon"></span>
                     </button>
                 </li>
@@ -201,7 +201,7 @@
 
                     {{-- dropdown pannello utente --}}
                     <div class="dropdown position-relative">
-                        <button class="btn btn-user px-2 py-2 fs_nav rounded-4 shadow" type="button"
+                        <button class="btn btn-user ms-3 px-2 py-2 fs_nav rounded-4 shadow" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-5 ms-1 me-2" id="icon_user"></i>
                             <span class="me-2 dark" id="span_user">
@@ -326,7 +326,7 @@
                 @foreach (Auth::user()->wishlist as $wish)
                     <div class="col-6 mb-4">
                         <div class="card rounded-4 px-2 bg-2-s">
-                 
+
                             <h5 class="text-center mt-2">{{ $wish->title }}</h5>
                             <hr class="divider mt-0 mb-2">
                             <img src="{{ $wish->images->isNotEmpty() ? $wish->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
