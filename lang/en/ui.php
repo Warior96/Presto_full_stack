@@ -3,8 +3,8 @@ return [
     // homepage
     'home' => 'Homepage',
     'aggiungiUn' => 'Add a',
-    'prodotto' => 'Product',
-    'aggiungiProdotto2' => 'Complete the sale',
+    'prodotto' => 'product',
+    'completaLaVendita' => 'Complete the sale',
     'mostraProdotti' => 'Show all products',
     'categorie' => 'Categories',
     'revisiona' => 'Revise',
@@ -53,5 +53,20 @@ return [
     'register_name_required' => 'The name is required.',
     'register_email_unique' => 'The email is already registered.',
     'register_password_confirmed' => 'The password does not match.',
-
+    //footer
+    'contatti' => 'Contacts' ,
+    'chi_siamo' => 'About us' ,
+    'privacy' => 'This site uses cookies to improve user experience. By continuing to browse, you accept our Privacy Policy and Cookie Policy.' ,
+    //footer-revisore
+    'richiediDiLavorare' => 'Ask to work with us' ,
+    'inviaCandidatura' => 'Send your application to work as a revisor' ,
+    'vuoiLavorare' => 'do you want to work with us?',
+    'tuoiDati' => 'Your data',
+    'nome' => 'name',
+    'email' => 'email',
+    'annulla' => 'No, cancel',
+    'benvenutoRevisore' => 'Welcome revisor',
+    'alMomentoSono' => 'Currently there are',
+    'articoliRev' => 'articols to review.',
+    'alMomentoÈ' => 'Currently there is 1 article to review.',
 ];

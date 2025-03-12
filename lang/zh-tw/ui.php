@@ -53,4 +53,5 @@ return [
     'register_name_required' => '必须填写用户名。',
     'register_email_unique' => '该邮箱已经注册。',
     'register_password_confirmed' => '输入的密码不一致。',
+    'privacy' => '本网站使用 cookies 来改善用户体验。继续浏览，即表示您接受我们的隐私政策和 Cookie 政策。' ,
 ];

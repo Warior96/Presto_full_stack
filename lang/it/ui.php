@@ -3,8 +3,8 @@ return [
     // homepage
     'home' => 'Homepage',
     'aggiungiUn' => 'Aggiungi un',
-    'prodotto' => 'Prodotto',
-    'aggiungiProdotto2' => 'Completa la vendita',
+    'prodotto' => 'prodotto',
+    'completaLaVendita' => 'Completa la vendita',
     'mostraProdotti' => 'Mostra tutti i prodotti',
     'categorie' => 'Categorie',
     'revisiona' => 'Revisiona',
@@ -53,4 +53,21 @@ return [
     'register_name_required' => 'Il nome è obbligatorio.',
     'register_email_unique' => 'Questa email è gia registrata.',
     'register_password_confirmed' => 'Le password non corrispondono.',
+
+    //footer
+    'contatti' => 'Contatti' ,
+    'chi_siamo' => 'Chi siamo' ,
+    'privacy' => 'Questo sito utilizza cookie per migliorare l\'esperienza utente. Continuando la navigazione, accetti la nostra Privacy Policy e Cookie Policy.' ,
+    //footer-revisore
+    'richiediDiLavorare' => 'Richiedi di lavorare con noi' ,
+    'inviaCandidatura' => 'Invia la tua candidatura come revisore' ,
+    'vuoiLavorare' => 'vuoi lavorare con noi?',
+    'tuoiDati' => 'I tuoi dati',
+    'nome' => 'nome',
+    'email' => 'email',
+    'annulla' => 'No, annulla',
+    'benvenutoRevisore' => 'Benvenuto revisore',
+    'alMomentoSono' => 'Al momento ci sono',
+    'articoliRev' => 'articoli da revisionare.',
+    'alMomentoÈ' => 'Al momento c\'è 1 articolo da revisionare.',
 ];

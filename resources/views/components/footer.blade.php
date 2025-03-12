@@ -16,7 +16,7 @@
 
                     {{-- chi siamo --}}
                     <div class="col-lg-5 col-md-5 ms-3 ms-md-0 mb-3 c-2 me-2 me-md-0 ps-lg-5">
-                        <p class="c-2 mb-2">Chi siamo</p>
+                        <p class="c-2 mb-2">{{__('ui.chi_siamo')}}</p>
                         <p class="c-2">
                             Emporium The Shop è un marketplace dove puoi vendere e acquistare prodotti di ogni
                             categoria. Scopri offerte esclusive e un'esperienza sicura e intuitiva.
@@ -25,7 +25,7 @@
 
                     {{-- contatti --}}
                     <div class="col-lg-4 col-md-5 mb-3 ms-3 ms-md-0 ms-lg-4 c-2">
-                        <p class="c-2 mb-2">Contatti</p>
+                        <p class="c-2 mb-2">{{__('ui.contatti')}}</p>
                         <p class="c-2">
                             <i class="fa-solid fa-envelope c-2 me-2"></i>
                             <a href="mailto:amdin@example.com">amdin@example.com</a>
@@ -51,8 +51,8 @@
                     @if (!Auth::user()->is_revisor)
                         <div class="col-md-5 ms-3 ms-md-0 d-flex w-100 mb-3">
                             <div>
-                                <h5 class="c-2">Richiedi di lavorare con noi</h5>
-                                <p class="c-2">Invia la tua candidatura come revisore</p>
+                                <h5 class="c-2">{{__('ui.richiediDiLavorare')}}</h5>
+                                <p class="c-2">{{__('ui.inviaCandidatura')}}</p>
                                 <div class="col-3">
                                     {{-- bottone apertura modale --}}
                                     <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
@@ -68,24 +68,23 @@
                                             <div class="modal-content bg-2">
                                                 <div class="modal-header">
                                                     <h1 class="modal-title fs-5 w-100 pt-3" id="staticBackdropLabel">
-                                                        {{ Auth::user()->name }}, vuoi lavorare con noi?
+                                                        {{ Auth::user()->name }}, {{__('ui.vuoiLavorare')}}
                                                     </h1>
                                                     <button type="button" class="btn-close bg-white"
                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body px-4">
-                                                    <p>I tuoi dati:</p>
+                                                    <p>{{__('ui.tuoiDati')}}:</p>
                                                     <ul>
-                                                        <li>nome: {{ Auth::user()->name }}</li>
-                                                        <li>email: {{ Auth::user()->email }}</li>
+                                                        <li>{{__('ui.nome')}}: {{ Auth::user()->name }}</li>
+                                                        <li>{{__('ui.email')}}: {{ Auth::user()->email }}</li>
                                                     </ul>
                                                 </div>
                                                 <div
                                                     class="modal-footer d-flex justify-content-between align-items-center pb-2">
-                                                    <button type="button" class="btn modal-no" data-bs-dismiss="modal">No,
-                                                        annulla</button>
+                                                    <button type="button" class="btn modal-no" data-bs-dismiss="modal">{{__('ui.annulla')}}</button>
                                                     <a href="{{ route('become.revisor') }}"
-                                                        class="btn modal-si px-3 py-2 shadow">Candidati</a>
+                                                        class="btn modal-si px-3 py-2 shadow">{{__('ui.candidati')}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,18 +100,17 @@
 
                                     @if (\App\Models\Article::toBeRevisedCount() > 1)
                                         <p class="c-2 col-12 col-md-6 col-lg-12">
-                                            Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            {{__('ui.benvenutoRevisore')}} <strong class="c-2">{{ Auth::user()->name }}</strong>,
                                             <br>
-                                            Al momento ci sono
+                                            {{__('ui.alMomentoSono')}}
                                             {{ \App\Models\Article::toBeRevisedCount() }}
-                                            articoli da
-                                            revisionare
+                                            {{__('ui.articoliRev')}}
                                         </p>
                                     @else
                                         <p class="c-2 col-12 col-md-6 col-lg-12">
-                                            Benvenuto revisore <strong class="c-2">{{ Auth::user()->name }}</strong>,
+                                            {{__('ui.benvenutoRevisore')}} <strong class="c-2">{{ Auth::user()->name }}</strong>,
                                             <br>
-                                            Al momento c'è 1 articolo da revisionare
+                                            {{__('ui.alMomentoÈ')}}
                                         </p>
                                     @endif
                                     <div class="mt-2 mt-md-0 mt-lg-2 mb-md-3 mb-lg-0 col-12 col-md-6">
@@ -186,8 +184,7 @@
         {{-- privacy --}}
         <div
             class="d-flex flex-column flex-sm-row justify-content-between pt-3 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
-            <p class="c-2">Questo sito utilizza cookie per migliorare l'esperienza utente. Continuando la
-                navigazione, accetti la nostra Privacy Policy e Cookie Policy.</p>
+            <p class="c-2">{{__('ui.privacy')}}</p>
         </div>
 
 
