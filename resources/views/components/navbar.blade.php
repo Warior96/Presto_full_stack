@@ -190,7 +190,7 @@
                 {{-- se l'utente è ospite vede il pulsante login --}}
                 @guest
                     <li class="me-2 nav-item ">
-                        <a class="nav-link mx-2  {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
+                        <a class="nav-link mx-2 fs-5 {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
                             href="{{ route('login') }}">{{ __('ui.login') }}</a>
                     </li>
                 @endguest

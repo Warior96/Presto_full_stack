@@ -9,29 +9,27 @@ use Illuminate\Support\Facades\Auth;
 class WishlistRemover extends Component
 {
 
-    // public $article;
-    // public $wishlist;
-    // public function mount(Article $article)
-    // {
-    //     $this->article = $article;
-    // }
+    public $article;
+    public $wishlist;
+    public function mount(Article $article)
+    {
+        $this->article = $article;
+    }
 
-    // public function deleteWish()
-    // {
-    //     $user = Auth::user();
-    //     // Aggiungi l'articolo alla wishlist
-    //     $article = Article::find($this->article->id);
-    //     $user->wishlist()->detach($article->id);
+    public function deleteWish()
+    {
+        $user = Auth::user();
+        // Aggiungi l'articolo alla wishlist
+        $article = Article::find($this->article->id);
+        $user->wishlist()->detach($article->id);
 
-    //     // $this->emit('wishlistUpdated');
-    //     // $this->dispatch('wishlistUpdated', ['articleId' => $this->article->id, 'action' => 'remove']);
- 
-    // }
+        // $this->emit('wishlistUpdated');
+        // $this->dispatch('wishlistUpdated', ['articleId' => $this->article->id, 'action' => 'remove']);
 
-    // public function render()
-    // {
-    //     return view('livewire.wishlist-remover');
-    // }
+    }
+
+    public function render()
+    {
+        return view('livewire.wishlist-remover');
+    }
 }
-
-

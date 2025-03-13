@@ -224,13 +224,6 @@
                         @endif
                     </div>
                     <div class="row pb-4 justify-content-around flex-row">
-                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'
-                            class="col-6 px-3">
-                            @csrf
-                            @method('PATCH')
-                            <button class="btn btn-cus p-2 w-100 fw-bold"
-                                id="reject">{{ __('ui.rifiuta') }}</button>
-                        </form>
 
                         <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
                             class="col-6 px-3">
@@ -239,6 +232,22 @@
                             <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
+                        
+                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'
+                            class="col-6 px-3">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-cus p-2 w-100 fw-bold"
+                                id="reject">{{ __('ui.rifiuta') }}</button>
+                        </form>
+
+                        {{-- <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
+                            class="col-6 px-3">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
+                                id="accept">{{ __('ui.accetta') }}</button>
+                        </form> --}}
 
 
                         {{-- modale back --}}
