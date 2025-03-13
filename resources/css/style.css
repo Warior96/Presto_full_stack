@@ -191,7 +191,7 @@ body {
 
 ::selection {
   background-color:var(--color-1); /* Colore di sfondo dell'evidenziazione */
-  color: white; /* Colore del testo selezionato */
+  color: var(--color-2); /* Colore del testo selezionato */
 }
 
 /* Carosello categorie */
