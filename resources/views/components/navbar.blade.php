@@ -216,12 +216,12 @@
                                     </a>
                                 </li>
                             @endif
-                            {{-- <li>
+                            <li>
                                 <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample"
                                     role="button" aria-controls="offcanvasExample">
                                     <i class="fa-solid fa-hand-holding-heart px-2 fs-6"></i> Wishlist
                                 </a>
-                            </li> --}}
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -314,7 +314,7 @@
 </div>
 
 {{-- comparsa del pannello wish list --}}
-{{-- <div class="offcanvas offcanvas-end bg-2" tabindex="-1" id="offcanvasExample"
+<div class="offcanvas offcanvas-end bg-2" tabindex="-1" id="offcanvasExample"
     aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-center w-100 fs-3" id="offcanvasExampleLabel">La mia wishlist</h5>
@@ -340,4 +340,4 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>

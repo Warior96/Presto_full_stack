@@ -635,7 +635,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 .price-input {
   padding-left: 25px;
 }
-/*
+
 .wishlist{
   display: flex;
   top: 30px;
@@ -660,7 +660,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 
 .wishlistadd {
   background: var(--color-2-o);
-} */
+}
 
 
 /* btn aggiungi un prodotto homepage */
@@ -681,9 +681,9 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   opacity: 1;
   transform: translateY(0) rotateX(0);
 }
-.wishlist:hover {
+/* .wishlist:hover {
   transform: scale(1.1);
-}
+} */
 
 .btn-flip:hover:before {
   opacity: 0;

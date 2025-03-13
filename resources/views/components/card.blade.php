@@ -3,13 +3,13 @@
         class="card-img-top {{ Route::currentRouteName() == 'homepage' ? 'img-cus' : 'aspect-ratio-1' }}"
         alt="Immagine dell'articolo {{ $article->title }}">
 
-    {{-- @if (Auth::user()->wishlist->contains($article->id))
-        <livewire:wishlist-remover :article="$article" />
-        <p class="bg-2">Rimuovi</p>
+    @if (Auth::user()->wishlist->contains($article->id))
+    <livewire:wishlist-remover :article="$article" />
+    <p class="bg-2">Rimuovi</p>
     @else
-        <livewire:wishlist :article="$article" />
+    <livewire:wishlist :article="$article" />
         <p class="bg-white">Aggiungi</p>
-    @endif --}}
+    @endif
     {{-- <livewire:wishlist-button :article="$article" /> --}}
     {{-- <div id="wishlist-{{ $article->id }}" wire:key="wishlist-{{ $article->id }}">
         @if (Auth::user()->wishlist->contains($article->id))
@@ -21,7 +21,7 @@
         @endif
     </div> --}}
 
-    
+
 
     <div class="card-body px-0 pt-2 pb-0">
         <h4 class="card-title">{{ $article->title }}</h4>
