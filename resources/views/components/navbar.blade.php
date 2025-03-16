@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-6 position-fixed top-0 left-0 w-100 z-3 shadow px-2">
     <div class="container-fluid mx-lg-2">
         <a class="navbar-brand my-0 me-3 p-0" href="{{ route('homepage') }}">
-            <img src="{{ Storage::url('logo/logo-rettangolare.png') }}" alt="" class="img-logo">
+            <img src="{{ Storage::url(Route::currentRouteName() == 'homepage' ? 'logo/logo-rettangolare-w.png' : 'logo/logo-rettangolare.png') }}"
+                alt="" class="img-logo">
         </a>
 
         {{-- visbili da sm e md fuori da hamburger menu --}}
@@ -55,35 +56,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
 
-                {{-- <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'homepage' ? 'active' : '' }}"
-                    href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
-                </li> --}}
-
                 {{-- se l'utente è loggato vede questi pulsanti --}}
                 @auth
                     {{-- crea articoli --}}
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'active' : '' }}"
+                        <a class="nav-link {{ Route::currentRouteName() == 'createarticle' ? 'c-2' : '' }}"
                             href="{{ route('createarticle') }}">{{ __('ui.aggiungiUn') }} {{ __('ui.prodotto') }}</a>
                     </li>
 
 
 
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'active' : '' }}"
+                        <a class="nav-link {{ Route::currentRouteName() == 'article.indexAll' ? 'c-2' : '' }}"
                             href="{{ route('article.indexAll') }}">{{ __('ui.mostraProdotti') }}</a>
                     </li>
+
+                    {{-- categorie btn --}}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'byCategory' ? 'c-2' : '' }} "
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ __('ui.categorie') }}
                         </a>
-
                         {{-- categorie --}}
                         <ul class="dropdown-menu bg-2">
                             @foreach ($categories as $category)
-                                <li class="d-flex justify-content-center z-3">
+                                <li
+                                    class="d-flex justify-content-center z-3 {{ Route::currentRouteName() == 'byCategory' && $category->id == Request::route('category')->id ? 'bg-1' : '' }}">
                                     <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('byCategory', ['category' => $category]) }}">
                                         <!-- icona associata automaticamente alla categoria -->
@@ -95,7 +93,7 @@
                                             class="ms-auto ps-2 dark">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
                                     </a>
                                 </li>
-
+                                {{-- divder --}}
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
                                 @endif
@@ -107,7 +105,7 @@
                     {{-- revisore --}}
                     @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount())
                         <li class="nav-item">
-                            <a class="d-flex position-relative nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'active' : '' }}"
+                            <a class="d-flex position-relative nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'c-2' : '' }}"
                                 href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
                                 {{-- <span class="position-absolute translate-middle badge rounded-pill bg-5"
                                     id="revisor-badge">
@@ -137,11 +135,12 @@
                 @if (Route::currentRouteName() != 'homepage')
                     <form action="{{ route('article.search') }}" method="GET" role="search"
                         class="d-flex ms-lg-auto ms-1 me-2 my-2 my-md-2 ms-md-1 me-md-3 my-lg-0 mx-lg-0">
-                        <div class="input-group">
+                        <div class="input-group d-flex">
                             <input type="search" name="query" class="form-control"
                                 placeholder="{{ __('ui.cerca') }}" aria-label="search" value="{{ $query }}">
-                            <button class="input-group-text btn" type="submit" id="basic-addon2"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
+                            <button class="input-group-text btn" type="submit" id="basic-addon2">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
                     </form>
                 @endif
@@ -150,7 +149,7 @@
                 {{-- switch dark light mode --}}
                 <li
                     class="nav-item me-2 d-none d-lg-block {{ Route::currentRouteName() == 'homepage' ? 'ms-auto' : 'ms-4' }}  my-auto">
-                    <button class="btnlight ">
+                    <button class="btnlight">
                         <span id="nightmodeIcon" class="fa-solid fa-moon"></span>
                     </button>
                 </li>
@@ -162,10 +161,10 @@
                         aria-expanded="false">
                         @if (session('locale'))
                             <img src="{{ asset('vendor/blade-flags/language-' . session('locale') . '.svg') }}"
-                                alt="{{ session('locale') }} Flag" width="32" height="32" class="">
+                                alt="{{ session('locale') }} Flag" width="42" height="42" class="">
                         @else
                             <img src="{{ asset('vendor/blade-flags/language-it.svg') }}" alt="it Flag"
-                                width="32" height="32" class="">
+                                width="42" height="42" class="">
                         @endif
                     </a>
                     <ul class="dropdown-menu bg-2 mt-2">
@@ -189,10 +188,12 @@
 
                 {{-- se l'utente è ospite vede il pulsante login --}}
                 @guest
-                    <li class="me-2 nav-item ">
-                        <a class="nav-link mx-2 fs-5 {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
-                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
-                    </li>
+                    <a class="btn btn-user ms-3 px-2 py-2 fs_nav rounded-4 shadow {{ Route::currentRouteName() == 'login' ? 'bg-2' : '' }}"
+                        href="{{ route('login') }}">
+                        <i class="fa-solid fa-user fs-5 ms-1 me-2" id="icon_user"></i>
+                        <span class="me-2 dark" id="span_user">
+                            {{ __('ui.login') }}</span>
+                    </a>
                 @endguest
                 @auth
 

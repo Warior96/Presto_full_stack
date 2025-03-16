@@ -16,7 +16,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::post('/language/{lang}', 'setLanguage')->name('setLocale');
 });
 
-// gruppo articoli articleController
+// gruppo articoli articleController  // prefisso articles/
 Route::prefix('articles/')->controller(ArticleController::class)->group(function () {
     // view creazione articolo
     Route::get('create', 'createArticle')->name('createarticle');
@@ -25,10 +25,10 @@ Route::prefix('articles/')->controller(ArticleController::class)->group(function
     // view dettaglio articolo
     Route::get('show/{article}', 'show')->name('article.show');
     // view articoli per categoria
-    Route::get('/category/{category}', 'byCategory')->name('byCategory');
+    Route::get('category/{category}', 'byCategory')->name('byCategory');
 });
 
-// gruppo revisori revisorController
+// gruppo revisori revisorController  // prefisso revisor/
     Route::prefix('revisor/')->controller(RevisorController::class)->group(function () {
     // view elenco articoli da revisionare
     Route::get('index', 'index')->middleware('isRevisor')->name('revisor.index');
