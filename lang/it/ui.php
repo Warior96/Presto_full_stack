@@ -19,9 +19,9 @@ return [
     // homepage carosello
     'seiProntoAFareOttimiAffariAncheOggi' => 'Sei pronto a fare ottimi affari anche oggi',
     'compraEVendiProdottiNuoviEUsatiInPochiClick' => 'Compra e vendi prodotti, nuovi e usati, in pochi click',
-    'èUnMarketplaceInnovativo' => 'è un marketplace innovativo dove puoi vendere e acquistareprodotti di ogni categoria,
-    dai dispositivi tecnologici all\'abbigliamento, dagliarticoli per la casa ai prodotti artigianali. 
-    Unisciti alla nostra community divenditori e acquirenti per vivere il megliodel commercio online',
+    'èUnMarketplaceInnovativo' => 'è un marketplace innovativo dove puoi vendere e acquistare prodotti di ogni categoria,
+    dai dispositivi tecnologici all\'abbigliamento, dagli articoli per la casa ai prodotti artigianali. 
+    Unisciti alla nostra community di venditori e acquirenti per vivere il meglio del commercio online',
     // homepage carosello categorie
     'laTuaLavatriceFaICapricci' => 'La tua lavatrice fa i capricci',
     'sostituiscilaConUnaDellaCategoria' => 'Sostituiscila con una della categoria',
@@ -36,11 +36,11 @@ return [
     'vuoiTenertiInForma' => 'Vuoi tenerti in forma',
     'daiUnOcchiataAllaCategoria' => 'Dai un\'occhiata alla categoria',
     'iTuoiDispositiviSonoVecchi' => 'I tuoi dispositivi sono vecchi',
-    'guardaLeNostreOfferteNellaCategoriaTecnologia' => 'Guarda le nostre offerte nella categoria Tecnologia',
+    'guardaLeNostreOfferteNellaCategoriaTecnologia' => 'Guarda le nostre offerte nella categoria "Tecnologia"',
     'trovaIlLibroDeiTuoiSogni' => 'Trova il libro dei tuoi sogni',
-    'iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria' => 'I piccoli dettagli a volte fanno la differenza. Cerca il tuo stile nella categoria',
+    'iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria' => 'I piccoli dettagli a volte fanno la differenza. <br> Cerca il tuo stile nella categoria',
     'staiVendendoIlTuoMezzoONeStaiCercandoUnAltro' => 'Stai vendendo il tuo mezzo o ne stai cercando un altro',
-    'scopriloNellaCategoriaMotori' => 'Scoprilo nella categoria Motori',
+    'scopriloNellaCategoriaMotori' => 'Scoprilo nella categoria "Motori"',
     // show
     'articoloPubblicatoDi' => 'Articolo pubblicato di',
     'informazioniSuQuestoArticolo' => 'Informazioni su questo articolo',

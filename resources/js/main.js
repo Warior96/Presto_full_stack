@@ -1,21 +1,45 @@
-let addArticle = document.querySelector('#addArticle');
+document.addEventListener('DOMContentLoaded', () => {
+  const textDiv = document.querySelector('#dynamicText');
+  const swiper = document.querySelector('.mySwiper').swiper;
 
+  let firstTime = true;
+
+  swiper.on('slideChange', () => {
+      const index = swiper.realIndex % texts.length;
+
+      if (firstTime) {
+          // Nessuna animazione per il primo testo
+          textDiv.innerHTML = texts[index];
+          firstTime = false;
+      } else {
+          // Aggiunge solo animazione di entrata
+          textDiv.classList.remove('fade-in-right');
+          void textDiv.offsetWidth; // forza reflow per riavviare l’animazione
+          textDiv.innerHTML = texts[index];
+          textDiv.classList.add('fade-in-right');
+      }
+  });
+});
+
+
+
+
+// bottone ultimi articoli home
+let addArticle = document.querySelector('#addArticle');
 let observerArticle = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         addArticle.classList.remove('opacity-0');
         addArticle.classList.add('opacity-100');
-      }, 1000);
+      }, 500);
     }
   });
 });
-// INSERITO NELLA DARK MODE
 
 
 
 //INIZIO DEL CODICE PER LA DARK-MODE
-
 let btnlight = document.querySelectorAll('.btnlight')
 let dashboard_btn = document.querySelector('.dashboard_btn')
 let textElements = document.querySelectorAll('h1:not(footer *):not(.dark), p:not(footer *), h2:not(.typewriter):not(footer *), h3:not(footer *), h4:not(.typewriter-text):not(footer *):not(.card-title):not(.typewriter), h5:not(.typewriter-text2):not(footer *), h6:not(.dark):not(footer *), span:not(.fa-solid):not(.dark), button:not(.btnlight):not(footer *):not(.btn):not(.dashboard_btn), a:not(.nav-link):not(footer *):not(.dropdown-item):not(.dark):not(.page-link');

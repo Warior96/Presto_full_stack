@@ -8,7 +8,7 @@
         @else
             <livewire:wishlist :article="$article" />
         @endif
-    @endauth--
+    @endauth
     <div class="card-body px-0 pt-2 pb-0">
         <h4 class="card-title">{{ $article->title }}</h4>
         <h5 class="card-subtitle text-body-secondary">{{ __('ui.€') }} {{ $article->price }}</h5>

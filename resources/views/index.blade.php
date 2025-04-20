@@ -29,32 +29,123 @@
             {{-- MESSAGGIO DI SUCCESSO GENERICO --}}
             <x-success />
 
+            {{-- variabile con testi delle slide --}}
+            @php
+                $texts = array_merge(
+                    ['Emporium Shop ' . __('ui.èUnMarketplaceInnovativo') . '!'],
+                    Auth::check()
+                        ? [
+                            __('ui.ciao') .
+                            ' ' .
+                            Auth::user()->name .
+                            '. ' .
+                            '<br>' .
+                            __('ui.seiProntoAFareOttimiAffariAncheOggi') .
+                            '?' .
+                            __('ui.haiLarmadioVuoto') .
+                            '? ' .
+                            '<br>' .
+                            __('ui.riempiloConIProdottiDellaCategoria') .
+                            ' "' .
+                            __('ui.Abbigliamento') .
+                            '"',
+                        ]
+                        : [
+                            __('ui.compraEVendiProdottiNuoviEUsatiInPochiClick') .
+                            '<br>' .
+                            __('ui.haiLarmadioVuoto') .
+                            '? ' .
+                            '<br>' .
+                            __('ui.riempiloConIProdottiDellaCategoria') .
+                            ' "' .
+                            __('ui.Abbigliamento') .
+                            '"',
+                        ],
+
+                    [
+                        __('ui.iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria') .
+                        ' "' .
+                        __('ui.Accessori') .
+                        '"',
+                        __('ui.curaLaTuaPelleConIProdottiDellaCategoria') . ' "' . __('ui.Bellezza') . '"',
+                        __('ui.laTuaLavatriceFaICapricci') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.sostituiscilaConUnaDellaCategoria') .
+                        ' "' .
+                        __('ui.Elettronica') .
+                        '"',
+                        __('ui.haiIlPolliceVerde') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.scopriLaCategoria') .
+                        ' "' .
+                        __('ui.Giardinaggio') .
+                        '"',
+                        __('ui.giochiSparsiPerCasaNonSonoAbbastanza') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.aggiungineAltriDallaCategoria') .
+                        ' "' .
+                        __('ui.Giocattoli') .
+                        '"',
+                        __('ui.trovaIlLibroDeiTuoiSogni') .
+                        '! ' .
+                        '<br>' .
+                        __('ui.daiUnOcchiataAllaCategoria') .
+                        ' "' .
+                        __('ui.Libri e riviste') .
+                        '"',
+                        __('ui.staiVendendoIlTuoMezzoONeStaiCercandoUnAltro') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.scopriloNellaCategoriaMotori'),
+                        __('ui.seiUnaPersonaAtletica') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.vuoiTenertiInForma') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.daiUnOcchiataAllaCategoria') .
+                        ' "' .
+                        __('ui.Sport') .
+                        '"',
+                        __('ui.iTuoiDispositiviSonoVecchi') .
+                        '? ' .
+                        '<br>' .
+                        __('ui.guardaLeNostreOfferteNellaCategoriaTecnologia'),
+                    ],
+                );
+            @endphp
+
+            <script>
+                const texts = @json($texts);
+            </script>
             {{-- carosello categorie --}}
-            <div class="col-12 overflow-hidden">
+            <div class="col-12 overflow-hidden position-relative">
+                <div class="z-2 d-flex flex-column justify-content-center align-items-center text-slide-header fs-header px-5"
+                    data-aos="fade-left" data-aos-duration="2000">
+                    <div class="c-2 h-tx d-flex align-items-center fs-header text2" id="dynamicText">
+                        Emporium Shop {{ __('ui.èUnMarketplaceInnovativo') }}!
+                    </div>
+                    <div class="mt-3 h-sc w-100">
+                        <form action="{{ route('article.search') }}" method="GET" role="search" class="d-flex w-100">
+                            <div class="input-group">
+                                <input type="search" name="query" class="form-control"
+                                    placeholder="{{ __('ui.cerca') }}" aria-label="search" value="{{ $query }}">
+                                <button class="input-group-text btn " type="submit" id="basic-addon2">
+                                    <i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <swiper-container class="mySwiper px-lg-5" thumbs-swiper=".mySwiper2-index" space-between="10"
-                    loop="true" autoplay-delay="12000" autoplay-pause-on-mouse-enter="true">
+                    loop="true" autoplay-delay="11000" autoplay-pause-on-mouse-enter="false" allow-touch-move="false"
+                    simulate-touch="false">
                     <swiper-slide class="rounded-3 my-1 overflow-hidden">
                         <div class="row justify-content-center p-0">
                             <div class="col-12 container-img-card p-0 position-relative">
                                 <img src="{{ Storage::url('categories-img/all.png') }}" alt="home" class="">
-
-                                <div class="d-flex flex-column justify-content-center align-items-center text-slide-header fs-header p-5"
-                                    data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1000">
-                                    <div class="c-2">
-                                        Emporium Shop {{ __('ui.èUnMarketplaceInnovativo') }}!
-                                    </div>
-                                    {{-- search --}}
-                                    <form action="{{ route('article.search') }}" method="GET" role="search"
-                                        class="d-flex w-100 mt-3">
-                                        <div class="input-group">
-                                            <input type="search" name="query" class="form-control"
-                                                placeholder="{{ __('ui.cerca') }}" aria-label="search"
-                                                value="{{ $query }}">
-                                            <button class="input-group-text btn " type="submit" id="basic-addon2">
-                                                <i class="fa-solid fa-magnifying-glass"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     </swiper-slide>
@@ -64,110 +155,12 @@
                                 <div class="col-12 container-img-card p-0 position-relative">
                                     <img src="{{ Storage::url($category->img) }}"
                                         alt="immagine di {{ $category->name }}" class="radius">
-                                    <div
-                                        class="d-flex flex-column justify-content-center align-items-center text-slide-header p-5">
-                                        @auth
-                                            <h4 class="typewriter c-2 mb-3 fs-header">
-                                                {{ __('ui.ciao') }} {{ Auth::user()->name }},
-                                                {{ __('ui.seiProntoAFareOttimiAffariAncheOggi') }}?
-                                            </h4>
-                                        @else
-                                            <h4 class="typewriter c-2 mb-3 fs-header">
-                                                {{ __('ui.compraEVendiProdottiNuoviEUsatiInPochiClick') }}
-                                            </h4>
-                                        @endauth
-                                        @switch($category->name)
-                                            @case('Elettronica')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.laTuaLavatriceFaICapricci') }}?
-                                                    {{ __('ui.sostituiscilaConUnaDellaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Abbigliamento')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.haiLarmadioVuoto') }}?
-                                                    {{ __('ui.riempiloConIProdottiDellaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Bellezza')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.curaLaTuaPelleConIProdottiDellaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Giardinaggio')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.haiIlPolliceVerde') }}?
-                                                    {{ __('ui.scopriLaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"
-                                                </h5>
-                                            @break
-
-                                            @case('Giocattoli')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.giochiSparsiPerCasaNonSonoAbbastanza') }}?
-                                                    {{ __('ui.aggiungineAltriDallaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Sport')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.seiUnaPersonaAtletica') }}? {{ __('ui.vuoiTenertiInForma') }}?
-                                                    {{ __('ui.daiUnOcchiataAllaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Tecnologia')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.iTuoiDispositiviSonoVecchi') }}?
-                                                    {{ __('ui.guardaLeNostreOfferteNellaCategoriaTecnologia') }}
-                                                    "{{ __("ui.$category->name") }}"</h5>
-                                            @break
-
-                                            @case('Libri e riviste')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.trovaIlLibroDeiTuoiSogni') }}!
-                                                    {{ __('ui.daiUnOcchiataAllaCategoria') }} "{{ __("ui.$category->name") }}"
-                                                </h5>
-                                            @break
-
-                                            @case('Accessori')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria') }}
-                                                    "{{ __("ui.$category->name") }}"
-                                                </h5>
-                                            @break
-
-                                            @case('Motori')
-                                                <h5 class="c-2 mb-3 fs-header typewriter-text2">
-                                                    {{ __('ui.staiVendendoIlTuoMezzoONeStaiCercandoUnAltro') }}?
-                                                    {{ __('ui.scopriloNellaCategoriaMotori') }}
-                                                    "{{ __("ui.$category->name") }}"
-                                                </h5>
-                                            @break
-                                        @endswitch
-
-                                        {{-- search --}}
-                                        <form action="{{ route('article.search') }}" method="GET" role="search"
-                                            class="d-flex w-100 mt-3">
-                                            <div class="input-group">
-                                                <input type="search" name="query" class="form-control"
-                                                    placeholder="{{ __('ui.cerca') }}" aria-label="search"
-                                                    value="{{ $query }}">
-                                                <button class="input-group-text btn " type="submit" id="basic-addon2">
-                                                    <i class="fa-solid fa-magnifying-glass"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
 
                         </swiper-slide>
                     @endforeach
                 </swiper-container>
-
             </div>
 
 
@@ -210,7 +203,7 @@
                             "1024": { "slidesPerView": 3 }
                         }'>
                         @foreach ($articles as $article)
-                            <swiper-slide class="mb-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3"
+                            <swiper-slide class="mb-md-5 swiper-slide-home me-0 col-lg-12 col-md-4 col-3"
                                 data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="500">
                                 <x-card :article="$article" />
                             </swiper-slide>

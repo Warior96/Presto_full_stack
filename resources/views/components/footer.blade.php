@@ -1,5 +1,5 @@
 <footer class="container-fluid shadow bg-5 overflow-hidden mt-5 pt-5">
-    <div class="py-5">
+    <div class="py-lg-5">
         <div class="row mx-md-2">
             <div class="col-12 col-lg-8">
                 <div class="ps-lg-5 row">
@@ -9,13 +9,13 @@
                         <img src="{{ Storage::url('logo/logo-rettangolare-w.png') }}" alt=""
                             class="img-logo-footer">
                     </div>
-                    <div class="col-md-2 d-none d-md-flex justify-content-center">
+                    <div class="col-md-3 col-lg-2 d-none d-md-flex justify-content-center">
                         <img src="{{ Storage::url('logo/logo-quadrato-w.png') }}" alt=""
                             class="img-logo-footer">
                     </div>
 
                     {{-- chi siamo --}}
-                    <div class="col-lg-5 col-md-5 ms-3 ms-md-0 mb-3 c-2 me-2 me-md-0 ps-lg-5">
+                    <div class="col-lg-5 col-md-5 c-2 ms-3 mb-3 me-2 ms-md-0 me-md-0 ps-lg-5">
                         <p class="c-2 mb-2">{{ __('ui.chi_siamo') }}</p>
                         <p class="c-2">
                             Emporium Shop {{ __('ui.UnMarketplaceDove') }}
@@ -23,7 +23,7 @@
                     </div>
 
                     {{-- contatti --}}
-                    <div class="col-lg-4 col-md-5 mb-3 ms-3 ms-md-0 ms-lg-4 c-2">
+                    <div class="col-lg-4 col-md-4 mb-3 ms-3 ms-md-0 ms-lg-4 c-2">
                         <p class="c-2 mb-2">{{ __('ui.contatti') }}</p>
                         <p class="c-2">
                             <i class="fa-solid fa-envelope c-2 me-2"></i>

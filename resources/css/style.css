@@ -107,7 +107,7 @@ body {
 }
 
 .vh-98 {
-  height: 98vh;
+  height: 85vh;
 }
 
 .fs-6 {
@@ -198,15 +198,20 @@ body {
 
 .text-slide-header {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
+  top: 49.4%;
+  left: 2.8%;
+  width: 94.5%;
   height: 50%;
   background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .fs-header {
-  font-size: 0.92rem !important;
+  font-size: 1.1rem !important;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.5s ease-in-out forwards;
 }
 
 /* Fine Carosello categorie */
@@ -517,7 +522,7 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 }
 
 .img-logo-footer {
-  width: 10vw;
+  width: 70%;
   margin-bottom: 40px;
 }
 
@@ -880,6 +885,24 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   }
 }
 
+/* testo slide header home */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+
 
 
 
@@ -904,16 +927,26 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   }
 
   .text-slide-header {
-    position: absolute;
-    top: 60%;
-    left: 0%;
-    width: 100%;
+    top: 59.4%;
+    left: 1.5%;
+    width: 97%;
     height: 40%;
-    background-color: rgba(0, 0, 0, 0.7);
   }
 
   .fs-header {
     font-size: 1.22rem !important;
+  }
+
+  .swiper-slide-home {
+    height: 40vh;
+  }
+
+  .vh-98 {
+    height: 70vh;
+  }
+
+  .img-logo-footer {
+    width: 100%;
   }
 
 }
@@ -1013,11 +1046,12 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 
   .text-slide-header {
     position: absolute;
-    top: 0;
-    left: 65%;
+    top: 0.7%;
+    left: 60.8%;
     width: 35%;
-    height: 100%;
+    height: 98.6%;
     background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0.5rem 0.5rem 0;
   }
 
   .hover-expand {
@@ -1038,6 +1072,14 @@ table *:not(img):not(button):not(a):not(span):not(form) {
 
   .fs-header {
     font-size: 1.40rem !important;
+  }
+
+  .h-tx {
+    height: 60%;
+  }
+
+  .h-sc {
+    height: 20%;
   }
 
   .modal-no:hover {
@@ -1063,6 +1105,15 @@ table *:not(img):not(button):not(a):not(span):not(form) {
   .btn-user:hover #icon_user,
   .btn-user:hover #span_user {
     color: var(--color-2) !important;
+  }
+
+  .img-logo-footer {
+    width: 10vw;
+    margin-bottom: 40px;
+  }
+
+  .vh-98 {
+    height: 70vh;
   }
 
 }

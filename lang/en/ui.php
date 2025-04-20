@@ -36,11 +36,11 @@ return [
     'vuoiTenertiInForma' => 'Do you want to stay in shape',
     'daiUnOcchiataAllaCategoria' => 'Take a look at the category',
     'iTuoiDispositiviSonoVecchi' => 'Your devices are old',
-    'guardaLeNostreOfferteNellaCategoriaTecnologia' => 'Check out our offers in the Technology category',
+    'guardaLeNostreOfferteNellaCategoriaTecnologia' => 'Check out our offers in the "Technology" category',
     'trovaIlLibroDeiTuoiSogni' => 'Find the book of your dreams',
     'iDiccoliDettagliAVolteFannoLaDifferenzaCercaIlTuoStileNellaCategoria' => 'The small details sometimes make the difference. Look for your style in the category',
     'staiVendendoIlTuoMezzoONeStaiCercandoUnAltro' => 'Are you selling your vehicle or looking for another one',
-    'scopriloNellaCategoriaMotori' => 'Discover it in the Motors category',
+    'scopriloNellaCategoriaMotori' => 'Discover it in the "Motors" category',
     // show
     'articoloPubblicatoDi' => 'Article published by',
     'informazioniSuQuestoArticolo' => 'Information about this article',
