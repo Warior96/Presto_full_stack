@@ -39,7 +39,8 @@
 
             <p class="col-12 col-md-7 mx-5">data e ora della
                 richiesta:{{ \Carbon\Carbon::now()->addHours(1)->format('d/m/Y H:i') }}</p>
-            <p class="col-12 col-md-5 col-lg-4 ms-md-5 mb-3 mb-md-0 mt-2 ">Se vuoi accettare la richiesta, clicca qui:</p>
+            <p class="col-12 col-md-5 col-lg-4 ms-md-5 mb-3 mb-md-0 mt-2 ">Se vuoi accettare la richiesta, clicca qui:
+            </p>
             <div class="col-12 col-md-6 col-lg-6 me-lg-5">
                 <a href="{{ route('make.revisor', compact('user')) }}"
                     class="btn btn-primary rounded-2 fs-5 shadow w-50 py-2 ">Rendi revisor</a>

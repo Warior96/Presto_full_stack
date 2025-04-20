@@ -40,16 +40,6 @@
 
                                 <div class="d-flex flex-column justify-content-center align-items-center text-slide-header fs-header p-5"
                                     data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1000">
-                                    {{-- @auth
-                                        <h4 class="typewriter c-2 mb-3">
-                                            Ciao {{ Auth::user()->name }}, sei pronto a fare ottimi affari anche
-                                            oggi?
-                                        </h4>
-                                    @else
-                                        <h4 class="typewriter c-2 mb-3">
-                                            Compra e vendi prodotti, nuovi e usati, in pochi click.
-                                        </h4>
-                                    @endauth --}}
                                     <div class="c-2">
                                         Emporium Shop {{ __('ui.èUnMarketplaceInnovativo') }}!
                                     </div>
@@ -178,28 +168,6 @@
                     @endforeach
                 </swiper-container>
 
-                {{-- anteprima categorie --}}
-                {{-- <swiper-container class="mySwiper2-index" free-mode="true" watch-slides-progress="true"
-                    breakpoints='{
-                        "0": { "slidesPerView": 2, "spaceBetween": 2 },
-                        "768": { "slidesPerView": 4, "spaceBetween": 5 },
-                        "1024": { "slidesPerView": 5, "spaceBetween": 10 }
-                    }'>
-                    @foreach ($categories as $category)
-                        <swiper-slide class="my-1 point">
-                            <div class="row justify-content-center p-0 position-relative">
-                                <div class="col-12 container-little-img-card p-0">
-                                    <img src="{{ Storage::url($category->img) }}" alt="" class="radius">
-                                    <div class="little-black-opacity p-0 radius">
-                                        <h6
-                                            class="dark c-2 position-absolute top-50 start-50 translate-middle text-center">
-                                            {{ __("ui.$category->name") }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                    @endforeach
-                </swiper-container> --}}
             </div>
 
 
@@ -257,10 +225,6 @@
 
             {{-- crea articolo --}}
             <div class="col-12 d-flex flex-column align-items-center justify-content-start mb-4 mt-3">
-                {{-- <a href="{{ route('createarticle') }}"
-        class="btn bg-4 btn-cus text-dark px-3 py-3 fs-4 rounded-4 w-md-25 " id="addArticle">
-        {{ __('ui.aggiungiProdotto') }}
-    </a> --}}
                 <a href="{{ route('createarticle') }}" id="addArticle"
                     class="btn-cus btn-flip btn-text fs-4 w-md-25 opacity-0"
                     data-back="{{ __('ui.completaLaVendita') }}"

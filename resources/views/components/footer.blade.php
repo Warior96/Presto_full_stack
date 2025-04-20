@@ -141,7 +141,7 @@
                     <div class="col-md-5 d-flex w-100 mb-3">
                         <div>
                             <h5 class="c-2 dark">{{ __('ui.richiediDiLavorare') }}</h5>
-                            <p class="c-2 dark"> {{__('ui.InviaLaTua')}}</p>
+                            <p class="c-2 dark"> {{ __('ui.InviaLaTua') }}</p>
                             <div class="col-4 ">
                                 {{-- bottone apertura modale --}}
                                 <button type="button" class="btn btn-footer px-3 py-2 fs-5 c-2 shadow"
@@ -163,7 +163,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body px-4">
-                                                <p>{{__('ui.IscrivitiAlNostro')}}</p>
+                                                <p>{{ __('ui.IscrivitiAlNostro') }}</p>
                                             </div>
                                             <div
                                                 class="modal-footer d-flex justify-content-between align-items-center pb-2 ">
@@ -192,7 +192,7 @@
 
         <div
             class="d-flex flex-column flex-sm-row justify-content-between pt-4 ps-lg-5 mx-3 mx-md-5 border-top border-secondary">
-            <p class="c-2">&copy; 2025 The Final Commit.{{__('ui.tuttiIDirittiRiservati')}}.</p>
+            <p class="c-2">&copy; 2025 The Final Commit.{{ __('ui.tuttiIDirittiRiservati') }}.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" target="_blank"
                         href="https://www.facebook.com/?locale=it_IT"><i class="c-2 fa-brands fa-facebook"></i></a>

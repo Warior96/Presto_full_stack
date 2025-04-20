@@ -2,11 +2,11 @@
     <header class="container mt-5 pt-4">
         <div class="row justify-content-center">
             <h1 class="col-12 display-5 text-center mt-3 mb-1">
-                {{-- @dd($article_to_check) --}}
                 @if (\App\Models\Article::toBeRevisedCount() == 1)
-                {{__('ui.tiMancaAncora1ArticoloDaRevisionare')}}
+                    {{ __('ui.tiMancaAncora1ArticoloDaRevisionare') }}
                 @elseif (\App\Models\Article::toBeRevisedCount() > 1)
-                {{__('ui.tiMancanoAncora')}} {{ \App\Models\Article::toBeRevisedCount() }} {{__('ui.articoliDaRevisionare')}}
+                    {{ __('ui.tiMancanoAncora') }} {{ \App\Models\Article::toBeRevisedCount() }}
+                    {{ __('ui.articoliDaRevisionare') }}
                 @endif
             </h1>
         </div>
@@ -166,7 +166,8 @@
                             <span class="fs-7 me-1">{{ __('ui.titolo') }}: </span>{{ $article_to_check->title }}
                         </h2>
                         <h4 class="mb-3">
-                            <span class="fs-7 fw-normal">{{__('ui.autore')}}:</span> {{ $article_to_check->user->name }}
+                            <span class="fs-7 fw-normal">{{ __('ui.autore') }}:</span>
+                            {{ $article_to_check->user->name }}
                         </h4>
                         <p class="fs-5">
                             <span class="fs-7">{{ __('ui.prezzo') }}:
@@ -174,7 +175,6 @@
                         </p>
                         <p class="fst-italic text-muted fs-5">
                             <span class="fs-7 fst-normal">{{ __('ui.categoria') }}: </span>
-                            {{-- #{{ $article_to_check->category->name }} --}}
                             @foreach ($categories as $category)
                                 @if ($article_to_check->category->name == $category->name)
                                     <span class="fs-7 fst-normal">#{{ __("ui.$category->name") }}: </span>
@@ -232,7 +232,7 @@
                             <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
                                 id="accept">{{ __('ui.accetta') }}</button>
                         </form>
-                        
+
                         <form action="{{ route('reject', ['article' => $article_to_check]) }}" method='POST'
                             class="col-6 px-3">
                             @csrf
@@ -240,14 +240,6 @@
                             <button class="btn btn-cus p-2 w-100 fw-bold"
                                 id="reject">{{ __('ui.rifiuta') }}</button>
                         </form>
-
-                        {{-- <form action="{{ route('accept', ['article' => $article_to_check]) }}" method='POST'
-                            class="col-6 px-3">
-                            @csrf
-                            @method('PATCH')
-                            <button class="btn btn-cus btn-success p-2 w-100 fw-bold"
-                                id="accept">{{ __('ui.accetta') }}</button>
-                        </form> --}}
 
 
                         {{-- modale back --}}
@@ -275,8 +267,8 @@
 
                 {{-- modale back --}}
                 <div class="col-12 d-flex justify-content-center align-content-center pt-2 pb-1">
-                    <button type="button" class="btn py-3 px-5 c-5 btn-storico fs-6 dashboard_btn" data-bs-toggle="modal"
-                        data-bs-target="#modal_revisor" id="revisor_dash">
+                    <button type="button" class="btn py-3 px-5 c-5 btn-storico fs-6 dashboard_btn"
+                        data-bs-toggle="modal" data-bs-target="#modal_revisor" id="revisor_dash">
                         Dashboard
                     </button>
 

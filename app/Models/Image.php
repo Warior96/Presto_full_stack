@@ -12,15 +12,18 @@ class Image extends Model
 {
     use HasFactory;
 
+    // fillable
     protected $fillable = [
         'path',
     ];
 
-    public function atricle(): BelongsTo
+    // relazione con article N-1
+    public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class);
     }
 
+    // funzione per ottenere l'url immagine cropata
     public static function getUrlByFilePath($filePath, $w = null, $h = null)
     {
         if (!$w && !$h) {
@@ -33,11 +36,11 @@ class Image extends Model
         return Storage::url($file);
     }
 
+    // funzione per ottenere l'url immagine originale
     public function getUrl($w = null, $h = null)
     {
         return self::getUrlByFilePath($this->path, $w, $h);
     }
-
 
     protected function casts(): array
     {

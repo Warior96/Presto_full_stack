@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="xxx">
-    <meta name="keywords" content="xxx, yyy, zzz">
+    <meta name="description" content="Compra e vendi prodotti, nuovi e usati, in pochi click">
+    <meta name="keywords" content="buy, sell, products, new, used, refurbished">
     <meta name="author" content="The Final Commit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -27,19 +27,12 @@
 
 <body>
 
-    <!--  description: argomento della pagina -->
-    <!--  keywords: parole chiave per SEO -->
-    <!--  icon: icona del sito nella scheda broswer: favicon.ico -->
-
-
     <x-navbar />
 
 
     {{ $slot }}
 
 
-
-    {{-- <x-footer /> --}}
 
     <!-- CDN JavaScript -->
     <!-- script AOS -->
@@ -49,8 +42,7 @@
     </script>
     <!-- script fontAwsome -->
     <script src="https://kit.fontawesome.com/141c05eb74.js" crossorigin="anonymous"></script>
-
-    <!-- link cdn Swiper-->
+    <!-- script Swiper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 

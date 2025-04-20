@@ -27,25 +27,17 @@ class Wishlist extends Component
         $user = Auth::user();
         // Aggiungi l'articolo alla wishlist
         $article = Article::find($this->article->id);
-        // dd($article);
         $user->wishlist()->syncWithoutDetaching([$article->id]);
         $this->addedToWishlist = false;
-
-
-        // $this->dispatch('wishlistUpdated', ['articleId' => $this->article->id, 'action' => 'add']);
     }
 
     public function deleteWish()
     {
         $user = Auth::user();
-        // Aggiungi l'articolo alla wishlist
+        // rimuovi l'articolo dalla wishlist
         $article = Article::find($this->article->id);
         $user->wishlist()->detach($article->id);
         $this->removedToWishlist = true;
-
-        // $this->emit('wishlistUpdated');
-        // $this->dispatch('wishlistUpdated', ['articleId' => $this->article->id, 'action' => 'remove']);
-
     }
 
     public function render()

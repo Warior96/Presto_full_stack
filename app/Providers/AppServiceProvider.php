@@ -26,28 +26,30 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
-        // categorie disponibili ovunque
+        // categories variabile globale
         if (Schema::hasTable('categories')) {
             View::share('categories', Category::orderBy('name')->get());
         }
-        // Condividi gli articoli globalmente se la tabella esiste
+        // articles variabile globale
         if (Schema::hasTable('articles')) {
             View::share('articles', Article::all());
         }
-        //rendiamo globale la request della navbar search
+
+        // query della navbar search variabile globale
         View::share('query', request()->query('query', ''));
 
+        // categoryIcons variabile globale
         $categoryIcons = [
-            'Elettronica'        => 'fa-tv',
-            'Abbigliamento'      => 'fa-tshirt',
-            'Bellezza'           => 'fa-paint-brush',
-            'Giardinaggio'       => 'fa-leaf',
-            'Giocattoli'         => 'fa-puzzle-piece',
-            'Sport'              => 'fa-football-ball',
-            'Tecnologia'         => 'fa-cogs',
-            'Libri e riviste'    => 'fa-book',
-            'Accessori'          => 'fa-glasses',
-            'Motori'             => 'fa-car',
+            'Elettronica' => 'fa-tv',
+            'Abbigliamento' => 'fa-tshirt',
+            'Bellezza' => 'fa-paint-brush',
+            'Giardinaggio' => 'fa-leaf',
+            'Giocattoli' => 'fa-puzzle-piece',
+            'Sport' => 'fa-football-ball',
+            'Tecnologia' => 'fa-cogs',
+            'Libri e riviste' => 'fa-book',
+            'Accessori' => 'fa-glasses',
+            'Motori' => 'fa-car',
         ];
         View::share('categoryIcons', $categoryIcons);
     }

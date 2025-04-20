@@ -2,29 +2,13 @@
     <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/300' }}"
         class="card-img-top {{ Route::currentRouteName() == 'homepage' ? 'img-cus' : 'aspect-ratio-1' }}"
         alt="Immagine dell'articolo {{ $article->title }}">
-    {{-- @dd(Auth::user()->wishlist) --}}
     @auth
         @if (Auth::user()->wishlist->contains($article->id))
             <livewire:wishlist-remover :article="$article" />
-            {{-- <p class="bg-2">Rimuovi</p> --}}
         @else
             <livewire:wishlist :article="$article" />
-            {{-- <p class="bg-white">Aggiungi</p> --}}
         @endif
-    @endauth
-    {{-- <livewire:wishlist-button :article="$article" /> --}}
-    {{-- <div id="wishlist-{{ $article->id }}" wire:key="wishlist-{{ $article->id }}">
-        @if (Auth::user()->wishlist->contains($article->id))
-            <livewire:wishlist-remover :article="$article" wire:key="remover-{{ $article->id }}" />
-            <p class="bg-2">Rimuovi</p>
-        @else
-            <livewire:wishlist :article="$article" wire:key="add-{{ $article->id }}" />
-            <p class="bg-white">Aggiungi</p>
-        @endif
-    </div> --}}
-
-
-
+    @endauth--
     <div class="card-body px-0 pt-2 pb-0">
         <h4 class="card-title">{{ $article->title }}</h4>
         <h5 class="card-subtitle text-body-secondary">{{ __('ui.€') }} {{ $article->price }}</h5>

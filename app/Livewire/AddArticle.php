@@ -68,9 +68,6 @@ class AddArticle extends Component
                         "path" => $image->store($newFileName, 'public')
                     ]
                 );
-                // dispatch(new ResizeImage($newImage->path, 600, 600));
-                // dispatch(new GoogleVisionSafeSearch($newImage->id));
-                // dispatch(new GoogleVisionLabelImage($newImage->id));
                 RemoveFaces::withChain([
                     new ResizeImage($newImage->path, 600, 600),
                     new GoogleVisionSafeSearch($newImage->id),
@@ -84,26 +81,28 @@ class AddArticle extends Component
         // funzione di pulizia
         $this->puliziaCampi();
         return redirect()->route('createarticle')->with('success', 'Il tuo articolo è stato caricato ed è in attesa di approvazione');
-        // session()->flash('success', 'Articolo aggiunto con successo');
-        // return redirect()->route('createarticle');
     }
 
     // funzione di aggiunta immagini
     public function updatedTemporaryImages()
     {
         // validazione
-        if ($this->validate([
-            'temporary_images.*' => 'mimes:jpg,jpeg,png',
-            'temporary_images' => 'max:5',
-        ], [
-            'temporary_images.*.mimes' => 'Il file deve essere un\'immagine in formato jpg, jpeg o png',
-            'temporary_images.max' => 'Non puoi caricare più di 5 immagini',
-        ])) {
-            if ($this->validate([
-                'temporary_images.*' => 'max:1024',
+        if (
+            $this->validate([
+                'temporary_images.*' => 'mimes:jpg,jpeg,png',
+                'temporary_images' => 'max:5',
             ], [
-                'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
-            ]))
+                'temporary_images.*.mimes' => 'Il file deve essere un\'immagine in formato jpg, jpeg o png',
+                'temporary_images.max' => 'Non puoi caricare più di 5 immagini',
+            ])
+        ) {
+            if (
+                $this->validate([
+                    'temporary_images.*' => 'max:1024',
+                ], [
+                    'temporary_images.*.max' => 'L\'immagine non deve superare i 1024 KB',
+                ])
+            )
                 foreach ($this->temporary_images as $image) {
                     $this->images[] = $image;
                 }

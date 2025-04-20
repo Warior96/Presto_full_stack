@@ -48,12 +48,13 @@ class User extends Authenticatable
         ];
     }
 
-    // relazione con articles
+    // relazione con articles 1-N
     public function articles(): HasMany
     {
         return $this->hasMany(Article::class);
     }
 
+    // relazione con wishlist 1-N
     public function wishlist(): BelongsToMany
     {
         return $this->belongsToMany(Article::class, 'wishlist');

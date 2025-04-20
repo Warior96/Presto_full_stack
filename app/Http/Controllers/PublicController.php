@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
+    // view index
     public function index()
     {
-        // $articles = Article::take(6)->orderBy('created_at', 'desc')->get();
         $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
         return view('index', compact('articles'));
     }
@@ -23,7 +23,7 @@ class PublicController extends Controller
         return view('article.searched', ['articles' => $articles, 'query' => $query]);
     }
 
-    // set lingua
+    // set language
     public function setLanguage($lang)
     {
         session()->put('locale', $lang);

@@ -6,7 +6,7 @@
         @if ($lang == 'it')
             Italiano
         @elseif ($lang == 'en')
-            English 
+            English
         @elseif ($lang == 'zh-tw')
             简体中文
         @endif

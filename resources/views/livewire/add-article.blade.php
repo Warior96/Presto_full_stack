@@ -28,7 +28,7 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <label class="form-label" for="temporary_images">{{ __('ui.immagine') }}:</label>
-                <span class="mt-1 fs-8 dark">*{{__('ui.massimo5Allavolta')}}</span>
+                <span class="mt-1 fs-8 dark">*{{ __('ui.massimo5Allavolta') }}</span>
             </div>
             <input type="file" wire:model.live="temporary_images" multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">

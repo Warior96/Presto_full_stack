@@ -93,7 +93,7 @@
                                             class="ms-auto ps-2 dark">({{ $category->articles->where('is_accepted', 1)->count() }})</span>
                                     </a>
                                 </li>
-                                {{-- divder --}}
+                                {{-- divider --}}
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
                                 @endif
@@ -107,11 +107,6 @@
                         <li class="nav-item">
                             <a class="d-flex position-relative nav-link {{ Route::currentRouteName() == 'revisor.index' ? 'c-2' : '' }}"
                                 href="{{ route('revisor.index') }}">{{ __('ui.revisiona') }}
-                                {{-- <span class="position-absolute translate-middle badge rounded-pill bg-5"
-                                    id="revisor-badge">
-                                    {{ \App\Models\Article::toBeRevisedCount() }}
-                                </span> --}}
-
                                 <span class="bell-icon translate-middle">
                                     <img class="bell" src="{{ Storage::url('logo/bell.gif') }}" alt="">
                                     <div class="notification-amount">
@@ -120,14 +115,6 @@
                                 </span>
                             </a>
                         </li>
-                    @else
-                        {{-- modale back --}}
-
-
-                        {{-- <button type="button" class="btn py-2 px-4 fw-bold c-5 btn-storico" data-bs-toggle="modal"
-                            data-bs-target="#no-revisor-nav">
-                            Storico operazioni
-                        </button> --}}
                     @endif
                 @endauth
 

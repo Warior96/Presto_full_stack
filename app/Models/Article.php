@@ -13,6 +13,7 @@ class Article extends Model
 {
     use Searchable;
 
+    // indici della ricerca
     public function toSearchableArray()
     {
         return [
@@ -23,6 +24,7 @@ class Article extends Model
         ];
     }
 
+    // fillable
     protected $fillable = [
         'title',
         'description',
@@ -32,36 +34,40 @@ class Article extends Model
         'condition'
     ];
 
-    // relazione con users
+    // relazione con users N-1
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    // relazione con categories
+    // relazione con categories N-N
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    //valore is_accepted
+    // valore is_accepted
     public function setAccepted($value)
     {
         $this->is_accepted = $value;
         $this->save();
         return true;
     }
+
+    // contatore articoli da revisionare
     public static function toBeRevisedCount()
     {
 
         return Article::where('is_accepted', null)->count();
     }
 
+    // relazione con images 1-N
     public function images(): HasMany
     {
         return $this->hasMany(Image::class);
     }
 
+    // relazione con users 1-N
     public function wishlistBy(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'wishlist');

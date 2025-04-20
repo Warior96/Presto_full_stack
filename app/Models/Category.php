@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
+    // fillable
     protected $fillable = [
-        'name', 'img'
+        'name',
+        'img'
     ];
 
-    // relazione con articles
+    // relazione con articles N-N
     public function articles(): HasMany
     {
         return $this->hasMany(Article::class);

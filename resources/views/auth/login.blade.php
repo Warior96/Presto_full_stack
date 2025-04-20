@@ -2,9 +2,6 @@
     <header class="container mt-5 pt-5 vh-100">
         <div class="row justify-content-center pt-3">
             <h1 class="col-12 display-4 text-center mb-3">{{ __('ui.login') }}</h1>
-            {{-- <div class="col-6">
-                <x-error></x-error>
-            </div> --}}
         </div>
 
         <div class="row justify-content-center mt-5">
